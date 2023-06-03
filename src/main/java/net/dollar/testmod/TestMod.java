@@ -1,6 +1,7 @@
 package net.dollar.testmod;
 
 import com.mojang.logging.LogUtils;
+import net.dollar.testmod.item.ModCreativeModeTabs;
 import net.dollar.testmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -48,6 +49,13 @@ public class TestMod
     {
         //NOTE: each creative mode tab's events can be accepted within the same if statement
         if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RUBY_SHARD);
+            event.accept(ModItems.RUBY_GEM);
+            event.accept(ModItems.AMETHYST_GEM);
+        }
+
+        //also add to TEST_TAB
+        if (event.getTab() == ModCreativeModeTabs.TEST_TAB) {
             event.accept(ModItems.RUBY_SHARD);
             event.accept(ModItems.RUBY_GEM);
             event.accept(ModItems.AMETHYST_GEM);

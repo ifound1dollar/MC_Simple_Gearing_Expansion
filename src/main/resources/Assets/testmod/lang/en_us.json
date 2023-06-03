@@ -1,5 +1,7 @@
 {
   "item.testmod.ruby_shard": "Ruby Shard",
   "item.testmod.ruby_gem": "Ruby Gem",
-  "item.testmod.amethyst_gem": "Amethyst Gem"
+  "item.testmod.amethyst_gem": "Amethyst Gem",
+
+  "creativemodetab.test_tab": "Test Tab"
 }
