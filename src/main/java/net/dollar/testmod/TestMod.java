@@ -49,6 +49,7 @@ public class TestMod
         //NOTE: each creative mode tab's events can be accepted within the same if statement
         if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.RUBY_SHARD);
+            event.accept(ModItems.RUBY_GEM);
             event.accept(ModItems.AMETHYST_GEM);
         }
     }

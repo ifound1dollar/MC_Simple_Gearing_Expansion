@@ -15,6 +15,8 @@ public class ModItems {
     //create RegistryObjects for new items
     public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUBY_GEM = ITEMS.register("ruby_gem",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMETHYST_GEM = ITEMS.register("amethyst_gem",
             () -> new Item(new Item.Properties()));
 
