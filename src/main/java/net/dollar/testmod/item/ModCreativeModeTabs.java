@@ -18,6 +18,7 @@ public class ModCreativeModeTabs {
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
         TEST_TAB = event.registerCreativeModeTab(new ResourceLocation(TestMod.MOD_ID, "test_tab"),
                 builder -> builder.icon(() -> new ItemStack(ModItems.RUBY_SHARD.get()))
-                        .title(Component.translatable("creativemodetab.test_tab")));    //IGNORE ERROR
+                        .title(Component.literal("Test Tab")));
+        //NOTE: Component.translatable is unable to find translation in lang file, must use literal
     }
 }
