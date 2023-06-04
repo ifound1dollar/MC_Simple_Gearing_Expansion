@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.dollar.testmod.block.ModBlocks;
 import net.dollar.testmod.item.ModCreativeModeTabs;
 import net.dollar.testmod.item.ModItems;
+import net.dollar.testmod.util.ModTags;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -65,9 +66,11 @@ public class TestMod
             event.accept(ModItems.SAPPHIRE_SHARD);
             event.accept(ModItems.SAPPHIRE_GEM);
             event.accept(ModItems.AMETHYST_GEM);
+            event.accept(ModItems.BRONZE_PICKAXE);
 
             //BLOCKS
             event.accept(ModBlocks.RUBY_BLOCK);
+            event.accept(ModBlocks.RUBY_ORE);
         }
     }
 

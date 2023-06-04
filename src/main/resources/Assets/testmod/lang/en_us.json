@@ -4,8 +4,10 @@
   "item.testmod.sapphire_shard": "Sapphire Shard",
   "item.testmod.sapphire_gem": "Sapphire Gem",
   "item.testmod.amethyst_gem": "Amethyst Gem",
+  "item.testmod.bronze_pickaxe": "Bronze Pickaxe",
 
   "block.testmod.ruby_block": "Ruby Block",
+  "block.testmod.ruby_ore": "Ruby Ore",
 
   "creativemodetab.test_tab": "Test Tab", "comment1": "THIS LINE IS UNUSED CURRENTLY"
 }
