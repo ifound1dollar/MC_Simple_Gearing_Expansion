@@ -1,9 +1,9 @@
 package net.dollar.testmod;
 
 import com.mojang.logging.LogUtils;
+import net.dollar.testmod.block.ModBlocks;
 import net.dollar.testmod.item.ModCreativeModeTabs;
 import net.dollar.testmod.item.ModItems;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -27,8 +27,9 @@ public class TestMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        //register new items in ModItems class
+        //register new items in ModItems class and new blocks in ModBlocks class
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -48,17 +49,25 @@ public class TestMod
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
         //NOTE: each creative mode tab's events can be accepted within the same if statement
-        if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
+
+        //FOR NOW, KEEP ALL NEW ITEMS IN NEW TAB BELOW
+        /*if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.RUBY_SHARD);
             event.accept(ModItems.RUBY_GEM);
             event.accept(ModItems.AMETHYST_GEM);
-        }
+        }*/
 
         //also add to TEST_TAB
         if (event.getTab() == ModCreativeModeTabs.TEST_TAB) {
+            //ITEMS
             event.accept(ModItems.RUBY_SHARD);
             event.accept(ModItems.RUBY_GEM);
+            event.accept(ModItems.SAPPHIRE_SHARD);
+            event.accept(ModItems.SAPPHIRE_GEM);
             event.accept(ModItems.AMETHYST_GEM);
+
+            //BLOCKS
+            event.accept(ModBlocks.RUBY_BLOCK);
         }
     }
 

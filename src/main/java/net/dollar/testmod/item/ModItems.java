@@ -11,11 +11,14 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TestMod.MOD_ID);
 
-
     //create RegistryObjects for new items
     public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUBY_GEM = ITEMS.register("ruby_gem",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAPPHIRE_SHARD = ITEMS.register("sapphire_shard",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAPPHIRE_GEM = ITEMS.register("sapphire_gem",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMETHYST_GEM = ITEMS.register("amethyst_gem",
             () -> new Item(new Item.Properties()));
