@@ -1,9 +1,8 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.TestMod;
-import net.dollar.testmod.util.ModToolTiers;
+import net.dollar.testmod.util.ModTiers;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -30,7 +29,7 @@ public class ModItems {
 
     //all PickaxeItems (existing in Minecraft) have 1 and -2.8f as the 2nd and 3rd parameter, respectively
     public static final RegistryObject<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.BRONZE, 1, -2.8f, new Item.Properties()));
+            () -> new PickaxeItem(ModTiers.Tools.BRONZE, 1, -2.8f, new Item.Properties()));
 
 
 
