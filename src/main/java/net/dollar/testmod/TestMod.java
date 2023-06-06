@@ -67,6 +67,13 @@ public class TestMod
             event.accept(ModItems.SAPPHIRE_GEM);
             event.accept(ModItems.AMETHYST_GEM);
             event.accept(ModItems.BRONZE_PICKAXE);
+            event.accept(ModItems.BRONZE_INGOT);
+
+            //ARMOR
+            event.accept(ModItems.BRONZE_HELMET);
+            event.accept(ModItems.BRONZE_CHESTPLATE);
+            event.accept(ModItems.BRONZE_LEGGINGS);
+            event.accept(ModItems.BRONZE_BOOTS);
 
             //BLOCKS
             event.accept(ModBlocks.RUBY_BLOCK);
