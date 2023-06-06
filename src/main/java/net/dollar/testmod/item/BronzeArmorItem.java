@@ -32,8 +32,6 @@ public class BronzeArmorItem extends ArmorItem implements IDamageHandlingArmor {
         boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.BRONZE_LEGGINGS.get();
         boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.BRONZE_BOOTS.get();
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
-
-        //player.sendSystemMessage(Component.literal(String.valueOf(isFullSet)));
     }
 
     @Override
@@ -41,22 +39,17 @@ public class BronzeArmorItem extends ArmorItem implements IDamageHandlingArmor {
         //if not chestplate OR not full set, do not alter damage
         if (slot != EquipmentSlot.CHEST || !isFullSet) { return amount; }
 
-        //should always be LivingEntity; make new LivingEntity variable 'attacker'
-        if (source.getEntity() instanceof LivingEntity attacker) {
-            Item heldItem = attacker.getItemBySlot(EquipmentSlot.MAINHAND).getItem();
+        //entity.sendSystemMessage(Component.literal(String.valueOf(source.type())));
+        //entity.sendSystemMessage(Component.literal(String.valueOf(ModUtils.getDamageCategory(source))));
 
-            //entity.sendSystemMessage(Component.literal(String.valueOf(heldItem)));
-
-            //if taking damage from sharp source, reduce damage taken
-            if (ModUtils.getDamageCategory(heldItem, source) == ModUtils.DamageCategory.SHARP) {
-                return amount * 0.75f;  //REDUCE BY 25%
-            }
+        //if taking damage from sharp source, reduce damage taken
+        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
+            return amount * 0.75f;  //REDUCE BY 25%
         }
         return amount;  //if reaches here, return original amount
     }
 
-
-    //USE THIS FUNCTION FOR GILDED BRONZE
+    //USE THIS METHOD FOR GILDED BRONZE
 //    @Override
 //    public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
 //        return true;
