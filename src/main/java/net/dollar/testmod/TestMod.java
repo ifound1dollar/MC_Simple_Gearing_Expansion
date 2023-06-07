@@ -49,8 +49,6 @@ public class TestMod
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-        //NOTE: each creative mode tab's events can be accepted within the same if statement
-
         //FOR NOW, KEEP ALL NEW ITEMS IN NEW TAB BELOW
         /*if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.RUBY_SHARD);
@@ -58,26 +56,29 @@ public class TestMod
             event.accept(ModItems.AMETHYST_GEM);
         }*/
 
-        //also add to TEST_TAB
+        //add to TEST_TAB
         if (event.getTab() == ModCreativeModeTabs.TEST_TAB) {
+            //BLOCKS
+            event.accept(ModBlocks.RUBY_BLOCK);
+            event.accept(ModBlocks.RUBY_ORE);
+            event.accept(ModBlocks.SAPPHIRE_BLOCK);
+            event.accept(ModBlocks.SAPPHIRE_ORE);
+            event.accept(ModBlocks.BRONZE_BLOCK);
+            event.accept(ModBlocks.BRONZE_ORE);
+
+
             //ITEMS
             event.accept(ModItems.RUBY_SHARD);
-            event.accept(ModItems.RUBY_GEM);
             event.accept(ModItems.SAPPHIRE_SHARD);
-            event.accept(ModItems.SAPPHIRE_GEM);
-            event.accept(ModItems.AMETHYST_GEM);
-            event.accept(ModItems.BRONZE_PICKAXE);
+            event.accept(ModItems.RAW_BRONZE);
             event.accept(ModItems.BRONZE_INGOT);
 
-            //ARMOR
+            //TOOLS, ARMOR
+            event.accept(ModItems.BRONZE_PICKAXE);
             event.accept(ModItems.BRONZE_HELMET);
             event.accept(ModItems.BRONZE_CHESTPLATE);
             event.accept(ModItems.BRONZE_LEGGINGS);
             event.accept(ModItems.BRONZE_BOOTS);
-
-            //BLOCKS
-            event.accept(ModBlocks.RUBY_BLOCK);
-            event.accept(ModBlocks.RUBY_ORE);
         }
     }
 

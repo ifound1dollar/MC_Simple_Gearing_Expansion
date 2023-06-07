@@ -1,0 +1,7 @@
+// 1.19.4	2023-06-07T15:29:14.7815183	Loot Tables
+5806d58293ad5b5051c949b10010a7ddd9e0c5b5 data/testmod/loot_tables/blocks/bronze_block.json
+fc53d47dfa111ace9ff7358e766800d0f0956a2c data/testmod/loot_tables/blocks/bronze_ore.json
+f128d56f975f77b844a1224e40caa3255ee70df7 data/testmod/loot_tables/blocks/ruby_block.json
+d480cd8981d38be389359477c572292c2ffb6137 data/testmod/loot_tables/blocks/ruby_ore.json
+7e35048202c6751092744c5063b13450fe821234 data/testmod/loot_tables/blocks/sapphire_block.json
+fca8b423af94f7c37e1ac9a858a385a47cace24c data/testmod/loot_tables/blocks/sapphire_ore.json

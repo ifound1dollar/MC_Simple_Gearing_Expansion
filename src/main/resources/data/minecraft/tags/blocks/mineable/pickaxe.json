@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "testmod:ruby_block",
-    "testmod:ruby_ore"
+    "testmod:ruby_ore",
+    "testmod:sapphire_block",
+    "testmod:sapphire_ore",
+    "testmod:bronze_block",
+    "testmod:bronze_ore"
   ]
 }
