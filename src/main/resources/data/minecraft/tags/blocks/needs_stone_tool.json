@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "testmod:bronze_block",
-    "testmod:bronze_ore"
+    "testmod:tin_block",
+    "testmod:tin_ore",
+    "testmod:bronze_block"
   ]
 }

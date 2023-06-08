@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bronze_ore": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "testmod:tungsten_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tungsten_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:bronze_ore"
+              "testmod:tungsten_ingot"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "testmod:bronze_ingot_from_blasting_bronze_ore"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_bronze_ore",
+      "has_tungsten_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "testmod:bronze_ingot_from_blasting_bronze_ore"
+      "testmod:tungsten_block"
     ]
   }
 }

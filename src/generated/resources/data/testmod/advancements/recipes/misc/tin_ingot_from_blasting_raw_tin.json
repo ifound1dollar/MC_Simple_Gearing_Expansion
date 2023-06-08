@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_bronze": {
+    "has_raw_tin": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:raw_bronze"
+              "testmod:raw_tin"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "testmod:bronze_ingot_from_smelting_raw_bronze"
+        "recipe": "testmod:tin_ingot_from_blasting_raw_tin"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_raw_bronze",
+      "has_raw_tin",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "testmod:bronze_ingot_from_smelting_raw_bronze"
+      "testmod:tin_ingot_from_blasting_raw_tin"
     ]
   }
 }

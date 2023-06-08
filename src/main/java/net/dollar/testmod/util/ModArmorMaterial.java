@@ -42,7 +42,7 @@ public record ModArmorMaterial(String name, int durabilityMultiplier, int[] prot
 
     @Override
     public @NotNull String getName() {
-        return TestMod.MOD_ID + this.name;
+        return this.name;
     }
 
     @Override

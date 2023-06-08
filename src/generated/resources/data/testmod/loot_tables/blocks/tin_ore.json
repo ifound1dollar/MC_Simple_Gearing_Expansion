@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "testmod:bronze_ore"
+              "name": "testmod:tin_ore"
             },
             {
               "type": "minecraft:item",
@@ -38,7 +38,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "testmod:raw_bronze"
+              "name": "testmod:raw_tin"
             }
           ]
         }

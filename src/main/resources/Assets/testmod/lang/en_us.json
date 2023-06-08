@@ -3,16 +3,23 @@
   "block.testmod.ruby_ore": "Ruby Ore",
   "block.testmod.sapphire_block": "Sapphire Block",
   "block.testmod.sapphire_ore": "Sapphire Ore",
+  "block.testmod.tin_block": "Tin Block",
+  "block.testmod.tin_ore": "Tin Ore",
   "block.testmod.bronze_block": "Bronze Block",
-  "block.testmod.bronze_ore": "Bronze Ore",
+  "block.testmod.tungsten_block": "Tungsten Block",
+  "block.testmod.tungsten_ore": "Tungsten Ore",
 
 
 
   "item.testmod.ruby_shard": "Ruby Shard",
   "item.testmod.sapphire_shard": "Sapphire Shard",
 
-  "item.testmod.raw_bronze": "Raw Bronze",
+  "item.testmod.raw_tin": "Raw Tin",
+  "item.testmod.tin_ingot": "Tin Ingot",
   "item.testmod.bronze_ingot": "Bronze Ingot",
+  "item.testmod.raw_tungsten": "Raw Tungsten",
+  "item.testmod.tungsten_ingot": "Tungsten Ingot",
+
   "item.testmod.bronze_helmet": "Bronze Helmet",
   "item.testmod.bronze_chestplate": "Bronze Chestplate",
   "item.testmod.bronze_leggings": "Bronze Leggings",

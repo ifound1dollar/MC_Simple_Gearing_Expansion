@@ -33,14 +33,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         //BLASTING ONLY RECIPES ARE POSSIBLE BY NOT DEFINING oreSmelting
-        oreSmelting(consumer, List.of(ModBlocks.BRONZE_ORE.get()), RecipeCategory.MISC,
-                ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
-        oreBlasting(consumer, List.of(ModBlocks.BRONZE_ORE.get()), RecipeCategory.MISC,
-                ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
-        oreSmelting(consumer, List.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC,
-                ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
-        oreBlasting(consumer, List.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC,
-                ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
+        oreSmelting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
+        oreBlasting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
+        oreSmelting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
+        oreBlasting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
+
+        oreSmelting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 200, "tungsten_ingot" );
+        oreBlasting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
+        oreSmelting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 200, "tungsten_ingot" );
+        oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
 
 
         //NOTE: FIRST IS FOR BLOCK->ITEM, SECOND IS FOR ITEM->BLOCK
@@ -48,8 +57,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.RUBY_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE_SHARD.get(),
                 RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get());
+        //replace above with custom-made fourBlockStorageRecipes method
+
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT.get(),
+                RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_INGOT.get(),
+                RecipeCategory.MISC, ModBlocks.TUNGSTEN_BLOCK.get());
 
 
         //region BRONZE ARMOR, TOOLS

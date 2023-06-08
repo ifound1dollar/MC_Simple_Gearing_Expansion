@@ -1,9 +1,7 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.TestMod;
-import net.dollar.testmod.util.ModArmorMaterial;
 import net.dollar.testmod.util.ModTiers;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,9 +19,15 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE_SHARD = ITEMS.register("sapphire_shard",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_BRONZE = ITEMS.register("raw_bronze",
+    public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_TUNGSTEN = ITEMS.register("raw_tungsten",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
             () -> new Item(new Item.Properties()));
 
 

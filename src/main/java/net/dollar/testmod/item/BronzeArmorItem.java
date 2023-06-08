@@ -44,7 +44,7 @@ public class BronzeArmorItem extends ArmorItem implements IDamageHandlingArmor {
 
         //if taking damage from sharp source, reduce damage taken
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
-            return amount * 0.75f;  //REDUCE BY 25%
+            return amount * 0.50f;  //REDUCE BY 50%
         }
         return amount;  //if reaches here, return original amount
     }
