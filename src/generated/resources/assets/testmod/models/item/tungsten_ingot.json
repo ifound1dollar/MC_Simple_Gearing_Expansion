@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "testmod:item/raw_bronze"
+    "layer0": "testmod:item/tungsten_ingot"
   }
 }

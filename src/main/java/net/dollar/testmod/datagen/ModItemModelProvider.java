@@ -20,8 +20,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUBY_SHARD);
         simpleItem(ModItems.SAPPHIRE_SHARD);
 
-        simpleItem(ModItems.RAW_BRONZE);
+        simpleItem(ModItems.RAW_TIN);
+        simpleItem(ModItems.TIN_INGOT);
         simpleItem(ModItems.BRONZE_INGOT);
+        simpleItem(ModItems.RAW_TUNGSTEN);
+        simpleItem(ModItems.TUNGSTEN_INGOT);
 
         simpleItem(ModItems.BRONZE_HELMET);
         simpleItem(ModItems.BRONZE_CHESTPLATE);

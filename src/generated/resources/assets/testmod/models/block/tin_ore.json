@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "testmod:block/bronze_ore"
+    "all": "testmod:block/tin_ore"
   }
 }

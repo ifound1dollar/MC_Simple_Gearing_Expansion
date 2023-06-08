@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_bronze": {
+    "has_raw_tungsten": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:raw_bronze"
+              "testmod:raw_tungsten"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "testmod:bronze_ingot_from_smelting_raw_bronze"
+        "recipe": "testmod:tungsten_ingot_from_smelting_raw_tungsten"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_raw_bronze",
+      "has_raw_tungsten",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "testmod:bronze_ingot_from_smelting_raw_bronze"
+      "testmod:tungsten_ingot_from_smelting_raw_tungsten"
     ]
   }
 }

@@ -4,7 +4,6 @@ import com.mojang.logging.LogUtils;
 import net.dollar.testmod.block.ModBlocks;
 import net.dollar.testmod.item.ModCreativeModeTabs;
 import net.dollar.testmod.item.ModItems;
-import net.dollar.testmod.util.ModTags;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -63,15 +62,21 @@ public class TestMod
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.SAPPHIRE_BLOCK);
             event.accept(ModBlocks.SAPPHIRE_ORE);
+            event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.TIN_ORE);
             event.accept(ModBlocks.BRONZE_BLOCK);
-            event.accept(ModBlocks.BRONZE_ORE);
+            event.accept(ModBlocks.TUNGSTEN_BLOCK);
+            event.accept(ModBlocks.TUNGSTEN_ORE);
 
 
             //ITEMS
             event.accept(ModItems.RUBY_SHARD);
             event.accept(ModItems.SAPPHIRE_SHARD);
-            event.accept(ModItems.RAW_BRONZE);
+            event.accept(ModItems.RAW_TIN);
+            event.accept(ModItems.TIN_INGOT);
             event.accept(ModItems.BRONZE_INGOT);
+            event.accept(ModItems.RAW_TUNGSTEN);
+            event.accept(ModItems.TUNGSTEN_INGOT);
 
             //TOOLS, ARMOR
             event.accept(ModItems.BRONZE_PICKAXE);

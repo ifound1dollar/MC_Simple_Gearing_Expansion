@@ -3,9 +3,7 @@ package net.dollar.testmod.datagen;
 import net.dollar.testmod.block.ModBlocks;
 import net.dollar.testmod.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -28,15 +26,19 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.RUBY_BLOCK.get());
         dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
+        dropSelf(ModBlocks.TIN_BLOCK.get());
         dropSelf(ModBlocks.BRONZE_BLOCK.get());
+        dropSelf(ModBlocks.TUNGSTEN_BLOCK.get());
 
         //ORES (NOTE: OVERRIDE createLapisOreDrops FOR MORE THAN ONE DROP)
         add(ModBlocks.RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY_SHARD.get()));
         add(ModBlocks.SAPPHIRE_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.SAPPHIRE_ORE.get(), ModItems.SAPPHIRE_SHARD.get()));
-        add(ModBlocks.BRONZE_ORE.get(),
-                (block) -> createOreDrop(ModBlocks.BRONZE_ORE.get(), ModItems.RAW_BRONZE.get()));
+        add(ModBlocks.TIN_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get()));
+        add(ModBlocks.TUNGSTEN_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.TUNGSTEN_ORE.get(), ModItems.RAW_TUNGSTEN.get()));
     }
 
     //this gets all known blocks from the mod as an iterator

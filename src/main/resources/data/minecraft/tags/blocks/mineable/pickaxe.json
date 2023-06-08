@@ -5,7 +5,10 @@
     "testmod:ruby_ore",
     "testmod:sapphire_block",
     "testmod:sapphire_ore",
+    "testmod:tin_block",
+    "testmod:tin_ore",
     "testmod:bronze_block",
-    "testmod:bronze_ore"
+    "testmod:tungsten_block",
+    "testmod:tungsten_ore"
   ]
 }
