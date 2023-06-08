@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-08T00:10:49.708864	Recipes
+// 1.19.4	2023-06-08T00:17:19.9830045	Recipes
 2a4152480f1b852d0c58f188121b6fbb55505688 data/testmod/advancements/recipes/building_blocks/bronze_ingot.json
 880cade5d9e248b39361f73d5d8058466fe0806e data/testmod/advancements/recipes/building_blocks/ruby_shard.json
 d30339be507ad259824f58015ef17d52ea5ef936 data/testmod/advancements/recipes/building_blocks/sapphire_shard.json
@@ -19,8 +19,6 @@ a7ba593fcbfe80b4b8ccb639b3f9e68eced59b7e data/testmod/advancements/recipes/misc/
 5e50c26853ab73107a537db793bfa4c00b6b0a9d data/testmod/advancements/recipes/misc/tungsten_block.json
 f897ba8997aab01d58de9569e5c245380a79fdf4 data/testmod/advancements/recipes/misc/tungsten_ingot_from_blasting_raw_tungsten.json
 124cd76c4f4b412388422fbfd65c41d23e7998da data/testmod/advancements/recipes/misc/tungsten_ingot_from_blasting_tungsten_ore.json
-f0437eef5a4e140a3dce382595789b3f6ba86f6a data/testmod/advancements/recipes/misc/tungsten_ingot_from_smelting_raw_tungsten.json
-87682b690183e22a9dd69f306dbc00ea44b73292 data/testmod/advancements/recipes/misc/tungsten_ingot_from_smelting_tungsten_ore.json
 4f2279018846eb2c851b2b48c3603657cac6eac5 data/testmod/advancements/recipes/tools/bronze_pickaxe.json
 633641ab628c65e7ef3845e4443f7429764f8808 data/testmod/recipes/bronze_block.json
 bb635f2b65dc02d7a81367b87b6d86b22eafbf3a data/testmod/recipes/bronze_boots.json
@@ -43,5 +41,3 @@ c90aa74f6fe6a8bffbf2b68b4d774920995b76c2 data/testmod/recipes/tungsten_block.jso
 97f8752d3cdb8bceff00293f366c873d0c64a255 data/testmod/recipes/tungsten_ingot.json
 056035f1eabf5c68685ba5266417127cb8a3a1c2 data/testmod/recipes/tungsten_ingot_from_blasting_raw_tungsten.json
 c3c390eba7da543ab0fbb5106c34f8c4dff76aac data/testmod/recipes/tungsten_ingot_from_blasting_tungsten_ore.json
-da505226fe1e377b86af1c45c809d503b5223de8 data/testmod/recipes/tungsten_ingot_from_smelting_raw_tungsten.json
-405d098f306eb8ecdf7d2f4da3c9a27c34cec5ae data/testmod/recipes/tungsten_ingot_from_smelting_tungsten_ore.json

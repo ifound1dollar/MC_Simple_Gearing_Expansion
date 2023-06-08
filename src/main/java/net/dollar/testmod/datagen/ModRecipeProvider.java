@@ -42,12 +42,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
 
-        oreSmelting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
-                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 200, "tungsten_ingot" );
         oreBlasting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
-        oreSmelting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
-                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 200, "tungsten_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
 
