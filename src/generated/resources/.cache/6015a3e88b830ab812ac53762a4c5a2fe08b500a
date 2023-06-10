@@ -1,13 +1,16 @@
-// 1.19.4	2023-06-07T23:53:09.7142264	Item Models: testmod
+// 1.19.4	2023-06-10T15:34:36.8571847	Item Models: testmod
 191ce2b157f39b46c7113c87e800b24c4256d971 assets/testmod/models/item/bronze_boots.json
 3ef19b52c018eaabf8aaf6836a7d02ce8bdf284b assets/testmod/models/item/bronze_chestplate.json
 a6ac9a5b94a13f6c1c5e70a0a440f68de0cad794 assets/testmod/models/item/bronze_helmet.json
 c9c85140add7bdff4a6e520708bea4baaf5b5057 assets/testmod/models/item/bronze_ingot.json
 5659a8cc08798dc27a9fb10e5661bb5be02a834f assets/testmod/models/item/bronze_leggings.json
 dcf98656040519260b0e166f92a93f7417378c58 assets/testmod/models/item/bronze_pickaxe.json
+c18e80b309381ba409cd3bf57bf6fcc21a36e6c0 assets/testmod/models/item/gilded_bronze_pickaxe.json
 af6aa13c4c02b3c7fca7265dc9c54c31ce33ea4b assets/testmod/models/item/raw_tin.json
 bde86731dba1adeac0b31ca5c4298ce840438026 assets/testmod/models/item/raw_tungsten.json
 871fa63eaec6e00a7bad44409bf58901dafff8b8 assets/testmod/models/item/ruby_shard.json
 bed3505faa823524cbe92d7da00423554f18c8e8 assets/testmod/models/item/sapphire_shard.json
+60459fb19b4ff22b943c55d1367063f94d2f37c1 assets/testmod/models/item/steel_ingot.json
 a4d343e11a8d40914ef65c8c589b59de45672f83 assets/testmod/models/item/tin_ingot.json
+7a2558c535ae2dfbcbed96db8eaaa5d5bbe93380 assets/testmod/models/item/tungsten_carbide_ingot.json
 eab5e1dafc83b5f569e86da4e22a9de84fa53e17 assets/testmod/models/item/tungsten_ingot.json

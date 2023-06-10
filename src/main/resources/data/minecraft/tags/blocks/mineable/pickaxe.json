@@ -8,7 +8,9 @@
     "testmod:tin_block",
     "testmod:tin_ore",
     "testmod:bronze_block",
+    "testmod:steel_block",
     "testmod:tungsten_block",
-    "testmod:tungsten_ore"
+    "testmod:tungsten_ore",
+    "testmod:tungsten_carbide_block"
   ]
 }

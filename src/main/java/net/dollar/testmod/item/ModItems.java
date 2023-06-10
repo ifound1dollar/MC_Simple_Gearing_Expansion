@@ -25,15 +25,28 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TUNGSTEN = ITEMS.register("raw_tungsten",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
+            () -> new Item(new Item.Properties()));
 
 
-    //all PickaxeItems (existing in Minecraft) have 1 and -2.8f as the 2nd and 3rd parameter, respectively
+    //IMPORTANT: numeric parameters are Attack Damage and Attack Speed, respectively
+    //all PickaxeItems have 1 and -2.8f (baseline Attack Speed is 4, so -2.8f results in 1.2 Attack Speed)
     public static final RegistryObject<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe",
             () -> new PickaxeItem(ModTiers.Tools.BRONZE, 1, -2.8f, new Item.Properties()));
+    public static final RegistryObject<Item> GILDED_BRONZE_PICKAXE = ITEMS.register("gilded_bronze_pickaxe",
+            () -> new PickaxeItem(ModTiers.Tools.GILDED_BRONZE, 1, -2.8f, new Item.Properties()));
+
+    //all SwordItems have 3 and -2.4f by default
+
+    //IMPORTANT: TUNGSTEN AND TUNGSTEN-CARBIDE TOOLS MUST OVERRIDE SPEED PARAMETER (not damage parameter as
+    //  the damage modifier is already applied in the Tier)
+    //ALSO INFUSED DIAMOND FOR INCREASED SPEED
 
 
     //bronze armor

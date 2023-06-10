@@ -6,8 +6,10 @@
   "block.testmod.tin_block": "Tin Block",
   "block.testmod.tin_ore": "Tin Ore",
   "block.testmod.bronze_block": "Bronze Block",
+  "block.testmod.steel_block": "Steel Block",
   "block.testmod.tungsten_block": "Tungsten Block",
   "block.testmod.tungsten_ore": "Tungsten Ore",
+  "block.testmod.tungsten_carbide_block": "Tungsten-Carbide Block",
 
 
 
@@ -17,14 +19,18 @@
   "item.testmod.raw_tin": "Raw Tin",
   "item.testmod.tin_ingot": "Tin Ingot",
   "item.testmod.bronze_ingot": "Bronze Ingot",
+  "item.testmod.steel_ingot": "Steel Ingot",
   "item.testmod.raw_tungsten": "Raw Tungsten",
   "item.testmod.tungsten_ingot": "Tungsten Ingot",
+  "item.testmod.tungsten_carbide_ingot": "Tungsten-Carbide Ingot",
 
   "item.testmod.bronze_helmet": "Bronze Helmet",
   "item.testmod.bronze_chestplate": "Bronze Chestplate",
   "item.testmod.bronze_leggings": "Bronze Leggings",
   "item.testmod.bronze_boots": "Bronze Boots",
+
   "item.testmod.bronze_pickaxe": "Bronze Pickaxe",
+  "item.testmod.gilded_bronze_pickaxe": "Gilded Bronze Pickaxe",
 
 
 

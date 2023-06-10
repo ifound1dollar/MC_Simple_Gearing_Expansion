@@ -22,8 +22,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         basicBlockWithItem(ModBlocks.TIN_BLOCK);
         basicBlockWithItem(ModBlocks.TIN_ORE);
         basicBlockWithItem(ModBlocks.BRONZE_BLOCK);
+        basicBlockWithItem(ModBlocks.STEEL_BLOCK);
         basicBlockWithItem(ModBlocks.TUNGSTEN_BLOCK);
         basicBlockWithItem(ModBlocks.TUNGSTEN_ORE);
+        basicBlockWithItem(ModBlocks.TUNGSTEN_CARBIDE_BLOCK);
     }
 
     //this method will produce a basic item corresponding to the block

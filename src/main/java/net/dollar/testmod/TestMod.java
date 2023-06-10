@@ -65,8 +65,10 @@ public class TestMod
             event.accept(ModBlocks.TIN_BLOCK);
             event.accept(ModBlocks.TIN_ORE);
             event.accept(ModBlocks.BRONZE_BLOCK);
+            event.accept(ModBlocks.STEEL_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_ORE);
+            event.accept(ModBlocks.TUNGSTEN_CARBIDE_BLOCK);
 
 
             //ITEMS
@@ -75,11 +77,15 @@ public class TestMod
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
             event.accept(ModItems.BRONZE_INGOT);
+            event.accept(ModItems.STEEL_INGOT);
             event.accept(ModItems.RAW_TUNGSTEN);
             event.accept(ModItems.TUNGSTEN_INGOT);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
             //TOOLS, ARMOR
             event.accept(ModItems.BRONZE_PICKAXE);
+            event.accept(ModItems.GILDED_BRONZE_PICKAXE);
+
             event.accept(ModItems.BRONZE_HELMET);
             event.accept(ModItems.BRONZE_CHESTPLATE);
             event.accept(ModItems.BRONZE_LEGGINGS);

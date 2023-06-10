@@ -23,14 +23,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_TIN);
         simpleItem(ModItems.TIN_INGOT);
         simpleItem(ModItems.BRONZE_INGOT);
+        simpleItem(ModItems.STEEL_INGOT);
         simpleItem(ModItems.RAW_TUNGSTEN);
         simpleItem(ModItems.TUNGSTEN_INGOT);
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
         simpleItem(ModItems.BRONZE_HELMET);
         simpleItem(ModItems.BRONZE_CHESTPLATE);
         simpleItem(ModItems.BRONZE_LEGGINGS);
         simpleItem(ModItems.BRONZE_BOOTS);
+
         handheldItem(ModItems.BRONZE_PICKAXE);
+        handheldItem(ModItems.GILDED_BRONZE_PICKAXE);
     }
 
     //creates an auto-generated simple item

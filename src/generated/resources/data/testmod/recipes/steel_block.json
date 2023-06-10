@@ -3,15 +3,16 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "testmod:sapphire_shard"
+      "item": "testmod:steel_ingot"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "###",
+    "###",
+    "###"
   ],
   "result": {
-    "item": "testmod:sapphire_block"
+    "item": "testmod:steel_block"
   },
   "show_notification": true
 }

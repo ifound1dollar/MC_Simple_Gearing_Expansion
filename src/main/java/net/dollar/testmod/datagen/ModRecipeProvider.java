@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.dollar.testmod.TestMod;
 import net.dollar.testmod.block.ModBlocks;
 import net.dollar.testmod.item.ModItems;
+import net.dollar.testmod.util.ModLegacySmithingRecipeBuilder;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -49,18 +50,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
         //NOTE: FIRST IS FOR BLOCK->ITEM, SECOND IS FOR ITEM->BLOCK
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY_SHARD.get(),
+        fourBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY_SHARD.get(),
                 RecipeCategory.MISC, ModBlocks.RUBY_BLOCK.get());
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE_SHARD.get(),
+        fourBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE_SHARD.get(),
                 RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get());
-        //replace above with custom-made fourBlockStorageRecipes method
 
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_INGOT.get(),
+                RecipeCategory.MISC, ModBlocks.STEEL_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
+                RecipeCategory.MISC, ModBlocks.TUNGSTEN_CARBIDE_BLOCK.get());
 
 
         //region BRONZE ARMOR, TOOLS
@@ -72,9 +76,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 "has_bronze_ingot");
         armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.BRONZE_INGOT, ModItems.BRONZE_BOOTS,
                 "has_bronze_ingot");
+
         toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.BRONZE_INGOT, ModItems.BRONZE_PICKAXE,
                 "has_bronze_ingot");
+        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_PICKAXE.get(), Items.GOLD_INGOT,
+                RecipeCategory.TOOLS, ModItems.GILDED_BRONZE_PICKAXE.get(), "has_gold_ingot");
         //endregion
+
+
 
 
 
@@ -211,6 +220,53 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .save(consumer);
         }
     }
+
+
+    /**
+     * Helper to automatically generate LEGACY smithing recipes for versions before 1.20
+     * @param consumer Consumer of FinishedRecipe
+     * @param upgradeItem Item being upgraded
+     * @param ingredient Ingredient to upgrade item
+     * @param category Recipe category
+     * @param result Smithing result
+     * @param unlockedByString Tag used for unlocking smithing recipe
+     */
+    private void legacySmithingRecipeBuilder(Consumer<FinishedRecipe> consumer, Item upgradeItem,
+                                                      Item ingredient, RecipeCategory category, Item result,
+                                                      String unlockedByString) {
+        ModLegacySmithingRecipeBuilder.smithing(Ingredient.of(upgradeItem), Ingredient.of(ingredient),
+                category, result).unlocks(unlockedByString, has(ingredient))
+                .save(consumer, new ResourceLocation(TestMod.MOD_ID, getItemName(result)) + "_smithing");
+    }
+
+    /**
+     * Helper to automatically generate smithing recipes
+     * @param consumer Consumer of FinishedRecipe
+     * @param template Required upgrade template
+     * @param upgradeItem Item being upgraded
+     * @param ingredient Ingredient to upgrade item
+     * @param category Recipe category
+     * @param result Smithing result
+     * @param unlockedByString Tag used for unlocking smithing recipe
+     */
+    private void smithingRecipeBuilder(Consumer<FinishedRecipe> consumer, Item template, Item upgradeItem,
+                                                Item ingredient, RecipeCategory category, Item result,
+                                                String unlockedByString) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(template), Ingredient.of(upgradeItem),
+                        Ingredient.of(ingredient), category, result)
+                .unlocks(unlockedByString, has(ingredient))
+                .save(consumer, new ResourceLocation(TestMod.MOD_ID, getItemName(result)) + "_smithing");
+    }
+
+
+    protected static void fourBlockStorageRecipes(Consumer<FinishedRecipe> p_249580_, RecipeCategory p_251203_, ItemLike p_251689_, RecipeCategory p_251376_, ItemLike p_248771_) {
+        fourBlockStorageRecipes(p_249580_, p_251203_, p_251689_, p_251376_, p_248771_, getSimpleRecipeName(p_248771_), (String)null, getSimpleRecipeName(p_251689_), (String)null);
+    }
+    protected static void fourBlockStorageRecipes(Consumer<FinishedRecipe> p_250423_, RecipeCategory p_250083_, ItemLike p_250042_, RecipeCategory p_248977_, ItemLike p_251911_, String p_250475_, @Nullable String p_248641_, String p_252237_, @Nullable String p_250414_) {
+        ShapelessRecipeBuilder.shapeless(p_250083_, p_250042_, 4).requires(p_251911_).group(p_250414_).unlockedBy(getHasName(p_251911_), has(p_251911_)).save(p_250423_, new ResourceLocation(TestMod.MOD_ID, p_252237_));
+        ShapedRecipeBuilder.shaped(p_248977_, p_251911_).define('#', p_250042_).pattern("##").pattern("##").group(p_248641_).unlockedBy(getHasName(p_250042_), has(p_250042_)).save(p_250423_, new ResourceLocation(TestMod.MOD_ID, p_250475_));
+    }
+
 
 
 
