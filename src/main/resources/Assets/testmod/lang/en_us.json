@@ -15,6 +15,8 @@
 
   "item.testmod.ruby_shard": "Ruby Shard",
   "item.testmod.sapphire_shard": "Sapphire Shard",
+  "item.testmod.infused_gemstone": "Infused Gemstone",
+  "item.testmod.nameless_infusion_item": "NAMELESS INFUSION ITEM",
 
   "item.testmod.raw_tin": "Raw Tin",
   "item.testmod.tin_ingot": "Tin Ingot",
@@ -28,9 +30,33 @@
   "item.testmod.bronze_chestplate": "Bronze Chestplate",
   "item.testmod.bronze_leggings": "Bronze Leggings",
   "item.testmod.bronze_boots": "Bronze Boots",
-
   "item.testmod.bronze_pickaxe": "Bronze Pickaxe",
+
+  "item.testmod.gilded_bronze_helmet": "Gilded Bronze Helmet",
+  "item.testmod.gilded_bronze_chestplate": "Gilded Bronze Chestplate",
+  "item.testmod.gilded_bronze_leggings": "Gilded Bronze Leggings",
+  "item.testmod.gilded_bronze_boots": "Gilded Bronze Boots",
   "item.testmod.gilded_bronze_pickaxe": "Gilded Bronze Pickaxe",
+
+  "item.testmod.steel_helmet": "Steel Helmet",
+  "item.testmod.steel_chestplate": "Steel Chestplate",
+  "item.testmod.steel_leggings": "Steel Leggings",
+  "item.testmod.steel_boots": "Steel Boots",
+
+  "item.testmod.tungsten_helmet": "Tungsten Helmet",
+  "item.testmod.tungsten_chestplate": "Tungsten Chestplate",
+  "item.testmod.tungsten_leggings": "Tungsten Leggings",
+  "item.testmod.tungsten_boots": "Tungsten Boots",
+
+  "item.testmod.tungsten_carbide_helmet": "Tungsten-Carbide Helmet",
+  "item.testmod.tungsten_carbide_chestplate": "Tungsten-Carbide Chestplate",
+  "item.testmod.tungsten_carbide_leggings": "Tungsten-Carbide Leggings",
+  "item.testmod.tungsten_carbide_boots": "Tungsten-Carbide Boots",
+
+  "item.testmod.infused_diamond_helmet": "Infused Diamond Helmet",
+  "item.testmod.infused_diamond_chestplate": "Infused Diamond Chestplate",
+  "item.testmod.infused_diamond_leggings": "Infused Diamond Leggings",
+  "item.testmod.infused_diamond_boots": "Infused Diamond Boots",
 
 
 

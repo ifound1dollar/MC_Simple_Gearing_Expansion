@@ -74,6 +74,8 @@ public class TestMod
             //ITEMS
             event.accept(ModItems.RUBY_SHARD);
             event.accept(ModItems.SAPPHIRE_SHARD);
+            event.accept(ModItems.INFUSED_GEMSTONE);
+            event.accept(ModItems.NAMELESS_INFUSION_ITEM);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
             event.accept(ModItems.BRONZE_INGOT);
@@ -82,14 +84,38 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_INGOT);
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
-            //TOOLS, ARMOR
-            event.accept(ModItems.BRONZE_PICKAXE);
-            event.accept(ModItems.GILDED_BRONZE_PICKAXE);
-
+            //ARMOR, TOOLS
             event.accept(ModItems.BRONZE_HELMET);
             event.accept(ModItems.BRONZE_CHESTPLATE);
             event.accept(ModItems.BRONZE_LEGGINGS);
             event.accept(ModItems.BRONZE_BOOTS);
+            event.accept(ModItems.BRONZE_PICKAXE);
+
+            event.accept(ModItems.GILDED_BRONZE_HELMET);
+            event.accept(ModItems.GILDED_BRONZE_CHESTPLATE);
+            event.accept(ModItems.GILDED_BRONZE_LEGGINGS);
+            event.accept(ModItems.GILDED_BRONZE_BOOTS);
+            event.accept(ModItems.GILDED_BRONZE_PICKAXE);
+
+            event.accept(ModItems.STEEL_HELMET);
+            event.accept(ModItems.STEEL_CHESTPLATE);
+            event.accept(ModItems.STEEL_LEGGINGS);
+            event.accept(ModItems.STEEL_BOOTS);
+
+            event.accept(ModItems.TUNGSTEN_HELMET);
+            event.accept(ModItems.TUNGSTEN_CHESTPLATE);
+            event.accept(ModItems.TUNGSTEN_LEGGINGS);
+            event.accept(ModItems.TUNGSTEN_BOOTS);
+
+            event.accept(ModItems.TUNGSTEN_CARBIDE_HELMET);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_LEGGINGS);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_BOOTS);
+
+            event.accept(ModItems.INFUSED_DIAMOND_HELMET);
+            event.accept(ModItems.INFUSED_DIAMOND_CHESTPLATE);
+            event.accept(ModItems.INFUSED_DIAMOND_LEGGINGS);
+            event.accept(ModItems.INFUSED_DIAMOND_BOOTS);
         }
     }
 

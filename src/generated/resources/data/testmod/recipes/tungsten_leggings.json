@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "testmod:tungsten_ingot"
+    }
+  },
+  "pattern": [
+    "ddd",
+    "d d",
+    "d d"
+  ],
+  "result": {
+    "item": "testmod:tungsten_leggings"
+  },
+  "show_notification": true
+}

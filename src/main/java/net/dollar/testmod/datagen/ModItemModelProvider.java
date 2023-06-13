@@ -19,6 +19,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(ModItems.RUBY_SHARD);
         simpleItem(ModItems.SAPPHIRE_SHARD);
+        simpleItem(ModItems.INFUSED_GEMSTONE);
+        simpleItem(ModItems.NAMELESS_INFUSION_ITEM);
 
         simpleItem(ModItems.RAW_TIN);
         simpleItem(ModItems.TIN_INGOT);
@@ -32,6 +34,31 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BRONZE_CHESTPLATE);
         simpleItem(ModItems.BRONZE_LEGGINGS);
         simpleItem(ModItems.BRONZE_BOOTS);
+
+        simpleItem(ModItems.GILDED_BRONZE_HELMET);
+        simpleItem(ModItems.GILDED_BRONZE_CHESTPLATE);
+        simpleItem(ModItems.GILDED_BRONZE_LEGGINGS);
+        simpleItem(ModItems.GILDED_BRONZE_BOOTS);
+
+        simpleItem(ModItems.STEEL_HELMET);
+        simpleItem(ModItems.STEEL_CHESTPLATE);
+        simpleItem(ModItems.STEEL_LEGGINGS);
+        simpleItem(ModItems.STEEL_BOOTS);
+
+        simpleItem(ModItems.TUNGSTEN_HELMET);
+        simpleItem(ModItems.TUNGSTEN_CHESTPLATE);
+        simpleItem(ModItems.TUNGSTEN_LEGGINGS);
+        simpleItem(ModItems.TUNGSTEN_BOOTS);
+
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_HELMET);
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE);
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_LEGGINGS);
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_BOOTS);
+
+        simpleItem(ModItems.INFUSED_DIAMOND_HELMET);
+        simpleItem(ModItems.INFUSED_DIAMOND_CHESTPLATE);
+        simpleItem(ModItems.INFUSED_DIAMOND_LEGGINGS);
+        simpleItem(ModItems.INFUSED_DIAMOND_BOOTS);
 
         handheldItem(ModItems.BRONZE_PICKAXE);
         handheldItem(ModItems.GILDED_BRONZE_PICKAXE);

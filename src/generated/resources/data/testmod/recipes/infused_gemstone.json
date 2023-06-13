@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "testmod:ruby_shard"
+    },
+    {
+      "item": "testmod:sapphire_shard"
+    },
+    {
+      "item": "testmod:nameless_infusion_item"
+    }
+  ],
+  "result": {
+    "item": "testmod:infused_gemstone"
+  }
+}

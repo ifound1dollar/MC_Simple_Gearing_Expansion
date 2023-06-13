@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "testmod:bronze_helmet"
+  },
+  "result": {
+    "item": "testmod:gilded_bronze_helmet"
+  }
+}

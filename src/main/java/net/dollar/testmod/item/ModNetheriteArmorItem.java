@@ -2,6 +2,7 @@ package net.dollar.testmod.item;
 
 import net.dollar.testmod.util.IDamageHandlingArmor;
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -31,11 +32,17 @@ public class ModNetheriteArmorItem extends ArmorItem implements IDamageHandlingA
         if (level.isClientSide || LivingEntity.getEquipmentSlotForItem(stack) != EquipmentSlot.CHEST) { return; }
 
         //check for correct equipment, then set isFullSet accordingly
-        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.BRONZE_HELMET.get();
-        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.BRONZE_CHESTPLATE.get();
-        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.BRONZE_LEGGINGS.get();
-        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.BRONZE_BOOTS.get();
+        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.NETHERITE_HELMET.get();
+        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.NETHERITE_CHESTPLATE.get();
+        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.NETHERITE_LEGGINGS.get();
+        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.NETHERITE_BOOTS.get();
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
+
+        //TEMP
+        if (isFullSet) {
+            player.sendSystemMessage(Component.literal("Netherite Armor full set"));
+        }
+        //TEMP
     }
 
     /**

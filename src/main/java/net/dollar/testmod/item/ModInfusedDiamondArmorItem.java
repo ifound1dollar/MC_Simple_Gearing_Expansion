@@ -32,10 +32,10 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         if (level.isClientSide || LivingEntity.getEquipmentSlotForItem(stack) != EquipmentSlot.CHEST) { return; }
 
         //check for correct equipment, then set isFullSet accordingly
-        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.BRONZE_HELMET.get();
-        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.BRONZE_CHESTPLATE.get();
-        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.BRONZE_LEGGINGS.get();
-        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.BRONZE_BOOTS.get();
+        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.INFUSED_DIAMOND_HELMET.get();
+        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.INFUSED_DIAMOND_CHESTPLATE.get();
+        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.INFUSED_DIAMOND_LEGGINGS.get();
+        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.INFUSED_DIAMOND_BOOTS.get();
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
     }
 
@@ -53,7 +53,7 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         //if not chestplate OR not full set, do not alter damage
         if (slot != EquipmentSlot.CHEST || !isFullSet) { return amount; }
 
-        //if taking damage from magic source, reduce damage taken
+        //if taking damage from Magic source, reduce damage taken
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.MAGIC) {
             return amount * 0.50f;  //REDUCE BY 50%
         }

@@ -16,6 +16,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -66,7 +67,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_CARBIDE_BLOCK.get());
 
+        //something
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INFUSED_GEMSTONE.get(), 1)
+                .requires(Items.AMETHYST_SHARD)
+                .requires(Items.EMERALD)
+                .requires(ModItems.RUBY_SHARD.get())
+                .requires(ModItems.SAPPHIRE_SHARD.get())
+                .requires(ModItems.NAMELESS_INFUSION_ITEM.get())
+                .unlockedBy("has_nameless_infusion_item", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.NAMELESS_INFUSION_ITEM.get()).build()))
+                .save(consumer);
 
+        //armors and tools
         //region BRONZE ARMOR, TOOLS
         armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.BRONZE_INGOT, ModItems.BRONZE_HELMET,
                 "has_bronze_ingot");
@@ -79,10 +91,65 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.BRONZE_INGOT, ModItems.BRONZE_PICKAXE,
                 "has_bronze_ingot");
+        //endregion
+
+        //region GILDED BRONZE ARMOR, TOOLS (smithing)
+        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_HELMET.get(), Items.GOLD_INGOT,
+                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_HELMET.get(), "has_gold_ingot");
+        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_CHESTPLATE.get(), Items.GOLD_INGOT,
+                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_CHESTPLATE.get(), "has_gold_ingot");
+        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_LEGGINGS.get(), Items.GOLD_INGOT,
+                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_LEGGINGS.get(), "has_gold_ingot");
+        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_BOOTS.get(), Items.GOLD_INGOT,
+                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_BOOTS.get(), "has_gold_ingot");
+
         legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_PICKAXE.get(), Items.GOLD_INGOT,
                 RecipeCategory.TOOLS, ModItems.GILDED_BRONZE_PICKAXE.get(), "has_gold_ingot");
         //endregion
 
+        //region STEEL ARMOR, TOOLS
+        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.STEEL_INGOT, ModItems.STEEL_HELMET,
+                "has_steel_ingot");
+        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModItems.STEEL_INGOT, ModItems.STEEL_CHESTPLATE,
+                "has_steel_ingot");
+        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModItems.STEEL_INGOT, ModItems.STEEL_LEGGINGS,
+                "has_steel_ingot");
+        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.STEEL_INGOT, ModItems.STEEL_BOOTS,
+                "has_steel_ingot");
+        //endregion
+
+        //region TUNGSTEN ARMOR, TOOLS
+        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_HELMET,
+                "has_tungsten_ingot");
+        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_CHESTPLATE,
+                "has_tungsten_ingot");
+        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_LEGGINGS,
+                "has_tungsten_ingot");
+        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_BOOTS,
+                "has_tungsten_ingot");
+        //endregion
+
+        //region TUNGSTEN-CARBIDE ARMOR, TOOLS (smithing)
+        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_HELMET.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
+                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_HELMET.get(), "has_tungsten_carbide_ingot");
+        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_CHESTPLATE.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
+                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_CHESTPLATE.get(), "has_tungsten_carbide_ingot");
+        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_LEGGINGS.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
+                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_LEGGINGS.get(), "has_tungsten_carbide_ingot");
+        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_BOOTS.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
+                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_BOOTS.get(), "has_tungsten_carbide_ingot");
+        //endregion
+
+        //region INFUSED DIAMOND ARMOR, TOOLS (smithing)
+        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
+                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_HELMET.get(), "has_infused_gemstone");
+        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
+                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_CHESTPLATE.get(), "has_infused_gemstone");
+        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
+                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_LEGGINGS.get(), "has_infused_gemstone");
+        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
+                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_BOOTS.get(), "has_infused_gemstone");
+        //endregion
 
 
 

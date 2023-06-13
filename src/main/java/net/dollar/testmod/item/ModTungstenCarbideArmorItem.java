@@ -29,10 +29,10 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
         if (level.isClientSide || LivingEntity.getEquipmentSlotForItem(stack) != EquipmentSlot.CHEST) { return; }
 
         //check for correct equipment, then set isFullSet accordingly
-        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.BRONZE_HELMET.get();
-        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.BRONZE_CHESTPLATE.get();
-        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.BRONZE_LEGGINGS.get();
-        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.BRONZE_BOOTS.get();
+        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.TUNGSTEN_CARBIDE_HELMET.get();
+        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.TUNGSTEN_CARBIDE_CHESTPLATE.get();
+        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.TUNGSTEN_CARBIDE_LEGGINGS.get();
+        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.TUNGSTEN_CARBIDE_BOOTS.get();
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
     }
 
@@ -52,7 +52,7 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
         //entity.sendSystemMessage(Component.literal(String.valueOf(source.type())));
         //entity.sendSystemMessage(Component.literal(String.valueOf(ModUtils.getDamageCategory(source))));
 
-        //if taking damage from explosion source, reduce damage taken
+        //if taking damage from Explosion source, reduce damage taken
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.EXPLOSION) {
             return amount * 0.50f;  //REDUCE BY 50%
         }

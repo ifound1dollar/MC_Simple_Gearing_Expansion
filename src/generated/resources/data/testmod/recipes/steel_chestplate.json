@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "testmod:steel_ingot"
+    }
+  },
+  "pattern": [
+    "d d",
+    "ddd",
+    "ddd"
+  ],
+  "result": {
+    "item": "testmod:steel_chestplate"
+  },
+  "show_notification": true
+}

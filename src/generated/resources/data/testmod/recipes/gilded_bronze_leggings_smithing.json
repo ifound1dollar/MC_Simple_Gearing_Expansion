@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "testmod:bronze_leggings"
+  },
+  "result": {
+    "item": "testmod:gilded_bronze_leggings"
+  }
+}
