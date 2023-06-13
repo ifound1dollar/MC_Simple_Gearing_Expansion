@@ -44,20 +44,20 @@ public class ModItems {
 
     //all SwordItems have 3 and -2.4f by default
 
-    //IMPORTANT: TUNGSTEN AND TUNGSTEN-CARBIDE TOOLS MUST OVERRIDE SPEED PARAMETER (not damage parameter as
+    //IMPORTANT: TUNGSTEN AND TUNGSTEN-CARBIDE TOOLS MUST CHANGE DEFAULT SPEED PARAMETER (not damage parameter as
     //  the damage modifier is already applied in the Tier)
     //ALSO INFUSED DIAMOND FOR INCREASED SPEED
 
 
-    //bronze armor
+    //bronze armor, is nothing special so can use default ArmorItem
     public static final RegistryObject<Item> BRONZE_HELMET = ITEMS.register("bronze_helmet",
-            () -> new BronzeArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new ArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_CHESTPLATE = ITEMS.register("bronze_chestplate",
-            () -> new BronzeArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            () -> new ArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_LEGGINGS = ITEMS.register("bronze_leggings",
-            () -> new BronzeArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            () -> new ArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_BOOTS = ITEMS.register("bronze_boots",
-            () -> new BronzeArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.BOOTS, new Item.Properties()));
+            () -> new ArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
 

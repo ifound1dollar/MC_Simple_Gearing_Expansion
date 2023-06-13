@@ -2,25 +2,27 @@ package net.dollar.testmod.item;
 
 import net.dollar.testmod.util.IDamageHandlingArmor;
 import net.dollar.testmod.util.ModUtils;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
-public class BronzeArmorItem extends ArmorItem implements IDamageHandlingArmor {
+public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHandlingArmor {
     boolean isFullSet;
 
 
-    public BronzeArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
+    public ModTungstenCarbideArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
         super(p_40386_, p_266831_, p_40388_);
     }
 
-
+    /**
+     * Checks each tick if the player has a full set of this armor
+     * @param stack The ItemStack associated with this Object
+     * @param level Active level/world
+     * @param player Player this armor item is attached to
+     */
     @Override
     public void onArmorTick(ItemStack stack, Level level, Player player) {
         //do nothing if on client side OR if not chestplate
@@ -34,6 +36,14 @@ public class BronzeArmorItem extends ArmorItem implements IDamageHandlingArmor {
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
     }
 
+    /**
+     * Intercepts the damage operation and reduces damage from a certain source
+     * @param entity The attacked LivingEntity (wearer)
+     * @param slot Equipment slot of this item
+     * @param source Source of damage to be dealt
+     * @param amount Initial damage amount
+     * @return Updated damage amount
+     */
     @Override
     public float onDamaged(LivingEntity entity, EquipmentSlot slot, DamageSource source, float amount) {
         //if not chestplate OR not full set, do not alter damage
@@ -42,16 +52,10 @@ public class BronzeArmorItem extends ArmorItem implements IDamageHandlingArmor {
         //entity.sendSystemMessage(Component.literal(String.valueOf(source.type())));
         //entity.sendSystemMessage(Component.literal(String.valueOf(ModUtils.getDamageCategory(source))));
 
-        //if taking damage from sharp source, reduce damage taken
-        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
+        //if taking damage from explosion source, reduce damage taken
+        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.EXPLOSION) {
             return amount * 0.50f;  //REDUCE BY 50%
         }
         return amount;  //if reaches here, return original amount
     }
-
-    //USE THIS METHOD FOR GILDED BRONZE
-//    @Override
-//    public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
-//        return true;
-//    }
 }
