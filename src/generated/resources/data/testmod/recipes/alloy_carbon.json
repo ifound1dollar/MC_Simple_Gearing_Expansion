@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "testmod:carbonite_dust"
+    }
+  ],
+  "result": {
+    "item": "testmod:alloy_carbon"
+  }
+}

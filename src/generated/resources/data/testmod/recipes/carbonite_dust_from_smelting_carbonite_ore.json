@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "carbonite_dust",
+  "ingredient": {
+    "item": "testmod:carbonite_ore"
+  },
+  "result": "testmod:carbonite_dust"
+}

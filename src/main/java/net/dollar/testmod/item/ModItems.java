@@ -2,8 +2,6 @@ package net.dollar.testmod.item;
 
 import net.dollar.testmod.TestMod;
 import net.dollar.testmod.util.ModTiers;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,26 +19,36 @@ public class ModItems {
 
 
     //create RegistryObjects for new items
-    public static final RegistryObject<Item> RUBY_SHARD = ITEMS.register("ruby_shard",
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SAPPHIRE_SHARD = ITEMS.register("sapphire_shard",
+    public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_GEMSTONE = ITEMS.register("infused_gemstone",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> NAMELESS_INFUSION_ITEM = ITEMS.register("nameless_infusion_item",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> CARBONITE_DUST = ITEMS.register("carbonite_dust",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ALLOY_CARBON = ITEMS.register("alloy_carbon",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_BRONZE = ITEMS.register("raw_bronze",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_STEEL = ITEMS.register("raw_steel",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TUNGSTEN = ITEMS.register("raw_tungsten",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_TUNGSTEN_CARBIDE = ITEMS.register("raw_tungsten_carbide",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
             () -> new Item(new Item.Properties()));

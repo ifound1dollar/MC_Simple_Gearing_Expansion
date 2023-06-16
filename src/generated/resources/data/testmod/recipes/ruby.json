@@ -3,11 +3,11 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "testmod:sapphire_block"
+      "item": "testmod:ruby_block"
     }
   ],
   "result": {
-    "count": 4,
-    "item": "testmod:sapphire_shard"
+    "count": 9,
+    "item": "testmod:ruby"
   }
 }

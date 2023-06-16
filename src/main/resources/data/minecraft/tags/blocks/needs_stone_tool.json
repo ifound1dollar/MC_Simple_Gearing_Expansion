@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "testmod:carbonite_ore",
     "testmod:tin_block",
     "testmod:tin_ore",
     "testmod:bronze_block"

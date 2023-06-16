@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sapphire_block": {
+    "has_ruby_ore": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:sapphire_block"
+              "testmod:ruby_ore"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "testmod:sapphire_shard"
+        "recipe": "testmod:ruby_from_blasting_ruby_ore"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_sapphire_block",
+      "has_ruby_ore",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "testmod:sapphire_shard"
+      "testmod:ruby_from_blasting_ruby_ore"
     ]
   }
 }

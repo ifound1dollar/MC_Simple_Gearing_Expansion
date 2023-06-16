@@ -16,7 +16,6 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +33,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
-        //BLASTING ONLY RECIPES ARE POSSIBLE BY NOT DEFINING oreSmelting
+        //smelting AND blasting
+        oreSmelting(consumer, List.of(ModBlocks.RUBY_ORE.get()), RecipeCategory.MISC,
+                ModItems.RUBY.get(), 1.0f, 200, "ruby" );
+        oreBlasting(consumer, List.of(ModBlocks.RUBY_ORE.get()), RecipeCategory.MISC,
+                ModItems.RUBY.get(), 1.0f, 100, "ruby" );
+        oreSmelting(consumer, List.of(ModBlocks.SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+                ModItems.SAPPHIRE.get(), 1.0f, 200, "sapphire" );
+        oreBlasting(consumer, List.of(ModBlocks.SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+                ModItems.SAPPHIRE.get(), 1.0f, 100, "sapphire" );
+
+        oreSmelting(consumer, List.of(ModBlocks.CARBONITE_ORE.get()), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust" );
+        oreBlasting(consumer, List.of(ModBlocks.CARBONITE_ORE.get()), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust" );
         oreSmelting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
         oreBlasting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
@@ -43,19 +55,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
+        oreSmelting(consumer, List.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC,
+                ModItems.BRONZE_INGOT.get(), 0.7f, 200, "bronze_ingot" );
+        oreBlasting(consumer, List.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC,
+                ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
 
+        //blasting ONLY
+        oreBlasting(consumer, List.of(ModItems.RAW_STEEL.get()), RecipeCategory.MISC,
+                ModItems.STEEL_INGOT.get(), 0.7f, 100, "steel_ingot" );
         oreBlasting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
+        oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN_CARBIDE.get()), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1.0f, 100, "tungsten_carbide_ingot" );
 
 
         //NOTE: FIRST IS FOR BLOCK->ITEM, SECOND IS FOR ITEM->BLOCK
-        fourBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY_SHARD.get(),
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY.get(),
                 RecipeCategory.MISC, ModBlocks.RUBY_BLOCK.get());
-        fourBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE_SHARD.get(),
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE.get(),
                 RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get());
-
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT.get(),
@@ -68,11 +88,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_CARBIDE_BLOCK.get());
 
         //something
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ALLOY_CARBON.get(), 1)
+                .requires(Items.COAL)
+                .requires(ModItems.CARBONITE_DUST.get())
+                .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.CARBONITE_DUST.get()).build()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_BRONZE.get(), 3)
+                .requires(Items.RAW_COPPER, 3)
+                .requires(ModItems.RAW_TIN.get())
+                .unlockedBy("has_raw_tin", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.RAW_TIN.get()).build()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_STEEL.get(), 3)
+                .requires(Items.RAW_IRON, 3)
+                .requires(ModItems.ALLOY_CARBON.get())
+                .unlockedBy("has_alloy_carbon", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.ALLOY_CARBON.get()).build()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TUNGSTEN_CARBIDE.get(), 3)
+                .requires(ModItems.RAW_TUNGSTEN.get(), 3)
+                .requires(ModItems.ALLOY_CARBON.get())
+                .unlockedBy("has_alloy_carbon", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.ALLOY_CARBON.get()).build()))
+                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INFUSED_GEMSTONE.get(), 1)
                 .requires(Items.AMETHYST_SHARD)
                 .requires(Items.EMERALD)
-                .requires(ModItems.RUBY_SHARD.get())
-                .requires(ModItems.SAPPHIRE_SHARD.get())
+                .requires(ModItems.RUBY.get())
+                .requires(ModItems.SAPPHIRE.get())
                 .requires(ModItems.NAMELESS_INFUSION_ITEM.get())
                 .unlockedBy("has_nameless_infusion_item", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.NAMELESS_INFUSION_ITEM.get()).build()))

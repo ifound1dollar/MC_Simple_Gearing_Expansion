@@ -62,6 +62,8 @@ public class TestMod
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.SAPPHIRE_BLOCK);
             event.accept(ModBlocks.SAPPHIRE_ORE);
+
+            event.accept(ModBlocks.CARBONITE_ORE);
             event.accept(ModBlocks.TIN_BLOCK);
             event.accept(ModBlocks.TIN_ORE);
             event.accept(ModBlocks.BRONZE_BLOCK);
@@ -72,16 +74,22 @@ public class TestMod
 
 
             //ITEMS
-            event.accept(ModItems.RUBY_SHARD);
-            event.accept(ModItems.SAPPHIRE_SHARD);
+            event.accept(ModItems.RUBY);
+            event.accept(ModItems.SAPPHIRE);
             event.accept(ModItems.INFUSED_GEMSTONE);
             event.accept(ModItems.NAMELESS_INFUSION_ITEM);
+
+            event.accept(ModItems.CARBONITE_DUST);
+            event.accept(ModItems.ALLOY_CARBON);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
+            event.accept(ModItems.RAW_BRONZE);
             event.accept(ModItems.BRONZE_INGOT);
+            event.accept(ModItems.RAW_STEEL);
             event.accept(ModItems.STEEL_INGOT);
             event.accept(ModItems.RAW_TUNGSTEN);
             event.accept(ModItems.TUNGSTEN_INGOT);
+            event.accept(ModItems.RAW_TUNGSTEN_CARBIDE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
             //ARMOR, TOOLS

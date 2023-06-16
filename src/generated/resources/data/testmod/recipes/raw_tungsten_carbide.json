@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "testmod:raw_tungsten"
+    },
+    {
+      "item": "testmod:raw_tungsten"
+    },
+    {
+      "item": "testmod:raw_tungsten"
+    },
+    {
+      "item": "testmod:alloy_carbon"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "testmod:raw_tungsten_carbide"
+  }
+}

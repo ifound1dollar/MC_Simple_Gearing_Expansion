@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sapphire_shard": {
+    "has_sapphire": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:sapphire_shard"
+              "testmod:sapphire"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_sapphire_shard",
+      "has_sapphire",
       "has_the_recipe"
     ]
   ],

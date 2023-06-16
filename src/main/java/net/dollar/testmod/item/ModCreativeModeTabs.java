@@ -17,7 +17,7 @@ public class ModCreativeModeTabs {
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
         TEST_TAB = event.registerCreativeModeTab(new ResourceLocation(TestMod.MOD_ID, "test_tab"),
-                builder -> builder.icon(() -> new ItemStack(ModItems.RUBY_SHARD.get()))
+                builder -> builder.icon(() -> new ItemStack(ModItems.RUBY.get()))
                         .title(Component.literal("Jewels and Tools")));
         //NOTE: Component.translatable is unable to find translation in lang file, must use Component.literal instead
     }

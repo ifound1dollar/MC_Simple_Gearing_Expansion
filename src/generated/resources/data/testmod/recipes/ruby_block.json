@@ -3,12 +3,13 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "testmod:ruby_shard"
+      "item": "testmod:ruby"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "###",
+    "###",
+    "###"
   ],
   "result": {
     "item": "testmod:ruby_block"

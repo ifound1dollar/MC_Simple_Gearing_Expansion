@@ -3,6 +3,8 @@
   "block.testmod.ruby_ore": "Ruby Ore",
   "block.testmod.sapphire_block": "Sapphire Block",
   "block.testmod.sapphire_ore": "Sapphire Ore",
+
+  "block.testmod.carbonite_ore": "Carbonite Ore",
   "block.testmod.tin_block": "Tin Block",
   "block.testmod.tin_ore": "Tin Ore",
   "block.testmod.bronze_block": "Bronze Block",
@@ -13,17 +15,22 @@
 
 
 
-  "item.testmod.ruby_shard": "Ruby Shard",
-  "item.testmod.sapphire_shard": "Sapphire Shard",
+  "item.testmod.ruby": "Ruby",
+  "item.testmod.sapphire": "Sapphire",
   "item.testmod.infused_gemstone": "Infused Gemstone",
   "item.testmod.nameless_infusion_item": "NAMELESS INFUSION ITEM",
 
+  "item.testmod.carbonite_dust": "Carbonite Dust",
+  "item.testmod.alloy_carbon": "Alloy Carbon",
   "item.testmod.raw_tin": "Raw Tin",
   "item.testmod.tin_ingot": "Tin Ingot",
+  "item.testmod.raw_bronze": "Raw Bronze",
   "item.testmod.bronze_ingot": "Bronze Ingot",
+  "item.testmod.raw_steel": "Raw Steel",
   "item.testmod.steel_ingot": "Steel Ingot",
   "item.testmod.raw_tungsten": "Raw Tungsten",
   "item.testmod.tungsten_ingot": "Tungsten Ingot",
+  "item.testmod.raw_tungsten_carbide": "Raw Tungsten-Carbide",
   "item.testmod.tungsten_carbide_ingot": "Tungsten-Carbide Ingot",
 
   "item.testmod.bronze_helmet": "Bronze Helmet",

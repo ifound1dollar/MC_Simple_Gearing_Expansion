@@ -3,12 +3,13 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "testmod:sapphire_shard"
+      "item": "testmod:sapphire"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "###",
+    "###",
+    "###"
   ],
   "result": {
     "item": "testmod:sapphire_block"

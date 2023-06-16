@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ruby_shard": {
+    "has_ruby": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:ruby_shard"
+              "testmod:ruby"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_ruby_shard",
+      "has_ruby",
       "has_the_recipe"
     ]
   ],

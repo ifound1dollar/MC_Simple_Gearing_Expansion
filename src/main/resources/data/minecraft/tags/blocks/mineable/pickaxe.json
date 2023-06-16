@@ -5,6 +5,8 @@
     "testmod:ruby_ore",
     "testmod:sapphire_block",
     "testmod:sapphire_ore",
+
+    "testmod:carbonite_ore",
     "testmod:tin_block",
     "testmod:tin_ore",
     "testmod:bronze_block",
