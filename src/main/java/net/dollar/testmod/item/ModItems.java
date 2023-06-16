@@ -30,8 +30,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> CARBONITE_DUST = ITEMS.register("carbonite_dust",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ALLOY_CARBON = ITEMS.register("alloy_carbon",
-            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",

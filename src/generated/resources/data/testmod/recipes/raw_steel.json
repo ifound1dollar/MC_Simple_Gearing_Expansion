@@ -6,17 +6,10 @@
       "item": "minecraft:raw_iron"
     },
     {
-      "item": "minecraft:raw_iron"
-    },
-    {
-      "item": "minecraft:raw_iron"
-    },
-    {
-      "item": "testmod:alloy_carbon"
+      "item": "testmod:carbonite_dust"
     }
   ],
   "result": {
-    "count": 3,
     "item": "testmod:raw_steel"
   }
 }

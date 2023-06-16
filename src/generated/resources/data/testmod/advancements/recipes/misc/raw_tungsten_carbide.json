@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_alloy_carbon": {
+    "has_carbonite_dust": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:alloy_carbon"
+              "testmod:carbonite_dust"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_alloy_carbon",
+      "has_carbonite_dust",
       "has_the_recipe"
     ]
   ],

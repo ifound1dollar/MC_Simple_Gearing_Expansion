@@ -23,7 +23,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.NAMELESS_INFUSION_ITEM);
 
         simpleItem(ModItems.CARBONITE_DUST);
-        simpleItem(ModItems.ALLOY_CARBON);
         simpleItem(ModItems.RAW_TIN);
         simpleItem(ModItems.TIN_INGOT);
         simpleItem(ModItems.RAW_BRONZE);

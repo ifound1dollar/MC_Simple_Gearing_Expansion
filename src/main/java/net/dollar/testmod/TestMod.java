@@ -80,7 +80,6 @@ public class TestMod
             event.accept(ModItems.NAMELESS_INFUSION_ITEM);
 
             event.accept(ModItems.CARBONITE_DUST);
-            event.accept(ModItems.ALLOY_CARBON);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
             event.accept(ModItems.RAW_BRONZE);

@@ -88,29 +88,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_CARBIDE_BLOCK.get());
 
         //something
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ALLOY_CARBON.get(), 1)
-                .requires(Items.COAL)
-                .requires(ModItems.CARBONITE_DUST.get())
-                .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.CARBONITE_DUST.get()).build()))
-                .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_BRONZE.get(), 3)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_BRONZE.get(), 4)
                 .requires(Items.RAW_COPPER, 3)
                 .requires(ModItems.RAW_TIN.get())
                 .unlockedBy("has_raw_tin", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.RAW_TIN.get()).build()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_STEEL.get(), 3)
-                .requires(Items.RAW_IRON, 3)
-                .requires(ModItems.ALLOY_CARBON.get())
-                .unlockedBy("has_alloy_carbon", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.ALLOY_CARBON.get()).build()))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_STEEL.get(), 1)
+                .requires(Items.RAW_IRON, 1)
+                .requires(ModItems.CARBONITE_DUST.get())
+                .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.CARBONITE_DUST.get()).build()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TUNGSTEN_CARBIDE.get(), 3)
-                .requires(ModItems.RAW_TUNGSTEN.get(), 3)
-                .requires(ModItems.ALLOY_CARBON.get())
-                .unlockedBy("has_alloy_carbon", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.ALLOY_CARBON.get()).build()))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TUNGSTEN_CARBIDE.get(), 1)
+                .requires(ModItems.RAW_TUNGSTEN.get(), 1)
+                .requires(ModItems.CARBONITE_DUST.get())
+                .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.CARBONITE_DUST.get()).build()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INFUSED_GEMSTONE.get(), 1)
                 .requires(Items.AMETHYST_SHARD)

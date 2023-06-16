@@ -21,7 +21,7 @@
   "item.testmod.nameless_infusion_item": "NAMELESS INFUSION ITEM",
 
   "item.testmod.carbonite_dust": "Carbonite Dust",
-  "item.testmod.alloy_carbon": "Alloy Carbon",
+  "item.testmod.alloy_carbon": "Alloy Carbon",  "comment_alloy_carbon": "UNUSED CURRENTLY",
   "item.testmod.raw_tin": "Raw Tin",
   "item.testmod.tin_ingot": "Tin Ingot",
   "item.testmod.raw_bronze": "Raw Bronze",

@@ -6,17 +6,10 @@
       "item": "testmod:raw_tungsten"
     },
     {
-      "item": "testmod:raw_tungsten"
-    },
-    {
-      "item": "testmod:raw_tungsten"
-    },
-    {
-      "item": "testmod:alloy_carbon"
+      "item": "testmod:carbonite_dust"
     }
   ],
   "result": {
-    "count": 3,
     "item": "testmod:raw_tungsten_carbide"
   }
 }
