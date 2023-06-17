@@ -55,19 +55,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
-        oreSmelting(consumer, List.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC,
+        oreSmelting(consumer, List.of(ModItems.BRONZE_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.BRONZE_INGOT.get(), 0.7f, 200, "bronze_ingot" );
-        oreBlasting(consumer, List.of(ModItems.RAW_BRONZE.get()), RecipeCategory.MISC,
+        oreBlasting(consumer, List.of(ModItems.BRONZE_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
 
         //blasting ONLY
-        oreBlasting(consumer, List.of(ModItems.RAW_STEEL.get()), RecipeCategory.MISC,
+        oreBlasting(consumer, List.of(ModItems.STEEL_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.STEEL_INGOT.get(), 0.7f, 100, "steel_ingot" );
         oreBlasting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
-        oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN_CARBIDE.get()), RecipeCategory.MISC,
+        oreBlasting(consumer, List.of(ModItems.TUNGSTEN_CARBIDE_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1.0f, 100, "tungsten_carbide_ingot" );
 
 
@@ -88,20 +88,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_CARBIDE_BLOCK.get());
 
         //something
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_BRONZE.get(), 4)
-                .requires(Items.RAW_COPPER, 3)
-                .requires(ModItems.RAW_TIN.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)
+                .requires(Items.COPPER_INGOT, 3)
+                .requires(ModItems.TIN_INGOT.get())
                 .unlockedBy("has_raw_tin", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.RAW_TIN.get()).build()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_STEEL.get(), 1)
-                .requires(Items.RAW_IRON, 1)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STEEL_COMPOUND.get(), 1)
+                .requires(Items.IRON_INGOT, 1)
                 .requires(ModItems.CARBONITE_DUST.get())
                 .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.CARBONITE_DUST.get()).build()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TUNGSTEN_CARBIDE.get(), 1)
-                .requires(ModItems.RAW_TUNGSTEN.get(), 1)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_COMPOUND.get(), 1)
+                .requires(ModItems.TUNGSTEN_INGOT.get(), 1)
                 .requires(ModItems.CARBONITE_DUST.get())
                 .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.CARBONITE_DUST.get()).build()))

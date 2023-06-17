@@ -25,13 +25,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CARBONITE_DUST);
         simpleItem(ModItems.RAW_TIN);
         simpleItem(ModItems.TIN_INGOT);
-        simpleItem(ModItems.RAW_BRONZE);
+        simpleItem(ModItems.BRONZE_COMPOUND);
         simpleItem(ModItems.BRONZE_INGOT);
-        simpleItem(ModItems.RAW_STEEL);
+        simpleItem(ModItems.STEEL_COMPOUND);
         simpleItem(ModItems.STEEL_INGOT);
         simpleItem(ModItems.RAW_TUNGSTEN);
         simpleItem(ModItems.TUNGSTEN_INGOT);
-        simpleItem(ModItems.RAW_TUNGSTEN_CARBIDE);
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_COMPOUND);
         simpleItem(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
         simpleItem(ModItems.BRONZE_HELMET);

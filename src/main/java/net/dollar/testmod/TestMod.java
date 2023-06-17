@@ -82,13 +82,13 @@ public class TestMod
             event.accept(ModItems.CARBONITE_DUST);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
-            event.accept(ModItems.RAW_BRONZE);
+            event.accept(ModItems.BRONZE_COMPOUND);
             event.accept(ModItems.BRONZE_INGOT);
-            event.accept(ModItems.RAW_STEEL);
+            event.accept(ModItems.STEEL_COMPOUND);
             event.accept(ModItems.STEEL_INGOT);
             event.accept(ModItems.RAW_TUNGSTEN);
             event.accept(ModItems.TUNGSTEN_INGOT);
-            event.accept(ModItems.RAW_TUNGSTEN_CARBIDE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_COMPOUND);
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
             //ARMOR, TOOLS

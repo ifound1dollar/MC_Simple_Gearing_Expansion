@@ -34,11 +34,11 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_BRONZE = ITEMS.register("raw_bronze",
+    public static final RegistryObject<Item> BRONZE_COMPOUND = ITEMS.register("bronze_compound",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_INGOT = ITEMS.register("bronze_ingot",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_STEEL = ITEMS.register("raw_steel",
+    public static final RegistryObject<Item> STEEL_COMPOUND = ITEMS.register("steel_compound",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",
             () -> new Item(new Item.Properties()));
@@ -46,7 +46,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RAW_TUNGSTEN_CARBIDE = ITEMS.register("raw_tungsten_carbide",
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_COMPOUND = ITEMS.register("tungsten_carbide_compound",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
             () -> new Item(new Item.Properties()));
