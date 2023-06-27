@@ -187,6 +187,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_LEGGINGS.get(), "has_infused_gemstone");
         legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
                 RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_BOOTS.get(), "has_infused_gemstone");
+
+        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_PICKAXE, ModItems.INFUSED_GEMSTONE.get(),
+                RecipeCategory.TOOLS, ModItems.INFUSED_DIAMOND_PICKAXE.get(), "has_infused_gemstone");
         //endregion
 
 

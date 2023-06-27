@@ -123,6 +123,7 @@ public class TestMod
             event.accept(ModItems.INFUSED_DIAMOND_CHESTPLATE);
             event.accept(ModItems.INFUSED_DIAMOND_LEGGINGS);
             event.accept(ModItems.INFUSED_DIAMOND_BOOTS);
+            event.accept(ModItems.INFUSED_DIAMOND_PICKAXE);
         }
     }
 

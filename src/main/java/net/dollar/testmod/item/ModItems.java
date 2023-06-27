@@ -54,12 +54,13 @@ public class ModItems {
 
     //IMPORTANT: numeric parameters are Attack Damage and Attack Speed, respectively
     //all PickaxeItems have 1 and -2.8f (baseline Attack Speed is 4, so -2.8f results in 1.2 Attack Speed)
+    //see VANILLA TOOL DATA in OneNote for vanilla values
     public static final RegistryObject<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe",
             () -> new PickaxeItem(ModTiers.Tools.BRONZE, 1, -2.8f, new Item.Properties()));
     public static final RegistryObject<Item> GILDED_BRONZE_PICKAXE = ITEMS.register("gilded_bronze_pickaxe",
             () -> new PickaxeItem(ModTiers.Tools.GILDED_BRONZE, 1, -2.8f, new Item.Properties()));
-
-    //all SwordItems have 3 and -2.4f by default
+    public static final RegistryObject<Item> INFUSED_DIAMOND_PICKAXE = ITEMS.register("infused_diamond_pickaxe",
+            () -> new PickaxeItem(ModTiers.Tools.INFUSED_DIAMOND, 1, -2.4f, new Item.Properties()));
 
     //IMPORTANT: TUNGSTEN AND TUNGSTEN-CARBIDE TOOLS MUST CHANGE DEFAULT SPEED PARAMETER (not damage parameter as
     //  the damage modifier is already applied in the Tier)

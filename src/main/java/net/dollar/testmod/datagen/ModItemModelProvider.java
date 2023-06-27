@@ -66,6 +66,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         handheldItem(ModItems.BRONZE_PICKAXE);
         handheldItem(ModItems.GILDED_BRONZE_PICKAXE);
+        handheldItem(ModItems.INFUSED_DIAMOND_PICKAXE);
     }
 
     //creates an auto-generated simple item

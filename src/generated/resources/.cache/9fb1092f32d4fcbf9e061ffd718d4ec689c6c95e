@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-16T19:23:45.6038749	Recipes
+// 1.19.4	2023-06-27T12:21:57.0328101	Recipes
 2a4152480f1b852d0c58f188121b6fbb55505688 data/testmod/advancements/recipes/building_blocks/bronze_ingot.json
 becc984a980881d4c55d6783c06e0628744e45d4 data/testmod/advancements/recipes/building_blocks/ruby.json
 b70dededbffe8cf545b3cb39774098a5219faad3 data/testmod/advancements/recipes/building_blocks/sapphire.json
@@ -59,6 +59,7 @@ f897ba8997aab01d58de9569e5c245380a79fdf4 data/testmod/advancements/recipes/misc/
 124cd76c4f4b412388422fbfd65c41d23e7998da data/testmod/advancements/recipes/misc/tungsten_ingot_from_blasting_tungsten_ore.json
 4f2279018846eb2c851b2b48c3603657cac6eac5 data/testmod/advancements/recipes/tools/bronze_pickaxe.json
 858d876c1057ccd340d6478f38779ab16dc7029e data/testmod/advancements/recipes/tools/gilded_bronze_pickaxe_smithing.json
+d144e453e53fef279272143a8b7888e1f5467edb data/testmod/advancements/recipes/tools/infused_diamond_pickaxe_smithing.json
 633641ab628c65e7ef3845e4443f7429764f8808 data/testmod/recipes/bronze_block.json
 bb635f2b65dc02d7a81367b87b6d86b22eafbf3a data/testmod/recipes/bronze_boots.json
 d4bc30b139a79ec867e2a4fbe4b28e070bb4abb4 data/testmod/recipes/bronze_chestplate.json
@@ -80,6 +81,7 @@ dfd99ed7b34b556227f5f243cc644ddcc1478d74 data/testmod/recipes/gilded_bronze_legg
 37af0d25736945aa808a7c9e1d56339f53869e8a data/testmod/recipes/infused_diamond_chestplate_smithing.json
 d9dabc67bb82b92a953ab2bc792d4f5c06592d9f data/testmod/recipes/infused_diamond_helmet_smithing.json
 f19e9713f157fce251889724d03ff5edd0181001 data/testmod/recipes/infused_diamond_leggings_smithing.json
+289f9ce7d22d9e744f732294c370dbe0a077f84b data/testmod/recipes/infused_diamond_pickaxe_smithing.json
 6bfb898b9d157829e8dcb51c4b2203c2f9d1011d data/testmod/recipes/infused_gemstone.json
 f4f4c8055be959bfeda4aca0144215beb173eadd data/testmod/recipes/ruby.json
 0a43a6d8c2213e85250db509a6167fc6e13cea31 data/testmod/recipes/ruby_block.json

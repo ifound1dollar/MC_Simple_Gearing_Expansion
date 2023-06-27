@@ -1,4 +1,4 @@
-// 1.19.4	2023-06-16T19:23:45.6068673	Item Models: testmod
+// 1.19.4	2023-06-27T12:21:57.0348039	Item Models: testmod
 191ce2b157f39b46c7113c87e800b24c4256d971 assets/testmod/models/item/bronze_boots.json
 3ef19b52c018eaabf8aaf6836a7d02ce8bdf284b assets/testmod/models/item/bronze_chestplate.json
 86ecbfd01ce32272929aba487abb5e4fcb00ff99 assets/testmod/models/item/bronze_compound.json
@@ -16,6 +16,7 @@ c18e80b309381ba409cd3bf57bf6fcc21a36e6c0 assets/testmod/models/item/gilded_bronz
 d21aeb7de074f528eba47e07ac0ffdccbb099a25 assets/testmod/models/item/infused_diamond_chestplate.json
 8fd5c67b68dc66fb19a4b6d4a5060677704bd182 assets/testmod/models/item/infused_diamond_helmet.json
 04d5933c34185851cdda549ea913bdceb3a2f505 assets/testmod/models/item/infused_diamond_leggings.json
+b06d7e17cc0ef34435342d7ee99ed45c3d5342e9 assets/testmod/models/item/infused_diamond_pickaxe.json
 c23d121fe179562163823397b7e897247f0a3189 assets/testmod/models/item/infused_gemstone.json
 c2beab728a4b450e8b9ca1ce2f5144b725bc43d6 assets/testmod/models/item/nameless_infusion_item.json
 af6aa13c4c02b3c7fca7265dc9c54c31ce33ea4b assets/testmod/models/item/raw_tin.json

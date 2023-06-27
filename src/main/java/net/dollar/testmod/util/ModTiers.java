@@ -72,6 +72,7 @@ public class ModTiers {
                 () -> Ingredient.of(Items.DIAMOND));
     }
     public static class Armor {
+        //same as Iron
         public static final ArmorMaterial BRONZE = new ModArmorMaterial(
                 TestMod.MOD_ID + ":bronze",
                 15,
@@ -82,6 +83,7 @@ public class ModTiers {
                 0.0f,
                 () -> Ingredient.of(ModItems.BRONZE_INGOT.get())
         );
+        //same as Bronze/Iron EXCEPT enchantability matches Gold
         public static final ArmorMaterial GILDED_BRONZE = new ModArmorMaterial(
                 TestMod.MOD_ID + ":gilded_bronze",
                 15,
@@ -92,7 +94,7 @@ public class ModTiers {
                 0.0f,
                 () -> Ingredient.of(Items.GOLD_INGOT)   //MAYBE BRONZE?
         );
-        //+7 durabilityMultiplier, +1 toughness
+        //+7 durabilityMultiplier, +1 toughness from Iron
         public static final ArmorMaterial STEEL = new ModArmorMaterial(
                 TestMod.MOD_ID + ":steel",
                 22,
@@ -104,14 +106,14 @@ public class ModTiers {
                 () -> Ingredient.of(ModItems.STEEL_INGOT.get())
         );
 
-        //same as diamond
+        //-1 enchantability, -0.5 armor toughness from Diamond (very slightly worse)
         public static final ArmorMaterial TUNGSTEN = new ModArmorMaterial(
                 TestMod.MOD_ID + ":tungsten",
                 33,
                 new int[] { 3, 6, 8, 3 },
-                10,
+                9,
                 SoundEvents.ARMOR_EQUIP_IRON,
-                2.0f,
+                1.5f,
                 0.0f,
                 () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get())
         );
@@ -134,7 +136,7 @@ public class ModTiers {
                 37,
                 new int[] { 3, 6, 8, 3 },
                 20,
-                SoundEvents.ARMOR_EQUIP_NETHERITE,
+                SoundEvents.ARMOR_EQUIP_DIAMOND,
                 2.0f,
                 0.0f,
                 () -> Ingredient.of(Items.DIAMOND)
