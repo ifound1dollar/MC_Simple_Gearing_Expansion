@@ -41,33 +41,33 @@ public class ModTiers {
                 BlockTags.NEEDS_IRON_TOOL,
                 () -> Ingredient.of(ModItems.STEEL_INGOT.get()));
 
-        //almost identical to Diamond (damage bonus is 3), but speed matches Iron and damage bonus matches Netherite
+        //more damage than Diamond (3), but speed between Stone (4) and Iron (6) (very slow)
         public static final Tier TUNGSTEN = new ForgeTier(
                 3,
                 1561,
-                6.0f,
+                5.0f,
                 4f,
                 14,
                 BlockTags.NEEDS_DIAMOND_TOOL,
                 () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get()));
 
-        //more durable than Netherite, speed equal to Iron, damage +2 above Netherite, same enchantability as Diamond
+        //more durable than Netherite, speed between Stone and Iron, damage +1 above Netherite, same enchantability as Diamond
         public static final Tier TUNGSTEN_CARBIDE = new ForgeTier(
                 4,
                 2501,
-                6.0f,
+                5.0f,
                 6f,
                 10,
                 Tags.Blocks.NEEDS_NETHERITE_TOOL,
                 () -> Ingredient.of(ModItems.TUNGSTEN_CARBIDE_INGOT.get()));
 
-        //same durability and damage as Netherite, speed and enchantability just below Gold
+        //same durability and as Netherite, same damage as Diamond (3), speed and enchantability equal to Gold
         public static final Tier INFUSED_DIAMOND = new ForgeTier(
                 4,
                 2031,
-                11.0f,
-                4f,
-                20,
+                12.0f,
+                3f,
+                22,
                 Tags.Blocks.NEEDS_NETHERITE_TOOL,
                 () -> Ingredient.of(Items.DIAMOND));
     }
