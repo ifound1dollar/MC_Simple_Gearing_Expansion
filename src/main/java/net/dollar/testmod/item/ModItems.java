@@ -59,8 +59,19 @@ public class ModItems {
             () -> new PickaxeItem(ModTiers.Tools.BRONZE, 1, -2.8f, new Item.Properties()));
     public static final RegistryObject<Item> GILDED_BRONZE_PICKAXE = ITEMS.register("gilded_bronze_pickaxe",
             () -> new PickaxeItem(ModTiers.Tools.GILDED_BRONZE, 1, -2.8f, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_PICKAXE = ITEMS.register("steel_pickaxe",
+            () -> new PickaxeItem(ModTiers.Tools.STEEL, 1, -2.8f, new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_PICKAXE = ITEMS.register("tungsten_pickaxe",
+            () -> new PickaxeItem(ModTiers.Tools.TUNGSTEN, 1, -3.2f, new Item.Properties()));   //slow
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_PICKAXE = ITEMS.register("tungsten_carbide_pickaxe",
+            () -> new ModTungstenCarbidePickaxeItem(ModTiers.Tools.TUNGSTEN_CARBIDE, 1, -3.0f,
+                    new Item.Properties()));    //slow, little faster than Tungsten
     public static final RegistryObject<Item> INFUSED_DIAMOND_PICKAXE = ITEMS.register("infused_diamond_pickaxe",
-            () -> new PickaxeItem(ModTiers.Tools.INFUSED_DIAMOND, 1, -2.4f, new Item.Properties()));
+            () -> new ModInfusedDiamondPickaxeItem(ModTiers.Tools.INFUSED_DIAMOND, 1, -2.4f,
+                    new Item.Properties()));    //fast
+    public static final RegistryObject<Item> NETHERITE_PICKAXE = VANILLA_ITEMS.register("netherite_pickaxe",
+            () -> new ModNetheritePickaxeItem(Tiers.NETHERITE, 1, -2.8f,
+                    new Item.Properties()));
 
     //IMPORTANT: TUNGSTEN AND TUNGSTEN-CARBIDE TOOLS MUST CHANGE DEFAULT SPEED PARAMETER (not damage parameter as
     //  the damage modifier is already applied in the Tier)

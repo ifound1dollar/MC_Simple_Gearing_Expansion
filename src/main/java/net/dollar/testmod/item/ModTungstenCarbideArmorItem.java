@@ -25,7 +25,7 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
      */
     @Override
     public void onArmorTick(ItemStack stack, Level level, Player player) {
-        //do nothing if on client side OR if not chestplate
+        //do nothing if on client side OR if not chestplate (isFullSet will never be true on clients)
         if (level.isClientSide || LivingEntity.getEquipmentSlotForItem(stack) != EquipmentSlot.CHEST) { return; }
 
         //check for correct equipment, then set isFullSet accordingly

@@ -2,13 +2,15 @@ package net.dollar.testmod.util;
 
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 
-import javax.print.attribute.DateTimeSyntax;
+import java.util.Random;
 
 public class ModUtils {
     public enum DamageCategory { NONE, BLUNT, SHARP, MAGIC, FIRE, EXPLOSION }
@@ -55,5 +57,47 @@ public class ModUtils {
 
         //FINALLY, if not specific above, return NONE
         return DamageCategory.NONE;
+    }
+
+
+
+    /**
+     * Rolls chance to apply special effect on attack using Infused Diamond tools/armor, and applies when applicable
+     * @param attackedEntity Attacked entity
+     * @param attacker Attacking (holder) entity
+     * @param targetEffectChance Chance out of 100 to apply this effect
+     */
+    public static void rollInfusedDiamondOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
+        //roll chance to remove Slowness from and apply Speed effect to user (attacker) for 3 seconds
+        if (new Random().nextInt(100) < targetEffectChance) {
+            attacker.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3));
+        }
+    }
+
+    /**
+     * Rolls chance to apply special effect on attack using Netherite tools/armor, and applies when applicable
+     * @param attackedEntity Attacked entity
+     * @param attacker Attacking (holder) entity
+     * @param targetEffectChance Chance out of 100 to apply this effect
+     */
+    public static void rollNetheriteOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
+        //roll chance to apply Wither effect to target (attackedEntity) for 3 seconds
+        if (new Random().nextInt(100) < targetEffectChance) {
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 3));
+        }
+    }
+
+    /**
+     * Rolls chance to apply special effect on attack using Tungsten-Carbide tools/armor, and applies when applicable
+     * @param attackedEntity Attacked entity
+     * @param attacker Attacking (holder) entity
+     * @param targetEffectChance Chance out of 100 to apply this effect
+     */
+    public static void rollTungstenCarbideOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
+        //roll chance to apply Slowness effect to target (attackedEntity) for 3 seconds
+        if (new Random().nextInt(100) < targetEffectChance) {
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3));
+        }
     }
 }
