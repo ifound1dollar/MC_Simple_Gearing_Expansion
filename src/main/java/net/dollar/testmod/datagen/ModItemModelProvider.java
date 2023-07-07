@@ -17,6 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        //region BASIC ITEMS
         simpleItem(ModItems.RUBY);
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.INFUSED_GEMSTONE);
@@ -39,7 +40,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
+        //endregion
 
+        //region ARMORS
         simpleItem(ModItems.BRONZE_HELMET);
         simpleItem(ModItems.BRONZE_CHESTPLATE);
         simpleItem(ModItems.BRONZE_LEGGINGS);
@@ -69,7 +72,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFUSED_DIAMOND_CHESTPLATE);
         simpleItem(ModItems.INFUSED_DIAMOND_LEGGINGS);
         simpleItem(ModItems.INFUSED_DIAMOND_BOOTS);
+        //endregion
 
+        //region HANDHELD ITEMS
         handheldItem(ModItems.BRONZE_AXE);
         handheldItem(ModItems.GILDED_BRONZE_AXE);
         handheldItem(ModItems.STEEL_AXE);
@@ -104,6 +109,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TUNGSTEN_SWORD);
         handheldItem(ModItems.TUNGSTEN_CARBIDE_SWORD);
         handheldItem(ModItems.INFUSED_DIAMOND_SWORD);
+        //endregion
     }
 
     //creates an auto-generated simple item

@@ -60,7 +60,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(consumer, List.of(ModItems.BRONZE_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
         //endregion
-
         //region Ores, blasting ONLY
         oreBlasting(consumer, List.of(ModItems.STEEL_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.STEEL_INGOT.get(), 0.7f, 100, "steel_ingot" );
@@ -71,7 +70,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(consumer, List.of(ModItems.TUNGSTEN_CARBIDE_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1.0f, 100, "tungsten_carbide_ingot" );
         //endregion
-
         //region Basic nine-block storage recipes
         //NOTE: FIRST IS FOR BLOCK->ITEM, SECOND IS FOR ITEM->BLOCK
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY.get(),
@@ -91,7 +89,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_CARBIDE_BLOCK.get());
         //endregion
-
         //region Compounds and Gemstone (shapeless)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)
                 .requires(Items.COPPER_INGOT, 3)
@@ -121,7 +118,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(ModItems.NAMELESS_INFUSION_ITEM.get()).build()))
                 .save(consumer);
         //endregion
-
         //region Upgrade Templates
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get())
@@ -177,7 +173,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.BRONZE_INGOT, ModItems.BRONZE_SWORD,
                 "has_bronze_ingot");
         //endregion
-
         //region GILDED BRONZE ARMOR, TOOLS (smithing)
 //        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_HELMET.get(), Items.GOLD_INGOT,
 //                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_HELMET.get(), "has_gold_ingot");
@@ -220,7 +215,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.BRONZE_SWORD.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_SWORD.get(), "has_gold_ingot");
         //endregion
-
         //region STEEL ARMOR, TOOLS
         armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.STEEL_INGOT, ModItems.STEEL_HELMET,
                 "has_steel_ingot");
@@ -242,7 +236,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.STEEL_INGOT, ModItems.STEEL_SWORD,
                 "has_steel_ingot");
         //endregion
-
         //region TUNGSTEN ARMOR, TOOLS
         armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_HELMET,
                 "has_tungsten_ingot");
@@ -264,7 +257,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_SWORD,
                 "has_tungsten_ingot");
         //endregion
-
         //region TUNGSTEN-CARBIDE ARMOR, TOOLS (smithing)
 //        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_HELMET.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
 //                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_HELMET.get(), "has_tungsten_carbide_ingot");
@@ -304,7 +296,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.TUNGSTEN_SWORD.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_SWORD.get(), "has_carbide_upgrade");
         //endregion
-
         //region INFUSED DIAMOND ARMOR, TOOLS (smithing)
 //        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
 //                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_HELMET.get(), "has_infused_gemstone");
@@ -347,18 +338,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 Items.DIAMOND_SWORD, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
                 ModItems.INFUSED_DIAMOND_SWORD.get(), "has_nameless_infusion_item");
         //endregion
+    }
 
 
 
 
-        //BELOW IS HOW TO MANUALLY CREATE SHAPELESS RECIPES (third shapeless() param is quantity)
+    //BELOW IS HOW TO MANUALLY CREATE SHAPELESS RECIPES (third shapeless() param is quantity)
 //        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RUBY_SHARD.get(), 9)
 //                .requires(ModBlocks.RUBY_BLOCK.get())
 //                .unlockedBy("has_ruby_block", inventoryTrigger(ItemPredicate.Builder.item()
 //                        .of(ModBlocks.RUBY_BLOCK.get()).build()))
 //                .save(consumer);
 
-        //BELOW IS HOW TO MANUALLY CREATE SHAPED RECIPES (third shaped() param is quantity)
+    //BELOW IS HOW TO MANUALLY CREATE SHAPED RECIPES (third shaped() param is quantity)
 //        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.BRONZE_PICKAXE.get(), 1)
 //                .define('d', ModItems.BRONZE_INGOT.get())
 //                .define('i', Items.STICK)
@@ -368,7 +360,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                .unlockedBy("has_bronze_ingot", inventoryTrigger(ItemPredicate.Builder.item()
 //                        .of(ModItems.BRONZE_INGOT.get()).build()))
 //                .save(consumer);
-    }
 
 
     /**
@@ -484,7 +475,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .save(consumer);
         }
     }
-
 
     /**
      * Helper to automatically generate LEGACY smithing recipes for versions before 1.20

@@ -57,7 +57,7 @@ public class TestMod
 
         //add to TEST_TAB
         if (event.getTab() == ModCreativeModeTabs.TEST_TAB) {
-            //BLOCKS
+            //region BLOCKS
             event.accept(ModBlocks.RUBY_BLOCK);
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.SAPPHIRE_BLOCK);
@@ -72,9 +72,8 @@ public class TestMod
             event.accept(ModBlocks.TUNGSTEN_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_ORE);
             event.accept(ModBlocks.TUNGSTEN_CARBIDE_BLOCK);
-
-
-            //ITEMS
+            //endregion
+            //region BASIC ITEMS
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
             event.accept(ModItems.INFUSED_GEMSTONE);
@@ -97,8 +96,8 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_INGOT);
             event.accept(ModItems.TUNGSTEN_CARBIDE_COMPOUND);
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
-
-            //ARMOR, TOOLS
+            //endregion
+            //region BRONZE ARMOR/TOOLS
             event.accept(ModItems.BRONZE_HELMET);
             event.accept(ModItems.BRONZE_CHESTPLATE);
             event.accept(ModItems.BRONZE_LEGGINGS);
@@ -108,7 +107,8 @@ public class TestMod
             event.accept(ModItems.BRONZE_PICKAXE);
             event.accept(ModItems.BRONZE_SHOVEL);
             event.accept(ModItems.BRONZE_SWORD);
-
+            //endregion
+            //region GILDED BRONZE ARMOR/TOOLS
             event.accept(ModItems.GILDED_BRONZE_HELMET);
             event.accept(ModItems.GILDED_BRONZE_CHESTPLATE);
             event.accept(ModItems.GILDED_BRONZE_LEGGINGS);
@@ -118,7 +118,8 @@ public class TestMod
             event.accept(ModItems.GILDED_BRONZE_PICKAXE);
             event.accept(ModItems.GILDED_BRONZE_SHOVEL);
             event.accept(ModItems.GILDED_BRONZE_SWORD);
-
+            //endregion
+            //region STEEL ARMOR/TOOLS
             event.accept(ModItems.STEEL_HELMET);
             event.accept(ModItems.STEEL_CHESTPLATE);
             event.accept(ModItems.STEEL_LEGGINGS);
@@ -128,7 +129,8 @@ public class TestMod
             event.accept(ModItems.STEEL_PICKAXE);
             event.accept(ModItems.STEEL_SHOVEL);
             event.accept(ModItems.STEEL_SWORD);
-
+            //endregion
+            //region TUNGSTEN ARMOR/TOOLS
             event.accept(ModItems.TUNGSTEN_HELMET);
             event.accept(ModItems.TUNGSTEN_CHESTPLATE);
             event.accept(ModItems.TUNGSTEN_LEGGINGS);
@@ -138,7 +140,8 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_PICKAXE);
             event.accept(ModItems.TUNGSTEN_SHOVEL);
             event.accept(ModItems.TUNGSTEN_SWORD);
-
+            //endregion
+            //region TUNGSTEN-CARBIDE ARMOR/TOOLS
             event.accept(ModItems.TUNGSTEN_CARBIDE_HELMET);
             event.accept(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_LEGGINGS);
@@ -148,7 +151,8 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_CARBIDE_PICKAXE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_SHOVEL);
             event.accept(ModItems.TUNGSTEN_CARBIDE_SWORD);
-
+            //endregion
+            //region INFUSED DIAMOND ARMOR/TOOLS
             event.accept(ModItems.INFUSED_DIAMOND_HELMET);
             event.accept(ModItems.INFUSED_DIAMOND_CHESTPLATE);
             event.accept(ModItems.INFUSED_DIAMOND_LEGGINGS);
@@ -158,6 +162,7 @@ public class TestMod
             event.accept(ModItems.INFUSED_DIAMOND_PICKAXE);
             event.accept(ModItems.INFUSED_DIAMOND_SHOVEL);
             event.accept(ModItems.INFUSED_DIAMOND_SWORD);
+            //endregion
         }
     }
 

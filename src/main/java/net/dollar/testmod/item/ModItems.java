@@ -18,7 +18,9 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
 
 
+
     //create RegistryObjects for new items
+    //region BASIC ITEMS
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
@@ -61,7 +63,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
             () -> new Item(new Item.Properties()));
-
+    //endregion
 
     //IMPORTANT: numeric parameters are Attack Damage (base) and Attack Speed (base 4, so -2.8 = 1.2), respectively
     //see VANILLA TOOL DATA in OneNote for vanilla values
@@ -84,7 +86,6 @@ public class ModItems {
             () -> new ModNetheriteAxeItem(Tiers.NETHERITE, 6, -3.0f,
                     new Item.Properties()));
     //endregion
-
     //region Hoes
     public static final RegistryObject<Item> BRONZE_HOE = ITEMS.register("bronze_hoe",
             () -> new HoeItem(ModTiers.Tools.BRONZE, -2, -1.0f, new Item.Properties()));
@@ -104,7 +105,6 @@ public class ModItems {
             () -> new ModNetheriteHoeItem(Tiers.NETHERITE, -2, -1.0f,
                     new Item.Properties()));
     //endregion
-
     //region Pickaxes
     public static final RegistryObject<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe",
             () -> new PickaxeItem(ModTiers.Tools.BRONZE, 1, -2.8f, new Item.Properties()));
@@ -124,7 +124,6 @@ public class ModItems {
             () -> new ModNetheritePickaxeItem(Tiers.NETHERITE, 1, -2.8f,
                     new Item.Properties()));
     //endregion
-
     //region Shovels
     public static final RegistryObject<Item> BRONZE_SHOVEL = ITEMS.register("bronze_shovel",
             () -> new ShovelItem(ModTiers.Tools.BRONZE, 1.5f, -3.0f, new Item.Properties()));
@@ -144,7 +143,6 @@ public class ModItems {
             () -> new ModNetheriteShovelItem(Tiers.NETHERITE, 2.0f, -3.0f,
                     new Item.Properties()));
     //endregion
-
     //region Swords
     public static final RegistryObject<Item> BRONZE_SWORD = ITEMS.register("bronze_sword",
             () -> new SwordItem(ModTiers.Tools.BRONZE, 3, -2.4f, new Item.Properties()));
@@ -176,7 +174,6 @@ public class ModItems {
     public static final RegistryObject<Item> BRONZE_BOOTS = ITEMS.register("bronze_boots",
             () -> new ArmorItem(ModTiers.Armor.BRONZE, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
-
     //region Gilded Bronze armor, overrides makePiglinsNeutral() method to true
     public static final RegistryObject<Item> GILDED_BRONZE_HELMET = ITEMS.register("gilded_bronze_helmet",
             () -> new ModGildedBronzeArmorItem(ModTiers.Armor.GILDED_BRONZE, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -187,7 +184,6 @@ public class ModItems {
     public static final RegistryObject<Item> GILDED_BRONZE_BOOTS = ITEMS.register("gilded_bronze_boots",
             () -> new ModGildedBronzeArmorItem(ModTiers.Armor.GILDED_BRONZE, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
-
     //region Steel armor, is nothing special so can use default ArmorItem
     public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet",
             () -> new ArmorItem(ModTiers.Armor.STEEL, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -198,7 +194,6 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots",
             () -> new ArmorItem(ModTiers.Armor.STEEL, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
-
     //region Tungsten armor, is nothing special so can use default ArmorItem
     public static final RegistryObject<Item> TUNGSTEN_HELMET = ITEMS.register("tungsten_helmet",
             () -> new ArmorItem(ModTiers.Armor.TUNGSTEN, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -209,7 +204,6 @@ public class ModItems {
     public static final RegistryObject<Item> TUNGSTEN_BOOTS = ITEMS.register("tungsten_boots",
             () -> new ArmorItem(ModTiers.Armor.TUNGSTEN, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
-
     //region Tungsten-Carbide armor, has custom full set bonus
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_HELMET = ITEMS.register("tungsten_carbide_helmet",
             () -> new ModTungstenCarbideArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -220,7 +214,6 @@ public class ModItems {
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_BOOTS = ITEMS.register("tungsten_carbide_boots",
             () -> new ModTungstenCarbideArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
-
     //region Infused Diamond armor, has custom full set bonus
     public static final RegistryObject<Item> INFUSED_DIAMOND_HELMET = ITEMS.register("infused_diamond_helmet",
             () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -231,7 +224,6 @@ public class ModItems {
     public static final RegistryObject<Item> INFUSED_DIAMOND_BOOTS = ITEMS.register("infused_diamond_boots",
             () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
-
     //region Netherite armor, replaces vanilla registry because it has custom full set bonus
     public static final RegistryObject<Item> NETHERITE_HELMET = VANILLA_ITEMS.register("netherite_helmet",
             () -> new ModNetheriteArmorItem(ArmorMaterials.NETHERITE, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -242,7 +234,6 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERITE_BOOTS = VANILLA_ITEMS.register("netherite_boots",
             () -> new ModNetheriteArmorItem(ArmorMaterials.NETHERITE, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
-
 
 
     //register new items and vanilla items overridden by the mod
