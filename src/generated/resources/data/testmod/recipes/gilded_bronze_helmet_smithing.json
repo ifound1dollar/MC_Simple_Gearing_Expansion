@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
   "addition": {
     "item": "minecraft:gold_ingot"
   },
@@ -8,5 +8,8 @@
   },
   "result": {
     "item": "testmod:gilded_bronze_helmet"
+  },
+  "template": {
+    "item": "testmod:gilded_upgrade_smithing_template"
   }
 }

@@ -62,6 +62,7 @@ public class TestMod
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.SAPPHIRE_BLOCK);
             event.accept(ModBlocks.SAPPHIRE_ORE);
+            event.accept(ModBlocks.PRETTY_AMETHYST_BLOCK);
 
             event.accept(ModBlocks.CARBONITE_ORE);
             event.accept(ModBlocks.TIN_BLOCK);
@@ -78,6 +79,12 @@ public class TestMod
             event.accept(ModItems.SAPPHIRE);
             event.accept(ModItems.INFUSED_GEMSTONE);
             event.accept(ModItems.NAMELESS_INFUSION_ITEM);
+            event.accept(ModItems.NAMELESS_CARBIDE_ITEM);
+            event.accept(ModItems.CARBIDE_UPGRADE);
+
+            event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
+            event.accept(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
+            event.accept(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
 
             event.accept(ModItems.CARBONITE_DUST);
             event.accept(ModItems.RAW_TIN);
@@ -96,34 +103,61 @@ public class TestMod
             event.accept(ModItems.BRONZE_CHESTPLATE);
             event.accept(ModItems.BRONZE_LEGGINGS);
             event.accept(ModItems.BRONZE_BOOTS);
+            event.accept(ModItems.BRONZE_AXE);
+            event.accept(ModItems.BRONZE_HOE);
             event.accept(ModItems.BRONZE_PICKAXE);
+            event.accept(ModItems.BRONZE_SHOVEL);
+            event.accept(ModItems.BRONZE_SWORD);
 
             event.accept(ModItems.GILDED_BRONZE_HELMET);
             event.accept(ModItems.GILDED_BRONZE_CHESTPLATE);
             event.accept(ModItems.GILDED_BRONZE_LEGGINGS);
             event.accept(ModItems.GILDED_BRONZE_BOOTS);
+            event.accept(ModItems.GILDED_BRONZE_AXE);
+            event.accept(ModItems.GILDED_BRONZE_HOE);
             event.accept(ModItems.GILDED_BRONZE_PICKAXE);
+            event.accept(ModItems.GILDED_BRONZE_SHOVEL);
+            event.accept(ModItems.GILDED_BRONZE_SWORD);
 
             event.accept(ModItems.STEEL_HELMET);
             event.accept(ModItems.STEEL_CHESTPLATE);
             event.accept(ModItems.STEEL_LEGGINGS);
             event.accept(ModItems.STEEL_BOOTS);
+            event.accept(ModItems.STEEL_AXE);
+            event.accept(ModItems.STEEL_HOE);
+            event.accept(ModItems.STEEL_PICKAXE);
+            event.accept(ModItems.STEEL_SHOVEL);
+            event.accept(ModItems.STEEL_SWORD);
 
             event.accept(ModItems.TUNGSTEN_HELMET);
             event.accept(ModItems.TUNGSTEN_CHESTPLATE);
             event.accept(ModItems.TUNGSTEN_LEGGINGS);
             event.accept(ModItems.TUNGSTEN_BOOTS);
+            event.accept(ModItems.TUNGSTEN_AXE);
+            event.accept(ModItems.TUNGSTEN_HOE);
+            event.accept(ModItems.TUNGSTEN_PICKAXE);
+            event.accept(ModItems.TUNGSTEN_SHOVEL);
+            event.accept(ModItems.TUNGSTEN_SWORD);
 
             event.accept(ModItems.TUNGSTEN_CARBIDE_HELMET);
             event.accept(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_LEGGINGS);
             event.accept(ModItems.TUNGSTEN_CARBIDE_BOOTS);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_AXE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_HOE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_PICKAXE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_SHOVEL);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_SWORD);
 
             event.accept(ModItems.INFUSED_DIAMOND_HELMET);
             event.accept(ModItems.INFUSED_DIAMOND_CHESTPLATE);
             event.accept(ModItems.INFUSED_DIAMOND_LEGGINGS);
             event.accept(ModItems.INFUSED_DIAMOND_BOOTS);
+            event.accept(ModItems.INFUSED_DIAMOND_AXE);
+            event.accept(ModItems.INFUSED_DIAMOND_HOE);
             event.accept(ModItems.INFUSED_DIAMOND_PICKAXE);
+            event.accept(ModItems.INFUSED_DIAMOND_SHOVEL);
+            event.accept(ModItems.INFUSED_DIAMOND_SWORD);
         }
     }
 

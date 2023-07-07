@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "testmod:carbide_upgrade"
+  },
+  "base": {
+    "item": "testmod:tungsten_axe"
+  },
+  "result": {
+    "item": "testmod:tungsten_carbide_axe"
+  },
+  "template": {
+    "item": "testmod:carbide_upgrade_smithing_template"
+  }
+}

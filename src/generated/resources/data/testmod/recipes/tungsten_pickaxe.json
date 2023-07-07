@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "testmod:tungsten_ingot"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "ddd",
+    " i ",
+    " i "
+  ],
+  "result": {
+    "item": "testmod:tungsten_pickaxe"
+  },
+  "show_notification": true
+}

@@ -19,6 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         basicBlockWithItem(ModBlocks.RUBY_ORE);
         basicBlockWithItem(ModBlocks.SAPPHIRE_BLOCK);
         basicBlockWithItem(ModBlocks.SAPPHIRE_ORE);
+        basicBlockWithItem(ModBlocks.PRETTY_AMETHYST_BLOCK);
 
         basicBlockWithItem(ModBlocks.CARBONITE_ORE);
         basicBlockWithItem(ModBlocks.TIN_BLOCK);

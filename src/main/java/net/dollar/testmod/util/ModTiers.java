@@ -41,7 +41,7 @@ public class ModTiers {
                 BlockTags.NEEDS_IRON_TOOL,
                 () -> Ingredient.of(ModItems.STEEL_INGOT.get()));
 
-        //almost identical to Diamond, but speed matches Iron and damage bonus matches Netherite
+        //almost identical to Diamond (damage bonus is 3), but speed matches Iron and damage bonus matches Netherite
         public static final Tier TUNGSTEN = new ForgeTier(
                 3,
                 1561,
@@ -71,6 +71,7 @@ public class ModTiers {
                 Tags.Blocks.NEEDS_NETHERITE_TOOL,
                 () -> Ingredient.of(Items.DIAMOND));
     }
+
     public static class Armor {
         //same as Iron
         public static final ArmorMaterial BRONZE = new ModArmorMaterial(

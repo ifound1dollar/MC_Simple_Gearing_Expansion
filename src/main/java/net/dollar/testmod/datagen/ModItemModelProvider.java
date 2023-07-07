@@ -21,6 +21,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.INFUSED_GEMSTONE);
         simpleItem(ModItems.NAMELESS_INFUSION_ITEM);
+        simpleItem(ModItems.NAMELESS_CARBIDE_ITEM);
+        simpleItem(ModItems.CARBIDE_UPGRADE);
 
         simpleItem(ModItems.CARBONITE_DUST);
         simpleItem(ModItems.RAW_TIN);
@@ -33,6 +35,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TUNGSTEN_INGOT);
         simpleItem(ModItems.TUNGSTEN_CARBIDE_COMPOUND);
         simpleItem(ModItems.TUNGSTEN_CARBIDE_INGOT);
+
+        simpleItem(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
+        simpleItem(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
+        simpleItem(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
 
         simpleItem(ModItems.BRONZE_HELMET);
         simpleItem(ModItems.BRONZE_CHESTPLATE);
@@ -64,9 +70,40 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFUSED_DIAMOND_LEGGINGS);
         simpleItem(ModItems.INFUSED_DIAMOND_BOOTS);
 
+        handheldItem(ModItems.BRONZE_AXE);
+        handheldItem(ModItems.GILDED_BRONZE_AXE);
+        handheldItem(ModItems.STEEL_AXE);
+        handheldItem(ModItems.TUNGSTEN_AXE);
+        handheldItem(ModItems.TUNGSTEN_CARBIDE_AXE);
+        handheldItem(ModItems.INFUSED_DIAMOND_AXE);
+
+        handheldItem(ModItems.BRONZE_HOE);
+        handheldItem(ModItems.GILDED_BRONZE_HOE);
+        handheldItem(ModItems.STEEL_HOE);
+        handheldItem(ModItems.TUNGSTEN_HOE);
+        handheldItem(ModItems.TUNGSTEN_CARBIDE_HOE);
+        handheldItem(ModItems.INFUSED_DIAMOND_HOE);
+
         handheldItem(ModItems.BRONZE_PICKAXE);
         handheldItem(ModItems.GILDED_BRONZE_PICKAXE);
+        handheldItem(ModItems.STEEL_PICKAXE);
+        handheldItem(ModItems.TUNGSTEN_PICKAXE);
+        handheldItem(ModItems.TUNGSTEN_CARBIDE_PICKAXE);
         handheldItem(ModItems.INFUSED_DIAMOND_PICKAXE);
+
+        handheldItem(ModItems.BRONZE_SHOVEL);
+        handheldItem(ModItems.GILDED_BRONZE_SHOVEL);
+        handheldItem(ModItems.STEEL_SHOVEL);
+        handheldItem(ModItems.TUNGSTEN_SHOVEL);
+        handheldItem(ModItems.TUNGSTEN_CARBIDE_SHOVEL);
+        handheldItem(ModItems.INFUSED_DIAMOND_SHOVEL);
+
+        handheldItem(ModItems.BRONZE_SWORD);
+        handheldItem(ModItems.GILDED_BRONZE_SWORD);
+        handheldItem(ModItems.STEEL_SWORD);
+        handheldItem(ModItems.TUNGSTEN_SWORD);
+        handheldItem(ModItems.TUNGSTEN_CARBIDE_SWORD);
+        handheldItem(ModItems.INFUSED_DIAMOND_SWORD);
     }
 
     //creates an auto-generated simple item

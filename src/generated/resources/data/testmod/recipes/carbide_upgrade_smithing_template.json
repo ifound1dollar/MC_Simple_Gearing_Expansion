@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "testmod:carbide_upgrade_smithing_template"
+    },
+    "i": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "n": {
+      "item": "testmod:tungsten_ingot"
+    }
+  },
+  "pattern": [
+    "ndn",
+    "nin",
+    "nnn"
+  ],
+  "result": {
+    "count": 2,
+    "item": "testmod:carbide_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

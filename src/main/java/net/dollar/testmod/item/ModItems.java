@@ -27,6 +27,17 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> NAMELESS_INFUSION_ITEM = ITEMS.register("nameless_infusion_item",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> NAMELESS_CARBIDE_ITEM = ITEMS.register("nameless_carbide_item",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CARBIDE_UPGRADE = ITEMS.register("carbide_upgradeA",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> GILDED_UPGRADE_SMITHING_TEMPLATE =
+            ITEMS.register("gilded_upgrade_smithing_template", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> INFUSION_UPGRADE_SMITHING_TEMPLATE =
+            ITEMS.register("infusion_upgrade_smithing_template", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CARBIDE_UPGRADE_SMITHING_TEMPLATE =
+            ITEMS.register("carbide_upgrade_smithing_template", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CARBONITE_DUST = ITEMS.register("carbonite_dust",
             () -> new Item(new Item.Properties()));
@@ -52,9 +63,49 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
 
-    //IMPORTANT: numeric parameters are Attack Damage and Attack Speed, respectively
-    //all PickaxeItems have 1 and -2.8f (baseline Attack Speed is 4, so -2.8f results in 1.2 Attack Speed)
+    //IMPORTANT: numeric parameters are Attack Damage (base) and Attack Speed (base 4, so -2.8 = 1.2), respectively
     //see VANILLA TOOL DATA in OneNote for vanilla values
+    //region Axes
+    public static final RegistryObject<Item> BRONZE_AXE = ITEMS.register("bronze_axe",
+            () -> new AxeItem(ModTiers.Tools.BRONZE, 6, -3.1f, new Item.Properties()));
+    public static final RegistryObject<Item> GILDED_BRONZE_AXE = ITEMS.register("gilded_bronze_axe",
+            () -> new AxeItem(ModTiers.Tools.GILDED_BRONZE, 6, -3.0f, new Item.Properties()));  //gold speed
+    public static final RegistryObject<Item> STEEL_AXE = ITEMS.register("steel_axe",
+            () -> new AxeItem(ModTiers.Tools.STEEL, 6, -3.1f, new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_AXE = ITEMS.register("tungsten_axe",
+            () -> new AxeItem(ModTiers.Tools.TUNGSTEN, 5, -3.2f, new Item.Properties()));   //slow (Stone)
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_AXE = ITEMS.register("tungsten_carbide_axe",
+            () -> new ModTungstenCarbideAxeItem(ModTiers.Tools.TUNGSTEN_CARBIDE, 5, -3.1f,
+                    new Item.Properties()));    //slow, little faster than Tungsten (Iron)
+    public static final RegistryObject<Item> INFUSED_DIAMOND_AXE = ITEMS.register("infused_diamond_axe",
+            () -> new ModInfusedDiamondAxeItem(ModTiers.Tools.INFUSED_DIAMOND, 5, -2.6f,
+                    new Item.Properties()));    //fast
+    public static final RegistryObject<Item> NETHERITE_AXE = VANILLA_ITEMS.register("netherite_axe",
+            () -> new ModNetheriteAxeItem(Tiers.NETHERITE, 5, -3.0f,
+                    new Item.Properties()));
+    //endregion
+
+    //region Hoes
+    public static final RegistryObject<Item> BRONZE_HOE = ITEMS.register("bronze_hoe",
+            () -> new HoeItem(ModTiers.Tools.BRONZE, -2, -1.0f, new Item.Properties()));
+    public static final RegistryObject<Item> GILDED_BRONZE_HOE = ITEMS.register("gilded_bronze_hoe",
+            () -> new HoeItem(ModTiers.Tools.GILDED_BRONZE, -2, 0.0f, new Item.Properties()));  //fast
+    public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe",
+            () -> new HoeItem(ModTiers.Tools.STEEL, -2, -1.0f, new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_HOE = ITEMS.register("tungsten_hoe",
+            () -> new HoeItem(ModTiers.Tools.TUNGSTEN, -3, -2.0f, new Item.Properties()));   //slow (Stone)
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_HOE = ITEMS.register("tungsten_carbide_hoe",
+            () -> new ModTungstenCarbideHoeItem(ModTiers.Tools.TUNGSTEN_CARBIDE, -3, -1.0f,
+                    new Item.Properties()));    //slow, little faster than Tungsten (Iron)
+    public static final RegistryObject<Item> INFUSED_DIAMOND_HOE = ITEMS.register("infused_diamond_hoe",
+            () -> new ModInfusedDiamondHoeItem(ModTiers.Tools.INFUSED_DIAMOND, -4, 0.0f,
+                    new Item.Properties()));    //fast
+    public static final RegistryObject<Item> NETHERITE_HOE = VANILLA_ITEMS.register("netherite_hoe",
+            () -> new ModNetheriteHoeItem(Tiers.NETHERITE, -4, 0.0f,
+                    new Item.Properties()));
+    //endregion
+
+    //region Pickaxes
     public static final RegistryObject<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe",
             () -> new PickaxeItem(ModTiers.Tools.BRONZE, 1, -2.8f, new Item.Properties()));
     public static final RegistryObject<Item> GILDED_BRONZE_PICKAXE = ITEMS.register("gilded_bronze_pickaxe",
@@ -72,10 +123,47 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERITE_PICKAXE = VANILLA_ITEMS.register("netherite_pickaxe",
             () -> new ModNetheritePickaxeItem(Tiers.NETHERITE, 1, -2.8f,
                     new Item.Properties()));
+    //endregion
 
-    //IMPORTANT: TUNGSTEN AND TUNGSTEN-CARBIDE TOOLS MUST CHANGE DEFAULT SPEED PARAMETER (not damage parameter as
-    //  the damage modifier is already applied in the Tier)
-    //ALSO INFUSED DIAMOND FOR INCREASED SPEED
+    //region Shovels
+    public static final RegistryObject<Item> BRONZE_SHOVEL = ITEMS.register("bronze_shovel",
+            () -> new ShovelItem(ModTiers.Tools.BRONZE, 1.5f, -3.0f, new Item.Properties()));
+    public static final RegistryObject<Item> GILDED_BRONZE_SHOVEL = ITEMS.register("gilded_bronze_shovel",
+            () -> new ShovelItem(ModTiers.Tools.GILDED_BRONZE, 1.5f, -3.0f, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_SHOVEL = ITEMS.register("steel_shovel",
+            () -> new ShovelItem(ModTiers.Tools.STEEL, 1.5f, -3.0f, new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_SHOVEL = ITEMS.register("tungsten_shovel",
+            () -> new ShovelItem(ModTiers.Tools.TUNGSTEN, 1.5f, -3.3f, new Item.Properties()));   //slow
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_SHOVEL = ITEMS.register("tungsten_carbide_shovel",
+            () -> new ModTungstenCarbideShovelItem(ModTiers.Tools.TUNGSTEN_CARBIDE, 1.5f, -3.2f,
+                    new Item.Properties()));    //less slow, faster than Tungsten
+    public static final RegistryObject<Item> INFUSED_DIAMOND_SHOVEL = ITEMS.register("infused_diamond_shovel",
+            () -> new ModInfusedDiamondShovelItem(ModTiers.Tools.INFUSED_DIAMOND, 1.5f, -2.6f,
+                    new Item.Properties()));    //fast
+    public static final RegistryObject<Item> NETHERITE_SHOVEL = VANILLA_ITEMS.register("netherite_shovel",
+            () -> new ModNetheriteShovelItem(Tiers.NETHERITE, 1.5f, -3.0f,
+                    new Item.Properties()));
+    //endregion
+
+    //region Swords
+    public static final RegistryObject<Item> BRONZE_SWORD = ITEMS.register("bronze_sword",
+            () -> new SwordItem(ModTiers.Tools.BRONZE, 3, -2.4f, new Item.Properties()));
+    public static final RegistryObject<Item> GILDED_BRONZE_SWORD = ITEMS.register("gilded_bronze_sword",
+            () -> new SwordItem(ModTiers.Tools.GILDED_BRONZE, 3, -2.4f, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_SWORD = ITEMS.register("steel_sword",
+            () -> new SwordItem(ModTiers.Tools.STEEL, 3, -2.4f, new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_SWORD = ITEMS.register("tungsten_sword",
+            () -> new SwordItem(ModTiers.Tools.TUNGSTEN, 3, -2.7f, new Item.Properties()));   //slow
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_SWORD = ITEMS.register("tungsten_carbide_sword",
+            () -> new ModTungstenCarbideSwordItem(ModTiers.Tools.TUNGSTEN_CARBIDE, 3, -2.6f,
+                    new Item.Properties()));    //less slow, faster than Tungsten
+    public static final RegistryObject<Item> INFUSED_DIAMOND_SWORD = ITEMS.register("infused_diamond_sword",
+            () -> new ModInfusedDiamondSwordItem(ModTiers.Tools.INFUSED_DIAMOND, 3, -2.1f,
+                    new Item.Properties()));    //fast
+    public static final RegistryObject<Item> NETHERITE_SWORD = VANILLA_ITEMS.register("netherite_sword",
+            () -> new ModNetheriteSwordItem(Tiers.NETHERITE, 3, -2.4f,
+                    new Item.Properties()));
+    //endregion
 
 
     //region Bronze armor, is nothing special so can use default ArmorItem
@@ -133,7 +221,7 @@ public class ModItems {
             () -> new ModTungstenCarbideArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
 
-    //region Tungsten-Carbide armor, has custom full set bonus
+    //region Infused Diamond armor, has custom full set bonus
     public static final RegistryObject<Item> INFUSED_DIAMOND_HELMET = ITEMS.register("infused_diamond_helmet",
             () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_DIAMOND_CHESTPLATE = ITEMS.register("infused_diamond_chestplate",

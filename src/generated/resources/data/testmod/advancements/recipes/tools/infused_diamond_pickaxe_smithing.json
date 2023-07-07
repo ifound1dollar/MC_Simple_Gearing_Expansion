@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_infused_gemstone": {
+    "has_nameless_infusion_item": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:infused_gemstone"
+              "testmod:nameless_infusion_item"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_infused_gemstone",
+      "has_nameless_infusion_item",
       "has_the_recipe"
     ]
   ],

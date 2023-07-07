@@ -7,7 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
 public class ModNetheriteAxeItem extends AxeItem {
-    public ModNetheriteAxeItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
+    public ModNetheriteAxeItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 

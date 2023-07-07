@@ -1,12 +1,15 @@
 {
-  "type": "minecraft:smithing",
+  "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "testmod:infused_gemstone"
+    "item": "testmod:nameless_infusion_item"
   },
   "base": {
-    "item": "minecraft:diamond_helmet"
+    "item": "minecraft:diamond_leggings"
   },
   "result": {
     "item": "testmod:infused_diamond_leggings"
+  },
+  "template": {
+    "item": "testmod:infusion_upgrade_smithing_template"
   }
 }
