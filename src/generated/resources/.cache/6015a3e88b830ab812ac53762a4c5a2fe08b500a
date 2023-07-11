@@ -1,4 +1,4 @@
-// 1.19.4	2023-07-07T12:30:24.7813006	Item Models: testmod
+// 1.19.4	2023-07-11T12:11:16.7539091	Item Models: testmod
 95eee8989ae92b545c3cddfff90a11cc4870fec7 assets/testmod/models/item/bronze_axe.json
 191ce2b157f39b46c7113c87e800b24c4256d971 assets/testmod/models/item/bronze_boots.json
 3ef19b52c018eaabf8aaf6836a7d02ce8bdf284b assets/testmod/models/item/bronze_chestplate.json
@@ -7,6 +7,7 @@ a6ac9a5b94a13f6c1c5e70a0a440f68de0cad794 assets/testmod/models/item/bronze_helme
 af77048b366ec167dd620cdf36c16bcfcae97a14 assets/testmod/models/item/bronze_hoe.json
 c9c85140add7bdff4a6e520708bea4baaf5b5057 assets/testmod/models/item/bronze_ingot.json
 5659a8cc08798dc27a9fb10e5661bb5be02a834f assets/testmod/models/item/bronze_leggings.json
+f72aebce052b0f311e8ae0bfebf16f5e1f38163f assets/testmod/models/item/bronze_mace.json
 dcf98656040519260b0e166f92a93f7417378c58 assets/testmod/models/item/bronze_pickaxe.json
 ff51a56e3d08f668c37de0554ae5ed65507d770e assets/testmod/models/item/bronze_shovel.json
 493a4090e9e6e1f705ebd5a3443badfa6ebb2b0a assets/testmod/models/item/bronze_sword.json

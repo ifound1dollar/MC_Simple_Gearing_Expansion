@@ -97,6 +97,9 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_CARBIDE_COMPOUND);
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
             //endregion
+
+            event.accept(ModItems.BRONZE_MACE);
+
             //region BRONZE ARMOR/TOOLS
             event.accept(ModItems.BRONZE_HELMET);
             event.accept(ModItems.BRONZE_CHESTPLATE);

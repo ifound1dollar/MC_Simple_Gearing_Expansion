@@ -29,7 +29,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(output);
     }
 
-    private enum ToolType { AXE, HOE, PICKAXE, SHOVEL, SWORD }
+    private enum ToolType { AXE, HOE, MACE, PICKAXE, SHOVEL, SWORD }
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
@@ -165,6 +165,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolRecipeBuilder(consumer, ToolType.AXE, ModItems.BRONZE_INGOT, ModItems.BRONZE_AXE,
                 "has_bronze_ingot");
         toolRecipeBuilder(consumer, ToolType.HOE, ModItems.BRONZE_INGOT, ModItems.BRONZE_HOE,
+                "has_bronze_ingot");
+        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.BRONZE_INGOT, ModItems.BRONZE_MACE,
                 "has_bronze_ingot");
         toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.BRONZE_INGOT, ModItems.BRONZE_PICKAXE,
                 "has_bronze_ingot");
@@ -440,6 +442,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("dd")
                     .pattern(" i")
                     .pattern(" i")
+                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
+                            .of(ingredient.get()).build()))
+                    .save(consumer);
+        } else if (toolType == ToolType.MACE) {
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get(), 1)
+                    .define('d', ingredient.get())
+                    .define('i', Items.STICK)
+                    .pattern(" dd")
+                    .pattern(" id")
+                    .pattern("i  ")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
                             .of(ingredient.get()).build()))
                     .save(consumer);

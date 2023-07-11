@@ -75,6 +75,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         //endregion
 
         //region HANDHELD ITEMS
+        handheldItem(ModItems.BRONZE_MACE);
+
         handheldItem(ModItems.BRONZE_AXE);
         handheldItem(ModItems.GILDED_BRONZE_AXE);
         handheldItem(ModItems.STEEL_AXE);

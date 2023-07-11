@@ -1,6 +1,7 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.TestMod;
+import net.dollar.testmod.util.ModMaceItem;
 import net.dollar.testmod.util.ModTiers;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -64,6 +65,9 @@ public class ModItems {
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
             () -> new Item(new Item.Properties()));
     //endregion
+
+    public static final RegistryObject<Item> BRONZE_MACE = ITEMS.register("bronze_mace",
+            () -> new ModMaceItem(ModTiers.Tools.BRONZE, 7.0f, -2.8f, new Item.Properties()));
 
     //IMPORTANT: numeric parameters are Attack Damage (base) and Attack Speed (base 4, so -2.8 = 1.2), respectively
     //see VANILLA TOOL DATA in OneNote for vanilla values
