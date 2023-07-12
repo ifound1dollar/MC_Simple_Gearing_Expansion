@@ -75,8 +75,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         //endregion
 
         //region HANDHELD ITEMS
-        handheldItem(ModItems.BRONZE_MACE);
-
         handheldItem(ModItems.BRONZE_AXE);
         handheldItem(ModItems.GILDED_BRONZE_AXE);
         handheldItem(ModItems.STEEL_AXE);
@@ -90,6 +88,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TUNGSTEN_HOE);
         handheldItem(ModItems.TUNGSTEN_CARBIDE_HOE);
         handheldItem(ModItems.INFUSED_DIAMOND_HOE);
+
+        handheldItem(ModItems.BRONZE_MACE);
+        //next ones here
 
         handheldItem(ModItems.BRONZE_PICKAXE);
         handheldItem(ModItems.GILDED_BRONZE_PICKAXE);

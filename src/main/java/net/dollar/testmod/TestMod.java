@@ -2,6 +2,7 @@ package net.dollar.testmod;
 
 import com.mojang.logging.LogUtils;
 import net.dollar.testmod.block.ModBlocks;
+import net.dollar.testmod.enchantment.ModEnchantments;
 import net.dollar.testmod.item.ModCreativeModeTabs;
 import net.dollar.testmod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,6 +31,7 @@ public class TestMod
         //register new items in ModItems class and new blocks in ModBlocks class
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEnchantments.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
