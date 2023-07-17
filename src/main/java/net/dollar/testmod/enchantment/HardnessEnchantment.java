@@ -1,5 +1,6 @@
 package net.dollar.testmod.enchantment;
 
+import net.dollar.testmod.TestMod;
 import net.dollar.testmod.util.ModMaceItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobType;
@@ -9,7 +10,9 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
 public class HardnessEnchantment extends Enchantment {
     protected HardnessEnchantment(Rarity rarity, EquipmentSlot... slots) {
-        super(rarity, EnchantmentCategory.BREAKABLE, slots);
+        super(rarity,
+                EnchantmentCategory.create(TestMod.MOD_ID + "MACE", (item) -> item instanceof ModMaceItem),
+                slots); //new category allows this enchantment to only apply to new Mace item
     }
 
     private static final int MIN_COST = 1;

@@ -89,7 +89,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TUNGSTEN_CARBIDE_HOE);
         handheldItem(ModItems.INFUSED_DIAMOND_HOE);
 
+        handheldItem(ModItems.STONE_MACE);
+        handheldItem(ModItems.IRON_MACE);
+        handheldItem(ModItems.GOLD_MACE);
+        handheldItem(ModItems.DIAMOND_MACE);
+        handheldItem(ModItems.NETHERITE_MACE);
         handheldItem(ModItems.BRONZE_MACE);
+        handheldItem(ModItems.GILDED_BRONZE_MACE);
+        handheldItem(ModItems.STEEL_MACE);
+        handheldItem(ModItems.TUNGSTEN_MACE);
+        handheldItem(ModItems.TUNGSTEN_CARBIDE_MACE);
+        handheldItem(ModItems.INFUSED_DIAMOND_MACE);
         //next ones here
 
         handheldItem(ModItems.BRONZE_PICKAXE);

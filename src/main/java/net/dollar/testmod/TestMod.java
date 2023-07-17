@@ -100,8 +100,14 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
             //endregion
 
-            event.accept(ModItems.BRONZE_MACE);
 
+            //region NEW VANILLA TIER MACES
+            event.accept(ModItems.STONE_MACE);
+            event.accept(ModItems.IRON_MACE);
+            event.accept(ModItems.GOLD_MACE);
+            event.accept(ModItems.DIAMOND_MACE);
+            event.accept(ModItems.NETHERITE_MACE);
+            //endregion
             //region BRONZE ARMOR/TOOLS
             event.accept(ModItems.BRONZE_HELMET);
             event.accept(ModItems.BRONZE_CHESTPLATE);
@@ -109,6 +115,7 @@ public class TestMod
             event.accept(ModItems.BRONZE_BOOTS);
             event.accept(ModItems.BRONZE_AXE);
             event.accept(ModItems.BRONZE_HOE);
+            event.accept(ModItems.BRONZE_MACE);
             event.accept(ModItems.BRONZE_PICKAXE);
             event.accept(ModItems.BRONZE_SHOVEL);
             event.accept(ModItems.BRONZE_SWORD);
@@ -120,6 +127,7 @@ public class TestMod
             event.accept(ModItems.GILDED_BRONZE_BOOTS);
             event.accept(ModItems.GILDED_BRONZE_AXE);
             event.accept(ModItems.GILDED_BRONZE_HOE);
+            event.accept(ModItems.GILDED_BRONZE_MACE);
             event.accept(ModItems.GILDED_BRONZE_PICKAXE);
             event.accept(ModItems.GILDED_BRONZE_SHOVEL);
             event.accept(ModItems.GILDED_BRONZE_SWORD);
@@ -131,6 +139,7 @@ public class TestMod
             event.accept(ModItems.STEEL_BOOTS);
             event.accept(ModItems.STEEL_AXE);
             event.accept(ModItems.STEEL_HOE);
+            event.accept(ModItems.STEEL_MACE);
             event.accept(ModItems.STEEL_PICKAXE);
             event.accept(ModItems.STEEL_SHOVEL);
             event.accept(ModItems.STEEL_SWORD);
@@ -142,6 +151,7 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_BOOTS);
             event.accept(ModItems.TUNGSTEN_AXE);
             event.accept(ModItems.TUNGSTEN_HOE);
+            event.accept(ModItems.TUNGSTEN_MACE);
             event.accept(ModItems.TUNGSTEN_PICKAXE);
             event.accept(ModItems.TUNGSTEN_SHOVEL);
             event.accept(ModItems.TUNGSTEN_SWORD);
@@ -153,6 +163,7 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_CARBIDE_BOOTS);
             event.accept(ModItems.TUNGSTEN_CARBIDE_AXE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_HOE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_MACE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_PICKAXE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_SHOVEL);
             event.accept(ModItems.TUNGSTEN_CARBIDE_SWORD);
@@ -164,6 +175,7 @@ public class TestMod
             event.accept(ModItems.INFUSED_DIAMOND_BOOTS);
             event.accept(ModItems.INFUSED_DIAMOND_AXE);
             event.accept(ModItems.INFUSED_DIAMOND_HOE);
+            event.accept(ModItems.INFUSED_DIAMOND_MACE);
             event.accept(ModItems.INFUSED_DIAMOND_PICKAXE);
             event.accept(ModItems.INFUSED_DIAMOND_SHOVEL);
             event.accept(ModItems.INFUSED_DIAMOND_SWORD);

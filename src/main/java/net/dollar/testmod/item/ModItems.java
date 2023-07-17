@@ -66,8 +66,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     //endregion
 
-    public static final RegistryObject<Item> BRONZE_MACE = ITEMS.register("bronze_mace",
-            () -> new ModMaceItem(ModTiers.Tools.BRONZE, 7.0f, -2.8f, new Item.Properties()));
 
     //IMPORTANT: numeric parameters are Attack Damage (base) and Attack Speed (base 4, so -2.8 = 1.2), respectively
     //see VANILLA TOOL DATA in OneNote for vanilla values
@@ -108,6 +106,31 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERITE_HOE = VANILLA_ITEMS.register("netherite_hoe",
             () -> new ModNetheriteHoeItem(Tiers.NETHERITE, -2, -1.0f,
                     new Item.Properties()));
+    //endregion
+    //region Maces
+    public static final RegistryObject<Item> STONE_MACE = ITEMS.register("stone_mace",
+            () -> new ModMaceItem(Tiers.STONE, 7.0f, -3.3f, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_MACE = ITEMS.register("iron_mace",
+            () -> new ModMaceItem(Tiers.IRON, 7.0f, -3.3f, new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_MACE = ITEMS.register("gold_mace",
+            () -> new ModMaceItem(Tiers.GOLD, 7.0f, -3.2f, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_MACE = ITEMS.register("diamond_mace",
+            () -> new ModMaceItem(Tiers.DIAMOND, 7.0f, -3.2f, new Item.Properties()));
+    public static final RegistryObject<Item> BRONZE_MACE = ITEMS.register("bronze_mace",
+            () -> new ModMaceItem(ModTiers.Tools.BRONZE, 7.0f, -3.3f, new Item.Properties()));
+    public static final RegistryObject<Item> GILDED_BRONZE_MACE = ITEMS.register("gilded_bronze_mace",
+            () -> new ModMaceItem(ModTiers.Tools.GILDED_BRONZE, 7.0f, -3.2f, new Item.Properties()));
+    public static final RegistryObject<Item> STEEL_MACE = ITEMS.register("steel_mace",
+            () -> new ModMaceItem(ModTiers.Tools.STEEL, 7.0f, -3.3f, new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_MACE = ITEMS.register("tungsten_mace",
+            () -> new ModMaceItem(ModTiers.Tools.TUNGSTEN, 8f, -3.3f, new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_MACE = ITEMS.register("tungsten_carbide_mace",
+            () -> new ModTungstenCarbideMaceItem(ModTiers.Tools.TUNGSTEN_CARBIDE, 8f, -3.3f, new Item.Properties()));
+    public static final RegistryObject<Item> INFUSED_DIAMOND_MACE = ITEMS.register("infused_diamond_mace",
+            () -> new ModInfusedDiamondMaceItem(ModTiers.Tools.INFUSED_DIAMOND, 7.0f, -3.0f, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_MACE = ITEMS.register("netherite_mace",
+            () -> new ModNetheriteMaceItem(Tiers.NETHERITE, 8f, -3.2f, new Item.Properties()));
+
     //endregion
     //region Pickaxes
     public static final RegistryObject<Item> BRONZE_PICKAXE = ITEMS.register("bronze_pickaxe",

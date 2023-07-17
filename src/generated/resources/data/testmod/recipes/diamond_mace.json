@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " dd",
+    " id",
+    "i  "
+  ],
+  "result": {
+    "item": "testmod:diamond_mace"
+  },
+  "show_notification": true
+}

@@ -152,6 +152,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //endregion
 
 
+        //region VANILLA TIER MACES
+        toolRecipeBuilder(consumer, ToolType.MACE, Items.COBBLESTONE, ModItems.STONE_MACE.get(),
+                "has_cobblestone");
+        toolRecipeBuilder(consumer, ToolType.MACE, Items.IRON_INGOT, ModItems.IRON_MACE.get(),
+                "has_iron_ingot");
+        toolRecipeBuilder(consumer, ToolType.MACE, Items.GOLD_INGOT, ModItems.GOLD_MACE.get(),
+                "has_gold_ingot");
+        toolRecipeBuilder(consumer, ToolType.MACE, Items.DIAMOND, ModItems.DIAMOND_MACE.get(),
+                "has_diamond");
+        smithingRecipeBuilder(consumer, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.DIAMOND_MACE.get(), Items.NETHERITE_INGOT, RecipeCategory.COMBAT,
+                ModItems.NETHERITE_MACE.get(), "has_netherite_ingot");
+        //endregion
         //region BRONZE ARMOR, TOOLS
         armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.BRONZE_INGOT, ModItems.BRONZE_HELMET,
                 "has_bronze_ingot");
@@ -162,17 +175,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.BRONZE_INGOT, ModItems.BRONZE_BOOTS,
                 "has_bronze_ingot");
 
-        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.BRONZE_INGOT, ModItems.BRONZE_AXE,
+        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_AXE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.BRONZE_INGOT, ModItems.BRONZE_HOE,
+        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_HOE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.BRONZE_INGOT, ModItems.BRONZE_MACE,
+        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_MACE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.BRONZE_INGOT, ModItems.BRONZE_PICKAXE,
+        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_PICKAXE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.BRONZE_INGOT, ModItems.BRONZE_SHOVEL,
+        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_SHOVEL.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.BRONZE_INGOT, ModItems.BRONZE_SWORD,
+        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_SWORD.get(),
                 "has_bronze_ingot");
         //endregion
         //region GILDED BRONZE ARMOR, TOOLS (smithing)
@@ -208,6 +221,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.BRONZE_HOE.get(), Items.GOLD_INGOT, RecipeCategory.TOOLS,
                 ModItems.GILDED_BRONZE_HOE.get(), "has_gold_ingot");
         smithingRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_MACE.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
+                ModItems.GILDED_BRONZE_MACE.get(), "has_gold_ingot");
+        smithingRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.BRONZE_PICKAXE.get(), Items.GOLD_INGOT, RecipeCategory.TOOLS,
                 ModItems.GILDED_BRONZE_PICKAXE.get(), "has_gold_ingot");
         smithingRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
@@ -227,15 +243,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.STEEL_INGOT, ModItems.STEEL_BOOTS,
                 "has_steel_ingot");
 
-        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.STEEL_INGOT, ModItems.STEEL_AXE,
+        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_AXE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.STEEL_INGOT, ModItems.STEEL_HOE,
+        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_HOE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.STEEL_INGOT, ModItems.STEEL_PICKAXE,
+        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_MACE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.STEEL_INGOT, ModItems.STEEL_SHOVEL,
+        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_PICKAXE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.STEEL_INGOT, ModItems.STEEL_SWORD,
+        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.STEEL_INGOT.get(), ModItems.STEEL_SHOVEL.get(),
+                "has_steel_ingot");
+        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.STEEL_INGOT.get(), ModItems.STEEL_SWORD.get(),
                 "has_steel_ingot");
         //endregion
         //region TUNGSTEN ARMOR, TOOLS
@@ -248,15 +266,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_BOOTS,
                 "has_tungsten_ingot");
 
-        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_AXE,
+        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_AXE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_HOE,
+        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_HOE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_PICKAXE,
+        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_MACE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_SHOVEL,
+        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_PICKAXE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_SWORD,
+        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_SHOVEL.get(),
+                "has_tungsten_ingot");
+        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_SWORD.get(),
                 "has_tungsten_ingot");
         //endregion
         //region TUNGSTEN-CARBIDE ARMOR, TOOLS (smithing)
@@ -288,6 +308,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.TUNGSTEN_HOE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.TOOLS,
                 ModItems.TUNGSTEN_CARBIDE_HOE.get(), "has_carbide_upgrade");
+        smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.TUNGSTEN_MACE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_CARBIDE_MACE.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.TUNGSTEN_PICKAXE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.TOOLS,
                 ModItems.TUNGSTEN_CARBIDE_PICKAXE.get(), "has_carbide_upgrade");
@@ -330,6 +353,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
                 Items.DIAMOND_HOE, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.TOOLS,
                 ModItems.INFUSED_DIAMOND_HOE.get(), "has_nameless_infusion_item");
+        smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.DIAMOND_MACE.get(), ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_MACE.get(), "has_nameless_infusion_item");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
                 Items.DIAMOND_PICKAXE, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.TOOLS,
                 ModItems.INFUSED_DIAMOND_PICKAXE.get(), "has_nameless_infusion_item");
@@ -423,67 +449,67 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param unlockedByString Tag used for unlocking crafting recipe
      */
     private void toolRecipeBuilder(Consumer<FinishedRecipe> consumer, ToolType toolType,
-                                   RegistryObject<Item> ingredient, RegistryObject<Item> result,
+                                   Item ingredient, Item result,
                                    String unlockedByString) {
         if (toolType == ToolType.AXE) {
-            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get(), 1)  //third param is quantity
-                    .define('d', ingredient.get())
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)  //third param is quantity
+                    .define('d', ingredient)
                     .define('i', Items.STICK)
                     .pattern("dd")
                     .pattern("di")
                     .pattern(" i")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (toolType == ToolType.HOE) {
-            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get(), 1)
-                    .define('d', ingredient.get())
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
+                    .define('d', ingredient)
                     .define('i', Items.STICK)
                     .pattern("dd")
                     .pattern(" i")
                     .pattern(" i")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (toolType == ToolType.MACE) {
-            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get(), 1)
-                    .define('d', ingredient.get())
+            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result, 1)
+                    .define('d', ingredient)
                     .define('i', Items.STICK)
                     .pattern(" dd")
                     .pattern(" id")
                     .pattern("i  ")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (toolType == ToolType.PICKAXE) {
-            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get(), 1)
-                    .define('d', ingredient.get())
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
+                    .define('d', ingredient)
                     .define('i', Items.STICK)
                     .pattern("ddd")
                     .pattern(" i ")
                     .pattern(" i ")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (toolType == ToolType.SHOVEL) {
-            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get(), 1)
-                    .define('d', ingredient.get())
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
+                    .define('d', ingredient)
                     .define('i', Items.STICK)
                     .pattern("d")
                     .pattern("i")
                     .pattern("i")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (toolType == ToolType.SWORD) {
-            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result.get(), 1)
-                    .define('d', ingredient.get())
+            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result, 1)
+                    .define('d', ingredient)
                     .define('i', Items.STICK)
                     .pattern("d")
                     .pattern("d")
                     .pattern("i")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         }
     }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "testmod:nameless_infusion_item"
+  },
+  "base": {
+    "item": "testmod:diamond_mace"
+  },
+  "result": {
+    "item": "testmod:infused_diamond_mace"
+  },
+  "template": {
+    "item": "testmod:infusion_upgrade_smithing_template"
+  }
+}
