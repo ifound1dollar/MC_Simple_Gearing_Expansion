@@ -17,17 +17,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         basicBlockWithItem(ModBlocks.RUBY_BLOCK);
         basicBlockWithItem(ModBlocks.RUBY_ORE);
+        basicBlockWithItem(ModBlocks.DEEPSLATE_RUBY_ORE);
         basicBlockWithItem(ModBlocks.SAPPHIRE_BLOCK);
         basicBlockWithItem(ModBlocks.SAPPHIRE_ORE);
+        basicBlockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
         basicBlockWithItem(ModBlocks.PRETTY_AMETHYST_BLOCK);
 
         basicBlockWithItem(ModBlocks.CARBONITE_ORE);
+        basicBlockWithItem(ModBlocks.DEEPSLATE_CARBONITE_ORE);
         basicBlockWithItem(ModBlocks.TIN_BLOCK);
         basicBlockWithItem(ModBlocks.TIN_ORE);
+        basicBlockWithItem(ModBlocks.DEEPSLATE_TIN_ORE);
         basicBlockWithItem(ModBlocks.BRONZE_BLOCK);
         basicBlockWithItem(ModBlocks.STEEL_BLOCK);
         basicBlockWithItem(ModBlocks.TUNGSTEN_BLOCK);
         basicBlockWithItem(ModBlocks.TUNGSTEN_ORE);
+        basicBlockWithItem(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
         basicBlockWithItem(ModBlocks.TUNGSTEN_CARBIDE_BLOCK);
     }
 

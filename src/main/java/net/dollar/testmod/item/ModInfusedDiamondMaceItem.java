@@ -20,7 +20,7 @@ public class ModInfusedDiamondMaceItem extends ModMaceItem {
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
-        ModUtils.rollNetheriteOnHitAndApply(attackedEntity, attacker, 15);  //blunt, all 15
+        ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker, 15);  //blunt, all 15
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 

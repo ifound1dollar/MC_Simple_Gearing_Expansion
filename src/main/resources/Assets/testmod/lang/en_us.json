@@ -1,17 +1,22 @@
 {
   "block.testmod.ruby_block": "Ruby Block",
   "block.testmod.ruby_ore": "Ruby Ore",
+  "block.testmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "block.testmod.sapphire_block": "Sapphire Block",
   "block.testmod.sapphire_ore": "Sapphire Ore",
+  "block.testmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.testmod.pretty_amethyst_block": "Pretty Amethyst Block",
 
   "block.testmod.carbonite_ore": "Carbonite Ore",
+  "block.testmod.deepslate_carbonite_ore": "Deepslate Carbonite Ore",
   "block.testmod.tin_block": "Tin Block",
   "block.testmod.tin_ore": "Tin Ore",
+  "block.testmod.deepslate_tin_ore": "Deepslate Tin Ore",
   "block.testmod.bronze_block": "Bronze Block",
   "block.testmod.steel_block": "Steel Block",
   "block.testmod.tungsten_block": "Tungsten Block",
   "block.testmod.tungsten_ore": "Tungsten Ore",
+  "block.testmod.deepslate_tungsten_ore": "Deepslate Tungsten Ore",
   "block.testmod.tungsten_carbide_block": "Tungsten-Carbide Block",
 
 

@@ -71,7 +71,7 @@ public class ModUtils {
         //roll chance to remove Slowness from and apply Speed effect to user (attacker) for 3 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             attacker.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3));
+            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60));
         }
     }
 
@@ -84,7 +84,7 @@ public class ModUtils {
     public static void rollNetheriteOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
         //roll chance to apply Wither effect to target (attackedEntity) for 3 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
-            attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 3));
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1));  //level 2 for once per second
         }
     }
 
@@ -97,7 +97,7 @@ public class ModUtils {
     public static void rollTungstenCarbideOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
         //roll chance to apply Slowness effect to target (attackedEntity) for 3 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
-            attackedEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3));
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60));
         }
     }
 }

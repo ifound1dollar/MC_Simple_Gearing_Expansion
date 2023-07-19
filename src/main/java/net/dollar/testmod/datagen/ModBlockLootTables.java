@@ -36,14 +36,28 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         //ORES (NOTE: OVERRIDE createLapisOreDrops FOR MORE THAN ONE DROP)
         add(ModBlocks.RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY.get()));
+        add(ModBlocks.DEEPSLATE_RUBY_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModItems.RUBY.get()));
+
         add(ModBlocks.SAPPHIRE_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.SAPPHIRE_ORE.get(), ModItems.SAPPHIRE.get()));
+        add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModItems.SAPPHIRE.get()));
+
         add(ModBlocks.CARBONITE_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.CARBONITE_ORE.get(), ModItems.CARBONITE_DUST.get()));
+        add(ModBlocks.DEEPSLATE_CARBONITE_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_CARBONITE_ORE.get(), ModItems.CARBONITE_DUST.get()));
+
         add(ModBlocks.TIN_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get()));
+        add(ModBlocks.DEEPSLATE_TIN_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get()));
+
         add(ModBlocks.TUNGSTEN_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.TUNGSTEN_ORE.get(), ModItems.RAW_TUNGSTEN.get()));
+        add(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get(), ModItems.RAW_TUNGSTEN.get()));
     }
 
     //this gets all known blocks from the mod as an iterator

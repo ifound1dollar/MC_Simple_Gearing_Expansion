@@ -38,19 +38,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.RUBY.get(), 1.0f, 200, "ruby" );
         oreBlasting(consumer, List.of(ModBlocks.RUBY_ORE.get()), RecipeCategory.MISC,
                 ModItems.RUBY.get(), 1.0f, 100, "ruby" );
+        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_RUBY_ORE.get()), RecipeCategory.MISC,
+                ModItems.RUBY.get(), 1.0f, 200, "ruby" );
+        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_RUBY_ORE.get()), RecipeCategory.MISC,
+                ModItems.RUBY.get(), 1.0f, 100, "ruby" );
         oreSmelting(consumer, List.of(ModBlocks.SAPPHIRE_ORE.get()), RecipeCategory.MISC,
                 ModItems.SAPPHIRE.get(), 1.0f, 200, "sapphire" );
         oreBlasting(consumer, List.of(ModBlocks.SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+                ModItems.SAPPHIRE.get(), 1.0f, 100, "sapphire" );
+        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+                ModItems.SAPPHIRE.get(), 1.0f, 200, "sapphire" );
+        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()), RecipeCategory.MISC,
                 ModItems.SAPPHIRE.get(), 1.0f, 100, "sapphire" );
 
         oreSmelting(consumer, List.of(ModBlocks.CARBONITE_ORE.get()), RecipeCategory.MISC,
                 ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust" );
         oreBlasting(consumer, List.of(ModBlocks.CARBONITE_ORE.get()), RecipeCategory.MISC,
                 ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust" );
+        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_CARBONITE_ORE.get()), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust" );
+        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_CARBONITE_ORE.get()), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust" );
+
         oreSmelting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
         oreBlasting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
+        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_TIN_ORE.get()), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
+        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_TIN_ORE.get()), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
+
         oreSmelting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
@@ -64,6 +82,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(consumer, List.of(ModItems.STEEL_COMPOUND.get()), RecipeCategory.MISC,
                 ModItems.STEEL_INGOT.get(), 0.7f, 100, "steel_ingot" );
         oreBlasting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
+        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );

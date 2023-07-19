@@ -62,17 +62,22 @@ public class TestMod
             //region BLOCKS
             event.accept(ModBlocks.RUBY_BLOCK);
             event.accept(ModBlocks.RUBY_ORE);
+            event.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
             event.accept(ModBlocks.SAPPHIRE_BLOCK);
             event.accept(ModBlocks.SAPPHIRE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
             event.accept(ModBlocks.PRETTY_AMETHYST_BLOCK);
 
             event.accept(ModBlocks.CARBONITE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
             event.accept(ModBlocks.TIN_BLOCK);
             event.accept(ModBlocks.TIN_ORE);
+            event.accept(ModBlocks.DEEPSLATE_TIN_ORE);
             event.accept(ModBlocks.BRONZE_BLOCK);
             event.accept(ModBlocks.STEEL_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_ORE);
+            event.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
             event.accept(ModBlocks.TUNGSTEN_CARBIDE_BLOCK);
             //endregion
             //region BASIC ITEMS

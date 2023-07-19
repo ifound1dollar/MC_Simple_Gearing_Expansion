@@ -20,7 +20,7 @@ public class ModTungstenCarbideMaceItem extends ModMaceItem {
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
-        ModUtils.rollNetheriteOnHitAndApply(attackedEntity, attacker, 25);  //blunt
+        ModUtils.rollTungstenCarbideOnHitAndApply(attackedEntity, attacker, 25);  //blunt
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 
