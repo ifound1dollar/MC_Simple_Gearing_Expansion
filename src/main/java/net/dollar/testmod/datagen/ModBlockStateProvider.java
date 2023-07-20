@@ -33,7 +33,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         basicBlockWithItem(ModBlocks.TUNGSTEN_BLOCK);
         basicBlockWithItem(ModBlocks.TUNGSTEN_ORE);
         basicBlockWithItem(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
-        basicBlockWithItem(ModBlocks.TUNGSTEN_CARBIDE_BLOCK);
     }
 
     //this method will produce a basic item corresponding to the block

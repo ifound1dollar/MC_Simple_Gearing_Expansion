@@ -1,4 +1,4 @@
-// 1.19.4	2023-07-18T23:58:06.3174022	Loot Tables
+// 1.19.4	2023-07-20T02:08:31.5048332	Loot Tables
 5806d58293ad5b5051c949b10010a7ddd9e0c5b5 data/testmod/loot_tables/blocks/bronze_block.json
 4d210a68aed12be0362ae680fa97347c68445793 data/testmod/loot_tables/blocks/carbonite_ore.json
 4d6e230c591c928774936ebac7e66d732efbb30d data/testmod/loot_tables/blocks/deepslate_carbonite_ore.json
@@ -15,5 +15,4 @@ f128d56f975f77b844a1224e40caa3255ee70df7 data/testmod/loot_tables/blocks/ruby_bl
 0c977552cd775c818193819eb380d652c00cb13b data/testmod/loot_tables/blocks/tin_block.json
 1b933488920079e6c5060b3bcf88452247ddb7e3 data/testmod/loot_tables/blocks/tin_ore.json
 2db5b5fbba1c1b880e510872a1183ff6d11f8d75 data/testmod/loot_tables/blocks/tungsten_block.json
-b9b80d96704f42e7450bd7f21641645ddcda8557 data/testmod/loot_tables/blocks/tungsten_carbide_block.json
 2d328c48d3c53ef444dfb4d650c7cac9c60956d2 data/testmod/loot_tables/blocks/tungsten_ore.json

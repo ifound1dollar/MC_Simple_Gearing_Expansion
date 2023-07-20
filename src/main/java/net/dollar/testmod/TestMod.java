@@ -78,7 +78,6 @@ public class TestMod
             event.accept(ModBlocks.TUNGSTEN_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_ORE);
             event.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
-            event.accept(ModBlocks.TUNGSTEN_CARBIDE_BLOCK);
             //endregion
             //region BASIC ITEMS
             event.accept(ModItems.RUBY);

@@ -57,9 +57,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_TUNGSTEN_ORE = registerBlock("deepslate_tungsten_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(4.5f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> TUNGSTEN_CARBIDE_BLOCK = registerBlock("tungsten_carbide_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(6f).requiresCorrectToolForDrops()));
 
 
     //gem ore blocks drop experience and loot; DropExperienceBlock constructor is overridden to accept
