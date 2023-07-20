@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "testmod:item/tungsten_carbide_ingot"
+    "layer0": "testmod:item/tungsten_carbide_core"
   }
 }

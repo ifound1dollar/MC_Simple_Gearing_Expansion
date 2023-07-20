@@ -87,8 +87,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
         oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
-        oreBlasting(consumer, List.of(ModItems.TUNGSTEN_CARBIDE_COMPOUND.get()), RecipeCategory.MISC,
-                ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1.0f, 100, "tungsten_carbide_ingot" );
         //endregion
         //region Basic nine-block storage recipes
         //NOTE: FIRST IS FOR BLOCK->ITEM, SECOND IS FOR ITEM->BLOCK
@@ -106,8 +104,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.STEEL_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_BLOCK.get());
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
-                RecipeCategory.MISC, ModBlocks.TUNGSTEN_CARBIDE_BLOCK.get());
         //endregion
         //region Compounds and Gemstone (shapeless)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)
@@ -122,12 +118,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.CARBONITE_DUST.get()).build()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_COMPOUND.get(), 1)
-                .requires(ModItems.TUNGSTEN_INGOT.get(), 1)
-                .requires(ModItems.CARBONITE_DUST.get())
-                .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.CARBONITE_DUST.get()).build()))
-                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INFUSED_GEMSTONE.get(), 1)
                 .requires(Items.AMETHYST_SHARD)
                 .requires(Items.EMERALD)
@@ -136,6 +126,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.NAMELESS_INFUSION_ITEM.get())
                 .unlockedBy("has_nameless_infusion_item", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.NAMELESS_INFUSION_ITEM.get()).build()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_CORE.get(), 1)
+                .requires(ModItems.TUNGSTEN_INGOT.get(), 4)
+                .requires(ModItems.CARBONITE_DUST.get(), 4)
+                .requires(ModItems.SUPERHEATED_CORE.get(), 1)
+                .unlockedBy("has_superheated_core", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.SUPERHEATED_CORE.get()).build()))
                 .save(consumer);
         //endregion
         //region Upgrade Templates
@@ -310,35 +307,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_BOOTS.get(), "has_tungsten_carbide_ingot");
 
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_HELMET.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_HELMET.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_HELMET.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_CHESTPLATE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_CHESTPLATE.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_CHESTPLATE.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_LEGGINGS.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_LEGGINGS.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_LEGGINGS.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_BOOTS.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_BOOTS.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_BOOTS.get(), "has_carbide_upgrade");
 
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_AXE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.TOOLS,
+                ModItems.TUNGSTEN_AXE.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.TOOLS,
                 ModItems.TUNGSTEN_CARBIDE_AXE.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_HOE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.TOOLS,
+                ModItems.TUNGSTEN_HOE.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.TOOLS,
                 ModItems.TUNGSTEN_CARBIDE_HOE.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_MACE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_MACE.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_MACE.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_PICKAXE.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.TOOLS,
+                ModItems.TUNGSTEN_PICKAXE.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.TOOLS,
                 ModItems.TUNGSTEN_CARBIDE_PICKAXE.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_SHOVEL.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.TOOLS,
+                ModItems.TUNGSTEN_SHOVEL.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.TOOLS,
                 ModItems.TUNGSTEN_CARBIDE_SHOVEL.get(), "has_carbide_upgrade");
         smithingRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.TUNGSTEN_SWORD.get(), ModItems.CARBIDE_UPGRADE.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_SWORD.get(), ModItems.TUNGSTEN_CARBIDE_CORE.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_SWORD.get(), "has_carbide_upgrade");
         //endregion
         //region INFUSED DIAMOND ARMOR, TOOLS (smithing)

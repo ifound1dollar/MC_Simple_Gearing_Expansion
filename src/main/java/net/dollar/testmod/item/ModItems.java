@@ -26,13 +26,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> INFUSED_GEMSTONE = ITEMS.register("infused_gemstone",
-            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> NAMELESS_INFUSION_ITEM = ITEMS.register("nameless_infusion_item",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> NAMELESS_CARBIDE_ITEM = ITEMS.register("nameless_carbide_item",
+    public static final RegistryObject<Item> INFUSED_GEMSTONE = ITEMS.register("infused_gemstone",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CARBIDE_UPGRADE = ITEMS.register("carbide_upgrade",
+    public static final RegistryObject<Item> SUPERHEATED_CORE = ITEMS.register("superheated_core",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_CORE = ITEMS.register("tungsten_carbide_core",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GILDED_UPGRADE_SMITHING_TEMPLATE =
@@ -59,10 +59,6 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_TUNGSTEN = ITEMS.register("raw_tungsten",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_COMPOUND = ITEMS.register("tungsten_carbide_compound",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
             () -> new Item(new Item.Properties()));
     //endregion
 

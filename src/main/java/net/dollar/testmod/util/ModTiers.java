@@ -59,7 +59,7 @@ public class ModTiers {
                 6f,
                 10,
                 Tags.Blocks.NEEDS_NETHERITE_TOOL,
-                () -> Ingredient.of(ModItems.TUNGSTEN_CARBIDE_INGOT.get()));
+                () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get()));
 
         //same durability and as Netherite, same damage as Diamond (3), speed and enchantability equal to Gold
         public static final Tier INFUSED_DIAMOND = new ForgeTier(
@@ -128,7 +128,7 @@ public class ModTiers {
                 SoundEvents.ARMOR_EQUIP_NETHERITE,
                 3.0f,
                 0.0f,
-                () -> Ingredient.of(ModItems.TUNGSTEN_CARBIDE_INGOT.get())
+                () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get())
         );
 
         //same durability as Netherite, higher echantability than Netherite, same toughness as Diamond

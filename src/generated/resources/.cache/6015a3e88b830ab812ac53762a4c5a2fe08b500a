@@ -1,4 +1,4 @@
-// 1.19.4	2023-07-17T12:16:03.8828717	Item Models: testmod
+// 1.19.4	2023-07-20T01:58:41.1052449	Item Models: testmod
 95eee8989ae92b545c3cddfff90a11cc4870fec7 assets/testmod/models/item/bronze_axe.json
 191ce2b157f39b46c7113c87e800b24c4256d971 assets/testmod/models/item/bronze_boots.json
 3ef19b52c018eaabf8aaf6836a7d02ce8bdf284b assets/testmod/models/item/bronze_chestplate.json
@@ -11,7 +11,6 @@ f72aebce052b0f311e8ae0bfebf16f5e1f38163f assets/testmod/models/item/bronze_mace.
 dcf98656040519260b0e166f92a93f7417378c58 assets/testmod/models/item/bronze_pickaxe.json
 ff51a56e3d08f668c37de0554ae5ed65507d770e assets/testmod/models/item/bronze_shovel.json
 493a4090e9e6e1f705ebd5a3443badfa6ebb2b0a assets/testmod/models/item/bronze_sword.json
-edc540461d47875ad708bb5d690b822adc1fb90c assets/testmod/models/item/carbide_upgrade.json
 c2c75e263a2a943a327fad1d880c104515a46a1a assets/testmod/models/item/carbide_upgrade_smithing_template.json
 1684b6b1b722fe47719e4b528056c435c524db7b assets/testmod/models/item/carbonite_dust.json
 6a92ac6cac8ad7213a2b821f8595dbfc617ba1dc assets/testmod/models/item/diamond_mace.json
@@ -40,7 +39,6 @@ eeff14d579f01f64e1568fc99a8b13c2c28339c2 assets/testmod/models/item/infused_diam
 c23d121fe179562163823397b7e897247f0a3189 assets/testmod/models/item/infused_gemstone.json
 cf04761113b7f881402d1e89b06d2ace1866c3ea assets/testmod/models/item/infusion_upgrade_smithing_template.json
 bbac8128e1c64fe0317ee2ee96011d4a0a16f4eb assets/testmod/models/item/iron_mace.json
-7ef0a0b663698c93518a7a12a88ad0a91b31114f assets/testmod/models/item/nameless_carbide_item.json
 c2beab728a4b450e8b9ca1ce2f5144b725bc43d6 assets/testmod/models/item/nameless_infusion_item.json
 16aecf6a7d0bfa07944284edb2ff268681f3b4ee assets/testmod/models/item/netherite_mace.json
 af6aa13c4c02b3c7fca7265dc9c54c31ce33ea4b assets/testmod/models/item/raw_tin.json
@@ -60,16 +58,16 @@ aaa3126529b803a711705c99dd5e3f11334e53e3 assets/testmod/models/item/steel_hoe.js
 e98620a0d4badf8da8d5930bcd89daea1dd541f2 assets/testmod/models/item/steel_shovel.json
 5aedae586d3779ce9b04fafb928846038fbecd03 assets/testmod/models/item/steel_sword.json
 dc206220d75e1bbd45e9dcc3e9dca45638ae2412 assets/testmod/models/item/stone_mace.json
+d166df8657d3a5b3d996c262f77e57fb6ccd8930 assets/testmod/models/item/superheated_core.json
 a4d343e11a8d40914ef65c8c589b59de45672f83 assets/testmod/models/item/tin_ingot.json
 3c385071236174d9c998b71567a9f29f523373d1 assets/testmod/models/item/tungsten_axe.json
 db5b74ae9ec170773f1f9a28c75dd6c493ff31ea assets/testmod/models/item/tungsten_boots.json
 834214916ae6994bdd3602057489db6d6053eee2 assets/testmod/models/item/tungsten_carbide_axe.json
 9aa1c32ecb8bf03c44bfdcd117f2b5a88e58ec19 assets/testmod/models/item/tungsten_carbide_boots.json
 bb0fe95fe0f49e72612d7d42cbc14e2a89f61376 assets/testmod/models/item/tungsten_carbide_chestplate.json
-c17bae41421d332c3c4f347c4ed0b8611b0de749 assets/testmod/models/item/tungsten_carbide_compound.json
+f94e21673dc2316b7fe40cacbdc8461292948f59 assets/testmod/models/item/tungsten_carbide_core.json
 cf802e1902b69e7d8f754e29e8adc55b675b2479 assets/testmod/models/item/tungsten_carbide_helmet.json
 10024229094db74b810e69d7de4e055b3619433b assets/testmod/models/item/tungsten_carbide_hoe.json
-7a2558c535ae2dfbcbed96db8eaaa5d5bbe93380 assets/testmod/models/item/tungsten_carbide_ingot.json
 a5891adf098793258d53a852434a4a9795b2e1d6 assets/testmod/models/item/tungsten_carbide_leggings.json
 e0a7cd442ebdb587cee9054cb202ac2fb3cf0c2b assets/testmod/models/item/tungsten_carbide_mace.json
 8a417968c625e58ed3ad0058735b38dd25db28f8 assets/testmod/models/item/tungsten_carbide_pickaxe.json

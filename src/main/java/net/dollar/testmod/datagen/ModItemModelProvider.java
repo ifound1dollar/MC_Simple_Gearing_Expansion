@@ -20,10 +20,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         //region BASIC ITEMS
         simpleItem(ModItems.RUBY);
         simpleItem(ModItems.SAPPHIRE);
-        simpleItem(ModItems.INFUSED_GEMSTONE);
         simpleItem(ModItems.NAMELESS_INFUSION_ITEM);
-        simpleItem(ModItems.NAMELESS_CARBIDE_ITEM);
-        simpleItem(ModItems.CARBIDE_UPGRADE);
+        simpleItem(ModItems.INFUSED_GEMSTONE);
+        simpleItem(ModItems.SUPERHEATED_CORE);
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_CORE);
 
         simpleItem(ModItems.CARBONITE_DUST);
         simpleItem(ModItems.RAW_TIN);
@@ -34,8 +34,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.STEEL_INGOT);
         simpleItem(ModItems.RAW_TUNGSTEN);
         simpleItem(ModItems.TUNGSTEN_INGOT);
-        simpleItem(ModItems.TUNGSTEN_CARBIDE_COMPOUND);
-        simpleItem(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
         simpleItem(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);

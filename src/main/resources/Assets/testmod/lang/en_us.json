@@ -23,10 +23,10 @@
 
   "item.testmod.ruby": "Ruby",
   "item.testmod.sapphire": "Sapphire",
-  "item.testmod.infused_gemstone": "Infused Gemstone",
   "item.testmod.nameless_infusion_item": "NAMELESS INFUSION ITEM",
-  "item.testmod.nameless_carbide_item": "NAMELESS CARBIDE ITEM",
-  "item.testmod.carbide_upgrade": "Carbide Upgrade",
+  "item.testmod.infused_gemstone": "Infused Gemstone",
+  "item.testmod.superheated_core": "Superheated Core",
+  "item.testmod.tungsten_carbide_core": "Tungsten-Carbide Core",
 
   "item.testmod.gilded_upgrade_smithing_template": "Gilded Upgrade Smithing Template",
   "item.testmod.carbide_upgrade_smithing_template": "Carbide Upgrade Smithing Template",

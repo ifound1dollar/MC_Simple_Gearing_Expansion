@@ -83,10 +83,10 @@ public class TestMod
             //region BASIC ITEMS
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.INFUSED_GEMSTONE);
             event.accept(ModItems.NAMELESS_INFUSION_ITEM);
-            event.accept(ModItems.NAMELESS_CARBIDE_ITEM);
-            event.accept(ModItems.CARBIDE_UPGRADE);
+            event.accept(ModItems.INFUSED_GEMSTONE);
+            event.accept(ModItems.SUPERHEATED_CORE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_CORE);
 
             event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
             event.accept(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
@@ -101,8 +101,6 @@ public class TestMod
             event.accept(ModItems.STEEL_INGOT);
             event.accept(ModItems.RAW_TUNGSTEN);
             event.accept(ModItems.TUNGSTEN_INGOT);
-            event.accept(ModItems.TUNGSTEN_CARBIDE_COMPOUND);
-            event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
             //endregion
 
 

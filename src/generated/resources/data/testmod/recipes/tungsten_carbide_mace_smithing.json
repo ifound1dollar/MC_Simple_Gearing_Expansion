@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "testmod:carbide_upgrade"
+    "item": "testmod:tungsten_carbide_core"
   },
   "base": {
     "item": "testmod:tungsten_mace"
