@@ -1,7 +1,10 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -24,4 +27,21 @@ public class ModInfusedDiamondSwordItem extends SwordItem {
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 
+    @Override
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    @Override
+    public boolean canBeHurtBy(DamageSource source) {
+        return !(source.is(DamageTypes.EXPLOSION) || source.is(DamageTypes.FIREWORKS)
+                || source.is(DamageTypes.PLAYER_EXPLOSION) || source.is(DamageTypes.WITHER_SKULL));
+        //entity cannot be destroyed by explosions
+    }
+
+    @Override
+    public boolean onDroppedByPlayer(ItemStack item, Player player) {
+        //return super.onDroppedByPlayer(item, player);
+        return !player.isDeadOrDying(); //do not allow drop if player dead/dying DOES NOT WORK
+    }
 }
