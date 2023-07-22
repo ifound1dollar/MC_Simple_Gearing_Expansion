@@ -2,10 +2,8 @@ package net.dollar.testmod.util;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import net.dollar.testmod.TestMod;
 import net.dollar.testmod.enchantment.ModEnchantments;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,9 +16,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 
 import java.util.Map;
 
@@ -43,25 +39,20 @@ public class ModMaceItem extends TieredItem implements Vanishable {
                 enchantment == Enchantments.BANE_OF_ARTHROPODS ||
                 enchantment == Enchantments.SMITE ||
                 enchantment == Enchantments.UNBREAKING ||
+                enchantment == Enchantments.FIRE_ASPECT ||
                 enchantment == Enchantments.MOB_LOOTING);
     }
 
     @Override
     public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-        //only allow these six enchantments on maces
+        //only allow these enchantments on maces
         return EnchantmentHelper.getTagEnchantmentLevel(ModEnchantments.HARDNESS.get(), book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.BANE_OF_ARTHROPODS, book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.SMITE, book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.UNBREAKING, book) == 0 ||
+                EnchantmentHelper.getTagEnchantmentLevel(Enchantments.FIRE_ASPECT, book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.MOB_LOOTING, book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.MENDING, book) == 0;
-
-//        return book.getEnchantmentLevel(ModEnchantments.HARDNESS.get()) > 0 ||
-//                book.getEnchantmentLevel(Enchantments.BANE_OF_ARTHROPODS) > 0 ||
-//                book.getEnchantmentLevel(Enchantments.SMITE) > 0 ||
-//                book.getEnchantmentLevel(Enchantments.UNBREAKING) > 0 ||
-//                book.getEnchantmentLevel(Enchantments.MOB_LOOTING) > 0 ||
-//                book.getEnchantmentLevel(Enchantments.MENDING) > 0;
     }
 
     public float getDamage() {
@@ -73,9 +64,7 @@ public class ModMaceItem extends TieredItem implements Vanishable {
     }
 
     public float getDestroySpeed(ItemStack stack, BlockState state) {
-        Material material = state.getMaterial();
-        return material != Material.PLANT && material != Material.REPLACEABLE_PLANT && !state.is(BlockTags.LEAVES)
-                && material != Material.VEGETABLE ? 1.0F : 1.5F;    //destroys nothing faster
+        return state.is(BlockTags.SWORD_EFFICIENT) ? 1.5F : 1.0F;
     }
 
     @Override

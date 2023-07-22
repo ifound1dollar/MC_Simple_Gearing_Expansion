@@ -17,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
+@Deprecated
 public class ModLegacySmithingRecipeBuilder {
     private final Ingredient base;
     private final Ingredient addition;
@@ -34,7 +35,7 @@ public class ModLegacySmithingRecipeBuilder {
     }
 
     public static ModLegacySmithingRecipeBuilder smithing(Ingredient p_266949_, Ingredient p_267302_, RecipeCategory p_266837_, Item p_266863_) {
-        return new ModLegacySmithingRecipeBuilder(RecipeSerializer.SMITHING, p_266949_, p_267302_, p_266837_, p_266863_);
+        return new ModLegacySmithingRecipeBuilder(RecipeSerializer.SMITHING_TRANSFORM, p_266949_, p_267302_, p_266837_, p_266863_);
     }
 
     public ModLegacySmithingRecipeBuilder unlocks(String p_267310_, CriterionTriggerInstance p_266808_) {

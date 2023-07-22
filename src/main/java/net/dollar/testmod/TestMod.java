@@ -7,7 +7,7 @@ import net.dollar.testmod.item.ModCreativeModeTabs;
 import net.dollar.testmod.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -29,6 +29,7 @@ public class TestMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         //register new items in ModItems class and new blocks in ModBlocks class
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEnchantments.register(modEventBus);
@@ -48,7 +49,7 @@ public class TestMod
 
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event)
+    private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         //FOR NOW, KEEP ALL NEW ITEMS IN NEW TAB BELOW
         /*if (event.getTab() == CreativeModeTabs.INGREDIENTS) {
@@ -58,7 +59,7 @@ public class TestMod
         }*/
 
         //add to TEST_TAB
-        if (event.getTab() == ModCreativeModeTabs.TEST_TAB) {
+        if (event.getTab() == ModCreativeModeTabs.TEST_TAB.get()) {
             //region BLOCKS
             event.accept(ModBlocks.RUBY_BLOCK);
             event.accept(ModBlocks.RUBY_ORE);

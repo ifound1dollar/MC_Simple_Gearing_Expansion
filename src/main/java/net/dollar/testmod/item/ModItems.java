@@ -29,7 +29,7 @@ public class ModItems {
     public static final RegistryObject<Item> COMPOUND_GEMSTONE = ITEMS.register("compound_gemstone",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_GEMSTONE = ITEMS.register("infused_gemstone",
-            () -> new Item(new Item.Properties()));
+            () -> new ModInfusedDiamondItem(new Item.Properties()));
     public static final RegistryObject<Item> SUPERHEATED_CORE = ITEMS.register("superheated_core",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_CORE = ITEMS.register("tungsten_carbide_core",
@@ -239,13 +239,13 @@ public class ModItems {
     //endregion
     //region Infused Diamond armor, has custom full set bonus
     public static final RegistryObject<Item> INFUSED_DIAMOND_HELMET = ITEMS.register("infused_diamond_helmet",
-            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.INFUSED_DIAMOND, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_DIAMOND_CHESTPLATE = ITEMS.register("infused_diamond_chestplate",
-            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.INFUSED_DIAMOND, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_DIAMOND_LEGGINGS = ITEMS.register("infused_diamond_leggings",
-            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.INFUSED_DIAMOND, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_DIAMOND_BOOTS = ITEMS.register("infused_diamond_boots",
-            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.TUNGSTEN_CARBIDE, ArmorItem.Type.BOOTS, new Item.Properties()));
+            () -> new ModInfusedDiamondArmorItem(ModTiers.Armor.INFUSED_DIAMOND, ArmorItem.Type.BOOTS, new Item.Properties()));
     //endregion
     //region Netherite armor, replaces vanilla registry because it has custom full set bonus
     public static final RegistryObject<Item> NETHERITE_HELMET = VANILLA_ITEMS.register("netherite_helmet",

@@ -39,5 +39,4 @@ public class ModTungstenCarbideAxeItem extends AxeItem {
         }
         return !source.is(DamageTypeTags.IS_EXPLOSION);
     }
-
 }

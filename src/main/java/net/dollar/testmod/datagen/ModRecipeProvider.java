@@ -158,7 +158,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get())
-                .define('i', Items.COBBLED_DEEPSLATE)
+                .define('i', Items.OBSIDIAN)
                 .define('n', ModItems.TUNGSTEN_INGOT.get())
                 .pattern("ndn")
                 .pattern("nin")
@@ -531,6 +531,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
     }
 
+    @Deprecated
     /**
      * Helper to automatically generate LEGACY smithing recipes for versions before 1.20
      * @param consumer Consumer of FinishedRecipe

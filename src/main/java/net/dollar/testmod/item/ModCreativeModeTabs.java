@@ -1,24 +1,25 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.TestMod;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = TestMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModCreativeModeTabs {
-    public static CreativeModeTab TEST_TAB;
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TestMod.MOD_ID);
 
-    //this SubscribeEvent will fire automatically, loading new creative mode tab(s) (builds icon and title)
-    @SubscribeEvent
-    public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
-        TEST_TAB = event.registerCreativeModeTab(new ResourceLocation(TestMod.MOD_ID, "test_tab"),
-                builder -> builder.icon(() -> new ItemStack(ModItems.RUBY.get()))
-                        .title(Component.literal("Jewels and Tools")));
-        //NOTE: Component.translatable is unable to find translation in lang file, must use Component.literal instead
+    public static RegistryObject<CreativeModeTab> TEST_TAB = CREATIVE_MODE_TABS.register("test_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RUBY.get()))
+                    .title(Component.literal("Jewels and Tools")).build());
+
+    public static void register(IEventBus bus) {
+        CREATIVE_MODE_TABS.register(bus);
     }
 }

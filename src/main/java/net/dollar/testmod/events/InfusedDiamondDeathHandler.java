@@ -29,12 +29,12 @@ public class InfusedDiamondDeathHandler {
         //This is the first of three steps to keep Infused Diamond items in the player's inventory.
 
         //if keepInventory true, do nothing special upon death
-        if (event.getEntity().level.getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
+        if (event.getEntity().level().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
             return;
         }
 
         //only if the dead entity is a ServerPlayer and cause of death was Void
-        if (event.getEntity() instanceof ServerPlayer player && event.getSource().is(DamageTypes.OUT_OF_WORLD)) {
+        if (event.getEntity() instanceof ServerPlayer player && event.getSource().is(DamageTypes.FELL_OUT_OF_WORLD)) {
             //create array of ItemStacks and add all Infused Diamond items to it at corresponding indices
             ItemStack[] itemStacks = new ItemStack[41];
             for (int i = 0; i < 41; i++) {
@@ -57,7 +57,7 @@ public class InfusedDiamondDeathHandler {
         //This is the second of three steps to keep Infused Diamond items in the player's inventory.
 
         //if keepInventory true, do not do anything upon respawn (NOTE: no drops if keepInventory is true)
-        if (event.getEntity().level.getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
+        if (event.getEntity().level().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
             return;
         }
 
@@ -83,7 +83,7 @@ public class InfusedDiamondDeathHandler {
         //This is the third of three steps to keep Infused Diamond items in the player's inventory.
 
         //if keepInventory true, do nothing special upon respawn
-        if (event.getEntity().level.getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
+        if (event.getEntity().level().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
             return;
         }
 
