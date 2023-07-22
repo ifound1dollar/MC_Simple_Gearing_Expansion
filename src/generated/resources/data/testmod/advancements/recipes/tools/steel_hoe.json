@@ -30,5 +30,6 @@
     "recipes": [
       "testmod:steel_hoe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

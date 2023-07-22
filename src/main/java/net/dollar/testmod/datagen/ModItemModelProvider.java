@@ -23,7 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.COMPOUND_GEMSTONE);
         simpleItem(ModItems.INFUSED_GEMSTONE);
         simpleItem(ModItems.SUPERHEATED_CORE);
-        simpleItem(ModItems.TUNGSTEN_CARBIDE_CORE);
+        simpleItem(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
         simpleItem(ModItems.CARBONITE_DUST);
         simpleItem(ModItems.RAW_TIN);

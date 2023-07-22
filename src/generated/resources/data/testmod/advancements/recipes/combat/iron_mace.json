@@ -30,5 +30,6 @@
     "recipes": [
       "testmod:iron_mace"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -86,7 +86,7 @@ public class TestMod
             event.accept(ModItems.COMPOUND_GEMSTONE);
             event.accept(ModItems.INFUSED_GEMSTONE);
             event.accept(ModItems.SUPERHEATED_CORE);
-            event.accept(ModItems.TUNGSTEN_CARBIDE_CORE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
             event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
             event.accept(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);

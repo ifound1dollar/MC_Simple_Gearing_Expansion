@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "testmod:tungsten_carbide_core"
+        "recipe": "testmod:tungsten_carbide_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "testmod:tungsten_carbide_core"
+      "testmod:tungsten_carbide_ingot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

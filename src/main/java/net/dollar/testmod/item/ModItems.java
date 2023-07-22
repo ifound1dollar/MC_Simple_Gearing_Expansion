@@ -32,8 +32,8 @@ public class ModItems {
             () -> new ModInfusedDiamondItem(new Item.Properties()));
     public static final RegistryObject<Item> SUPERHEATED_CORE = ITEMS.register("superheated_core",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_CORE = ITEMS.register("tungsten_carbide_core",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
+            () -> new ModTungstenCarbideIngotItem(new Item.Properties()));
 
     public static final RegistryObject<Item> GILDED_UPGRADE_SMITHING_TEMPLATE =
             ITEMS.register("gilded_upgrade_smithing_template", () -> new Item(new Item.Properties()));

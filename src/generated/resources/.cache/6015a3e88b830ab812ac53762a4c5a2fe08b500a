@@ -1,4 +1,4 @@
-// 1.19.4	2023-07-22T00:50:06.4500192	Item Models: testmod
+// 1.20.1	2023-07-22T17:19:36.1544678	Item Models: testmod
 95eee8989ae92b545c3cddfff90a11cc4870fec7 assets/testmod/models/item/bronze_axe.json
 191ce2b157f39b46c7113c87e800b24c4256d971 assets/testmod/models/item/bronze_boots.json
 3ef19b52c018eaabf8aaf6836a7d02ce8bdf284b assets/testmod/models/item/bronze_chestplate.json
@@ -65,9 +65,9 @@ db5b74ae9ec170773f1f9a28c75dd6c493ff31ea assets/testmod/models/item/tungsten_boo
 834214916ae6994bdd3602057489db6d6053eee2 assets/testmod/models/item/tungsten_carbide_axe.json
 9aa1c32ecb8bf03c44bfdcd117f2b5a88e58ec19 assets/testmod/models/item/tungsten_carbide_boots.json
 bb0fe95fe0f49e72612d7d42cbc14e2a89f61376 assets/testmod/models/item/tungsten_carbide_chestplate.json
-f94e21673dc2316b7fe40cacbdc8461292948f59 assets/testmod/models/item/tungsten_carbide_core.json
 cf802e1902b69e7d8f754e29e8adc55b675b2479 assets/testmod/models/item/tungsten_carbide_helmet.json
 10024229094db74b810e69d7de4e055b3619433b assets/testmod/models/item/tungsten_carbide_hoe.json
+7a2558c535ae2dfbcbed96db8eaaa5d5bbe93380 assets/testmod/models/item/tungsten_carbide_ingot.json
 a5891adf098793258d53a852434a4a9795b2e1d6 assets/testmod/models/item/tungsten_carbide_leggings.json
 e0a7cd442ebdb587cee9054cb202ac2fb3cf0c2b assets/testmod/models/item/tungsten_carbide_mace.json
 8a417968c625e58ed3ad0058735b38dd25db28f8 assets/testmod/models/item/tungsten_carbide_pickaxe.json
