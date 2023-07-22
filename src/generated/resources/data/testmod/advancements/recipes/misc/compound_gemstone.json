@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_nameless_infusion_item": {
+    "has_diamond": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:nameless_infusion_item"
+              "minecraft:diamond"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "testmod:infused_gemstone"
+        "recipe": "testmod:compound_gemstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_nameless_infusion_item",
+      "has_diamond",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "testmod:infused_gemstone"
+      "testmod:compound_gemstone"
     ]
   }
 }

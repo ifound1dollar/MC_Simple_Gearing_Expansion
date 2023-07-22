@@ -20,7 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         //region BASIC ITEMS
         simpleItem(ModItems.RUBY);
         simpleItem(ModItems.SAPPHIRE);
-        simpleItem(ModItems.NAMELESS_INFUSION_ITEM);
+        simpleItem(ModItems.COMPOUND_GEMSTONE);
         simpleItem(ModItems.INFUSED_GEMSTONE);
         simpleItem(ModItems.SUPERHEATED_CORE);
         simpleItem(ModItems.TUNGSTEN_CARBIDE_CORE);

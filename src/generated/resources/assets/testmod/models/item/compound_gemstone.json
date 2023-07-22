@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "testmod:item/nameless_infusion_item"
+    "layer0": "testmod:item/compound_gemstone"
   }
 }

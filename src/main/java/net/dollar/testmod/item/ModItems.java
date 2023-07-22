@@ -26,7 +26,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> NAMELESS_INFUSION_ITEM = ITEMS.register("nameless_infusion_item",
+    public static final RegistryObject<Item> COMPOUND_GEMSTONE = ITEMS.register("compound_gemstone",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_GEMSTONE = ITEMS.register("infused_gemstone",
             () -> new Item(new Item.Properties()));

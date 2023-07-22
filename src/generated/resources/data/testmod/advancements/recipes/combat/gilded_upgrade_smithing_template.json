@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gilded_upgrade_smithing_template": {
+    "has_bronze_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:gilded_upgrade_smithing_template"
+              "testmod:bronze_ingot"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_gilded_upgrade_smithing_template",
+      "has_bronze_ingot",
       "has_the_recipe"
     ]
   ],
