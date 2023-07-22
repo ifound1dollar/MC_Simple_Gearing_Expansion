@@ -2,6 +2,7 @@ package net.dollar.testmod.item;
 
 import net.dollar.testmod.util.IDamageHandlingArmor;
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -58,4 +59,19 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
         }
         return amount;  //if reaches here, return original amount
     }
+
+    @Override
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    @Override
+    public boolean canBeHurtBy(DamageSource source) {
+        //entity cannot be destroyed by explosions or fire if fire-resistant
+        if (this.isFireResistant() && source.is(DamageTypeTags.IS_FIRE)) {
+            return false;
+        }
+        return !source.is(DamageTypeTags.IS_EXPLOSION);
+    }
+
 }
