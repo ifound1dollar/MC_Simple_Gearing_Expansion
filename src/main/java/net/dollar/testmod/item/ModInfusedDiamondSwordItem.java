@@ -1,6 +1,7 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
@@ -34,14 +35,12 @@ public class ModInfusedDiamondSwordItem extends SwordItem {
 
     @Override
     public boolean canBeHurtBy(DamageSource source) {
-        return !(source.is(DamageTypes.EXPLOSION) || source.is(DamageTypes.FIREWORKS)
-                || source.is(DamageTypes.PLAYER_EXPLOSION) || source.is(DamageTypes.WITHER_SKULL));
-        //entity cannot be destroyed by explosions
-    }
+        if (this.isFireResistant() && source.is(DamageTypeTags.IS_FIRE)) {
+            return false;
+        }
+        return !source.is(DamageTypeTags.IS_EXPLOSION);
+        //entity cannot be destroyed by explosions or fire if fire-resistant
 
-    @Override
-    public boolean onDroppedByPlayer(ItemStack item, Player player) {
-        //return super.onDroppedByPlayer(item, player);
-        return !player.isDeadOrDying(); //do not allow drop if player dead/dying DOES NOT WORK
+        //THIS METHOD ONLY NEEDS TO BE OVERRIDDEN IN TUNGSTEN-CARBIDE, NOTHING CHANGES IN INFUSED DIAMOND
     }
 }

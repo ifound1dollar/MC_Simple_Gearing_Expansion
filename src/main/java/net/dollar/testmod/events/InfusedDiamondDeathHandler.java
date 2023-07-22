@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 public class InfusedDiamondDeathHandler {
     @SubscribeEvent
     public static void dropsHandler(LivingDropsEvent event) {
-        //if keepInventory true, do not do anything upon respawn
+        //if keepInventory true, do not do anything upon respawn (NOTE: no drops if keepInventory is true)
         if (event.getEntity().level.getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
             return;
         }
@@ -40,17 +40,9 @@ public class InfusedDiamondDeathHandler {
                         itemStack.is(ModItems.INFUSED_DIAMOND_CHESTPLATE.get()) ||
                         itemStack.is(ModItems.INFUSED_DIAMOND_LEGGINGS.get()) ||
                         itemStack.is(ModItems.INFUSED_DIAMOND_BOOTS.get())) {
-                    //set to 1 durability and add back to player inventory starting from top left slot (index 0)
-                    itemStack.setDamageValue(itemStack.getMaxDamage() - 1);
-                    player.getInventory().add(tempSlot, itemStack);
+                    //add back to player inventory starting from bottom left (INDEX 0 IS HOTBAR???)
+                    player.getInventory().add(35 - tempSlot, itemStack);
                     tempSlot++;
-
-
-                    //CHANGE TO REMAIN AT ORIGINAL DURABILITY AND KEEP IN ORIGINAL SLOTS
-                    for (ItemStack armorItem : player.getInventory().armor) {
-                        //CAN ITERATE THROUGH FOUR ARMORS HERE, FROM BOOTS -> HELMET
-                        //SAME LOGIC USED FOR REGULAR INVENTORY AND OFFHAND
-                    }
                 }
             }
         }
@@ -69,10 +61,13 @@ public class InfusedDiamondDeathHandler {
             if (tempSlot > 35) {
                 break;
             }
-
-            //add all items back to inventory starting from top left slot (guaranteed to be Infused Diamond items)
-            event.getEntity().getInventory().add(tempSlot, itemStack);
+            //add all items back to inventory starting from bottom left slot (guaranteed to be Infused Diamond items)
+            event.getEntity().getInventory().add(35 - tempSlot, itemStack);
             tempSlot++;
+
+
+            //BELOW CAN BE USED TO SET ITEM IN SPECIFIC SLOT, INVENTORY -> ARMOR -> OFFHAND (max index 40)
+            //event.getEntity().getInventory().setItem();
         }
     }
 }
