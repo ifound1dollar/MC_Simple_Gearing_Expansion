@@ -1,6 +1,7 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.util.IDamageHandlingArmor;
+import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -11,7 +12,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHandlingArmor {
+public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHandlingArmor, IInfusedDiamondItem {
     boolean isFullSet;
 
 

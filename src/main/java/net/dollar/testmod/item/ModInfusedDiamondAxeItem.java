@@ -1,12 +1,13 @@
 package net.dollar.testmod.item;
 
+import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 
-public class ModInfusedDiamondAxeItem extends AxeItem {
+public class ModInfusedDiamondAxeItem extends AxeItem implements IInfusedDiamondItem {
     public ModInfusedDiamondAxeItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }

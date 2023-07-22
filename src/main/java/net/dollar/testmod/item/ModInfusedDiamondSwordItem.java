@@ -1,5 +1,6 @@
 package net.dollar.testmod.item;
 
+import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -10,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 
-public class ModInfusedDiamondSwordItem extends SwordItem {
+public class ModInfusedDiamondSwordItem extends SwordItem implements IInfusedDiamondItem {
     public ModInfusedDiamondSwordItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
