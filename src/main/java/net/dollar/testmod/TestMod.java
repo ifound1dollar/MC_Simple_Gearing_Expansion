@@ -82,7 +82,7 @@ public class TestMod
             //region BASIC ITEMS
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.NAMELESS_INFUSION_ITEM);
+            event.accept(ModItems.COMPOUND_GEMSTONE);
             event.accept(ModItems.INFUSED_GEMSTONE);
             event.accept(ModItems.SUPERHEATED_CORE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_CORE);

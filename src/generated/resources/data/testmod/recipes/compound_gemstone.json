@@ -15,10 +15,10 @@
       "item": "testmod:sapphire"
     },
     {
-      "item": "testmod:nameless_infusion_item"
+      "item": "minecraft:diamond"
     }
   ],
   "result": {
-    "item": "testmod:infused_gemstone"
+    "item": "testmod:compound_gemstone"
   }
 }

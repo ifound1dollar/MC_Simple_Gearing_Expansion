@@ -118,14 +118,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.CARBONITE_DUST.get()).build()))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INFUSED_GEMSTONE.get(), 1)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COMPOUND_GEMSTONE.get(), 1)
                 .requires(Items.AMETHYST_SHARD)
                 .requires(Items.EMERALD)
                 .requires(ModItems.RUBY.get())
                 .requires(ModItems.SAPPHIRE.get())
-                .requires(ModItems.NAMELESS_INFUSION_ITEM.get())
-                .unlockedBy("has_nameless_infusion_item", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.NAMELESS_INFUSION_ITEM.get()).build()))
+                .requires(Items.DIAMOND)
+                .unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.DIAMOND).build()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_CORE.get(), 1)
                 .requires(ModItems.TUNGSTEN_INGOT.get(), 4)
@@ -136,15 +136,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
         //endregion
         //region Upgrade Templates
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(), 2)
-                .define('d', ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(), 1)
+                .define('d', ModItems.BRONZE_INGOT.get())
                 .define('i', Items.COBBLESTONE)
                 .define('n', Items.GOLD_NUGGET)
                 .pattern("ndn")
                 .pattern("nin")
                 .pattern("nnn")
-                .unlockedBy("has_gilded_upgrade_smithing_template", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get()).build()))
+                .unlockedBy("has_bronze_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.BRONZE_INGOT.get()).build()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get())
@@ -352,36 +352,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 //                RecipeCategory.TOOLS, ModItems.INFUSED_DIAMOND_PICKAXE.get(), "has_infused_gemstone");
 
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_HELMET, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
-                ModItems.INFUSED_DIAMOND_HELMET.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_HELMET.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_CHESTPLATE, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
-                ModItems.INFUSED_DIAMOND_CHESTPLATE.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_CHESTPLATE, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_CHESTPLATE.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_LEGGINGS, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
-                ModItems.INFUSED_DIAMOND_LEGGINGS.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_LEGGINGS, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_LEGGINGS.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_BOOTS, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
-                ModItems.INFUSED_DIAMOND_BOOTS.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_BOOTS, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_BOOTS.get(), "has_infused_gemstone");
 
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_AXE, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.TOOLS,
-                ModItems.INFUSED_DIAMOND_AXE.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_AXE, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.TOOLS,
+                ModItems.INFUSED_DIAMOND_AXE.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_HOE, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.TOOLS,
-                ModItems.INFUSED_DIAMOND_HOE.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_HOE, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.TOOLS,
+                ModItems.INFUSED_DIAMOND_HOE.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.DIAMOND_MACE.get(), ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
-                ModItems.INFUSED_DIAMOND_MACE.get(), "has_nameless_infusion_item");
+                ModItems.DIAMOND_MACE.get(), ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_MACE.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_PICKAXE, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.TOOLS,
-                ModItems.INFUSED_DIAMOND_PICKAXE.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_PICKAXE, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.TOOLS,
+                ModItems.INFUSED_DIAMOND_PICKAXE.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_SHOVEL, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.TOOLS,
-                ModItems.INFUSED_DIAMOND_SHOVEL.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_SHOVEL, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.TOOLS,
+                ModItems.INFUSED_DIAMOND_SHOVEL.get(), "has_infused_gemstone");
         smithingRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
-                Items.DIAMOND_SWORD, ModItems.NAMELESS_INFUSION_ITEM.get(), RecipeCategory.COMBAT,
-                ModItems.INFUSED_DIAMOND_SWORD.get(), "has_nameless_infusion_item");
+                Items.DIAMOND_SWORD, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_SWORD.get(), "has_infused_gemstone");
         //endregion
     }
 

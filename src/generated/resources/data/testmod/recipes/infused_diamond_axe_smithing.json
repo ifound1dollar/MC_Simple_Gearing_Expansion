@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "testmod:nameless_infusion_item"
+    "item": "testmod:infused_gemstone"
   },
   "base": {
     "item": "minecraft:diamond_axe"
