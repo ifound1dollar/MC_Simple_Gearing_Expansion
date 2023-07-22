@@ -28,20 +28,4 @@ public class ModInfusedDiamondSwordItem extends SwordItem implements IInfusedDia
         ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker, 15); //sharp, all 15
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
-
-    @Override
-    public boolean isFireResistant() {
-        return true;
-    }
-
-    @Override
-    public boolean canBeHurtBy(DamageSource source) {
-        if (this.isFireResistant() && source.is(DamageTypeTags.IS_FIRE)) {
-            return false;
-        }
-        return !source.is(DamageTypeTags.IS_EXPLOSION);
-        //entity cannot be destroyed by explosions or fire if fire-resistant
-
-        //THIS METHOD ONLY NEEDS TO BE OVERRIDDEN IN TUNGSTEN-CARBIDE, NOTHING CHANGES IN INFUSED DIAMOND
-    }
 }

@@ -1,6 +1,8 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +24,20 @@ public class ModTungstenCarbideAxeItem extends AxeItem {
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
         ModUtils.rollTungstenCarbideOnHitAndApply(attackedEntity, attacker, 20);    //sharp
         return super.hurtEnemy(stack, attackedEntity, attacker);
+    }
+
+    @Override
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    @Override
+    public boolean canBeHurtBy(DamageSource source) {
+        //entity cannot be destroyed by explosions or fire if fire-resistant
+        if (this.isFireResistant() && source.is(DamageTypeTags.IS_FIRE)) {
+            return false;
+        }
+        return !source.is(DamageTypeTags.IS_EXPLOSION);
     }
 
 }
