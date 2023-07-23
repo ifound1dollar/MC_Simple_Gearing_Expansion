@@ -5,6 +5,7 @@ import net.dollar.testmod.TestMod;
 import net.dollar.testmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -31,6 +32,9 @@ public class ModBlocks {
                     .strength(6f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> PRETTY_AMETHYST_BLOCK = registerBlock("pretty_amethyst_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CARBONITE_BLOCK = registerBlock("carbonite_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK).mapColor(DyeColor.GRAY)
                     .strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",
