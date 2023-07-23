@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pretty_amethyst_block": {
+    "has_decorative_amethyst_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:pretty_amethyst_block"
+              "testmod:decorative_amethyst_block"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_pretty_amethyst_block",
+      "has_decorative_amethyst_block",
       "has_the_recipe"
     ]
   ],

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "testmod:block/carbonite_block"
+    "all": "testmod:block/decorative_amethyst_block"
   }
 }

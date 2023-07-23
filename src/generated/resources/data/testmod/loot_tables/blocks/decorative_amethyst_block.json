@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "testmod:pretty_amethyst_block"
+          "name": "testmod:decorative_amethyst_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "testmod:blocks/pretty_amethyst_block"
+  "random_sequence": "testmod:blocks/decorative_amethyst_block"
 }

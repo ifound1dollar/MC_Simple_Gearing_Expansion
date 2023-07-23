@@ -1,13 +1,12 @@
-// 1.20.1	2023-07-22T22:35:36.6330274	Loot Tables
+// 1.20.1	2023-07-22T22:46:50.4190732	Loot Tables
 8568dfd4d000609fff8b0ed7c73b8998da83a67c data/testmod/loot_tables/blocks/bronze_block.json
-3bf590650d6b9b509d6ca53fe015831cb5f59e27 data/testmod/loot_tables/blocks/carbonite_block.json
 a9ab382ef42cabefe43b9466f5661c7119788248 data/testmod/loot_tables/blocks/carbonite_ore.json
+f5b839cbf8bef48e45160af5e41f90a34b853f5a data/testmod/loot_tables/blocks/decorative_amethyst_block.json
 39e27c62c10935764f950f16351de494f3f53a76 data/testmod/loot_tables/blocks/deepslate_carbonite_ore.json
 836fe1f139cb7779802c41cb9f4310ffa928c9c4 data/testmod/loot_tables/blocks/deepslate_ruby_ore.json
 eb2eb3e0f62034957f4a4e56b784e81c74c0e842 data/testmod/loot_tables/blocks/deepslate_sapphire_ore.json
 1a5250d4bae8efdcce889d6786f9ebff73e58cd5 data/testmod/loot_tables/blocks/deepslate_tin_ore.json
 712c561a30d055b61d2727def2e72705c6164e52 data/testmod/loot_tables/blocks/deepslate_tungsten_ore.json
-007e2eb3ce177e268ed8a579b520e10f30105e6a data/testmod/loot_tables/blocks/pretty_amethyst_block.json
 f50210b07aa8209ce248309fe6b46bb55746f7ce data/testmod/loot_tables/blocks/raw_tin_block.json
 0bcb1d0042345c17b70df56a5befd49bedefc505 data/testmod/loot_tables/blocks/raw_tungsten_block.json
 db0b7b9a905a1b5b4ff2e1f05b73a09dfbbbe2e6 data/testmod/loot_tables/blocks/ruby_block.json

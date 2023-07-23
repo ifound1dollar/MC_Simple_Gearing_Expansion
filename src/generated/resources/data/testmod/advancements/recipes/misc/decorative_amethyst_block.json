@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_carbonite_block": {
+    "has_amethyst_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "testmod:carbonite_block"
+              "minecraft:amethyst_shard"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "testmod:carbonite_dust"
+        "recipe": "testmod:decorative_amethyst_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_carbonite_block",
+      "has_amethyst_shard",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "testmod:carbonite_dust"
+      "testmod:decorative_amethyst_block"
     ]
   },
   "sends_telemetry_event": false
