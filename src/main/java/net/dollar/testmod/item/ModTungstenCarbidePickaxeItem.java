@@ -34,11 +34,8 @@ public class ModTungstenCarbidePickaxeItem extends PickaxeItem {
 
     @Override
     public boolean canBeHurtBy(DamageSource source) {
-        //entity cannot be destroyed by explosions or fire if fire-resistant
-        if (this.isFireResistant() && source.is(DamageTypeTags.IS_FIRE)) {
-            return false;
-        }
-        return !source.is(DamageTypeTags.IS_EXPLOSION);
+        //entity cannot be destroyed by explosions or fire
+        return !(source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION));
     }
 
 }

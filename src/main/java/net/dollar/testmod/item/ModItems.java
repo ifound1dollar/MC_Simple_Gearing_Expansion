@@ -60,6 +60,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_INGOT = ITEMS.register("tungsten_ingot",
             () -> new Item(new Item.Properties()));
+    //re-register Netherite Ingot with a custom tooltip
+    public static final RegistryObject<Item> NETHERITE_INGOT = VANILLA_ITEMS.register("netherite_ingot",
+            () -> new ModNetheriteIngotItem(new Item.Properties()));
     //endregion
 
 
