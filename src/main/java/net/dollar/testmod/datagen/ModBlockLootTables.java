@@ -26,8 +26,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.RUBY_BLOCK.get());
         dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
-        dropSelf(ModBlocks.PRETTY_AMETHYST_BLOCK.get());
-        dropSelf(ModBlocks.CARBONITE_BLOCK.get());
+        dropSelf(ModBlocks.DECORATIVE_AMETHYST_BLOCK.get());
+//        dropSelf(ModBlocks.CARBONITE_BLOCK.get());
         dropSelf(ModBlocks.TIN_BLOCK.get());
         dropSelf(ModBlocks.RAW_TIN_BLOCK.get());
         dropSelf(ModBlocks.BRONZE_BLOCK.get());

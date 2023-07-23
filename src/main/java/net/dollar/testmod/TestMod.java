@@ -67,9 +67,9 @@ public class TestMod
             event.accept(ModBlocks.SAPPHIRE_BLOCK);
             event.accept(ModBlocks.SAPPHIRE_ORE);
             event.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
-            event.accept(ModBlocks.PRETTY_AMETHYST_BLOCK);
+            event.accept(ModBlocks.DECORATIVE_AMETHYST_BLOCK);
 
-            event.accept(ModBlocks.CARBONITE_BLOCK);
+            //event.accept(ModBlocks.CARBONITE_BLOCK);
             event.accept(ModBlocks.CARBONITE_ORE);
             event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
             event.accept(ModBlocks.TIN_BLOCK);

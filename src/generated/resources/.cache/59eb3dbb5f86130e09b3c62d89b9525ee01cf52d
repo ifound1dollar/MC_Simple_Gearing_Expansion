@@ -1,6 +1,5 @@
-// 1.20.1	2023-07-22T22:35:36.6330274	Loot Tables
+// 1.20.1	2023-07-22T22:43:41.8493085	Loot Tables
 8568dfd4d000609fff8b0ed7c73b8998da83a67c data/testmod/loot_tables/blocks/bronze_block.json
-3bf590650d6b9b509d6ca53fe015831cb5f59e27 data/testmod/loot_tables/blocks/carbonite_block.json
 a9ab382ef42cabefe43b9466f5661c7119788248 data/testmod/loot_tables/blocks/carbonite_ore.json
 39e27c62c10935764f950f16351de494f3f53a76 data/testmod/loot_tables/blocks/deepslate_carbonite_ore.json
 836fe1f139cb7779802c41cb9f4310ffa928c9c4 data/testmod/loot_tables/blocks/deepslate_ruby_ore.json

@@ -95,9 +95,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.SAPPHIRE.get(),
                 RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, Items.AMETHYST_SHARD,
-                RecipeCategory.MISC, ModBlocks.PRETTY_AMETHYST_BLOCK.get());
-        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.CARBONITE_DUST.get(),
-                RecipeCategory.MISC, ModBlocks.CARBONITE_BLOCK.get());
+                RecipeCategory.MISC, ModBlocks.DECORATIVE_AMETHYST_BLOCK.get());
+//        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.CARBONITE_DUST.get(),
+//                RecipeCategory.MISC, ModBlocks.CARBONITE_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_TIN.get(),
