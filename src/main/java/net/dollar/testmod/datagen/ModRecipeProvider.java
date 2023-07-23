@@ -98,12 +98,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.PRETTY_AMETHYST_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_TIN.get(),
+                RecipeCategory.MISC, ModBlocks.RAW_TIN_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.STEEL_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TUNGSTEN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TUNGSTEN_BLOCK.get());
+        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_TUNGSTEN.get(),
+                RecipeCategory.MISC, ModBlocks.RAW_TUNGSTEN_BLOCK.get());
         //endregion
         //region Compounds and Gemstone (shapeless)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)

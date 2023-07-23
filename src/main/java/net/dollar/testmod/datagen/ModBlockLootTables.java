@@ -28,9 +28,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
         dropSelf(ModBlocks.PRETTY_AMETHYST_BLOCK.get());
         dropSelf(ModBlocks.TIN_BLOCK.get());
+        dropSelf(ModBlocks.RAW_TIN_BLOCK.get());
         dropSelf(ModBlocks.BRONZE_BLOCK.get());
         dropSelf(ModBlocks.STEEL_BLOCK.get());
         dropSelf(ModBlocks.TUNGSTEN_BLOCK.get());
+        dropSelf(ModBlocks.RAW_TUNGSTEN_BLOCK.get());
 
         //ORES (NOTE: OVERRIDE createLapisOreDrops FOR MORE THAN ONE DROP)
         add(ModBlocks.RUBY_ORE.get(),

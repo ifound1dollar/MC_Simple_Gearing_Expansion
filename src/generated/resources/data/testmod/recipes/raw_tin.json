@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "testmod:raw_tin_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "testmod:raw_tin"
+  }
+}

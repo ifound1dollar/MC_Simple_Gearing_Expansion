@@ -36,6 +36,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RAW_TIN_BLOCK = registerBlock("raw_tin_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)
+                    .strength(5f, 6f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3f).requiresCorrectToolForDrops()));
@@ -51,6 +54,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> TUNGSTEN_BLOCK = registerBlock("tungsten_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> RAW_TUNGSTEN_BLOCK = registerBlock("raw_tungsten_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)
+                    .strength(5f, 6f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TUNGSTEN_ORE = registerBlock("tungsten_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(3f).requiresCorrectToolForDrops()));

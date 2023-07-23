@@ -1,6 +1,8 @@
-// 1.20.1	2023-07-22T17:19:36.1456511	Recipes
+// 1.20.1	2023-07-22T20:18:42.586231	Recipes
 bfa58cb25afecc113b514c39efe31eb307a36df8 data/testmod/advancements/recipes/building_blocks/amethyst_shard.json
 2e9be831622a396126c5f00df5ec5d0c387bd7c4 data/testmod/advancements/recipes/building_blocks/bronze_ingot.json
+071b69fb3f77da6597433411b13b48f25aa72167 data/testmod/advancements/recipes/building_blocks/raw_tin.json
+250810442a6a217811f9cff07799c1611ec7ff32 data/testmod/advancements/recipes/building_blocks/raw_tungsten.json
 99e3d9fd923c1f91c2a2988f03b21e4ab04eed99 data/testmod/advancements/recipes/building_blocks/ruby.json
 de4b7bbd0718c1e6cb5f9c016c680d1248b344dc data/testmod/advancements/recipes/building_blocks/sapphire.json
 9eb291167d394fbc24d16e278d6dfad10d091e1a data/testmod/advancements/recipes/building_blocks/steel_ingot.json
@@ -60,6 +62,8 @@ b61d22d50e048760edd8165a5f7c0feca275913a data/testmod/advancements/recipes/misc/
 bc88823cafd464d0187fab951fae6cbb95b549ce data/testmod/advancements/recipes/misc/carbonite_dust_from_smelting_deepslate_carbonite_ore.json
 a12abe94216313195b02c026b4564637579ea199 data/testmod/advancements/recipes/misc/compound_gemstone.json
 470f711898398e9a88c5b15203af99c33dcfa1b1 data/testmod/advancements/recipes/misc/pretty_amethyst_block.json
+1d72777dc297e9572d3bbdb07115312b08569df7 data/testmod/advancements/recipes/misc/raw_tin_block.json
+e81d754c39dcf90e9475f6620bf697227d98f0f8 data/testmod/advancements/recipes/misc/raw_tungsten_block.json
 a1126ee708eecb1143fb6c71d970543951f6fddb data/testmod/advancements/recipes/misc/ruby_block.json
 dee370f49657e839037955e6c5a15a498aa2e476 data/testmod/advancements/recipes/misc/ruby_from_blasting_deepslate_ruby_ore.json
 51559ffba4048537ff90cce73241e174eb2b121f data/testmod/advancements/recipes/misc/ruby_from_blasting_ruby_ore.json
@@ -158,6 +162,10 @@ cb883d842be51ae38af153910f03bf8eaddeef48 data/testmod/recipes/infused_diamond_sw
 c2ac738e9f97f8caa296c5b2ea276a8e97a94976 data/testmod/recipes/iron_mace.json
 6d9facdb6d8b78a3c5a80ecf4d2b6f4910dca3be data/testmod/recipes/netherite_mace_smithing.json
 53051aa9ba1e62d1bf5f35d9c4c539ec333e68d7 data/testmod/recipes/pretty_amethyst_block.json
+42d7d0652e031a5c776045c3f381113449a3650f data/testmod/recipes/raw_tin.json
+0efad28cc7dfa74ff997541eaf629e086539b13c data/testmod/recipes/raw_tin_block.json
+159042f54ef8c474e5ae161e645eff3fbaee04b2 data/testmod/recipes/raw_tungsten.json
+91be6f3b0ddfe2046dbb0175df7e64a7c74ebd0c data/testmod/recipes/raw_tungsten_block.json
 f4f4c8055be959bfeda4aca0144215beb173eadd data/testmod/recipes/ruby.json
 0a43a6d8c2213e85250db509a6167fc6e13cea31 data/testmod/recipes/ruby_block.json
 55af91f7c39470a90c5cbae0db439b2a314c49d2 data/testmod/recipes/ruby_from_blasting_deepslate_ruby_ore.json

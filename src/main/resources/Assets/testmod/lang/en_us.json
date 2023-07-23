@@ -10,11 +10,13 @@
   "block.testmod.carbonite_ore": "Carbonite Ore",
   "block.testmod.deepslate_carbonite_ore": "Deepslate Carbonite Ore",
   "block.testmod.tin_block": "Tin Block",
+  "block.testmod.raw_tin_block": "Raw Tin Block",
   "block.testmod.tin_ore": "Tin Ore",
   "block.testmod.deepslate_tin_ore": "Deepslate Tin Ore",
   "block.testmod.bronze_block": "Bronze Block",
   "block.testmod.steel_block": "Steel Block",
   "block.testmod.tungsten_block": "Tungsten Block",
+  "block.testmod.raw_tungsten_block": "Raw Tungsten Block",
   "block.testmod.tungsten_ore": "Tungsten Ore",
   "block.testmod.deepslate_tungsten_ore": "Deepslate Tungsten Ore",
 

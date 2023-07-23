@@ -72,11 +72,13 @@ public class TestMod
             event.accept(ModBlocks.CARBONITE_ORE);
             event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
             event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.RAW_TIN_BLOCK);
             event.accept(ModBlocks.TIN_ORE);
             event.accept(ModBlocks.DEEPSLATE_TIN_ORE);
             event.accept(ModBlocks.BRONZE_BLOCK);
             event.accept(ModBlocks.STEEL_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_BLOCK);
+            event.accept(ModBlocks.RAW_TUNGSTEN_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_ORE);
             event.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
             //endregion
