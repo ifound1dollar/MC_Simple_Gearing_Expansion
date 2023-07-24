@@ -1,25 +1,23 @@
-package net.dollar.testmod.item;
+package net.dollar.testmod.item.custom;
 
+import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.IDamageHandlingArmor;
-import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
-public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHandlingArmor, IInfusedDiamondItem {
+public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHandlingArmor {
     boolean isFullSet;
 
 
-    public ModInfusedDiamondArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
+    public ModTungstenCarbideArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
         super(p_40386_, p_266831_, p_40388_);
     }
-
 
     /**
      * Checks each tick if the player has a full set of this armor
@@ -33,13 +31,12 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         if (level.isClientSide || LivingEntity.getEquipmentSlotForItem(stack) != EquipmentSlot.CHEST) { return; }
 
         //check for correct equipment, then set isFullSet accordingly
-        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.INFUSED_DIAMOND_HELMET.get();
-        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.INFUSED_DIAMOND_CHESTPLATE.get();
-        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.INFUSED_DIAMOND_LEGGINGS.get();
-        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.INFUSED_DIAMOND_BOOTS.get();
+        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.TUNGSTEN_CARBIDE_HELMET.get();
+        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.TUNGSTEN_CARBIDE_CHESTPLATE.get();
+        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.TUNGSTEN_CARBIDE_LEGGINGS.get();
+        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.TUNGSTEN_CARBIDE_BOOTS.get();
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
     }
-
 
     /**
      * Intercepts the damage operation and reduces damage from a certain source
@@ -54,10 +51,25 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         //if not chestplate OR not full set, do not alter damage
         if (slot != EquipmentSlot.CHEST || !isFullSet) { return amount; }
 
-        //if taking damage from Magic source, reduce damage taken
-        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.MAGIC) {
+        //entity.sendSystemMessage(Component.literal(String.valueOf(source.type())));
+        //entity.sendSystemMessage(Component.literal(String.valueOf(ModUtils.getDamageCategory(source))));
+
+        //if taking damage from Explosion source, reduce damage taken
+        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.EXPLOSION) {
             return amount * 0.50f;  //REDUCE BY 50%
         }
         return amount;  //if reaches here, return original amount
     }
+
+    @Override
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    @Override
+    public boolean canBeHurtBy(DamageSource source) {
+        //entity cannot be destroyed by explosions or fire
+        return !(source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION));
+    }
+
 }

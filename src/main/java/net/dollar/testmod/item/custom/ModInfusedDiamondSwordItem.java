@@ -1,15 +1,18 @@
-package net.dollar.testmod.item;
+package net.dollar.testmod.item.custom;
 
+import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 
-public class ModTungstenCarbideAxeItem extends AxeItem {
-    public ModTungstenCarbideAxeItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
+public class ModInfusedDiamondSwordItem extends SwordItem implements IInfusedDiamondItem {
+    public ModInfusedDiamondSwordItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
@@ -22,18 +25,7 @@ public class ModTungstenCarbideAxeItem extends AxeItem {
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
-        ModUtils.rollTungstenCarbideOnHitAndApply(attackedEntity, attacker, 20);    //sharp
+        ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker, 15); //sharp, all 15
         return super.hurtEnemy(stack, attackedEntity, attacker);
-    }
-
-    @Override
-    public boolean isFireResistant() {
-        return true;
-    }
-
-    @Override
-    public boolean canBeHurtBy(DamageSource source) {
-        //entity cannot be destroyed by explosions or fire
-        return !(source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION));
     }
 }

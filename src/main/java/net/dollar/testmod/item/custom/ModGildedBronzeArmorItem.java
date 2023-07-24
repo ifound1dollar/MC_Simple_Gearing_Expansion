@@ -1,4 +1,4 @@
-package net.dollar.testmod.item;
+package net.dollar.testmod.item.custom;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ArmorItem;

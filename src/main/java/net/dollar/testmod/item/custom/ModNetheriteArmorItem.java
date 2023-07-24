@@ -1,5 +1,6 @@
-package net.dollar.testmod.item;
+package net.dollar.testmod.item.custom;
 
+import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.IDamageHandlingArmor;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.network.chat.Component;

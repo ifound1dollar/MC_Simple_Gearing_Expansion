@@ -1,6 +1,7 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.TestMod;
+import net.dollar.testmod.item.custom.*;
 import net.dollar.testmod.util.ModMaceItem;
 import net.dollar.testmod.util.ModTiers;
 import net.minecraft.world.item.*;

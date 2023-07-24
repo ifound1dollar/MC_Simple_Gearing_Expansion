@@ -1,4 +1,4 @@
-package net.dollar.testmod.item;
+package net.dollar.testmod.item.custom;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.DamageTypeTags;

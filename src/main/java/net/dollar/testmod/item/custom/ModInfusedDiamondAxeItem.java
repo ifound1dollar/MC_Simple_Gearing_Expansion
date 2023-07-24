@@ -1,14 +1,14 @@
-package net.dollar.testmod.item;
+package net.dollar.testmod.item.custom;
 
+import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 
-public class ModNetheriteSwordItem extends SwordItem {
-    public ModNetheriteSwordItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
+public class ModInfusedDiamondAxeItem extends AxeItem implements IInfusedDiamondItem {
+    public ModInfusedDiamondAxeItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
@@ -21,7 +21,7 @@ public class ModNetheriteSwordItem extends SwordItem {
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
-        ModUtils.rollNetheriteOnHitAndApply(attackedEntity, attacker, 20);  //sharp
+        ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker, 15); //sharp, all 15
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 

@@ -1,4 +1,4 @@
-package net.dollar.testmod.item;
+package net.dollar.testmod.item.custom;
 
 import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.minecraft.network.chat.Component;
