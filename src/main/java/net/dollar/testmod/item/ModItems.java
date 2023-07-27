@@ -1,10 +1,12 @@
 package net.dollar.testmod.item;
 
 import net.dollar.testmod.TestMod;
+import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.item.custom.*;
 import net.dollar.testmod.util.ModMaceItem;
 import net.dollar.testmod.util.ModTiers;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,6 +22,11 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
 
 
+
+
+    public static final RegistryObject<Item> OBSIDIAN_GOLEM_SPAWN_EGG = ITEMS.register("obsidian_golem_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.OBSIDIAN_GOLEM, 0xD57E36, 0x1D0D00,
+                    new Item.Properties()));
 
     //create RegistryObjects for new items
     //region BASIC ITEMS

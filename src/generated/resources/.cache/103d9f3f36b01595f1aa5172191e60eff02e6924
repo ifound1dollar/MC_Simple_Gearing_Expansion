@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-26T23:03:25.7079166	Registries
+// 1.20.1	2023-07-27T00:17:37.9684051	Registries
 19445ddc191a7bc8e53e2d1d7b2475e36c20e993 data/testmod/worldgen/configured_feature/carbonite_ore.json
 cc11d0b1060c864f001f6a2c708395a59dda34b3 data/testmod/worldgen/configured_feature/ruby_ore.json
 028db8f89a596ad821e620202fa4ab8a5d64c247 data/testmod/worldgen/configured_feature/sapphire_ore.json
@@ -6,8 +6,8 @@ a481e2f717fa6c23fe83273ed115f9bf39f4dc83 data/testmod/worldgen/configured_featur
 dc1a04bc57e601e783c63d78707ecbdc5530a3d5 data/testmod/worldgen/configured_feature/tin_ore_small.json
 7b07f347ce3fe08d5d52d687775e3fdab6dc8da1 data/testmod/worldgen/configured_feature/tungsten_ore.json
 18d704ad4742243e463b97d0369e3694f223b37d data/testmod/worldgen/configured_feature/tungsten_ore_small.json
-ac32dd1957ffa405cb51070ce665a9edccfa9b2c data/testmod/worldgen/placed_feature/carbonite_ore_lower_placed.json
-d10b9793cd1b9b5672fc922a0ca37c056e434d3a data/testmod/worldgen/placed_feature/carbonite_ore_upper_placed.json
+64fd1d2a9aff175b77823d70e0e2310de87ccf2f data/testmod/worldgen/placed_feature/carbonite_ore_lower_placed.json
+ae51907e150af21bf5aa050292f9d0fba92387ca data/testmod/worldgen/placed_feature/carbonite_ore_upper_placed.json
 9ba1386aa946d5d04e95838818aedea7c5e1ee5e data/testmod/worldgen/placed_feature/ruby_ore_placed.json
 a36655b09ff2a97e6d1f74d840a37478cd53e165 data/testmod/worldgen/placed_feature/sapphire_ore_placed.json
 893e80229cdf60383e1309bedacb88bad4f1aeac data/testmod/worldgen/placed_feature/tin_ore_placed.json

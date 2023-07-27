@@ -17,6 +17,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        withExistingParent(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
         //region BASIC ITEMS
         simpleItem(ModItems.RUBY);
         simpleItem(ModItems.SAPPHIRE);

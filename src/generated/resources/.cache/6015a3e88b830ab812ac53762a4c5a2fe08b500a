@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-22T17:19:36.1544678	Item Models: testmod
+// 1.20.1	2023-07-27T00:17:37.9703993	Item Models: testmod
 95eee8989ae92b545c3cddfff90a11cc4870fec7 assets/testmod/models/item/bronze_axe.json
 191ce2b157f39b46c7113c87e800b24c4256d971 assets/testmod/models/item/bronze_boots.json
 3ef19b52c018eaabf8aaf6836a7d02ce8bdf284b assets/testmod/models/item/bronze_chestplate.json
@@ -41,6 +41,7 @@ c23d121fe179562163823397b7e897247f0a3189 assets/testmod/models/item/infused_gems
 cf04761113b7f881402d1e89b06d2ace1866c3ea assets/testmod/models/item/infusion_upgrade_smithing_template.json
 bbac8128e1c64fe0317ee2ee96011d4a0a16f4eb assets/testmod/models/item/iron_mace.json
 16aecf6a7d0bfa07944284edb2ff268681f3b4ee assets/testmod/models/item/netherite_mace.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/testmod/models/item/obsidian_golem_spawn_egg.json
 af6aa13c4c02b3c7fca7265dc9c54c31ce33ea4b assets/testmod/models/item/raw_tin.json
 bde86731dba1adeac0b31ca5c4298ce840438026 assets/testmod/models/item/raw_tungsten.json
 cdfd550802d9de05915f2041480bb89b369edf6f assets/testmod/models/item/ruby.json

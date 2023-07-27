@@ -2,6 +2,7 @@ package net.dollar.testmod;
 
 import com.mojang.logging.LogUtils;
 import net.dollar.testmod.block.ModBlocks;
+import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.tile.ModTileEntities;
 import net.dollar.testmod.enchantment.ModEnchantments;
 import net.dollar.testmod.item.ModCreativeModeTabs;
@@ -35,6 +36,7 @@ public class TestMod
         ModBlocks.register(modEventBus);
         ModEnchantments.register(modEventBus);
         ModTileEntities.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
