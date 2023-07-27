@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-22T22:46:50.4190732	Loot Tables
+// 1.20.1	2023-07-26T17:44:31.9715412	Loot Tables
 8568dfd4d000609fff8b0ed7c73b8998da83a67c data/testmod/loot_tables/blocks/bronze_block.json
 a9ab382ef42cabefe43b9466f5661c7119788248 data/testmod/loot_tables/blocks/carbonite_ore.json
 f5b839cbf8bef48e45160af5e41f90a34b853f5a data/testmod/loot_tables/blocks/decorative_amethyst_block.json
@@ -13,6 +13,7 @@ db0b7b9a905a1b5b4ff2e1f05b73a09dfbbbe2e6 data/testmod/loot_tables/blocks/ruby_bl
 c4728a641de3c329c127141b47f99fa12da0100c data/testmod/loot_tables/blocks/ruby_ore.json
 d091e5bf79e6a49afedd8fc1ac94ff4724210ab7 data/testmod/loot_tables/blocks/sapphire_block.json
 99a659cc45edb7afb876ed58a3ed9de155f972aa data/testmod/loot_tables/blocks/sapphire_ore.json
+fc8fe096ac7685cac81839f561a03d0f84d66e14 data/testmod/loot_tables/blocks/shrine_block.json
 7f6972b877668b13a378669b7a21baece1035176 data/testmod/loot_tables/blocks/steel_block.json
 47e4f2dcaaa33f44d3e5935edb32c17213f64c16 data/testmod/loot_tables/blocks/tin_block.json
 7faed1ae01ec297d62bc2055d17a68fc40727769 data/testmod/loot_tables/blocks/tin_ore.json

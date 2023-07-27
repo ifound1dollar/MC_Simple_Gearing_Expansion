@@ -96,6 +96,11 @@ public class ModBlocks {
                     UniformInt.of(2, 5)));
 
 
+    public static final RegistryObject<Block> SHRINE_BLOCK = registerBlock("shrine_block",
+            () -> new ModShrineBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)
+                    .strength(3f).requiresCorrectToolForDrops()));
+
+
 
 
 

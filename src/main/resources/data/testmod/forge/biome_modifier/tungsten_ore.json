@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_overworld",
+  "features": [
+    "testmod:tungsten_ore_placed",
+    "testmod:tungsten_ore_small_placed"
+  ],
+  "step": "underground_ores"
+}

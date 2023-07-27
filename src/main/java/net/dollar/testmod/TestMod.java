@@ -2,6 +2,7 @@ package net.dollar.testmod;
 
 import com.mojang.logging.LogUtils;
 import net.dollar.testmod.block.ModBlocks;
+import net.dollar.testmod.tile.ModTileEntities;
 import net.dollar.testmod.enchantment.ModEnchantments;
 import net.dollar.testmod.item.ModCreativeModeTabs;
 import net.dollar.testmod.item.ModItems;
@@ -33,6 +34,7 @@ public class TestMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEnchantments.register(modEventBus);
+        ModTileEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -82,6 +84,8 @@ public class TestMod
             event.accept(ModBlocks.RAW_TUNGSTEN_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_ORE);
             event.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
+
+            event.accept(ModBlocks.SHRINE_BLOCK);
             //endregion
             //region BASIC ITEMS
             event.accept(ModItems.RUBY);

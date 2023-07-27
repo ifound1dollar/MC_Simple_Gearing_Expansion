@@ -3,9 +3,17 @@ package net.dollar.testmod.item.custom;
 import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModMaceItem;
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.Random;
 
 public class ModInfusedDiamondMaceItem extends ModMaceItem implements IInfusedDiamondItem {
     public ModInfusedDiamondMaceItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
@@ -24,5 +32,4 @@ public class ModInfusedDiamondMaceItem extends ModMaceItem implements IInfusedDi
         ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker, 15);  //blunt, all 15
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
-
 }
