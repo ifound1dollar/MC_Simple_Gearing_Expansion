@@ -25,6 +25,6 @@ public class ModObsidianGolemEntityRenderer extends MobRenderer<ObsidianGolemEnt
     @Override
     protected void scale(ObsidianGolemEntity entity, PoseStack poseStack, float p_115316_) {
         //scaling this will increase the size of the actual model & texture
-        poseStack.scale(1.5f, 1.5f, 1.5f);
+        poseStack.scale(1.25f, 1.25f, 1.25f);
     }
 }

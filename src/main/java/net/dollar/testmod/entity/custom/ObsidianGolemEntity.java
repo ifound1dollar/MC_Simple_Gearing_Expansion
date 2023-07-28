@@ -47,7 +47,12 @@ public class ObsidianGolemEntity extends IronGolem {
         //NOTE: smaller numbers (first argument) imply higher priority
 
         //speedModifier, followingTargetEvenIfNotSeen
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0d, true));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0d, true) {
+            @Override
+            protected double getAttackReachSqr(LivingEntity p_25556_) {
+                return super.getAttackReachSqr(p_25556_) / 1.5; //cut attack range down
+            }
+        });
         //speedModifier
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0d));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
@@ -99,28 +104,28 @@ public class ObsidianGolemEntity extends IronGolem {
 
         ticksSinceLastAttack++;
         teleportDelayTicks--;
-        //if this hasn't attacked in >5 seconds, roll 2% chance per tick to afflict nearby players and teleport to target
-        if (ticksSinceLastAttack > 100 && teleportDelayTicks <= 0 && this.random.nextInt(100) < 2) {
+        //if this hasn't attacked in >5 seconds, roll 1% chance per tick to afflict nearby players and teleport to target
+        if (ticksSinceLastAttack > 100 && teleportDelayTicks <= 0 && this.random.nextInt(100) < 1) {
             blindAndSlowNearbyPlayers();
 
             if (ticksSinceLastAttack > 240) {
                 //if this hasn't been able to attack in 12 seconds, teleport directly on top of the target
                 teleportTo((this.random.nextDouble() - 0.5D) + this.getTarget().getX(),
-                        this.getTarget().getY() + 2,
+                        this.getTarget().getY() + 0.5D,
                         (this.random.nextDouble() - 0.5D) + this.getTarget().getZ());
             } else {
                 //else teleport to near the target but not quite as close
                 //FIX THIS TO GUARANTEE TELEPORT TO RANGE OF 3-4 BLOCKS AWAY
-                randomTeleport((this.random.nextDouble() - 0.5D) + this.getTarget().getX() + (this.random.nextInt(8) - 4),
+                randomTeleport((this.random.nextDouble() - 0.5D) + this.getTarget().getX() + (this.random.nextInt(10) - 5),
                         this.getTarget().getY() + 2,
-                        (this.random.nextDouble() - 0.5D) + this.getTarget().getZ() + (this.random.nextInt(8) - 4),
+                        (this.random.nextDouble() - 0.5D) + this.getTarget().getZ() + (this.random.nextInt(10) - 5),
                         false);
 
                 //if now in attack range, should delay 1 second before allowing attack
                 //IMPORTANT: Must happen only here BECAUSE: when teleporting directly onto target, must attack
                 //  immediately to prevent cheesing (ex. knock off of pillar).
                 if (this.isWithinMeleeAttackRange(this.getTarget())) {
-                    ticksSinceLastAttack = 20;
+                    ticksSinceLastAttack = 30;
                 }
             }
             teleportDelayTicks = 100;
@@ -139,8 +144,8 @@ public class ObsidianGolemEntity extends IronGolem {
         this.playSound(SoundEvents.RAVAGER_ROAR, 1.0F, 1.0F);   //volume, pitch???
         for (Entity entity : entities) {
             if (entity instanceof Player player) {
-                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60));
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 1));
+                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
             }
         }
     }
