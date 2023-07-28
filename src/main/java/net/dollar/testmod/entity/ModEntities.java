@@ -3,7 +3,6 @@ package net.dollar.testmod.entity;
 import net.dollar.testmod.TestMod;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,7 +19,7 @@ public class ModEntities {
             ENTITY_TYPES.register("obsidian_golem",
                     () -> EntityType.Builder.of(ObsidianGolemEntity::new, MobCategory.MONSTER)
                             .fireImmune()
-                            .sized(2.25f, 4f)   //1.5x Iron Golem hitbox size, since model is 1.5x size
+                            .sized(1.75f, 4f)   //roughly 1.5x Iron Golem hitbox size, but less wide
                             .build(new ResourceLocation(TestMod.MOD_ID + "obsidian_golem").toString()));
 
 

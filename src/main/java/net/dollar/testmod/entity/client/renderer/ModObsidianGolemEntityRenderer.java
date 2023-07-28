@@ -6,10 +6,8 @@ import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.minecraft.client.model.IronGolemModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.IronGolemRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.IronGolem;
 
 public class ModObsidianGolemEntityRenderer extends MobRenderer<ObsidianGolemEntity, IronGolemModel<ObsidianGolemEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
