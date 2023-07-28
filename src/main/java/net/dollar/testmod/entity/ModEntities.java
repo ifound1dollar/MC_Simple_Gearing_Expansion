@@ -20,8 +20,7 @@ public class ModEntities {
             ENTITY_TYPES.register("obsidian_golem",
                     () -> EntityType.Builder.of(ObsidianGolemEntity::new, MobCategory.MONSTER)
                             .fireImmune()
-                            //.setTrackingRange(5)
-                            .sized(1.5f, 2.7f)
+                            .sized(2.25f, 4f)   //1.5x Iron Golem hitbox size, since model is 1.5x size
                             .build(new ResourceLocation(TestMod.MOD_ID + "obsidian_golem").toString()));
 
 

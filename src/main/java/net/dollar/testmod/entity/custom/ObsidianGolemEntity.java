@@ -1,6 +1,8 @@
 package net.dollar.testmod.entity.custom;
 
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -100,11 +102,12 @@ public class ObsidianGolemEntity extends IronGolem implements RangedAttackMob {
                 new AABB(x - 10, y - 10, z - 10,
                         x + 10, y + 10, z + 10));
 
+        this.playSound(SoundEvents.RAVAGER_ROAR, 1.0F, 1.0F);   //volume, pitch???
         for (Entity entity : entities) {
             if (entity instanceof Player player) {
-                this.playSound(SoundEvents.RAVAGER_ROAR, 1.0F, 1.0F);   //volume, pitch???
                 player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60));
-                //probably drag the player close to the mob here
+                player.hurt(damageSources().magic(), ((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
+                //probably drag the player close to the mob here???
             }
         }
     }
