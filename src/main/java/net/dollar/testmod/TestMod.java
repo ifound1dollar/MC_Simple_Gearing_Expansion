@@ -2,6 +2,7 @@ package net.dollar.testmod;
 
 import com.mojang.logging.LogUtils;
 import net.dollar.testmod.block.ModBlocks;
+import net.dollar.testmod.config.ModCommonConfigs;
 import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.tile.ModTileEntities;
 import net.dollar.testmod.enchantment.ModEnchantments;
@@ -12,7 +13,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -46,6 +49,9 @@ public class TestMod
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ModCommonConfigs.SPEC,
+                "simple_gearing_expansion-common.toml");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -89,6 +95,7 @@ public class TestMod
 
             event.accept(ModBlocks.SHRINE_BLOCK);
             //endregion
+
             //region BASIC ITEMS
             event.accept(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG);
             event.accept(ModItems.TIN_SHEARS);

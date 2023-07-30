@@ -1,6 +1,7 @@
 package net.dollar.testmod.entity.custom;
 
 import net.dollar.testmod.item.ModItems;
+import net.dollar.testmod.util.ModUtils;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -56,6 +57,15 @@ public class ObsidianGolemEntity extends IronGolem {
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+    }
+
+    @Override
+    public boolean hurt(DamageSource source, float value) {
+        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
+            value *= 0.67f;  //reduce Sharp damage by 33%
+        }
+
+        return super.hurt(source, value);
     }
 
     @Override

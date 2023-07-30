@@ -1,5 +1,6 @@
 package net.dollar.testmod.item.custom;
 
+import net.dollar.testmod.config.ModCommonConfigs;
 import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.IDamageHandlingArmor;
 import net.dollar.testmod.util.ModUtils;
@@ -11,7 +12,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ModNetheriteArmorItem extends ArmorItem implements IDamageHandlingArmor {
     boolean isFullSet;
@@ -61,8 +66,15 @@ public class ModNetheriteArmorItem extends ArmorItem implements IDamageHandlingA
 
         //if taking damage from fire source, reduce damage taken
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.FIRE) {
-            return amount * 0.50f;  //REDUCE BY 50%
+            return amount * (1 - (float)(ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get() / 100));
         }
         return amount;  //if reaches here, return original amount
     }
+
+    @Override
+    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
+        p_41423_.add(Component.literal(String.format("§4Full Set: %s%% Fire damage reduction",
+                ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get())));
+    }
+
 }

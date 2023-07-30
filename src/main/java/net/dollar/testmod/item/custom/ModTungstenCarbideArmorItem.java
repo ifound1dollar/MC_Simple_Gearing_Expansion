@@ -1,8 +1,10 @@
 package net.dollar.testmod.item.custom;
 
+import net.dollar.testmod.config.ModCommonConfigs;
 import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.IDamageHandlingArmor;
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -10,6 +12,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHandlingArmor {
     boolean isFullSet;
@@ -56,7 +61,7 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
 
         //if taking damage from Explosion source, reduce damage taken
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.EXPLOSION) {
-            return amount * 0.50f;  //REDUCE BY 50%
+            return amount * (1 - (float)(ModCommonConfigs.TUNGSTEN_CARBIDE_EXPLOSION_DAMAGE_REDUCTION.get() / 100));
         }
         return amount;  //if reaches here, return original amount
     }
@@ -72,4 +77,9 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
         return !(source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION));
     }
 
+    @Override
+    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
+        p_41423_.add(Component.literal(String.format("§8Full Set: %s%% Explosion damage reduction",
+                ModCommonConfigs.TUNGSTEN_CARBIDE_EXPLOSION_DAMAGE_REDUCTION.get())));
+    }
 }

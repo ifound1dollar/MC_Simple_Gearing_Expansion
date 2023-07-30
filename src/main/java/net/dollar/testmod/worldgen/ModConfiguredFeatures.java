@@ -2,6 +2,7 @@ package net.dollar.testmod.worldgen;
 
 import net.dollar.testmod.TestMod;
 import net.dollar.testmod.block.ModBlocks;
+import net.dollar.testmod.config.ModCommonConfigs;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -53,17 +54,48 @@ public class ModConfiguredFeatures {
 
         //INT PARAM IS VEIN SIZE
         //3 is equivalent to Emerald vein size
-        register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(rubyOres, 3));
-        register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(sapphireOres, 3));
-        register(context, CARBONITE_ORE_KEY, Feature.ORE, new OreConfiguration(carboniteOres, 4));
+        register(context, CARBONITE_ORE_KEY, Feature.ORE, new OreConfiguration(carboniteOres,
+                4));   //default 4
+        register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(rubyOres,
+                3));        //default 3
+        register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(sapphireOres,
+                3));    //default 3
 
         //9 is Iron equivalent (4 is small for Iron and Diamond)
-        register(context, TIN_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres, 6));
-        register(context, TIN_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(tinOres, 3));
+        register(context, TIN_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres,
+                6));         //default 6
+        register(context, TIN_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(tinOres,
+                3)); //half of default
 
         //last float is for chance to, when exposed to air, to fail (per block) (diamond is 0.7 for 12, 0.5 for 4)
-        register(context, TUNGSTEN_ORE_KEY, Feature.ORE, new OreConfiguration(tungstenOres, 12, 0.5f));
-        register(context, TUNGSTEN_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(tungstenOres, 4, 0.35f));
+        register(context, TUNGSTEN_ORE_KEY, Feature.ORE, new OreConfiguration(tungstenOres,
+                12, 0.6f));  //default 12
+        register(context, TUNGSTEN_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(tungstenOres,
+                4, 0.4f));  //one third of default
+
+
+
+        //BELOW IS TEMPORARILY COMMENTED OUT BECAUSE DATA CANNOT BE GENERATED USING CONFIGS (REGISTRIES)
+
+//        //3 is equivalent to Emerald vein size
+//        register(context, CARBONITE_ORE_KEY, Feature.ORE, new OreConfiguration(carboniteOres,
+//                ModCommonConfigs.CARBONITE_ORE_VEIN_SIZE.get()));   //default 4
+//        register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(rubyOres,
+//                ModCommonConfigs.RUBY_ORE_VEIN_SIZE.get()));        //default 3
+//        register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(sapphireOres,
+//                ModCommonConfigs.SAPPHIRE_ORE_VEIN_SIZE.get()));    //default 3
+//
+//        //9 is Iron equivalent (4 is small for Iron and Diamond)
+//        register(context, TIN_ORE_KEY, Feature.ORE, new OreConfiguration(tinOres,
+//                ModCommonConfigs.TIN_ORE_VEIN_SIZE.get()));         //default 6
+//        register(context, TIN_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(tinOres,
+//                ModCommonConfigs.TIN_ORE_VEIN_SIZE.get() / 2)); //half of default
+//
+//        //last float is for chance to, when exposed to air, to fail (per block) (diamond is 0.7 for 12, 0.5 for 4)
+//        register(context, TUNGSTEN_ORE_KEY, Feature.ORE, new OreConfiguration(tungstenOres,
+//                ModCommonConfigs.TUNGSTEN_ORE_VEIN_SIZE.get(), 0.6f));  //default 12
+//        register(context, TUNGSTEN_ORE_SMALL_KEY, Feature.ORE, new OreConfiguration(tungstenOres,
+//                ModCommonConfigs.TUNGSTEN_ORE_VEIN_SIZE.get() / 3, 0.4f));  //one third of default
     }
 
 

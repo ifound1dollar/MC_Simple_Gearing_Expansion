@@ -18,8 +18,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TestMod.MOD_ID);
-
-    //also make DeferredRegister for vanilla items to be overridden
     public static final DeferredRegister<Item> VANILLA_ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
 
@@ -27,7 +25,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> OBSIDIAN_GOLEM_SPAWN_EGG = ITEMS.register("obsidian_golem_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.OBSIDIAN_GOLEM, 0xD57E36, 0x1D0D00,
+            () -> new ForgeSpawnEggItem(ModEntities.OBSIDIAN_GOLEM, 0x12031E, 0xED4D0E,
                     new Item.Properties()));
     public static final RegistryObject<Item> TIN_SHEARS = ITEMS.register("tin_shears",
             () -> new ShearsItem(new Item.Properties().durability(150)));   //Iron is 238 (for some reason)
