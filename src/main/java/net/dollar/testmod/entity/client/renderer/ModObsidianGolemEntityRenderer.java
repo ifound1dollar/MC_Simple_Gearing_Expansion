@@ -7,14 +7,19 @@ import net.minecraft.client.model.IronGolemModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.layers.IronGolemCrackinessLayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
 public class ModObsidianGolemEntityRenderer extends MobRenderer<ObsidianGolemEntity, IronGolemModel<ObsidianGolemEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
             TestMod.MOD_ID, "textures/entities/obsidian_golem.png");
 
     public ModObsidianGolemEntityRenderer(EntityRendererProvider.Context context) {
-        super(context, new IronGolemModel<>(context.bakeLayer(ModelLayers.IRON_GOLEM)), 0.7f);
+        super(context, new IronGolemModel<>(context.bakeLayer(ModelLayers.IRON_GOLEM)), 0.7f);  //shadow radius
+        this.addLayer(new ModObsidianGolemCrackinessLayer(this));   //add custom crackiness layer
     }
 
     @Override

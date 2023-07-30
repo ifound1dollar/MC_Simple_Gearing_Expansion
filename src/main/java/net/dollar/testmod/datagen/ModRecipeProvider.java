@@ -111,6 +111,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_TUNGSTEN.get(),
                 RecipeCategory.MISC, ModBlocks.RAW_TUNGSTEN_BLOCK.get());
         //endregion
+        //region Misc.
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BUCKET, 1)
+                .define('d', ModItems.TIN_INGOT.get())
+                .pattern("   ")
+                .pattern("d d")
+                .pattern(" d ")
+                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.TIN_INGOT.get()).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TIN_SHEARS.get(), 1)
+                .define('d', ModItems.TIN_INGOT.get())
+                .pattern(" d")
+                .pattern("d ")
+                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.TIN_INGOT.get()).build()))
+                .save(consumer);
+        //endregion
         //region Compounds and Gemstone (shapeless)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)
                 .requires(Items.COPPER_INGOT, 3)
@@ -136,9 +153,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1)
                 .requires(ModItems.TUNGSTEN_INGOT.get(), 4)
                 .requires(ModItems.CARBONITE_DUST.get(), 4)
-                .requires(ModItems.SUPERHEATED_CORE.get(), 1)
+                .requires(ModItems.MOLTEN_CORE.get(), 1)
                 .unlockedBy("has_superheated_core", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.SUPERHEATED_CORE.get()).build()))
+                        .of(ModItems.MOLTEN_CORE.get()).build()))
                 .save(consumer);
         //endregion
         //region Upgrade Templates

@@ -52,11 +52,11 @@ public class ModPlacedFeatures {
 
         //less frequent than Iron, and slightly smaller veins
         register(context, TIN_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(6, HeightRangePlacement.triangle(
+                ModOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(
                                 VerticalAnchor.absolute(16),
                                 VerticalAnchor.absolute(96))));
         register(context, TIN_ORE_SMALL_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TIN_ORE_SMALL_KEY),
-                ModOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(
+                ModOrePlacement.commonOrePlacement(7, HeightRangePlacement.uniform(
                                 VerticalAnchor.bottom(),
                                 VerticalAnchor.absolute(32))));
 

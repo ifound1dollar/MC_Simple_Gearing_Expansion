@@ -90,11 +90,14 @@ public class TestMod
             event.accept(ModBlocks.SHRINE_BLOCK);
             //endregion
             //region BASIC ITEMS
+            event.accept(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG);
+            event.accept(ModItems.TIN_SHEARS);
+
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
             event.accept(ModItems.COMPOUND_GEMSTONE);
             event.accept(ModItems.INFUSED_GEMSTONE);
-            event.accept(ModItems.SUPERHEATED_CORE);
+            event.accept(ModItems.MOLTEN_CORE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
             event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);

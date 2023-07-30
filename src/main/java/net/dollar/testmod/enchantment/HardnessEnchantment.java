@@ -5,6 +5,7 @@ import net.dollar.testmod.util.ModMaceItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.DamageEnchantment;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
@@ -36,7 +37,7 @@ public class HardnessEnchantment extends Enchantment {
     }
 
     public boolean checkCompatibility(Enchantment enchantment) {
-        return !(enchantment instanceof HardnessEnchantment);
+        return !(enchantment instanceof HardnessEnchantment) && !(enchantment instanceof DamageEnchantment);
     }
 
     @Override

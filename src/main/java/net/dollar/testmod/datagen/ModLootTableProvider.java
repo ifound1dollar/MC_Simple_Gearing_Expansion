@@ -12,7 +12,8 @@ public class ModLootTableProvider {
     //auto-generates loot tables of the type(s) provided in the method, currently only blocks
     public static LootTableProvider create(PackOutput output) {
         return new LootTableProvider(output, Set.of(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK)));
+                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK),
+                        new LootTableProvider.SubProviderEntry(ModEntityLootTables::new, LootContextParamSets.ENTITY)));
 
         //NOTE: this is the way to make new loot tables for vanilla chests, can be extended to include any
         //  new mod chest loot tables

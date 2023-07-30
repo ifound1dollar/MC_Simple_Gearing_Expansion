@@ -19,12 +19,13 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         withExistingParent(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
+
         //region BASIC ITEMS
         simpleItem(ModItems.RUBY);
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.COMPOUND_GEMSTONE);
         simpleItem(ModItems.INFUSED_GEMSTONE);
-        simpleItem(ModItems.SUPERHEATED_CORE);
+        simpleItem(ModItems.MOLTEN_CORE);
         simpleItem(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
         simpleItem(ModItems.CARBONITE_DUST);
@@ -75,6 +76,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         //endregion
 
         //region HANDHELD ITEMS
+        handheldItem(ModItems.TIN_SHEARS);
+
         handheldItem(ModItems.BRONZE_AXE);
         handheldItem(ModItems.GILDED_BRONZE_AXE);
         handheldItem(ModItems.STEEL_AXE);
@@ -100,7 +103,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TUNGSTEN_MACE);
         handheldItem(ModItems.TUNGSTEN_CARBIDE_MACE);
         handheldItem(ModItems.INFUSED_DIAMOND_MACE);
-        //next ones here
 
         handheldItem(ModItems.BRONZE_PICKAXE);
         handheldItem(ModItems.GILDED_BRONZE_PICKAXE);

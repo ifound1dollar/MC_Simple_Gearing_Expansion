@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "testmod:item/superheated_core"
+    "layer0": "testmod:item/molten_core"
   }
 }

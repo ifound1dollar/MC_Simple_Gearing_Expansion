@@ -41,7 +41,7 @@
 
   "item.testmod.compound_gemstone": "Compound Gemstone",
   "item.testmod.infused_gemstone": "Infused Gemstone",
-  "item.testmod.superheated_core": "Superheated Core",
+  "item.testmod.molten_core": "Molten Core",
   "item.testmod.tungsten_carbide_ingot": "Tungsten-Carbide Ingot",
 
   "item.testmod.gilded_upgrade_smithing_template": "Gilded Upgrade Smithing Template",
@@ -125,6 +125,10 @@
 
 
   "enchantment.testmod.hardness": "Hardness",
+
+
+
+  "entity.testmod.obsidian_golem": "Obsidian Golem",
 
   "creativemodetab.test_tab": "Test Tab", "comment1": "THIS LINE IS UNUSED CURRENTLY"
 }
