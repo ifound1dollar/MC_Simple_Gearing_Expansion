@@ -4,8 +4,15 @@ import net.dollar.testmod.TestMod;
 import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.entity.client.renderer.ModObsidianGolemEntityRenderer;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.AbstractGolem;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -14,6 +21,13 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntities.OBSIDIAN_GOLEM.get(), ObsidianGolemEntity.setAttributes());
+    }
+
+    @SubscribeEvent
+    public static void entitySpawnRestriction(SpawnPlacementRegisterEvent event) {
+        event.register(ModEntities.OBSIDIAN_GOLEM.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ObsidianGolemEntity::checkObsidianGolemSpawnRules,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 
     @SubscribeEvent

@@ -41,7 +41,7 @@ public class ModItems {
     public static final RegistryObject<Item> INFUSED_GEMSTONE = ITEMS.register("infused_gemstone",
             () -> new ModInfusedDiamondItem(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_CORE = ITEMS.register("molten_core",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
             () -> new ModTungstenCarbideIngotItem(new Item.Properties()));
 

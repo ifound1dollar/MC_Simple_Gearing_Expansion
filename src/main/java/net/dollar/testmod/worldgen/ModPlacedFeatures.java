@@ -71,12 +71,12 @@ public class ModPlacedFeatures {
 
         //triangle base higher than Diamond, and average slightly larger veins
         register(context, TUNGSTEN_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TUNGSTEN_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(7,
+                ModOrePlacement.commonOrePlacement(6,
                         HeightRangePlacement.triangle(
                                 VerticalAnchor.aboveBottom(-64),
                                 VerticalAnchor.aboveBottom(80))));  //similar to Diamond, regular -1, small +1
         register(context, TUNGSTEN_ORE_SMALL_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TUNGSTEN_ORE_SMALL_KEY),
-                ModOrePlacement.rareOrePlacement(9,
+                ModOrePlacement.rareOrePlacement(8,
                         HeightRangePlacement.triangle(
                                 VerticalAnchor.aboveBottom(-64),
                                 VerticalAnchor.aboveBottom(80))));

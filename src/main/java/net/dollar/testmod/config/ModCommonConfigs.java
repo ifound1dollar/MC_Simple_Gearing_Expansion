@@ -71,7 +71,7 @@ public class ModCommonConfigs {
 
         BUILDER.push("Tungsten Ore");
         TUNGSTEN_ORE_VEINS_PER_CHUNK = BUILDER.comment("Number of Tungsten Ore veins that will spawn per chunk")
-                .define("Veins Per Chunk", 16); //NOTE: includes rare ore generation (way less)
+                .define("Veins Per Chunk", 14); //NOTE: includes rare ore generation (way less)
         TUNGSTEN_ORE_VEIN_SIZE = BUILDER.comment("Size of regular Tungsten Ore veins")
                 .defineInRange("Vein Size", 12, 4, 20);
         BUILDER.pop();

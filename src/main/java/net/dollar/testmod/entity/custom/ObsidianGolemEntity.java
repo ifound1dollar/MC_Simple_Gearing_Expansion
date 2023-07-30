@@ -2,7 +2,9 @@ package net.dollar.testmod.entity.custom;
 
 import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.ModUtils;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -11,14 +13,18 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 
 import java.util.List;
@@ -37,8 +43,18 @@ public class ObsidianGolemEntity extends IronGolem {
                 .add(Attributes.ATTACK_DAMAGE, 16f)     //Normal, Easy/Hard values are auto-scaled
                 .add(Attributes.MOVEMENT_SPEED, 0.25f)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1.0f)
-                .add(Attributes.FOLLOW_RANGE, 25.0f)
+                .add(Attributes.FOLLOW_RANGE, 30f)
                 .build();
+    }
+
+    public static boolean checkObsidianGolemSpawnRules(EntityType<ObsidianGolemEntity> entityType, LevelAccessor accessor,
+                                                       MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        //only valid spawn very low in the world
+        if (blockPos.getY() >= -16) {
+            return false;
+        }
+
+        return checkMobSpawnRules(entityType, accessor, spawnType, blockPos, randomSource);
     }
 
     @Override
@@ -61,6 +77,11 @@ public class ObsidianGolemEntity extends IronGolem {
 
     @Override
     public boolean hurt(DamageSource source, float value) {
+        //BECAUSE THIS DERIVES FROM IRON GOLEM, ZOMBIES AND SKELETONS WILL ATTACK IT
+        if (source.getEntity() instanceof Skeleton || source.getEntity() instanceof Zombie) {
+            return super.hurt(source, 1);   //take little damage from attacking Skeletons and Zombies
+        }
+
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
             value *= 0.67f;  //reduce Sharp damage by 33%
         }
@@ -95,8 +116,8 @@ public class ObsidianGolemEntity extends IronGolem {
                     }
                 }
 
-                //ALSO CHANCE TO SET TARGET ON FIRE BASED ON % MISSING HP (LOOSELY CORRESPONDS TO CRACKINESS)
-                if (this.random.nextFloat() > (this.getHealth() / this.getMaxHealth())) {
+                //ALSO CHANCE TO SET TARGET ON FIRE BASED ON % MISSING HP + 10% (LOOSELY CORRESPONDS TO CRACKINESS)
+                if (this.random.nextFloat() > (this.getHealth() / this.getMaxHealth()) - 0.1f) {
                     livingEntity.setSecondsOnFire(3);
                 }
             }
@@ -119,7 +140,7 @@ public class ObsidianGolemEntity extends IronGolem {
         teleportDelayTicks--;
         //if this hasn't attacked in >3 seconds, roll 1% chance per tick to afflict nearby players and teleport to target
         if (ticksSinceLastAttack > 60 && teleportDelayTicks <= 0 && this.random.nextInt(100) < 1) {
-            blindAndSlowNearbyPlayers();
+            blindAndSlowNearbyLivingEntities();
 
             //IF this hasn't been able to attack in 12s (240 ticks), teleport directly on top of the
             //  target, ELSE teleport to near the target
@@ -127,21 +148,22 @@ public class ObsidianGolemEntity extends IronGolem {
         }
     }
 
-    private void blindAndSlowNearbyPlayers() {
+    private void blindAndSlowNearbyLivingEntities() {
         //blind and slow for 3s all players within 25 blocks
         double x = this.position().x;
         double y = this.position().y;
         double z = this.position().z;
 
         List<Entity> entities = this.level().getEntities(this,
-                new AABB(x - 25, y - 25, z - 25,
-                        x + 25, y + 25, z + 25));
+                new AABB(x - 30, y - 30, z - 30,
+                        x + 30, y + 30, z + 30));
 
         this.playSound(SoundEvents.RAVAGER_ROAR, 1.0F, 1.0F);   //volume, pitch???
         for (Entity entity : entities) {
-            if (entity instanceof Player player) {
-                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60));
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 1));
+            if (entity instanceof LivingEntity livingEntity) {
+                //blind and slow ALL nearby LivingEntities, regardless of whether angry at
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 60));
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 1));
             }
         }
     }
