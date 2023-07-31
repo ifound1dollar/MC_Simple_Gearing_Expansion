@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "d": {
-      "item": "testmod:carbide_upgrade_smithing_template"
+      "item": "testmod:generic_upgrade_template"
     },
     "i": {
-      "item": "minecraft:obsidian"
+      "item": "minecraft:netherrack"
     },
     "n": {
-      "item": "testmod:tungsten_ingot"
+      "item": "minecraft:diamond"
     }
   },
   "pattern": [
@@ -18,8 +18,7 @@
     "nnn"
   ],
   "result": {
-    "count": 2,
-    "item": "testmod:carbide_upgrade_smithing_template"
+    "item": "minecraft:netherite_upgrade_smithing_template"
   },
   "show_notification": true
 }

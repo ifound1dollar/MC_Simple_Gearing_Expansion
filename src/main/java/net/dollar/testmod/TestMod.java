@@ -108,6 +108,7 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
             event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
+            event.accept(ModItems.GENERIC_UPGRADE_TEMPLATE);
             event.accept(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
             event.accept(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
 

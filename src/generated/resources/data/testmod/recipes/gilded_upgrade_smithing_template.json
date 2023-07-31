@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "category": "misc",
   "key": {
     "d": {
       "item": "testmod:bronze_ingot"
     },
     "i": {
-      "item": "minecraft:cobblestone"
+      "item": "minecraft:stone"
     },
     "n": {
       "item": "minecraft:gold_nugget"

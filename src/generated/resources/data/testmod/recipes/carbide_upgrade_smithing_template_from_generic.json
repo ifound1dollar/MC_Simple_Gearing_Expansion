@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "d": {
-      "item": "testmod:carbide_upgrade_smithing_template"
+      "item": "testmod:generic_upgrade_template"
     },
     "i": {
       "item": "minecraft:obsidian"
@@ -18,7 +18,6 @@
     "nnn"
   ],
   "result": {
-    "count": 2,
     "item": "testmod:carbide_upgrade_smithing_template"
   },
   "show_notification": true

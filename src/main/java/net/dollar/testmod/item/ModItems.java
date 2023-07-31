@@ -47,6 +47,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> GILDED_UPGRADE_SMITHING_TEMPLATE =
             ITEMS.register("gilded_upgrade_smithing_template", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GENERIC_UPGRADE_TEMPLATE =
+            ITEMS.register("generic_upgrade_template", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INFUSION_UPGRADE_SMITHING_TEMPLATE =
             ITEMS.register("infusion_upgrade_smithing_template", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CARBIDE_UPGRADE_SMITHING_TEMPLATE =

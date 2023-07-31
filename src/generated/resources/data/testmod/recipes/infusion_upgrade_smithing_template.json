@@ -1,12 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "category": "misc",
   "key": {
     "d": {
       "item": "testmod:infusion_upgrade_smithing_template"
     },
     "i": {
-      "item": "minecraft:cobbled_deepslate"
+      "item": "minecraft:deepslate"
     },
     "n": {
       "item": "minecraft:diamond"

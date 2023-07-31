@@ -39,6 +39,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TUNGSTEN_INGOT);
 
         simpleItem(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
+        simpleItem(ModItems.GENERIC_UPGRADE_TEMPLATE);
         simpleItem(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
         //endregion

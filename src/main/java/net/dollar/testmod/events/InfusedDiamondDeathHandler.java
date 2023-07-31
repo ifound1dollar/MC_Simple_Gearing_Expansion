@@ -5,6 +5,7 @@ import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -36,33 +37,60 @@ public class InfusedDiamondDeathHandler {
         //only if the dead entity is a ServerPlayer and cause of death was Void
         if (event.getEntity() instanceof ServerPlayer player && event.getSource().is(DamageTypes.FELL_OUT_OF_WORLD)) {
             //create array of ItemStacks and add all Infused Diamond items to it at corresponding indices
+            boolean foundInfusedDiamondItem = false;
             ItemStack[] itemStacks = new ItemStack[41];
             for (int i = 0; i < 41; i++) {
                 ItemStack currItemStack = player.getInventory().getItem(i);
                 if (currItemStack.getItem() instanceof IInfusedDiamondItem) {
+                    foundInfusedDiamondItem = true;
                     itemStacks[i] = currItemStack;
                 }
             }
 
-            //finally, add array of ItemStacks to 'inventories' HashMap
-            inventories.put(player.getUUID(), itemStacks);
+            //finally, add array of ItemStacks to 'inventories' HashMap IF an Infused Diamond item was found
+            if (foundInfusedDiamondItem) {
+                inventories.put(player.getUUID(), itemStacks);
+            }
         }
     }
 
     @SubscribeEvent
     public static void dropsHandler(LivingDropsEvent event) {
-        //THIS METHOD WILL TAKE ANY STORED INFUSED DIAMOND ITEMS OF THE PLAYER'S AND ADD THEM BACK TO
-        //  THE PLAYER'S INVENTORY. THIS IS DONE IMMEDIATELY BECAUSE THE HASHMAP MUST BE USED AND EMPTIED
-        //  IMMEDIATELY BEFORE THERE IS ANY CHANCE OF THE SERVER GOING DOWN AND THE DATA BEING LOST.
-        //This is the second of three steps to keep Infused Diamond items in the player's inventory.
+        //THIS METHOD PERFORMS TWO OPERATIONS:
+        //  1. ROLL SMALL CHANCE TO DROP GENERIC UPGRADE TEMPLATE FROM PLAYER SLAIN MONSTERS
+        //  2. HANDLE PLACING INFUSED DIAMOND ITEMS BACK IN PLAYER'S INVENTORY (CONDITIONALLY)
 
-        //if keepInventory true, do not do anything upon respawn (NOTE: no drops if keepInventory is true)
-        if (event.getEntity().level().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
-            return;
-        }
+        if (event.getEntity() instanceof Monster monster) {
+            //HERE, will roll a very small chance to drop a Generic Upgrade Template from a Monster
+            //  that was slain by the player.
 
-        //if this entity is ServerPlayer AND this player has items stored in 'inventories' Map
-        if (event.getEntity() instanceof ServerPlayer player && inventories.containsKey(player.getUUID())) {
+            //if killer was not a player, do not roll chance
+            if (!(monster.getKillCredit() instanceof Player)) {
+                return;
+            }
+
+            //roll 0.5% chance to add ONE Generic Upgrade Template item entity as an additional drop
+            if (event.getEntity().getRandom().nextFloat() < 0.005) {
+                event.getDrops().add(new ItemEntity(monster.level(), monster.getX(), monster.getY(), monster.getZ(),
+                        new ItemStack(ModItems.GENERIC_UPGRADE_TEMPLATE.get())));
+            }
+        } else if (event.getEntity() instanceof ServerPlayer player) {
+            //HERE, will take any stored Infused Diamond items of the player's and add them back to
+            //  the player's inventory. This is done here immediately because the hashmap must be
+            //  populated then immediately emptied before there is a chance that the server goes
+            //  down. The hashmap is not saved, so if the player does not instantly respawn and
+            //  the server goes down during that time, the items would otherwise be lost.
+            //This is the second of three steps to keep Infused Diamond items in the player's inventory.
+
+            //if keepInventory true, do not do anything upon respawn (NOTE: no drops if keepInventory is true)
+            if (event.getEntity().level().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
+                return;
+            }
+            //if this player does not have items stored in 'inventories' map, had no Infused Diamond items
+            if (!inventories.containsKey(player.getUUID())) {
+                return;
+            }
+
             //iterate through all 41 valid slots and add items stored in 'inventories' back to player inventory
             ItemStack[] itemStacks = inventories.get(player.getUUID());
             for (int i = 0; i < 41; i++) {

@@ -88,6 +88,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
         //endregion
+
         //region Basic nine-block storage recipes
         //NOTE: FIRST IS FOR BLOCK->ITEM, SECOND IS FOR ITEM->BLOCK
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY.get(),
@@ -96,8 +97,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, Items.AMETHYST_SHARD,
                 RecipeCategory.MISC, ModBlocks.DECORATIVE_AMETHYST_BLOCK.get());
-//        nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.CARBONITE_DUST.get(),
-//                RecipeCategory.MISC, ModBlocks.CARBONITE_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT.get(),
                 RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get());
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_TIN.get(),
@@ -111,6 +110,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(consumer, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_TUNGSTEN.get(),
                 RecipeCategory.MISC, ModBlocks.RAW_TUNGSTEN_BLOCK.get());
         //endregion
+
         //region Misc.
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BUCKET, 1)
                 .define('d', ModItems.TIN_INGOT.get())
@@ -119,7 +119,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" d ")
                 .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.TIN_INGOT.get()).build()))
-                .save(consumer);
+                .save(consumer, TestMod.MOD_ID + ":bucket_from_tin");
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TIN_SHEARS.get(), 1)
                 .define('d', ModItems.TIN_INGOT.get())
                 .pattern(" d")
@@ -128,6 +128,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(ModItems.TIN_INGOT.get()).build()))
                 .save(consumer);
         //endregion
+
         //region Compounds and Gemstone (shapeless)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)
                 .requires(Items.COPPER_INGOT, 3)
@@ -158,10 +159,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(ModItems.MOLTEN_CORE.get()).build()))
                 .save(consumer);
         //endregion
+
         //region Upgrade Templates
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(), 1)
                 .define('d', ModItems.BRONZE_INGOT.get())
-                .define('i', Items.COBBLESTONE)
+                .define('i', Items.STONE)
                 .define('n', Items.GOLD_NUGGET)
                 .pattern("ndn")
                 .pattern("nin")
@@ -169,9 +171,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_bronze_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.BRONZE_INGOT.get()).build()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 1)
+                .define('d', ModItems.GENERIC_UPGRADE_TEMPLATE.get())
+                .define('i', Items.DEEPSLATE)
+                .define('n', Items.DIAMOND)
+                .pattern("ndn")
+                .pattern("nin")
+                .pattern("nnn")
+                .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.GENERIC_UPGRADE_TEMPLATE.get()).build()))
+                .save(consumer, TestMod.MOD_ID + ":infusion_upgrade_smithing_template_from_generic");
+        //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get())
-                .define('i', Items.COBBLED_DEEPSLATE)
+                .define('i', Items.DEEPSLATE)
                 .define('n', Items.DIAMOND)
                 .pattern("ndn")
                 .pattern("nin")
@@ -179,7 +192,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_infusion_upgrade_smithing_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get()).build()))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 1)
+                .define('d', ModItems.GENERIC_UPGRADE_TEMPLATE.get())
+                .define('i', Items.OBSIDIAN)
+                .define('n', ModItems.TUNGSTEN_INGOT.get())
+                .pattern("ndn")
+                .pattern("nin")
+                .pattern("nnn")
+                .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.GENERIC_UPGRADE_TEMPLATE.get()).build()))
+                .save(consumer, TestMod.MOD_ID + ":carbide_upgrade_smithing_template_from_generic");
+        //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get())
                 .define('i', Items.OBSIDIAN)
                 .define('n', ModItems.TUNGSTEN_INGOT.get())
@@ -189,6 +213,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_carbide_upgrade_smithing_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get()).build()))
                 .save(consumer);
+        //NOTE: below recipe has custom name for clarity purposes
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, 1)
+                .define('d', ModItems.GENERIC_UPGRADE_TEMPLATE.get())
+                .define('i', Items.NETHERRACK)
+                .define('n', Items.DIAMOND)
+                .pattern("ndn")
+                .pattern("nin")
+                .pattern("nnn")
+                .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.GENERIC_UPGRADE_TEMPLATE.get()).build()))
+                .save(consumer, TestMod.MOD_ID + ":netherite_upgrade_smithing_template_from_generic");
         //endregion
 
 
