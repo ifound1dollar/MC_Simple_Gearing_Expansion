@@ -18,8 +18,6 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.Map;
-
 public class ModMaceItem extends TieredItem implements Vanishable {
     private final float attackDamage;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
@@ -40,6 +38,7 @@ public class ModMaceItem extends TieredItem implements Vanishable {
                 enchantment == Enchantments.SMITE ||
                 enchantment == Enchantments.UNBREAKING ||
                 enchantment == Enchantments.FIRE_ASPECT ||
+                enchantment == ModEnchantments.POISON_EDGE.get() ||
                 enchantment == Enchantments.MOB_LOOTING);
     }
 
@@ -51,6 +50,7 @@ public class ModMaceItem extends TieredItem implements Vanishable {
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.SMITE, book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.UNBREAKING, book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.FIRE_ASPECT, book) == 0 ||
+                EnchantmentHelper.getTagEnchantmentLevel(ModEnchantments.POISON_EDGE.get(), book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.MOB_LOOTING, book) == 0 ||
                 EnchantmentHelper.getTagEnchantmentLevel(Enchantments.MENDING, book) == 0;
     }
