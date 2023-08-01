@@ -44,11 +44,12 @@ public class PoisonEdgeEnchantment extends Enchantment {
     public void doPostAttack(LivingEntity user, Entity target, int enchantLevel) {
         //LivingEntity is user, Entity is target, int is enchantment level
         if (target instanceof LivingEntity livingEntity) {
-            //Level 2 Poison (1.66DPS), 4s for Enchantment Level 1, 8s for Level 2 (just like Fire Aspect)
+            //Level 1 Poison (1 damage / 25 ticks), 5s for Enchantment Level 1, 10s for Level 2
+            //  (Fire Aspect deals 1 damage / 20 ticks, 4s/8s for Enchantment Levels 1/2)
             if (enchantLevel == 0) {
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 80, 1));
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0));
             } else {
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 160, 1));
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 200, 0));
             }
         }
     }
