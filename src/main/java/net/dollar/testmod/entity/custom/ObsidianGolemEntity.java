@@ -79,7 +79,7 @@ public class ObsidianGolemEntity extends IronGolem {
     public boolean hurt(DamageSource source, float value) {
         //BECAUSE THIS DERIVES FROM IRON GOLEM, ZOMBIES AND SKELETONS WILL ATTACK IT
         if (source.getEntity() instanceof Skeleton || source.getEntity() instanceof Zombie) {
-            return super.hurt(source, 1);   //take little damage from attacking Skeletons and Zombies
+            return super.hurt(source, value * 0.25f);   //take 1/4 damage from attacking Skeletons and Zombies
         }
 
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
@@ -195,11 +195,22 @@ public class ObsidianGolemEntity extends IronGolem {
 
     @Override
     protected void dropCustomDeathLoot(DamageSource p_21385_, int p_21386_, boolean p_21387_) {
-        //this entire behavior is derived from how a Nether Star drops from WitherBoss
+        if (!(this.getLastAttacker() instanceof Player)) {
+            //only drop if last attacker was Player
+            return;
+        }
+
+        //below is copied from how a Nether Star drops from WitherBoss
         ItemEntity itementity = this.spawnAtLocation(ModItems.MOLTEN_CORE.get());
         if (itementity != null) {
             itementity.setExtendedLifetime();
         }
+    }
+
+    @Override
+    public int getExperienceReward() {
+        //WitherBoss drops 50xp on death
+        return 50;
     }
 
     @Override
