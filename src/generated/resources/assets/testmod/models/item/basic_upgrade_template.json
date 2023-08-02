@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "testmod:item/generic_upgrade_template"
+    "layer0": "testmod:item/basic_upgrade_template"
   }
 }

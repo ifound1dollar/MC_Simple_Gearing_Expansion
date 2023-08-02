@@ -1,5 +1,19 @@
 {
   "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "testmod:item/bronze_helmet_quartz_trim",
+      "predicate": {
+        "trim_type": 0.1
+      }
+    },
+    {
+      "model": "testmod:item/bronze_helmet_iron_trim",
+      "predicate": {
+        "trim_type": 0.2
+      }
+    }
+  ],
   "textures": {
     "layer0": "testmod:item/bronze_helmet"
   }

@@ -82,7 +82,7 @@ public class ModPlacedFeatures {
                                 VerticalAnchor.aboveBottom(80))));
 
 
-        //BELOW TEMPORARILY COMMENTED OUT FOR CONFIG ISSUE PURPOSES
+        //BELOW TEMPORARILY COMMENTED OUT FOR CONFIG ISSUE REASONS
 
 //        //uncommon but not rare (only small veins)
 //        register(context, CARBONITE_ORE_UPPER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CARBONITE_ORE_KEY),

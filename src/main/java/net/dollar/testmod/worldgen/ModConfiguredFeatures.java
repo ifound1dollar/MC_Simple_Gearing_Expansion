@@ -75,7 +75,7 @@ public class ModConfiguredFeatures {
 
 
 
-        //BELOW IS TEMPORARILY COMMENTED OUT BECAUSE DATA CANNOT BE GENERATED USING CONFIGS (REGISTRIES)
+        //BELOW IS TEMPORARILY COMMENTED OUT BECAUSE DATA CANNOT BE GENERATED WHILE USING CONFIGS (REGISTRIES)
 
 //        //3 is equivalent to Emerald vein size
 //        register(context, CARBONITE_ORE_KEY, Feature.ORE, new OreConfiguration(carboniteOres,

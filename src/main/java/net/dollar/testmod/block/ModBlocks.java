@@ -32,9 +32,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> DECORATIVE_AMETHYST_BLOCK = registerBlock("decorative_amethyst_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()));
-//    public static final RegistryObject<Block> CARBONITE_BLOCK = registerBlock("carbonite_block",
-//            () -> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK).mapColor(DyeColor.GRAY)
-//                    .strength(6f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)

@@ -1,6 +1,6 @@
 package net.dollar.testmod.enchantment;
 
-import net.dollar.testmod.util.ModMaceItem;
+import net.dollar.testmod.item.ModMaceItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;

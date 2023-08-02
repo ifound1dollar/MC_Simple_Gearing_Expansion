@@ -1,5 +1,6 @@
 package net.dollar.testmod.util;
 
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -19,7 +20,7 @@ public class ModUtils {
     {
         //FIRST, check if source is from a mob or player (will check for held item in this case)
         if (source.is(DamageTypes.MOB_ATTACK) || source.is(DamageTypes.MOB_ATTACK_NO_AGGRO)
-                || source.is(DamageTypes.PLAYER_ATTACK) || source.is(DamageTypes.STALAGMITE)) {
+                || source.is(DamageTypes.PLAYER_ATTACK)) {
             //access attacker LivingEntity if valid, checking its held item
             if (source.getEntity() instanceof LivingEntity attacker) {
                 //only Swords and Axes should be considered sharp weapons
@@ -33,6 +34,7 @@ public class ModUtils {
         }
 
         //THEN, if damage is not directly coming from a mob or player attack, can check other categories
+        //THIS COULD BE PUT IN A MAP, DamageType:DamageCategory, FOR MUCH MORE EFFICIENT ACCESSING
         if (source.is(DamageTypes.ARROW) || source.is(DamageTypes.CACTUS)
                 || source.is(DamageTypes.FALLING_STALACTITE) || source.is(DamageTypes.STALAGMITE)
                 || source.is(DamageTypes.STING) || source.is(DamageTypes.SWEET_BERRY_BUSH)
@@ -68,7 +70,7 @@ public class ModUtils {
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollInfusedDiamondOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
-        //roll chance to remove Slowness from and apply Speed effect to user (attacker) for 3 seconds
+        //roll chance to remove Slowness from and apply Speed to user (attacker) for 3 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             attacker.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
             attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 61));
@@ -84,7 +86,7 @@ public class ModUtils {
     public static void rollNetheriteOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
         //roll chance to apply Wither effect to target (attackedEntity) for 3 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
-            //apply level 2 slow for once-per-second damage tick
+            //apply level 2 wither for once-per-second damage tick
             attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 61, 1));
         }
     }

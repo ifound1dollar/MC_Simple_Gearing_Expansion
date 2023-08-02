@@ -1,11 +1,10 @@
 package net.dollar.testmod.item.custom;
 
 import net.dollar.testmod.config.ModCommonConfigs;
-import net.dollar.testmod.util.ModMaceItem;
+import net.dollar.testmod.item.ModMaceItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;

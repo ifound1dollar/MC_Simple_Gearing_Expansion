@@ -1,7 +1,7 @@
 package net.dollar.testmod.item.custom;
 
 import net.dollar.testmod.config.ModCommonConfigs;
-import net.dollar.testmod.util.ModMaceItem;
+import net.dollar.testmod.item.ModMaceItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.DamageTypeTags;

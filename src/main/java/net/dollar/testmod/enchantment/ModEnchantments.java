@@ -1,7 +1,7 @@
 package net.dollar.testmod.enchantment;
 
 import net.dollar.testmod.TestMod;
-import net.dollar.testmod.util.ModMaceItem;
+import net.dollar.testmod.item.ModMaceItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;

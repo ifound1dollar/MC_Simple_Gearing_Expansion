@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "testmod:bronze_helmet",
+    "testmod:bronze_chestplate",
+    "testmod:bronze_leggings",
+    "testmod:bronze_boots"
+  ]
+}

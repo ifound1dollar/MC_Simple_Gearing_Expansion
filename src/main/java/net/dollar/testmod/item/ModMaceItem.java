@@ -1,4 +1,4 @@
-package net.dollar.testmod.util;
+package net.dollar.testmod.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

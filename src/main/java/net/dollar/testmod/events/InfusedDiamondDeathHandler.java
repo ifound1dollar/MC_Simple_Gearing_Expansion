@@ -6,7 +6,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
@@ -72,7 +71,7 @@ public class InfusedDiamondDeathHandler {
             //roll 0.5% chance to add ONE Generic Upgrade Template item entity as an additional drop
             if (event.getEntity().getRandom().nextFloat() < 0.005) {
                 event.getDrops().add(new ItemEntity(monster.level(), monster.getX(), monster.getY(), monster.getZ(),
-                        new ItemStack(ModItems.GENERIC_UPGRADE_TEMPLATE.get())));
+                        new ItemStack(ModItems.BASIC_UPGRADE_TEMPLATE.get())));
             }
         } else if (event.getEntity() instanceof ServerPlayer player) {
             //HERE, will take any stored Infused Diamond items of the player's and add them back to

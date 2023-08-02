@@ -2,7 +2,7 @@ package net.dollar.testmod.item.custom;
 
 import net.dollar.testmod.config.ModCommonConfigs;
 import net.dollar.testmod.util.IInfusedDiamondItem;
-import net.dollar.testmod.util.ModMaceItem;
+import net.dollar.testmod.item.ModMaceItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -10,11 +10,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Random;
 
 public class ModInfusedDiamondMaceItem extends ModMaceItem implements IInfusedDiamondItem {
     public ModInfusedDiamondMaceItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
@@ -37,6 +35,6 @@ public class ModInfusedDiamondMaceItem extends ModMaceItem implements IInfusedDi
 
     @Override
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(Component.literal("§dChance on-hit: User gains Speed for 3s"));
+        p_41423_.add(Component.literal("§5Chance on-hit: User gains Speed for 3s"));
     }
 }

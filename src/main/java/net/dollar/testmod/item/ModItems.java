@@ -3,11 +3,9 @@ package net.dollar.testmod.item;
 import net.dollar.testmod.TestMod;
 import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.item.custom.*;
-import net.dollar.testmod.util.ModMaceItem;
+import net.dollar.testmod.util.ModSmithingUpgradeItemHelper;
 import net.dollar.testmod.util.ModTiers;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -45,14 +43,14 @@ public class ModItems {
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_INGOT = ITEMS.register("tungsten_carbide_ingot",
             () -> new ModTungstenCarbideIngotItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> BASIC_UPGRADE_TEMPLATE =
+            ITEMS.register("basic_upgrade_template", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GILDED_UPGRADE_SMITHING_TEMPLATE =
-            ITEMS.register("gilded_upgrade_smithing_template", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> GENERIC_UPGRADE_TEMPLATE =
-            ITEMS.register("generic_upgrade_template", () -> new Item(new Item.Properties()));
+            ITEMS.register("gilded_upgrade_smithing_template", ModSmithingUpgradeItemHelper::createGildedUpgradeTemplate);
     public static final RegistryObject<Item> INFUSION_UPGRADE_SMITHING_TEMPLATE =
-            ITEMS.register("infusion_upgrade_smithing_template", () -> new Item(new Item.Properties()));
+            ITEMS.register("infusion_upgrade_smithing_template", ModSmithingUpgradeItemHelper::createInfusionUpgradeTemplate);
     public static final RegistryObject<Item> CARBIDE_UPGRADE_SMITHING_TEMPLATE =
-            ITEMS.register("carbide_upgrade_smithing_template", () -> new Item(new Item.Properties()));
+            ITEMS.register("carbide_upgrade_smithing_template", ModSmithingUpgradeItemHelper::createCarbideUpgradeTemplate);
 
     public static final RegistryObject<Item> CARBONITE_DUST = ITEMS.register("carbonite_dust",
             () -> new Item(new Item.Properties()));

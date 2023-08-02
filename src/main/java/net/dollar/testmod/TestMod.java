@@ -50,6 +50,7 @@ public class TestMod
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
+        //config registration
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ModCommonConfigs.SPEC,
                 "simple_gearing_expansion-common.toml");
     }
@@ -107,8 +108,8 @@ public class TestMod
             event.accept(ModItems.MOLTEN_CORE);
             event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
+            event.accept(ModItems.BASIC_UPGRADE_TEMPLATE);
             event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
-            event.accept(ModItems.GENERIC_UPGRADE_TEMPLATE);
             event.accept(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
             event.accept(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
 

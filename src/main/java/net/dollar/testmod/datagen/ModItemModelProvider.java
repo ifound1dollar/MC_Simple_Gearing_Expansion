@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -39,13 +40,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TUNGSTEN_INGOT);
 
         simpleItem(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
-        simpleItem(ModItems.GENERIC_UPGRADE_TEMPLATE);
+        simpleItem(ModItems.BASIC_UPGRADE_TEMPLATE);
         simpleItem(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
         //endregion
 
         //region ARMORS
-        simpleItem(ModItems.BRONZE_HELMET);
+        //simpleItem(ModItems.BRONZE_HELMET);
         simpleItem(ModItems.BRONZE_CHESTPLATE);
         simpleItem(ModItems.BRONZE_LEGGINGS);
         simpleItem(ModItems.BRONZE_BOOTS);
@@ -126,6 +127,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TUNGSTEN_CARBIDE_SWORD);
         handheldItem(ModItems.INFUSED_DIAMOND_SWORD);
         //endregion
+
+        //must be done manually, so must nuke all previous armorItems above
+//        overriddenArmorItem(ModItems.BRONZE_HELMET);
+//        trimmedArmorItem(ModItems.BRONZE_HELMET, "helmet", "quartz");
+//        trimmedArmorItem(ModItems.BRONZE_HELMET, "helmet", "iron");
     }
 
     //creates an auto-generated simple item
@@ -133,6 +139,35 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
                 .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()));
     }
+
+    //WILL NEED TO MAKE ModItemModelBuilder WHICH WILL ALLOW:
+    //  1. PREDICATE WITHOUT NAMESPACE (needs to only be "trim_type", WITHOUT namespace)
+    //  2.
+    //NEVER MIND, WILL JUST HAVE TO MANUALLY DO FOR SOME FUCKING REASON
+//    private ItemModelBuilder overriddenArmorItem(RegistryObject<Item> item) {
+//        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+//                //first override
+//                .override()
+//                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+//                        "item/" + item.getId().getPath() + "_quartz_trim")))
+//                .predicate(new ResourceLocation("trim_type"), 0.1f)
+//                .end()
+//                //second override
+//                .override()
+//                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+//                        "item/" + item.getId().getPath() + "_iron_trim")))
+//                .predicate(new ResourceLocation("trim_type"), 0.2f)
+//                .end()
+//                .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()));
+//    }
+//
+//    private ItemModelBuilder trimmedArmorItem(RegistryObject<Item> item, String armorPiece, String trimMaterial) {
+//        return withExistingParent(item.getId().getPath() + "_" + trimMaterial + "_trim",
+//                new ResourceLocation("item/generated"))
+//                .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()))
+//                .texture("layer1", new ResourceLocation("trims/items/" + armorPiece
+//                        + "_trim" /*_" + trimMaterial*/));  //apparently second part DNE yet??
+//    }
 
     //creates an auto-generated handheld item
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

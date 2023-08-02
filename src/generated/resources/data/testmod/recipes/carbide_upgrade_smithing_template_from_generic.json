@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "d": {
-      "item": "testmod:generic_upgrade_template"
+      "item": "testmod:basic_upgrade_template"
     },
     "i": {
       "item": "minecraft:obsidian"

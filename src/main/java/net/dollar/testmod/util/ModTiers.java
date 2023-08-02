@@ -136,7 +136,7 @@ public class ModTiers {
                 TestMod.MOD_ID + ":infused_diamond",
                 37,
                 new int[] { 3, 6, 8, 3 },
-                20,
+                25,
                 SoundEvents.ARMOR_EQUIP_DIAMOND,
                 2.0f,
                 0.0f,
