@@ -3,59 +3,52 @@ package net.dollar.testmod.entity.custom;
 import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.TimeUtil;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.UUID;
 
-public class ObsidianGolemEntity extends IronGolem {
+public class ObsidianGolemEntity extends Monster implements NeutralMob {
+    private int attackAnimationTick;
+    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
+    private int remainingPersistentAngerTime;
+    @Nullable
+    private UUID persistentAngerTarget;
+
     private int ticksSinceLastAttack = 0;
     private int teleportDelayTicks = 0;
 
-    public ObsidianGolemEntity(EntityType<? extends IronGolem> type, Level level) {
+    public ObsidianGolemEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
     }
 
-    public static AttributeSupplier setAttributes() {
-        return IronGolem.createAttributes()
-                .add(Attributes.MAX_HEALTH, 240)
-                .add(Attributes.ATTACK_DAMAGE, 16f)     //Normal, Easy/Hard values are auto-scaled
-                .add(Attributes.MOVEMENT_SPEED, 0.25f)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 1.0f)
-                .add(Attributes.FOLLOW_RANGE, 30f)
-                .build();
-    }
-
-    public static boolean checkObsidianGolemSpawnRules(EntityType<ObsidianGolemEntity> entityType, LevelAccessor accessor,
-                                                       MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
-        //only valid spawn very low in the world
-        if (blockPos.getY() >= -16) {
-            return false;
-        }
-
-        return checkMobSpawnRules(entityType, accessor, spawnType, blockPos, randomSource);
-    }
 
     @Override
     protected void registerGoals() {
@@ -75,18 +68,81 @@ public class ObsidianGolemEntity extends IronGolem {
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
 
+    public static boolean checkObsidianGolemSpawnRules(EntityType<ObsidianGolemEntity> entityType, LevelAccessor accessor,
+                                                       MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        //only valid spawn very low in the world
+        if (blockPos.getY() >= -16) {
+            return false;
+        }
+
+        return checkMobSpawnRules(entityType, accessor, spawnType, blockPos, randomSource);
+    }
+
+
+
+    public static AttributeSupplier setAttributes() {
+        return IronGolem.createAttributes()
+                .add(Attributes.MAX_HEALTH, 240)
+                .add(Attributes.ATTACK_DAMAGE, 20f)     //Normal, Easy/Hard values are auto-scaled
+                .add(Attributes.MOVEMENT_SPEED, 0.25f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 1.0f)
+                .add(Attributes.FOLLOW_RANGE, 30f)
+                .build();
+    }
+
     @Override
-    public boolean hurt(DamageSource source, float value) {
-        //BECAUSE THIS DERIVES FROM IRON GOLEM, ZOMBIES AND SKELETONS WILL ATTACK IT
-        if (source.getEntity() instanceof Skeleton || source.getEntity() instanceof Zombie) {
-            return super.hurt(source, value * 0.25f);   //take 1/4 damage from attacking Skeletons and Zombies
+    protected int decreaseAirSupply(int p_21303_) {
+        return p_21303_;
+    }
+
+    public void aiStep() {
+        super.aiStep();
+        if (this.attackAnimationTick > 0) {
+            --this.attackAnimationTick;
         }
 
-        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
-            value *= 0.67f;  //reduce Sharp damage by 33%
+        if (!this.level().isClientSide) {
+            this.updatePersistentAnger((ServerLevel)this.level(), true);
         }
+    }
 
-        return super.hurt(source, value);
+    public void addAdditionalSaveData(CompoundTag p_28867_) {
+        super.addAdditionalSaveData(p_28867_);
+        this.addPersistentAngerSaveData(p_28867_);
+    }
+
+    public void readAdditionalSaveData(CompoundTag p_28857_) {
+        super.readAdditionalSaveData(p_28857_);
+        this.readPersistentAngerSaveData(this.level(), p_28857_);
+    }
+
+
+
+    public void startPersistentAngerTimer() {
+        this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.random));
+    }
+
+    public void setRemainingPersistentAngerTime(int p_28859_) {
+        this.remainingPersistentAngerTime = p_28859_;
+    }
+
+    public int getRemainingPersistentAngerTime() {
+        return this.remainingPersistentAngerTime;
+    }
+
+    public void setPersistentAngerTarget(@javax.annotation.Nullable UUID p_28855_) {
+        this.persistentAngerTarget = p_28855_;
+    }
+
+    @javax.annotation.Nullable
+    public UUID getPersistentAngerTarget() {
+        return this.persistentAngerTarget;
+    }
+
+
+
+    private float getAttackDamage() {
+        return (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
     }
 
     @Override
@@ -98,7 +154,7 @@ public class ObsidianGolemEntity extends IronGolem {
         ticksSinceLastAttack = 0;
 
         //actual attack here
-        float f = (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
+        float f = this.getAttackDamage();
         float f1 = (int)f > 0 ? f / 2.0F + (float)this.random.nextInt((int)f) : f;
         boolean flag = targetEntity.hurt(this.damageSources().mobAttack(this), f1);
         if (flag) {
@@ -126,6 +182,50 @@ public class ObsidianGolemEntity extends IronGolem {
         this.playSound(SoundEvents.IRON_GOLEM_ATTACK, 1.0F, 1.0F);
         return flag;
     }
+
+    @Override
+    public boolean hurt(DamageSource source, float value) {
+        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
+            value *= 0.67f;  //reduce Sharp damage by 33%
+        }
+
+        IronGolem.Crackiness irongolem$crackiness = this.getCrackiness();
+        boolean flag = super.hurt(source, value);
+        if (flag && this.getCrackiness() != irongolem$crackiness) {
+            this.playSound(SoundEvents.IRON_GOLEM_DAMAGE, 1.0F, 1.0F);
+        }
+
+        return flag;
+    }
+
+    public IronGolem.Crackiness getCrackiness() {
+        return IronGolem.Crackiness.byFraction(this.getHealth() / this.getMaxHealth());
+    }
+
+    public int getAttackAnimationTick() {
+        return this.attackAnimationTick;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.IRON_GOLEM_HURT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.IRON_GOLEM_DEATH;
+    }
+
+    @Override
+    protected InteractionResult mobInteract(Player p_28861_, InteractionHand p_28862_) {
+        return InteractionResult.PASS;
+    }
+
+    protected void playStepSound(BlockPos p_28864_, BlockState p_28865_) {
+        this.playSound(SoundEvents.IRON_GOLEM_STEP, 1.0F, 1.0F);
+    }
+
+
+
+
 
     @Override
     public void tick() {
@@ -216,10 +316,5 @@ public class ObsidianGolemEntity extends IronGolem {
     @Override
     public int getMaxFallDistance() {
         return 10;  //can always fall 10 blocks with no concern
-    }
-
-    @Override
-    protected InteractionResult mobInteract(Player p_28861_, InteractionHand p_28862_) {
-        return InteractionResult.PASS;
     }
 }

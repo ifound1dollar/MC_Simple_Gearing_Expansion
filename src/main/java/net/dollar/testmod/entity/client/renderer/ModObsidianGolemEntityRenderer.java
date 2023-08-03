@@ -2,6 +2,7 @@ package net.dollar.testmod.entity.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.dollar.testmod.TestMod;
+import net.dollar.testmod.entity.client.models.ModObsidianGolemModel;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.minecraft.client.model.IronGolemModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -13,12 +14,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class ModObsidianGolemEntityRenderer extends MobRenderer<ObsidianGolemEntity, IronGolemModel<ObsidianGolemEntity>> {
+public class ModObsidianGolemEntityRenderer extends MobRenderer<ObsidianGolemEntity, ModObsidianGolemModel<ObsidianGolemEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
             TestMod.MOD_ID, "textures/entities/obsidian_golem.png");
 
     public ModObsidianGolemEntityRenderer(EntityRendererProvider.Context context) {
-        super(context, new IronGolemModel<>(context.bakeLayer(ModelLayers.IRON_GOLEM)), 0.7f);  //shadow radius
+        super(context, new ModObsidianGolemModel<>(context.bakeLayer(ModelLayers.IRON_GOLEM)), 0.7f);  //shadow radius
         this.addLayer(new ModObsidianGolemCrackinessLayer(this));   //add custom crackiness layer
     }
 
