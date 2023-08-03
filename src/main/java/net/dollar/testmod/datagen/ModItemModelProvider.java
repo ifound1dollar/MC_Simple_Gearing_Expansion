@@ -181,61 +181,61 @@ public class ModItemModelProvider extends ItemModelProvider {
                 //first override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_quartz_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_quartz_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.1f)
                 .end()
                 //second override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_iron_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_iron_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.2f)
                 .end()
                 //third override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_netherite_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_netherite_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.3f)
                 .end()
                 //fourth override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_redstone_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_redstone_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.4f)
                 .end()
                 //fifth override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_copper_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_copper_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.5f)
                 .end()
                 //sixth override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_gold_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_gold_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.6f)
                 .end()
                 //seventh override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_emerald_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_emerald_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.7f)
                 .end()
                 //eighth override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_diamond_darker_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_diamond_darker_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.8f)
                 .end()
                 //ninth override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_lapis_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_lapis_trim")))
                 .predicate(new ResourceLocation("trim_type"), 0.9f)
                 .end()
                 //tenth override
                 .override()
                 .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_amethyst_trim")))
+                        "item/trims_" + item.getId().getPath() + "/" + item.getId().getPath() + "_amethyst_trim")))
                 .predicate(new ResourceLocation("trim_type"), 1.0f)
                 .end()
                 //default texture when ignoring overrides here

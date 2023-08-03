@@ -2,61 +2,61 @@
   "parent": "minecraft:item/generated",
   "overrides": [
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_quartz_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_quartz_trim",
       "predicate": {
         "minecraft:trim_type": 0.1
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_iron_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_iron_trim",
       "predicate": {
         "minecraft:trim_type": 0.2
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_netherite_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_netherite_trim",
       "predicate": {
         "minecraft:trim_type": 0.3
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_redstone_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_redstone_trim",
       "predicate": {
         "minecraft:trim_type": 0.4
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_copper_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_copper_trim",
       "predicate": {
         "minecraft:trim_type": 0.5
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_gold_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_gold_trim",
       "predicate": {
         "minecraft:trim_type": 0.6
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_emerald_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_emerald_trim",
       "predicate": {
         "minecraft:trim_type": 0.7
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_diamond_darker_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_diamond_darker_trim",
       "predicate": {
         "minecraft:trim_type": 0.8
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_lapis_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_lapis_trim",
       "predicate": {
         "minecraft:trim_type": 0.9
       }
     },
     {
-      "model": "testmod:item/tungsten_carbide_helmet/tungsten_carbide_helmet_amethyst_trim",
+      "model": "testmod:item/trims_tungsten_carbide_helmet/tungsten_carbide_helmet_amethyst_trim",
       "predicate": {
         "minecraft:trim_type": 1.0
       }
