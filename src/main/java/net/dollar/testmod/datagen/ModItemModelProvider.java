@@ -46,35 +46,35 @@ public class ModItemModelProvider extends ItemModelProvider {
         //endregion
 
         //region ARMORS
-        //simpleItem(ModItems.BRONZE_HELMET);
-        simpleItem(ModItems.BRONZE_CHESTPLATE);
-        simpleItem(ModItems.BRONZE_LEGGINGS);
-        simpleItem(ModItems.BRONZE_BOOTS);
+        trimmableArmorItem(ModItems.BRONZE_HELMET);
+        trimmableArmorItem(ModItems.BRONZE_CHESTPLATE);
+        trimmableArmorItem(ModItems.BRONZE_LEGGINGS);
+        trimmableArmorItem(ModItems.BRONZE_BOOTS);
 
-        simpleItem(ModItems.GILDED_BRONZE_HELMET);
-        simpleItem(ModItems.GILDED_BRONZE_CHESTPLATE);
-        simpleItem(ModItems.GILDED_BRONZE_LEGGINGS);
-        simpleItem(ModItems.GILDED_BRONZE_BOOTS);
+        trimmableArmorItem(ModItems.GILDED_BRONZE_HELMET);
+        trimmableArmorItem(ModItems.GILDED_BRONZE_CHESTPLATE);
+        trimmableArmorItem(ModItems.GILDED_BRONZE_LEGGINGS);
+        trimmableArmorItem(ModItems.GILDED_BRONZE_BOOTS);
 
-        simpleItem(ModItems.STEEL_HELMET);
-        simpleItem(ModItems.STEEL_CHESTPLATE);
-        simpleItem(ModItems.STEEL_LEGGINGS);
-        simpleItem(ModItems.STEEL_BOOTS);
+        trimmableArmorItem(ModItems.STEEL_HELMET);
+        trimmableArmorItem(ModItems.STEEL_CHESTPLATE);
+        trimmableArmorItem(ModItems.STEEL_LEGGINGS);
+        trimmableArmorItem(ModItems.STEEL_BOOTS);
 
-        simpleItem(ModItems.TUNGSTEN_HELMET);
-        simpleItem(ModItems.TUNGSTEN_CHESTPLATE);
-        simpleItem(ModItems.TUNGSTEN_LEGGINGS);
-        simpleItem(ModItems.TUNGSTEN_BOOTS);
+        trimmableArmorItem(ModItems.TUNGSTEN_HELMET);
+        trimmableArmorItem(ModItems.TUNGSTEN_CHESTPLATE);
+        trimmableArmorItem(ModItems.TUNGSTEN_LEGGINGS);
+        trimmableArmorItem(ModItems.TUNGSTEN_BOOTS);
 
-        simpleItem(ModItems.TUNGSTEN_CARBIDE_HELMET);
-        simpleItem(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE);
-        simpleItem(ModItems.TUNGSTEN_CARBIDE_LEGGINGS);
-        simpleItem(ModItems.TUNGSTEN_CARBIDE_BOOTS);
+        trimmableArmorItem(ModItems.TUNGSTEN_CARBIDE_HELMET);
+        trimmableArmorItem(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE);
+        trimmableArmorItem(ModItems.TUNGSTEN_CARBIDE_LEGGINGS);
+        trimmableArmorItem(ModItems.TUNGSTEN_CARBIDE_BOOTS);
 
-        simpleItem(ModItems.INFUSED_DIAMOND_HELMET);
-        simpleItem(ModItems.INFUSED_DIAMOND_CHESTPLATE);
-        simpleItem(ModItems.INFUSED_DIAMOND_LEGGINGS);
-        simpleItem(ModItems.INFUSED_DIAMOND_BOOTS);
+        trimmableArmorItem(ModItems.INFUSED_DIAMOND_HELMET);
+        trimmableArmorItem(ModItems.INFUSED_DIAMOND_CHESTPLATE);
+        trimmableArmorItem(ModItems.INFUSED_DIAMOND_LEGGINGS);
+        trimmableArmorItem(ModItems.INFUSED_DIAMOND_BOOTS);
         //endregion
 
         //region HANDHELD ITEMS
@@ -128,10 +128,35 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.INFUSED_DIAMOND_SWORD);
         //endregion
 
-        //must be done manually, so must nuke all previous armorItems above
-//        overriddenArmorItem(ModItems.BRONZE_HELMET);
-//        trimmedArmorItem(ModItems.BRONZE_HELMET, "helmet", "quartz");
-//        trimmedArmorItem(ModItems.BRONZE_HELMET, "helmet", "iron");
+//        //tempTrimmedArmorItem(ModItems.BRONZE_HELMET, "helmet", "redstone");
+//        tempTrimmedArmorItem(ModItems.BRONZE_CHESTPLATE, "chestplate", "redstone");
+//        tempTrimmedArmorItem(ModItems.BRONZE_LEGGINGS, "leggings", "redstone");
+//        tempTrimmedArmorItem(ModItems.BRONZE_BOOTS, "boots", "redstone");
+//
+//        //tempTrimmedArmorItem(ModItems.GILDED_BRONZE_HELMET, "helmet", "redstone");
+//        tempTrimmedArmorItem(ModItems.GILDED_BRONZE_CHESTPLATE, "chestplate", "redstone");
+//        tempTrimmedArmorItem(ModItems.GILDED_BRONZE_LEGGINGS, "leggings", "redstone");
+//        tempTrimmedArmorItem(ModItems.GILDED_BRONZE_BOOTS, "boots", "redstone");
+//
+//        tempTrimmedArmorItem(ModItems.STEEL_HELMET, "helmet", "redstone");
+//        tempTrimmedArmorItem(ModItems.STEEL_CHESTPLATE, "chestplate", "redstone");
+//        tempTrimmedArmorItem(ModItems.STEEL_LEGGINGS, "leggings", "redstone");
+//        tempTrimmedArmorItem(ModItems.STEEL_BOOTS, "boots", "redstone");
+//
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_HELMET, "helmet", "redstone");
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_CHESTPLATE, "chestplate", "redstone");
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_LEGGINGS, "leggings", "redstone");
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_BOOTS, "boots", "redstone");
+//
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_CARBIDE_HELMET, "helmet", "redstone");
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE, "chestplate", "redstone");
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_CARBIDE_LEGGINGS, "leggings", "redstone");
+//        tempTrimmedArmorItem(ModItems.TUNGSTEN_CARBIDE_BOOTS, "boots", "redstone");
+//
+//        tempTrimmedArmorItem(ModItems.INFUSED_DIAMOND_HELMET, "helmet", "redstone");
+//        tempTrimmedArmorItem(ModItems.INFUSED_DIAMOND_CHESTPLATE, "chestplate", "redstone");
+//        tempTrimmedArmorItem(ModItems.INFUSED_DIAMOND_LEGGINGS, "leggings", "redstone");
+//        tempTrimmedArmorItem(ModItems.INFUSED_DIAMOND_BOOTS, "boots", "redstone");
     }
 
     //creates an auto-generated simple item
@@ -140,38 +165,91 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()));
     }
 
-    //WILL NEED TO MAKE ModItemModelBuilder WHICH WILL ALLOW:
-    //  1. PREDICATE WITHOUT NAMESPACE (needs to only be "trim_type", WITHOUT namespace)
-    //  2.
-    //NEVER MIND, WILL JUST HAVE TO MANUALLY DO FOR SOME FUCKING REASON
-//    private ItemModelBuilder overriddenArmorItem(RegistryObject<Item> item) {
-//        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
-//                //first override
-//                .override()
-//                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-//                        "item/" + item.getId().getPath() + "_quartz_trim")))
-//                .predicate(new ResourceLocation("trim_type"), 0.1f)
-//                .end()
-//                //second override
-//                .override()
-//                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
-//                        "item/" + item.getId().getPath() + "_iron_trim")))
-//                .predicate(new ResourceLocation("trim_type"), 0.2f)
-//                .end()
-//                .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()));
-//    }
-//
-//    private ItemModelBuilder trimmedArmorItem(RegistryObject<Item> item, String armorPiece, String trimMaterial) {
-//        return withExistingParent(item.getId().getPath() + "_" + trimMaterial + "_trim",
-//                new ResourceLocation("item/generated"))
-//                .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()))
-//                .texture("layer1", new ResourceLocation("trims/items/" + armorPiece
-//                        + "_trim" /*_" + trimMaterial*/));  //apparently second part DNE yet??
-//    }
-
     //creates an auto-generated handheld item
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld"))
                 .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+
+
+    //creates item model for new armor items (trimmable), overriding for each trim where/when necessary
+    private ItemModelBuilder trimmableArmorItem(RegistryObject<Item> item) {
+        //NOTE: Each override's model file is placed in its own directory for readability. See
+        // resources/Assets/testmod/models/item/[DIRECTORY NAME MATCHING ITEM]/...).
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
+                //first override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_quartz_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.1f)
+                .end()
+                //second override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_iron_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.2f)
+                .end()
+                //third override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_netherite_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.3f)
+                .end()
+                //fourth override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_redstone_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.4f)
+                .end()
+                //fifth override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_copper_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.5f)
+                .end()
+                //sixth override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_gold_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.6f)
+                .end()
+                //seventh override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_emerald_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.7f)
+                .end()
+                //eighth override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_diamond_darker_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.8f)
+                .end()
+                //ninth override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_lapis_trim")))
+                .predicate(new ResourceLocation("trim_type"), 0.9f)
+                .end()
+                //tenth override
+                .override()
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation(TestMod.MOD_ID,
+                        "item/" + item.getId().getPath() + "/" + item.getId().getPath() + "_amethyst_trim")))
+                .predicate(new ResourceLocation("trim_type"), 1.0f)
+                .end()
+                //default texture when ignoring overrides here
+                .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    //This method will generate nearly-correct item model files, but texture layer 1 is incorrect and needs
+    //  the 'trimMaterial' suffix (cannot be done because it is not a valid ResourceLocation YET). The
+    //  suffix must be added manually with find & replace, then placed in the non-generated 'models' directory.
+    @Deprecated
+    private ItemModelBuilder tempTrimmedArmorItem(RegistryObject<Item> item, String armorPiece, String trimMaterial) {
+        return withExistingParent(item.getId().getPath() + "_" + trimMaterial + "_trim",
+                new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(TestMod.MOD_ID, "item/" + item.getId().getPath()))
+                .texture("layer1", new ResourceLocation("trims/items/" + armorPiece + "_trim"));  //apparently 'trimMaterial' part DNE yet??
     }
 }

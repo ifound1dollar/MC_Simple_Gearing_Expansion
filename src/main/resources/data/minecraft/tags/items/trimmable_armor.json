@@ -4,6 +4,31 @@
     "testmod:bronze_helmet",
     "testmod:bronze_chestplate",
     "testmod:bronze_leggings",
-    "testmod:bronze_boots"
+    "testmod:bronze_boots",
+
+    "testmod:gilded_bronze_helmet",
+    "testmod:gilded_bronze_chestplate",
+    "testmod:gilded_bronze_leggings",
+    "testmod:gilded_bronze_boots",
+
+    "testmod:steel_helmet",
+    "testmod:steel_chestplate",
+    "testmod:steel_leggings",
+    "testmod:steel_boots",
+
+    "testmod:tungsten_helmet",
+    "testmod:tungsten_chestplate",
+    "testmod:tungsten_leggings",
+    "testmod:tungsten_boots",
+
+    "testmod:tungsten_carbide_helmet",
+    "testmod:tungsten_carbide_chestplate",
+    "testmod:tungsten_carbide_leggings",
+    "testmod:tungsten_carbide_boots",
+
+    "testmod:infused_diamond_helmet",
+    "testmod:infused_diamond_chestplate",
+    "testmod:infused_diamond_leggings",
+    "testmod:infused_diamond_boots"
   ]
 }
