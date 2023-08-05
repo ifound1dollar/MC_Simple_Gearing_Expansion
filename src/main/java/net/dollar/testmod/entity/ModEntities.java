@@ -1,6 +1,7 @@
 package net.dollar.testmod.entity;
 
 import net.dollar.testmod.TestMod;
+import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -21,6 +22,10 @@ public class ModEntities {
                             .fireImmune()
                             .sized(1.67f, 3.33f)   //roughly 1.25x Iron Golem hitbox size, but narrower
                             .build(new ResourceLocation(TestMod.MOD_ID + "obsidian_golem").toString()));
+    public static final RegistryObject<EntityType<KathleenTheWickedEntity>> KATHLEEN_THE_WICKED =
+            ENTITY_TYPES.register("kathleen_the_wicked",
+                    () -> EntityType.Builder.of(KathleenTheWickedEntity::new, MobCategory.MONSTER)
+                            .build(new ResourceLocation(TestMod.MOD_ID + "kathleen_the_wicked").toString()));
 
 
     public static void register(IEventBus eventBus) {

@@ -2,8 +2,12 @@ package net.dollar.testmod.events;
 
 import net.dollar.testmod.TestMod;
 import net.dollar.testmod.entity.ModEntities;
+import net.dollar.testmod.entity.client.renderer.ModKathleenTheWickedRenderer;
 import net.dollar.testmod.entity.client.renderer.ModObsidianGolemEntityRenderer;
+import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
+import net.minecraft.client.renderer.entity.CowRenderer;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -21,6 +25,7 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntities.OBSIDIAN_GOLEM.get(), ObsidianGolemEntity.setAttributes());
+        event.put(ModEntities.KATHLEEN_THE_WICKED.get(), KathleenTheWickedEntity.setAttributes());
     }
 
     @SubscribeEvent
@@ -33,5 +38,6 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void entityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.OBSIDIAN_GOLEM.get(), ModObsidianGolemEntityRenderer::new);
+        event.registerEntityRenderer(ModEntities.KATHLEEN_THE_WICKED.get(), ModKathleenTheWickedRenderer::new);
     }
 }

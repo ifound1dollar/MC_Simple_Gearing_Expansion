@@ -214,17 +214,9 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         return SoundEvents.IRON_GOLEM_DEATH;
     }
 
-    @Override
-    protected InteractionResult mobInteract(Player p_28861_, InteractionHand p_28862_) {
-        return InteractionResult.PASS;
-    }
-
     protected void playStepSound(BlockPos p_28864_, BlockState p_28865_) {
         this.playSound(SoundEvents.IRON_GOLEM_STEP, 1.0F, 1.0F);
     }
-
-
-
 
 
     @Override

@@ -35,7 +35,7 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> COMPOUND_GEMSTONE = ITEMS.register("compound_gemstone",
-            () -> new Item(new Item.Properties()));
+            () -> new ModCompoundGemstoneItem(new Item.Properties()));
     public static final RegistryObject<Item> INFUSED_GEMSTONE = ITEMS.register("infused_gemstone",
             () -> new ModInfusedDiamondItem(new Item.Properties()));
     public static final RegistryObject<Item> MOLTEN_CORE = ITEMS.register("molten_core",

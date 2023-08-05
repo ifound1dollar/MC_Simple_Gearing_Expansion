@@ -1,10 +1,13 @@
 package net.dollar.testmod.item.custom;
 
+import net.dollar.testmod.tile.ShrineBlockTile;
 import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
