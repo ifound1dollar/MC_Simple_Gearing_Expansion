@@ -214,7 +214,7 @@ public class KathleenTheWickedEntity extends Monster implements NeutralMob {
     }
 
     @Override
-    protected void dropCustomDeathLoot(DamageSource p_21385_, int p_21386_, boolean p_21387_) {
+    protected void dropCustomDeathLoot(DamageSource source, int p_21386_, boolean p_21387_) {
         if (!(this.getLastAttacker() instanceof Player)) {
             //only drop if last attacker was Player
             return;
@@ -224,6 +224,12 @@ public class KathleenTheWickedEntity extends Monster implements NeutralMob {
         ItemEntity itementity = this.spawnAtLocation(ModItems.INFUSED_GEMSTONE.get());
         if (itementity != null) {
             itementity.setExtendedLifetime();
+        }
+
+        //THIS IS THE METHOD TO DROP THE COLLECTABLE ITEM WHEN IN SAME VEHICLE
+        if (this.getLastAttacker() != null &&
+                this.getLastAttacker().getVehicle() == this.getVehicle()) {
+            this.spawnAtLocation(ModItems.BASIC_UPGRADE_TEMPLATE.get());
         }
     }
 
