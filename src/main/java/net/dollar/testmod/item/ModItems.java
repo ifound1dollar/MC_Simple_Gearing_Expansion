@@ -28,6 +28,11 @@ public class ModItems {
     public static final RegistryObject<Item> TIN_SHEARS = ITEMS.register("tin_shears",
             () -> new ShearsItem(new Item.Properties().durability(150)));   //Iron is 238 (for some reason)
 
+    //region COLLECTOR ITEMS
+    public static final RegistryObject<Item> COLLECTOR_KATHLEENS_LOST_DIADEM = ITEMS.register("collector_kathleens_lost_diadem",
+            () -> new ModCollectorItem(new Item.Properties(), "1"));
+    //endregion
+
     //create RegistryObjects for new items
     //region BASIC ITEMS
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",

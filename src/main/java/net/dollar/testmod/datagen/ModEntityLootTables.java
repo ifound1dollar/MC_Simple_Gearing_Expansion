@@ -37,7 +37,10 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 //                        .setRolls(ConstantValue.exactly(1.0F))
 //                        .add(LootItem.lootTableItem(ModItems.MOLTEN_CORE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
 //                        .when(LootItemKilledByPlayerCondition.killedByPlayer())));
+
         add(ModEntities.OBSIDIAN_GOLEM.get(), LootTable.lootTable());   //drops custom loot (method) instead of this^
+
+        add(ModEntities.KATHLEEN_THE_WICKED.get(), LootTable.lootTable());
     }
 
 

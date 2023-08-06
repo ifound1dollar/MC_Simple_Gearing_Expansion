@@ -1,17 +1,13 @@
 package net.dollar.testmod.entity.custom;
 
 import net.dollar.testmod.item.ModItems;
-import net.dollar.testmod.util.ModUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.RandomSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -22,18 +18,17 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.UUID;
 
 public class KathleenTheWickedEntity extends Monster implements NeutralMob {
@@ -226,10 +221,50 @@ public class KathleenTheWickedEntity extends Monster implements NeutralMob {
             itementity.setExtendedLifetime();
         }
 
-        //THIS IS THE METHOD TO DROP THE COLLECTABLE ITEM WHEN IN SAME VEHICLE
-        if (this.getLastAttacker() != null &&
-                this.getLastAttacker().getVehicle() == this.getVehicle()) {
-            this.spawnAtLocation(ModItems.BASIC_UPGRADE_TEMPLATE.get());
+//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN THESE THREE EFFECTS ACTIVE
+//        if (this.hasEffect(MobEffects.REGENERATION) && this.hasEffect(MobEffects.MOVEMENT_SPEED) &&
+//                this.hasEffect(MobEffects.DAMAGE_BOOST)) {
+//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+//        }
+
+//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN ON FIRE WHEN KILLED
+//        if (this.wasOnFire) {
+//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+//        }
+
+//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN NAMED 'James'
+//        if (this.getCustomName() != null && this.getCustomName().getString().equals("Kevin")) {
+//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+//        }
+
+//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN IN WATER
+//        if (this.isInWaterOrBubble()) {
+//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+//        }
+
+//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN IN SAME VEHICLE
+//        if (this.getLastAttacker() != null &&
+//                this.getLastAttacker().getVehicle() == this.getVehicle()) {
+//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+//        }
+
+//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN SPIDER KILLED WITH BANE OF ARTHROPODS
+//        if (getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND).getItem().getEnchantmentLevel(
+//                getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND),
+//                Enchantments.BANE_OF_ARTHROPODS) > 0) {
+//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+//        }
+
+//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN SHOT EXACTLY 21 ARROWS
+//        if (arrowCounter == 3) {
+//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+//            //NOTE: must implement RangedAttackMob and copy/paste vanilla AbstractSkeleton's attack method
+//        }
+
+        //if killer player is holding Golden Hoe or Gilded Bronze Hoe, drop collector item
+        if (getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND).getItem() == Items.GOLDEN_HOE ||
+                getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND).getItem() == ModItems.GILDED_BRONZE_HOE.get()) {
+            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
         }
     }
 

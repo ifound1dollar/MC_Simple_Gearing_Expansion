@@ -97,10 +97,16 @@ public class TestMod
             event.accept(ModBlocks.SHRINE_BLOCK);
             //endregion
 
-            //region BASIC ITEMS
+
+
             event.accept(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG);
             event.accept(ModItems.TIN_SHEARS);
 
+            //region COLLECTOR ITEMS
+            event.accept(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM);
+            //endregion
+
+            //region BASIC ITEMS
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
             event.accept(ModItems.COMPOUND_GEMSTONE);

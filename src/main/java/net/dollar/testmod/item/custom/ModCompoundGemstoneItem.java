@@ -31,6 +31,7 @@ public class ModCompoundGemstoneItem extends Item implements IInfusedDiamondItem
             if (tile.attemptSpawnBoss(context)) {
                 return InteractionResult.CONSUME;
             }
+            //if reaches here, failed because cooldown so SHOULD POST MESSAGE TO PLAYER SAYING IS ON COOLDOWN
         }
 
         //if not ShrineBlockTile OR mob could not be spawned, PASS

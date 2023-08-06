@@ -21,6 +21,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
 
+        //region COLLECTOR ITEMS
+        simpleItem(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM);
+        //endregion
+
         //region BASIC ITEMS
         simpleItem(ModItems.RUBY);
         simpleItem(ModItems.SAPPHIRE);
