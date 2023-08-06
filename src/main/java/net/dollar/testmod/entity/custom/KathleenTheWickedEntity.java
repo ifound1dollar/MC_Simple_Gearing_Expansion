@@ -31,12 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
-public class KathleenTheWickedEntity extends Monster implements NeutralMob {
-    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
-    private int remainingPersistentAngerTime;
-    @Nullable
-    private UUID persistentAngerTarget;
-
+public class KathleenTheWickedEntity extends Monster {
     private int ticksSinceLastAttack = 0;
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
@@ -80,42 +75,6 @@ public class KathleenTheWickedEntity extends Monster implements NeutralMob {
 
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide) {
-            this.updatePersistentAnger((ServerLevel)this.level(), true);
-        }
-    }
-
-    public void addAdditionalSaveData(CompoundTag p_28867_) {
-        super.addAdditionalSaveData(p_28867_);
-        this.addPersistentAngerSaveData(p_28867_);
-    }
-
-    public void readAdditionalSaveData(CompoundTag p_28857_) {
-        super.readAdditionalSaveData(p_28857_);
-        this.readPersistentAngerSaveData(this.level(), p_28857_);
-    }
-
-
-
-    public void startPersistentAngerTimer() {
-        this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.random));
-    }
-
-    public void setRemainingPersistentAngerTime(int p_28859_) {
-        this.remainingPersistentAngerTime = p_28859_;
-    }
-
-    public int getRemainingPersistentAngerTime() {
-        return this.remainingPersistentAngerTime;
-    }
-
-    public void setPersistentAngerTarget(@javax.annotation.Nullable UUID p_28855_) {
-        this.persistentAngerTarget = p_28855_;
-    }
-
-    @javax.annotation.Nullable
-    public UUID getPersistentAngerTarget() {
-        return this.persistentAngerTarget;
     }
 
 

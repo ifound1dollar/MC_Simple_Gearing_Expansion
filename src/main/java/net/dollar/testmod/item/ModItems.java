@@ -31,6 +31,8 @@ public class ModItems {
     //region COLLECTOR ITEMS
     public static final RegistryObject<Item> COLLECTOR_KATHLEENS_LOST_DIADEM = ITEMS.register("collector_kathleens_lost_diadem",
             () -> new ModCollectorItem(new Item.Properties(), "1"));
+    public static final RegistryObject<Item> COLLECTOR_POTION_OF_EVERLASTING_YOUTH = ITEMS.register("collector_potion_of_everlasting_youth",
+            () -> new ModCollectorItem(new Item.Properties(), "2"));
     //endregion
 
     //create RegistryObjects for new items

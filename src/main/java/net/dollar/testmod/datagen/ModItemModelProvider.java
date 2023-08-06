@@ -23,6 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //region COLLECTOR ITEMS
         simpleItem(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM);
+        simpleItem(ModItems.COLLECTOR_POTION_OF_EVERLASTING_YOUTH);
         //endregion
 
         //region BASIC ITEMS

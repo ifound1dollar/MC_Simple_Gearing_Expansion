@@ -29,6 +29,7 @@
   "item.testmod.tin_shears": "Tin Shears",
 
   "item.testmod.collector_kathleens_lost_diadem": "Kathleen's Lost Diadem",
+  "item.testmod.collector_potion_of_everlasting_youth": "Potion of Everlasting Youth",
 
   "item.testmod.ruby": "Ruby",
   "item.testmod.sapphire": "Sapphire",
@@ -135,6 +136,7 @@
 
   "entity.testmod.obsidian_golem": "Obsidian Golem",
   "entity.testmod.kathleen_the_wicked": "Kathleen the Wicked",
+  "entity.testmod.old_lady_muff": "Old Lady Muff",
 
   "creativemodetab.test_tab": "Test Tab", "comment1": "THIS LINE IS UNUSED CURRENTLY"
 }

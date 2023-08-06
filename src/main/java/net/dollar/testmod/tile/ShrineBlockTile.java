@@ -2,12 +2,15 @@ package net.dollar.testmod.tile;
 
 import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
+import net.dollar.testmod.entity.custom.OldLadyMuffEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -15,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import org.apache.commons.lang3.RandomUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,7 +44,7 @@ public class ShrineBlockTile extends BlockEntity {
 
             //SEND MESSAGE IN CHAT TO NEARBY PLAYERS
 
-            KathleenTheWickedEntity entity = new KathleenTheWickedEntity(ModEntities.KATHLEEN_THE_WICKED.get(), context.getLevel());
+            Monster entity = randomlySelectBoss(context);
             entity.setTarget(context.getPlayer());
 
             entity.setPos(context.getClickLocation().add(0.0d, 2.0d, 0.0d));    //move up 2
@@ -55,5 +59,16 @@ public class ShrineBlockTile extends BlockEntity {
             return true;
         }
         return false;
+    }
+
+    private Monster randomlySelectBoss(UseOnContext context) {
+        switch (RandomUtils.nextInt(0, 2)) {
+            default -> {    //can interpret default as case 0, otherwise complains about duplicate
+                return new KathleenTheWickedEntity(ModEntities.KATHLEEN_THE_WICKED.get(), context.getLevel());
+            }
+            case 1 -> {
+                return new OldLadyMuffEntity(ModEntities.OLD_LADY_MUFF.get(), context.getLevel());
+            }
+        }
     }
 }

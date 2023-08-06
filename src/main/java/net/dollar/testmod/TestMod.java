@@ -104,6 +104,7 @@ public class TestMod
 
             //region COLLECTOR ITEMS
             event.accept(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM);
+            event.accept(ModItems.COLLECTOR_POTION_OF_EVERLASTING_YOUTH);
             //endregion
 
             //region BASIC ITEMS

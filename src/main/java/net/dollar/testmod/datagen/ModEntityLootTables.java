@@ -41,6 +41,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
         add(ModEntities.OBSIDIAN_GOLEM.get(), LootTable.lootTable());   //drops custom loot (method) instead of this^
 
         add(ModEntities.KATHLEEN_THE_WICKED.get(), LootTable.lootTable());
+        add(ModEntities.OLD_LADY_MUFF.get(), LootTable.lootTable());
     }
 
 
