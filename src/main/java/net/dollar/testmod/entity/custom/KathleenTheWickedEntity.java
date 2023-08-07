@@ -2,10 +2,12 @@ package net.dollar.testmod.entity.custom;
 
 import net.dollar.testmod.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
@@ -35,14 +37,11 @@ public class KathleenTheWickedEntity extends Monster {
     private int ticksSinceLastAttack = 0;
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
+    private boolean hasPlayedSpawnSound = false;
 
 
     public KathleenTheWickedEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
-
-        //make invisible and set silent TEMPORARILY, is removed/reset in tick function after delay
-        this.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 100));
-        setSilent(true);
     }
 
 
@@ -133,12 +132,14 @@ public class KathleenTheWickedEntity extends Monster {
 
     @Override
     public void tick() {
-        super.tick();   //NOTE: WILL MOVE AND STARE AT THE PLAYER EVEN DURING DELAY, BUT IS INVISIBLE AND SILENT
-
         //NOTE: Must check despawn before delay because otherwise reloading a single player world would
         //  cause the mob to wait the full 5s before despawning (constructor is called on reload).
-        if (!level().isClientSide && getTarget() == null) {
-            remove(RemovalReason.DISCARDED);
+
+        //if target is null OR current target is a player in creative mode, despawn
+        if (!level().isClientSide) {
+            if (getTarget() == null || (getTarget() instanceof Player player && player.isCreative())) {
+                remove(RemovalReason.DISCARDED);
+            }
         }
 
         if (isAwaitingSpawnDelay) {
@@ -151,13 +152,30 @@ public class KathleenTheWickedEntity extends Monster {
             return;
         }
 
+        super.tick();
         ticksSinceLastAttack++;
     }
 
     private void endSpawnDelay() {
-        removeEffect(MobEffects.INVISIBILITY);
-        setSilent(false);
+        this.setInvisible(false);
+        this.setSilent(false);
+        //speedModifier, followEvenIfNotSeen
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0d, true));
+
+        this.level().addParticle(ParticleTypes.POOF,
+                this.getX() + this.random.nextGaussian() * (double)0.13F,
+                this.getBoundingBox().maxY + this.random.nextGaussian() * (double)0.13F,
+                this.getZ() + this.random.nextGaussian() * (double)0.13F,
+                0.0D, 0.0D, 0.0D);
+    }
+
+    @Override
+    public void onRemovedFromWorld() {
+        this.level().addParticle(ParticleTypes.POOF,
+                this.getX() + this.random.nextGaussian() * (double)0.13F,
+                this.getBoundingBox().maxY + this.random.nextGaussian() * (double)0.13F,
+                this.getZ() + this.random.nextGaussian() * (double)0.13F,
+                0.0D, 0.0D, 0.0D);
     }
 
 

@@ -1,17 +1,12 @@
 package net.dollar.testmod.item.custom;
 
-import net.dollar.testmod.tile.ShrineBlockTile;
+import net.dollar.testmod.tile.SpectralLanternTile;
 import net.dollar.testmod.util.IInfusedDiamondItem;
-import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class ModCompoundGemstoneItem extends Item implements IInfusedDiamondItem {
     public ModCompoundGemstoneItem(Properties p_41383_) {
@@ -26,12 +21,15 @@ public class ModCompoundGemstoneItem extends Item implements IInfusedDiamondItem
     //this method is the first that will be called; should consume the interaction here
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof ShrineBlockTile tile) {
+        if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof SpectralLanternTile tile) {
             //CONSUME only if method within ShrineBlockTile returned true, otherwise PASS below
             if (tile.attemptSpawnBoss(context)) {
+//                context.getLevel().playLocalSound(context.getClickedPos(), SoundEvents.ENCHANTMENT_TABLE_USE,
+//                        SoundSource.BLOCKS, 5.0f, 1.0f, true);
+                //ABOVE ALWAYS FAILS BECAUSE METHOD WILL NEVER RETURN SUCCESSFUL CLIENT-SIDE
+
                 return InteractionResult.CONSUME;
             }
-            //if reaches here, failed because cooldown so SHOULD POST MESSAGE TO PLAYER SAYING IS ON COOLDOWN
         }
 
         //if not ShrineBlockTile OR mob could not be spawned, PASS

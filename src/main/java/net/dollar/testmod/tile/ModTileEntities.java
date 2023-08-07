@@ -13,9 +13,9 @@ public class ModTileEntities {
             ForgeRegistries.BLOCK_ENTITY_TYPES, TestMod.MOD_ID);
 
 
-    public static final RegistryObject<BlockEntityType<ShrineBlockTile>> SHRINE_BLOCK = TILE_ENTITY_TYPES.register(
-            "shrine_block",
-            () -> BlockEntityType.Builder.of(ShrineBlockTile::new, ModBlocks.SHRINE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<SpectralLanternTile>> SPECTRAL_LANTERN_TILE = TILE_ENTITY_TYPES.register(
+            "spectral_lantern",
+            () -> BlockEntityType.Builder.of(SpectralLanternTile::new, ModBlocks.SPECTRAL_LANTERN.get()).build(null));
 
 
 

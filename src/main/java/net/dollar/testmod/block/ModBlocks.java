@@ -6,10 +6,10 @@ import net.dollar.testmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -93,11 +93,12 @@ public class ModBlocks {
                     UniformInt.of(2, 5)));
 
 
-    public static final RegistryObject<Block> SHRINE_BLOCK = registerBlock("shrine_block",
-            () -> new ModShrineBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)
-                    .strength(3f).requiresCorrectToolForDrops()));
-
-
+    public static final RegistryObject<Block> SPECTRAL_LANTERN = registerBlock("spectral_lantern",
+            () -> new ModSpectralLanternBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.METAL).forceSolidOn()
+                    .strength(20.0F, 1200.0F)   //strength second param is explosion resistance
+                    .sound(SoundType.LANTERN).lightLevel((p_187433_) -> 8)  //soul lantern is 10, regular lantern is 15
+                    .noOcclusion().pushReaction(PushReaction.IGNORE))); //default behavior is DESTROY
 
 
 

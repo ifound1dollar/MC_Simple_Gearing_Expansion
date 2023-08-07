@@ -54,14 +54,11 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
 
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
+    private boolean hasPlayedSpawnSound = false;
 
 
     public OldLadyMuffEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
-
-        //make invisible and set silent TEMPORARILY, is removed/reset in tick function after delay
-        this.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 100));
-        setSilent(true);
     }
 
 
@@ -183,19 +180,19 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
         return p_34150_;
     }
 
-    public void performRangedAttack(LivingEntity p_34143_, float p_34144_) {
+    public void performRangedAttack(LivingEntity livingEntity, float p_34144_) {
         //by default, can only attack when not drinking; Old Lady Muff can do both at the same time
-        Vec3 vec3 = p_34143_.getDeltaMovement();
-        double d0 = p_34143_.getX() + vec3.x - this.getX();
-        double d1 = p_34143_.getEyeY() - (double)1.1F - this.getY();
-        double d2 = p_34143_.getZ() + vec3.z - this.getZ();
+        Vec3 vec3 = livingEntity.getDeltaMovement();
+        double d0 = livingEntity.getX() + vec3.x - this.getX();
+        double d1 = livingEntity.getEyeY() - (double)1.1F - this.getY();
+        double d2 = livingEntity.getZ() + vec3.z - this.getZ();
         double d3 = Math.sqrt(d0 * d0 + d2 * d2);
         Potion potion = Potions.STRONG_HARMING;
-        if (d3 >= 8.0D && !p_34143_.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
+        if (d3 >= 8.0D && !livingEntity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
             potion = Potions.STRONG_SLOWNESS;
-        } else if (p_34143_.getHealth() >= 8.0F && !p_34143_.hasEffect(MobEffects.POISON)) {
+        } else if (livingEntity.getHealth() >= 8.0F && !livingEntity.hasEffect(MobEffects.POISON)) {
             potion = Potions.STRONG_POISON;
-        } else if (d3 <= 3.0D && !p_34143_.hasEffect(MobEffects.WEAKNESS) && this.random.nextFloat() < 0.25F) {
+        } else if (d3 <= 3.0D && !livingEntity.hasEffect(MobEffects.WEAKNESS) && this.random.nextFloat() < 0.25F) {
             potion = Potions.WEAKNESS;
         }
 
@@ -225,12 +222,14 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
 
     @Override
     public void tick() {
-        super.tick();   //NOTE: WILL MOVE AND STARE AT THE PLAYER EVEN DURING DELAY, BUT IS INVISIBLE AND SILENT
-
         //NOTE: Must check despawn before delay because otherwise reloading a single player world would
         //  cause the mob to wait the full 5s before despawning (constructor is called on reload).
-        if (!level().isClientSide && getTarget() == null) {
-            remove(RemovalReason.DISCARDED);
+
+        //if target is null OR current target is a player in creative mode, despawn
+        if (!level().isClientSide) {
+            if (getTarget() == null || (getTarget() instanceof Player player && player.isCreative())) {
+                remove(RemovalReason.DISCARDED);
+            }
         }
 
         if (isAwaitingSpawnDelay) {
@@ -240,13 +239,32 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
                 isAwaitingSpawnDelay = false;
                 endSpawnDelay();
             }
+            return;
         }
+
+        super.tick();
     }
 
     private void endSpawnDelay() {
-        removeEffect(MobEffects.INVISIBILITY);
-        setSilent(false);
-        this.goalSelector.addGoal(2, new RangedAttackGoal(this, 1.0D, 60, 10.0F));
+        this.setInvisible(false);
+        this.setSilent(false);
+        //speedModifier, attackInterval, attackRadius
+        this.goalSelector.addGoal(2, new RangedAttackGoal(this, 1.0D, 40, 10.0F));
+
+        this.level().addParticle(ParticleTypes.POOF,
+                this.getX() + this.random.nextGaussian() * (double)0.13F,
+                this.getBoundingBox().maxY + this.random.nextGaussian() * (double)0.13F,
+                this.getZ() + this.random.nextGaussian() * (double)0.13F,
+                0.0D, 0.0D, 0.0D);
+    }
+
+    @Override
+    public void onRemovedFromWorld() {
+        this.level().addParticle(ParticleTypes.POOF,
+                this.getX() + this.random.nextGaussian() * (double)0.13F,
+                this.getBoundingBox().maxY + this.random.nextGaussian() * (double)0.13F,
+                this.getZ() + this.random.nextGaussian() * (double)0.13F,
+                0.0D, 0.0D, 0.0D);
     }
 
 

@@ -35,7 +35,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(ModBlocks.TUNGSTEN_BLOCK.get());
         dropSelf(ModBlocks.RAW_TUNGSTEN_BLOCK.get());
 
-        add(ModBlocks.SHRINE_BLOCK.get(), noDrop());
+        add(ModBlocks.SPECTRAL_LANTERN.get(), noDrop());
 
         //ORES (NOTE: OVERRIDE createLapisOreDrops FOR MORE THAN ONE DROP)
         add(ModBlocks.RUBY_ORE.get(),

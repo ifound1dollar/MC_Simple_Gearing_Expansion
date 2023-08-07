@@ -94,7 +94,7 @@ public class TestMod
             event.accept(ModBlocks.TUNGSTEN_ORE);
             event.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
 
-            event.accept(ModBlocks.SHRINE_BLOCK);
+            event.accept(ModBlocks.SPECTRAL_LANTERN);
             //endregion
 
 
