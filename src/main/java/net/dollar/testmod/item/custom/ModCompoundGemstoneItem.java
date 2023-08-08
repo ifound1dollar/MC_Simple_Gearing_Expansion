@@ -1,9 +1,7 @@
 package net.dollar.testmod.item.custom;
 
-import net.dollar.testmod.tile.SpectralLanternTile;
+import net.dollar.testmod.tile.ModSpectralLanternBlockEntity;
 import net.dollar.testmod.util.IInfusedDiamondItem;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
@@ -21,7 +19,7 @@ public class ModCompoundGemstoneItem extends Item implements IInfusedDiamondItem
     //this method is the first that will be called; should consume the interaction here
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof SpectralLanternTile tile) {
+        if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof ModSpectralLanternBlockEntity tile) {
             //CONSUME only if method within ShrineBlockTile returned true, otherwise PASS below
             if (tile.attemptSpawnBoss(context)) {
 //                context.getLevel().playLocalSound(context.getClickedPos(), SoundEvents.ENCHANTMENT_TABLE_USE,

@@ -13,9 +13,9 @@ public class ModTileEntities {
             ForgeRegistries.BLOCK_ENTITY_TYPES, TestMod.MOD_ID);
 
 
-    public static final RegistryObject<BlockEntityType<SpectralLanternTile>> SPECTRAL_LANTERN_TILE = TILE_ENTITY_TYPES.register(
+    public static final RegistryObject<BlockEntityType<ModSpectralLanternBlockEntity>> SPECTRAL_LANTERN_TILE = TILE_ENTITY_TYPES.register(
             "spectral_lantern",
-            () -> BlockEntityType.Builder.of(SpectralLanternTile::new, ModBlocks.SPECTRAL_LANTERN.get()).build(null));
+            () -> BlockEntityType.Builder.of(ModSpectralLanternBlockEntity::new, ModBlocks.SPECTRAL_LANTERN.get()).build(null));
 
 
 

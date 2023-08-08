@@ -68,8 +68,8 @@ public class InfusedDiamondDeathHandler {
                 return;
             }
 
-            //roll 0.5% chance to add ONE Generic Upgrade Template item entity as an additional drop
-            if (event.getEntity().getRandom().nextFloat() < 0.005) {
+            //roll 1% chance to add ONE Generic Upgrade Template item entity as an additional drop
+            if (event.getEntity().getRandom().nextFloat() < 0.01) {
                 event.getDrops().add(new ItemEntity(monster.level(), monster.getX(), monster.getY(), monster.getZ(),
                         new ItemStack(ModItems.BASIC_UPGRADE_TEMPLATE.get())));
             }
