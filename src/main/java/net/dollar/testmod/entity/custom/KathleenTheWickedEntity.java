@@ -62,6 +62,7 @@ public class KathleenTheWickedEntity extends Monster {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 160)
                 .add(Attributes.ATTACK_DAMAGE, 17f)     //Normal, Easy/Hard values are auto-scaled
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.9f)
                 .add(Attributes.FOLLOW_RANGE, 30f)
                 .build();
     }

@@ -76,6 +76,7 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 160)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.9f)
                 .add(Attributes.FOLLOW_RANGE, 30f)
                 .build();
     }

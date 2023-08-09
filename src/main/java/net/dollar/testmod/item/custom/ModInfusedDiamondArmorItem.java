@@ -1,6 +1,7 @@
 package net.dollar.testmod.item.custom;
 
 import net.dollar.testmod.config.ModCommonConfigs;
+import net.dollar.testmod.enchantment.ModEnchantments;
 import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.IDamageHandlingArmor;
 import net.dollar.testmod.util.IInfusedDiamondItem;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -66,6 +68,12 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
             return amount * (1 - (float)(ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get() / 100));
         }
         return amount;  //if reaches here, return original amount
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return super.canApplyAtEnchantingTable(stack, enchantment)
+                || enchantment == ModEnchantments.MENDING_VERY_RARE.get();
     }
 
     @Override

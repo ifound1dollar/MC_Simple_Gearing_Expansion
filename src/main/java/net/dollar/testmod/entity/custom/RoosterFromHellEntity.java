@@ -51,6 +51,8 @@ public class RoosterFromHellEntity extends Monster {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 160)
                 .add(Attributes.ATTACK_DAMAGE, 17f)     //Normal, Easy/Hard values are auto-scaled
+                .add(Attributes.MOVEMENT_SPEED, 0.4f)   //faster chicken (default 0.25)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.9f)
                 .add(Attributes.FOLLOW_RANGE, 30f)
                 .build();
     }

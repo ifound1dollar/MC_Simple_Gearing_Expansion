@@ -17,6 +17,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.Nullable;
 
 public class ModMaceItem extends TieredItem implements Vanishable {
     private final float attackDamage;
@@ -39,20 +40,8 @@ public class ModMaceItem extends TieredItem implements Vanishable {
                 enchantment == Enchantments.UNBREAKING ||
                 enchantment == Enchantments.FIRE_ASPECT ||
                 enchantment == ModEnchantments.POISON_EDGE.get() ||
-                enchantment == Enchantments.MOB_LOOTING);
-    }
-
-    @Override
-    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-        //only allow these enchantments on maces
-        return EnchantmentHelper.getTagEnchantmentLevel(ModEnchantments.HARDNESS.get(), book) == 0 ||
-                EnchantmentHelper.getTagEnchantmentLevel(Enchantments.BANE_OF_ARTHROPODS, book) == 0 ||
-                EnchantmentHelper.getTagEnchantmentLevel(Enchantments.SMITE, book) == 0 ||
-                EnchantmentHelper.getTagEnchantmentLevel(Enchantments.UNBREAKING, book) == 0 ||
-                EnchantmentHelper.getTagEnchantmentLevel(Enchantments.FIRE_ASPECT, book) == 0 ||
-                EnchantmentHelper.getTagEnchantmentLevel(ModEnchantments.POISON_EDGE.get(), book) == 0 ||
-                EnchantmentHelper.getTagEnchantmentLevel(Enchantments.MOB_LOOTING, book) == 0 ||
-                EnchantmentHelper.getTagEnchantmentLevel(Enchantments.MENDING, book) == 0;
+                enchantment == Enchantments.MOB_LOOTING ||
+                enchantment == Enchantments.MENDING);   //NOTE: Mending is treasure only, this just allows books.
     }
 
     public float getDamage() {
@@ -61,10 +50,6 @@ public class ModMaceItem extends TieredItem implements Vanishable {
 
     public boolean canAttackBlock(BlockState state, Level level, BlockPos blockPos, Player player) {
         return !player.isCreative();
-    }
-
-    public float getDestroySpeed(ItemStack stack, BlockState state) {
-        return state.is(BlockTags.SWORD_EFFICIENT) ? 1.5F : 1.0F;
     }
 
     @Override
@@ -83,6 +68,12 @@ public class ModMaceItem extends TieredItem implements Vanishable {
         }
 
         return true;
+    }
+
+
+
+    public float getDestroySpeed(ItemStack stack, BlockState state) {
+        return 1.0F;    //do not destroy anything more efficiently
     }
 
     public boolean isCorrectToolForDrops(BlockState state) {

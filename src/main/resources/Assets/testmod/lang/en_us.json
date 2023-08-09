@@ -102,17 +102,6 @@
   "item.testmod.tungsten_shovel": "Tungsten Shovel",
   "item.testmod.tungsten_sword": "Tungsten Sword",
 
-  "item.testmod.tungsten_carbide_helmet": "Tungsten-Carbide Helmet",
-  "item.testmod.tungsten_carbide_chestplate": "Tungsten-Carbide Chestplate",
-  "item.testmod.tungsten_carbide_leggings": "Tungsten-Carbide Leggings",
-  "item.testmod.tungsten_carbide_boots": "Tungsten-Carbide Boots",
-  "item.testmod.tungsten_carbide_axe": "Tungsten-Carbide Axe",
-  "item.testmod.tungsten_carbide_hoe": "Tungsten-Carbide Hoe",
-  "item.testmod.tungsten_carbide_mace": "Tungsten-Carbide Mace",
-  "item.testmod.tungsten_carbide_pickaxe": "Tungsten-Carbide Pickaxe",
-  "item.testmod.tungsten_carbide_shovel": "Tungsten-Carbide Shovel",
-  "item.testmod.tungsten_carbide_sword": "Tungsten-Carbide Sword",
-
   "item.testmod.infused_diamond_helmet": "Infused Diamond Helmet",
   "item.testmod.infused_diamond_chestplate": "Infused Diamond Chestplate",
   "item.testmod.infused_diamond_leggings": "Infused Diamond Leggings",
@@ -124,6 +113,17 @@
   "item.testmod.infused_diamond_shovel": "Infused Diamond Shovel",
   "item.testmod.infused_diamond_sword": "Infused Diamond Sword",
 
+  "item.testmod.tungsten_carbide_helmet": "Tungsten-Carbide Helmet",
+  "item.testmod.tungsten_carbide_chestplate": "Tungsten-Carbide Chestplate",
+  "item.testmod.tungsten_carbide_leggings": "Tungsten-Carbide Leggings",
+  "item.testmod.tungsten_carbide_boots": "Tungsten-Carbide Boots",
+  "item.testmod.tungsten_carbide_axe": "Tungsten-Carbide Axe",
+  "item.testmod.tungsten_carbide_hoe": "Tungsten-Carbide Hoe",
+  "item.testmod.tungsten_carbide_mace": "Tungsten-Carbide Mace",
+  "item.testmod.tungsten_carbide_pickaxe": "Tungsten-Carbide Pickaxe",
+  "item.testmod.tungsten_carbide_shovel": "Tungsten-Carbide Shovel",
+  "item.testmod.tungsten_carbide_sword": "Tungsten-Carbide Sword",
+
   "item.testmod.collector_kathleens_lost_diadem": "Kathleen's Lost Diadem",
   "item.testmod.collector_potion_of_everlasting_youth": "Potion of Everlasting Youth",
   "item.testmod.collector_slightly_overcooked_chicken": "Slightly Overcooked Chicken",
@@ -132,6 +132,7 @@
 
   "enchantment.testmod.hardness": "Hardness",
   "enchantment.testmod.poison_edge": "Poison Edge",
+  "enchantment.testmod.mending_very_rare": "Mending",
 
 
 
