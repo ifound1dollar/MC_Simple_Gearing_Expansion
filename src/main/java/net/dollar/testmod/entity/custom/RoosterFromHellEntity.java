@@ -1,5 +1,7 @@
 package net.dollar.testmod.entity.custom;
 
+import javax.annotation.Nullable;
+
 import net.dollar.testmod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -7,56 +9,43 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.TimeUtil;
-import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.phys.Vec3;
 
-import java.util.UUID;
-
-public class KathleenTheWickedEntity extends Monster {
+public class RoosterFromHellEntity extends Monster {
     private int ticksSinceLastAttack = 0;
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
 
-
-    public KathleenTheWickedEntity(EntityType<? extends Monster> type, Level level) {
-        super(type, level);
+    public RoosterFromHellEntity(EntityType<? extends Monster> entityType, Level level) {
+        super(entityType, level);
     }
 
-
-    @Override
     protected void registerGoals() {
-        //NOTE: smaller numbers (first argument) imply higher priority
-
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        //speedModifier, followingTargetEvenIfNotSeen
-        //this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0d, true));
-        //speedModifier
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0d));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
     }
-
-
 
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
@@ -71,8 +60,22 @@ public class KathleenTheWickedEntity extends Monster {
         return p_21303_;
     }
 
-    public void aiStep() {
-        super.aiStep();
+
+
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.CHICKEN_AMBIENT;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource p_28262_) {
+        return SoundEvents.CHICKEN_HURT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.CHICKEN_DEATH;
+    }
+
+    protected void playStepSound(BlockPos p_28254_, BlockState p_28255_) {
+        this.playSound(SoundEvents.CHICKEN_STEP, 0.15F, 1.0F);
     }
 
 
@@ -97,12 +100,12 @@ public class KathleenTheWickedEntity extends Monster {
             this.doEnchantDamageEffects(this, targetEntity);
 
             if (targetEntity instanceof LivingEntity livingEntity) {
-                //WITHER TARGET FOR 3s
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1));
+                //SET TARGET ON FIRE FOR 5s
+                livingEntity.setRemainingFireTicks(100);
             }
         }
 
-        this.playSound(SoundEvents.MOOSHROOM_MILK_SUSPICIOUSLY, 1.0F, 1.0F);
+        this.playSound(SoundEvents.BLAZE_HURT, 1.0F, 1.0F);
         return flag;
     }
 
@@ -113,18 +116,6 @@ public class KathleenTheWickedEntity extends Monster {
 //        }
 
         return super.hurt(source, value);
-    }
-
-    protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.COW_HURT;
-    }
-
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.COW_DEATH;
-    }
-
-    protected void playStepSound(BlockPos p_28864_, BlockState p_28865_) {
-        this.playSound(SoundEvents.COW_STEP, 1.0F, 1.0F);
     }
 
 
@@ -197,16 +188,10 @@ public class KathleenTheWickedEntity extends Monster {
             itementity.setExtendedLifetime();
         }
 
-//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN THESE THREE EFFECTS ACTIVE
-//        if (this.hasEffect(MobEffects.REGENERATION) && this.hasEffect(MobEffects.MOVEMENT_SPEED) &&
-//                this.hasEffect(MobEffects.DAMAGE_BOOST)) {
-//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
-//        }
-
-//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN ON FIRE WHEN KILLED
-//        if (this.wasOnFire) {
-//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
-//        }
+        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN ON FIRE WHEN KILLED
+        if (this.wasOnFire) {
+            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+        }
 
 //        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN NAMED 'James'
 //        if (this.getCustomName() != null && this.getCustomName().getString().equals("Kevin")) {
@@ -236,17 +221,11 @@ public class KathleenTheWickedEntity extends Monster {
 //            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
 //            //NOTE: must implement RangedAttackMob and copy/paste vanilla AbstractSkeleton's attack method
 //        }
-
-        //if killer player is holding Golden Hoe or Gilded Bronze Hoe, drop collector item
-        if (getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND).getItem() == Items.GOLDEN_HOE ||
-                getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND).getItem() == ModItems.GILDED_BRONZE_HOE.get()) {
-            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
-        }
     }
 
-    @Override
+
+
     public int getExperienceReward() {
-        //WitherBoss drops 50xp on death
         return 50;
     }
 

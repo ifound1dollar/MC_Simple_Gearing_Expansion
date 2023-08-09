@@ -82,7 +82,7 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
 
 
     public static AttributeSupplier setAttributes() {
-        return IronGolem.createAttributes()
+        return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 240)
                 .add(Attributes.ATTACK_DAMAGE, 20f)     //Normal, Easy/Hard values are auto-scaled
                 .add(Attributes.MOVEMENT_SPEED, 0.25f)

@@ -21,13 +21,13 @@ public class ModTiers {
                 BlockTags.NEEDS_IRON_TOOL,
                 () -> Ingredient.of(ModItems.BRONZE_INGOT.get()));
 
-        //almost identical to Bronze, but speed and enchantability is higher (just below Gold [12/22])
+        //almost identical to Bronze, but speed and enchantability match Gold (12 / 22)
         public static final Tier GILDED_BRONZE = new ForgeTier(
                 2,
                 250,
-                10.0f,
+                12.0f,
                 2.0f,
-                20,
+                22,
                 BlockTags.NEEDS_IRON_TOOL,
                 () -> Ingredient.of(Items.GOLD_INGOT)); //MAYBE BRONZE?
 
@@ -47,7 +47,7 @@ public class ModTiers {
                 1561,
                 5.0f,
                 4f,
-                14,
+                9,
                 BlockTags.NEEDS_DIAMOND_TOOL,
                 () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get()));
 
@@ -57,11 +57,11 @@ public class ModTiers {
                 2501,
                 5.0f,
                 6f,
-                10,
+                12,
                 Tags.Blocks.NEEDS_NETHERITE_TOOL,
                 () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get()));
 
-        //same durability and as Netherite, same damage as Diamond (3), speed and enchantability equal to Gold
+        //same durability as Netherite, same damage as Diamond (3), speed and enchantability equal to Gold
         public static final Tier INFUSED_DIAMOND = new ForgeTier(
                 4,
                 2031,
@@ -119,26 +119,26 @@ public class ModTiers {
                 () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get())
         );
 
-        //higher durability than Netherite, same echantability as Diamond, toughness matches Netherite
+        //higher durability than Netherite, same echantability as Diamond, toughness matches Netherite, half knockback
         public static final ArmorMaterial TUNGSTEN_CARBIDE = new ModArmorMaterial(
                 TestMod.MOD_ID + ":tungsten_carbide",
                 41,
                 new int[] { 3, 6, 8, 3 },
-                10,
+                12,
                 SoundEvents.ARMOR_EQUIP_NETHERITE,
                 3.0f,
-                0.0f,
+                0.5f,
                 () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get())
         );
 
-        //same durability as Netherite, higher echantability than Netherite, same toughness as Diamond
+        //same durability as Netherite, higher echantability than Netherite, half toughness as Netherite, no knockback
         public static final ArmorMaterial INFUSED_DIAMOND = new ModArmorMaterial(
                 TestMod.MOD_ID + ":infused_diamond",
                 37,
                 new int[] { 3, 6, 8, 3 },
                 25,
                 SoundEvents.ARMOR_EQUIP_DIAMOND,
-                2.0f,
+                2.5f,
                 0.0f,
                 () -> Ingredient.of(Items.DIAMOND)
         );

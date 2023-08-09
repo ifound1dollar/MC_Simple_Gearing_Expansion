@@ -42,6 +42,7 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
         add(ModEntities.KATHLEEN_THE_WICKED.get(), LootTable.lootTable());
         add(ModEntities.OLD_LADY_MUFF.get(), LootTable.lootTable());
+        add(ModEntities.ROOSTER_FROM_HELL.get(), LootTable.lootTable());
     }
 
 

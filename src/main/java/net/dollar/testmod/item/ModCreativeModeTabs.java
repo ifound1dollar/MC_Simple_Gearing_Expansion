@@ -15,9 +15,9 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TestMod.MOD_ID);
 
-    public static RegistryObject<CreativeModeTab> TEST_TAB = CREATIVE_MODE_TABS.register("test_tab",
+    public static RegistryObject<CreativeModeTab> SGE_TAB = CREATIVE_MODE_TABS.register("sge_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RUBY.get()))
-                    .title(Component.literal("Jewels and Tools")).build());
+                    .title(Component.literal("Simple Gearing Expansion")).build());
 
     public static void register(IEventBus bus) {
         CREATIVE_MODE_TABS.register(bus);

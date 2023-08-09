@@ -70,56 +70,41 @@ public class TestMod
         }*/
 
         //add to TEST_TAB
-        if (event.getTab() == ModCreativeModeTabs.TEST_TAB.get()) {
+        if (event.getTab() == ModCreativeModeTabs.SGE_TAB.get()) {
             //region BLOCKS
-            event.accept(ModBlocks.RUBY_BLOCK);
-            event.accept(ModBlocks.RUBY_ORE);
-            event.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
-            event.accept(ModBlocks.SAPPHIRE_BLOCK);
-            event.accept(ModBlocks.SAPPHIRE_ORE);
-            event.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
-            event.accept(ModBlocks.DECORATIVE_AMETHYST_BLOCK);
-
-            //event.accept(ModBlocks.CARBONITE_BLOCK);
             event.accept(ModBlocks.CARBONITE_ORE);
             event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
-            event.accept(ModBlocks.TIN_BLOCK);
-            event.accept(ModBlocks.RAW_TIN_BLOCK);
+            event.accept(ModBlocks.RUBY_ORE);
+            event.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
+            event.accept(ModBlocks.SAPPHIRE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
             event.accept(ModBlocks.TIN_ORE);
             event.accept(ModBlocks.DEEPSLATE_TIN_ORE);
+            event.accept(ModBlocks.TUNGSTEN_ORE);
+            event.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
+
+            event.accept(ModBlocks.DECORATIVE_AMETHYST_BLOCK);
+            event.accept(ModBlocks.RUBY_BLOCK);
+            event.accept(ModBlocks.SAPPHIRE_BLOCK);
+            event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.RAW_TIN_BLOCK);
             event.accept(ModBlocks.BRONZE_BLOCK);
             event.accept(ModBlocks.STEEL_BLOCK);
             event.accept(ModBlocks.TUNGSTEN_BLOCK);
             event.accept(ModBlocks.RAW_TUNGSTEN_BLOCK);
-            event.accept(ModBlocks.TUNGSTEN_ORE);
-            event.accept(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
 
             event.accept(ModBlocks.SPECTRAL_LANTERN);
             //endregion
 
 
 
-            event.accept(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG);
-            event.accept(ModItems.TIN_SHEARS);
-
-            //region COLLECTOR ITEMS
-            event.accept(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM);
-            event.accept(ModItems.COLLECTOR_POTION_OF_EVERLASTING_YOUTH);
-            //endregion
 
             //region BASIC ITEMS
+            event.accept(ModItems.TIN_SHEARS);
+            event.accept(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG);
+
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.COMPOUND_GEMSTONE);
-            event.accept(ModItems.INFUSED_GEMSTONE);
-            event.accept(ModItems.MOLTEN_CORE);
-            event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
-
-            event.accept(ModItems.BASIC_UPGRADE_TEMPLATE);
-            event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
-            event.accept(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
-            event.accept(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
-
             event.accept(ModItems.CARBONITE_DUST);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
@@ -129,6 +114,16 @@ public class TestMod
             event.accept(ModItems.STEEL_INGOT);
             event.accept(ModItems.RAW_TUNGSTEN);
             event.accept(ModItems.TUNGSTEN_INGOT);
+
+            event.accept(ModItems.COMPOUND_GEMSTONE);
+            event.accept(ModItems.INFUSED_GEMSTONE);
+            event.accept(ModItems.MOLTEN_CORE);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_INGOT);
+
+            event.accept(ModItems.BASIC_UPGRADE_TEMPLATE);
+            event.accept(ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE);
+            event.accept(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
+            event.accept(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE);
             //endregion
 
 
@@ -187,6 +182,18 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_SHOVEL);
             event.accept(ModItems.TUNGSTEN_SWORD);
             //endregion
+            //region INFUSED DIAMOND ARMOR/TOOLS
+            event.accept(ModItems.INFUSED_DIAMOND_HELMET);
+            event.accept(ModItems.INFUSED_DIAMOND_CHESTPLATE);
+            event.accept(ModItems.INFUSED_DIAMOND_LEGGINGS);
+            event.accept(ModItems.INFUSED_DIAMOND_BOOTS);
+            event.accept(ModItems.INFUSED_DIAMOND_AXE);
+            event.accept(ModItems.INFUSED_DIAMOND_HOE);
+            event.accept(ModItems.INFUSED_DIAMOND_MACE);
+            event.accept(ModItems.INFUSED_DIAMOND_PICKAXE);
+            event.accept(ModItems.INFUSED_DIAMOND_SHOVEL);
+            event.accept(ModItems.INFUSED_DIAMOND_SWORD);
+            //endregion
             //region TUNGSTEN-CARBIDE ARMOR/TOOLS
             event.accept(ModItems.TUNGSTEN_CARBIDE_HELMET);
             event.accept(ModItems.TUNGSTEN_CARBIDE_CHESTPLATE);
@@ -199,17 +206,11 @@ public class TestMod
             event.accept(ModItems.TUNGSTEN_CARBIDE_SHOVEL);
             event.accept(ModItems.TUNGSTEN_CARBIDE_SWORD);
             //endregion
-            //region INFUSED DIAMOND ARMOR/TOOLS
-            event.accept(ModItems.INFUSED_DIAMOND_HELMET);
-            event.accept(ModItems.INFUSED_DIAMOND_CHESTPLATE);
-            event.accept(ModItems.INFUSED_DIAMOND_LEGGINGS);
-            event.accept(ModItems.INFUSED_DIAMOND_BOOTS);
-            event.accept(ModItems.INFUSED_DIAMOND_AXE);
-            event.accept(ModItems.INFUSED_DIAMOND_HOE);
-            event.accept(ModItems.INFUSED_DIAMOND_MACE);
-            event.accept(ModItems.INFUSED_DIAMOND_PICKAXE);
-            event.accept(ModItems.INFUSED_DIAMOND_SHOVEL);
-            event.accept(ModItems.INFUSED_DIAMOND_SWORD);
+
+            //region COLLECTOR ITEMS
+            event.accept(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM);
+            event.accept(ModItems.COLLECTOR_POTION_OF_EVERLASTING_YOUTH);
+            event.accept(ModItems.COLLECTOR_SLIGHTLY_OVERCOOKED_CHICKEN);
             //endregion
         }
     }

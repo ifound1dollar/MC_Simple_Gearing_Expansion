@@ -28,9 +28,6 @@
   "item.testmod.obsidian_golem_spawn_egg": "Obsidian Golem Spawn Egg",
   "item.testmod.tin_shears": "Tin Shears",
 
-  "item.testmod.collector_kathleens_lost_diadem": "Kathleen's Lost Diadem",
-  "item.testmod.collector_potion_of_everlasting_youth": "Potion of Everlasting Youth",
-
   "item.testmod.ruby": "Ruby",
   "item.testmod.sapphire": "Sapphire",
   "item.testmod.carbonite_dust": "Carbonite Dust",
@@ -127,6 +124,10 @@
   "item.testmod.infused_diamond_shovel": "Infused Diamond Shovel",
   "item.testmod.infused_diamond_sword": "Infused Diamond Sword",
 
+  "item.testmod.collector_kathleens_lost_diadem": "Kathleen's Lost Diadem",
+  "item.testmod.collector_potion_of_everlasting_youth": "Potion of Everlasting Youth",
+  "item.testmod.collector_slightly_overcooked_chicken": "Slightly Overcooked Chicken",
+
 
 
   "enchantment.testmod.hardness": "Hardness",
@@ -137,6 +138,9 @@
   "entity.testmod.obsidian_golem": "Obsidian Golem",
   "entity.testmod.kathleen_the_wicked": "Kathleen the Wicked",
   "entity.testmod.old_lady_muff": "Old Lady Muff",
+  "entity.testmod.rooster_from_hell": "Rooster from Hell",
 
-  "creativemodetab.test_tab": "Test Tab", "comment1": "THIS LINE IS UNUSED CURRENTLY"
+
+
+  "creativemodetab.sge_tab": "Simple Gearing Expansion", "comment1": "THIS LINE IS UNUSED CURRENTLY"
 }

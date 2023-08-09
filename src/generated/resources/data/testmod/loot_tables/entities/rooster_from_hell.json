@@ -1,0 +1,4 @@
+{
+  "type": "minecraft:entity",
+  "random_sequence": "testmod:entities/rooster_from_hell"
+}

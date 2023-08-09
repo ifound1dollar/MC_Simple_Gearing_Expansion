@@ -4,6 +4,7 @@ import net.dollar.testmod.TestMod;
 import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.dollar.testmod.entity.custom.OldLadyMuffEntity;
+import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -23,6 +24,8 @@ public class ModEntities {
                             .fireImmune()
                             .sized(1.67f, 3.33f)   //roughly 1.25x Iron Golem hitbox size, but narrower
                             .build(new ResourceLocation(TestMod.MOD_ID + "obsidian_golem").toString()));
+
+
     public static final RegistryObject<EntityType<KathleenTheWickedEntity>> KATHLEEN_THE_WICKED =
             ENTITY_TYPES.register("kathleen_the_wicked",
                     () -> EntityType.Builder.of(KathleenTheWickedEntity::new, MobCategory.MONSTER)
@@ -31,6 +34,10 @@ public class ModEntities {
             ENTITY_TYPES.register("old_lady_muff",
                     () -> EntityType.Builder.of(OldLadyMuffEntity::new, MobCategory.MONSTER)
                             .build(new ResourceLocation(TestMod.MOD_ID + "old_lady_muff").toString()));
+    public static final RegistryObject<EntityType<RoosterFromHellEntity>> ROOSTER_FROM_HELL =
+            ENTITY_TYPES.register("rooster_from_hell",
+                    () -> EntityType.Builder.of(RoosterFromHellEntity::new, MobCategory.MONSTER)
+                            .build(new ResourceLocation(TestMod.MOD_ID + "rooster_from_hell").toString()));
 
 
     public static void register(IEventBus eventBus) {

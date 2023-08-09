@@ -96,8 +96,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SPECTRAL_LANTERN = registerBlock("spectral_lantern",
             () -> new ModSpectralLanternBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.METAL).forceSolidOn()
-                    .strength(20.0F, 1200.0F)   //strength second param is explosion resistance
-                    .sound(SoundType.LANTERN).lightLevel((p_187433_) -> 8)  //soul lantern is 10, regular lantern is 15
+                    .requiresCorrectToolForDrops().strength(20.0f)  //make hard to destroy (obsidian is 50)
+                    .sound(SoundType.LANTERN).explosionResistance(1200.0f)  //make explosion resistant
+                    .lightLevel((p_187433_) -> 8)  //soul lantern is 10, regular lantern is 15
                     .noOcclusion().pushReaction(PushReaction.IGNORE))); //default behavior is DESTROY
 
 

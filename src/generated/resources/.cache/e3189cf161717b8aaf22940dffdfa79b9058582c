@@ -1,4 +1,4 @@
-// 1.20.1	2023-07-26T17:44:31.9745337	Block States: testmod
+// 1.20.1	2023-08-09T01:26:53.1772946	Block States: testmod
 fe399a9eec9226ebc1eec852f78b69f5279c8187 assets/testmod/blockstates/bronze_block.json
 1ae4fb793148348d8bb8be4282a3473427d4d800 assets/testmod/blockstates/carbonite_ore.json
 30a245eba899dc4583d88e6c14127c2baf10d298 assets/testmod/blockstates/decorative_amethyst_block.json
@@ -13,7 +13,6 @@ db6a648a27bfbeeab71a76fb5751a30d239aeaac assets/testmod/blockstates/raw_tungsten
 55d00b29b167b03b5d8c83146b79effb672e1798 assets/testmod/blockstates/ruby_ore.json
 60f23667bc72bfed232efe04f1189c2601411145 assets/testmod/blockstates/sapphire_block.json
 9d7dae6c94c8f5e38729be4b5f19f2ff118423e4 assets/testmod/blockstates/sapphire_ore.json
-8caff1601e39e36b464d99ac696df91799f7a686 assets/testmod/blockstates/shrine_block.json
 cc20fce6609f9789ddea5960ce1e702f6142dc7c assets/testmod/blockstates/steel_block.json
 cbf2f6ed7780dd0d8a8c1031df67300f5a0cc1b7 assets/testmod/blockstates/tin_block.json
 96976d98291ec1733dbc1841e2c8872d37eeefc6 assets/testmod/blockstates/tin_ore.json
@@ -33,7 +32,6 @@ b9a9c876844def7340cb2039bde00d74b4c86a61 assets/testmod/models/block/raw_tungste
 21b0e82f55041c3b348cb08350d6bb612198ca3f assets/testmod/models/block/ruby_ore.json
 b428e5d13f39dac6a157b5a45eb18696a4449c22 assets/testmod/models/block/sapphire_block.json
 bbda4b4a0bd642b9b950d5e44ec1d3de9f6e89b2 assets/testmod/models/block/sapphire_ore.json
-f0a045a7efd1231013970566d55b3d86d82e05e5 assets/testmod/models/block/shrine_block.json
 388d690c0fa33dd5d78a89b6bb3132e5fbd1720f assets/testmod/models/block/steel_block.json
 9eb8d271948c23f2e5dcdb6fb2c85a508067a337 assets/testmod/models/block/tin_block.json
 6fd32a61a6668a1568eb016764bebbfcf4b6e8ad assets/testmod/models/block/tin_ore.json
@@ -53,7 +51,6 @@ b93470513d1e95ca96b795ed98b2099b06808dd3 assets/testmod/models/item/deepslate_ti
 6cd8e29d744d3a18c8762b3190b7fcd9fdc69d1e assets/testmod/models/item/ruby_ore.json
 8c9a6abc5cda1cfc833a9ccbaaa07e7927bdb082 assets/testmod/models/item/sapphire_block.json
 a95b11804b67e53163e1c240b8e092bf2cdda3d9 assets/testmod/models/item/sapphire_ore.json
-8a63370cb4f749af886922bf54dd5f5b25ee9573 assets/testmod/models/item/shrine_block.json
 be147588342efb7f84c786ee68063ca55f4c5441 assets/testmod/models/item/steel_block.json
 11ffe729e54019cc006ab2a80c193d1e12d1a575 assets/testmod/models/item/tin_block.json
 6cfe870a6e7c2b0335690200207f713dd8279676 assets/testmod/models/item/tin_ore.json

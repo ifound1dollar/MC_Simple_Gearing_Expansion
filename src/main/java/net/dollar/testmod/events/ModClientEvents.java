@@ -5,9 +5,11 @@ import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.entity.client.renderer.ModKathleenTheWickedRenderer;
 import net.dollar.testmod.entity.client.renderer.ModObsidianGolemEntityRenderer;
 import net.dollar.testmod.entity.client.renderer.ModOldLadyMuffRenderer;
+import net.dollar.testmod.entity.client.renderer.ModRoosterFromHellRenderer;
 import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.dollar.testmod.entity.custom.OldLadyMuffEntity;
+import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
 import net.minecraft.client.renderer.entity.CowRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.world.entity.Mob;
@@ -27,8 +29,10 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntities.OBSIDIAN_GOLEM.get(), ObsidianGolemEntity.setAttributes());
+
         event.put(ModEntities.KATHLEEN_THE_WICKED.get(), KathleenTheWickedEntity.setAttributes());
         event.put(ModEntities.OLD_LADY_MUFF.get(), OldLadyMuffEntity.setAttributes());
+        event.put(ModEntities.ROOSTER_FROM_HELL.get(), RoosterFromHellEntity.setAttributes());
     }
 
     @SubscribeEvent
@@ -41,7 +45,9 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void entityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.OBSIDIAN_GOLEM.get(), ModObsidianGolemEntityRenderer::new);
+
         event.registerEntityRenderer(ModEntities.KATHLEEN_THE_WICKED.get(), ModKathleenTheWickedRenderer::new);
         event.registerEntityRenderer(ModEntities.OLD_LADY_MUFF.get(), ModOldLadyMuffRenderer::new);
+        event.registerEntityRenderer(ModEntities.ROOSTER_FROM_HELL.get(), ModRoosterFromHellRenderer::new);
     }
 }

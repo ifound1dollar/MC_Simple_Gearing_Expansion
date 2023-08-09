@@ -3,6 +3,7 @@ package net.dollar.testmod.tile;
 import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.OldLadyMuffEntity;
+import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -70,7 +71,7 @@ public class ModSpectralLanternBlockEntity extends BlockEntity {
     }
 
     private Monster randomlySelectBoss(UseOnContext context) {
-        switch (RandomUtils.nextInt(0, 2)) {
+        switch (RandomUtils.nextInt(0, 3)) {
             default -> {    //can interpret default as case 0, otherwise complains about duplicate
                 //SEND MESSAGE IN CHAT TO NEARBY PLAYERS
                 context.getPlayer().sendSystemMessage(Component.literal("§cKathleen is coming..."));
@@ -79,6 +80,10 @@ public class ModSpectralLanternBlockEntity extends BlockEntity {
             case 1 -> {
                 context.getPlayer().sendSystemMessage(Component.literal("§dShe's back..."));
                 return new OldLadyMuffEntity(ModEntities.OLD_LADY_MUFF.get(), context.getLevel());
+            }
+            case 2 -> {
+                context.getPlayer().sendSystemMessage(Component.literal("§dSpicy nuggets, anyone?"));
+                return new RoosterFromHellEntity(ModEntities.ROOSTER_FROM_HELL.get(), context.getLevel());
             }
         }
     }

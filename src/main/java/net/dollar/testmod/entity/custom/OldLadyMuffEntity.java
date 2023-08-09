@@ -54,7 +54,6 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
 
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
-    private boolean hasPlayedSpawnSound = false;
 
 
     public OldLadyMuffEntity(EntityType<? extends Monster> type, Level level) {
@@ -75,7 +74,7 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
 
 
     public static AttributeSupplier setAttributes() {
-        return IronGolem.createAttributes()
+        return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 160)
                 .add(Attributes.FOLLOW_RANGE, 30f)
                 .build();
