@@ -49,9 +49,9 @@ public class RoosterFromHellEntity extends Monster {
 
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 160)
-                .add(Attributes.ATTACK_DAMAGE, 17f)     //Normal, Easy/Hard values are auto-scaled
-                .add(Attributes.MOVEMENT_SPEED, 0.4f)   //faster chicken (default 0.25)
+                .add(Attributes.MAX_HEALTH, 120)
+                .add(Attributes.ATTACK_DAMAGE, 14f)     //Normal, Easy/Hard values are auto-scaled
+                .add(Attributes.MOVEMENT_SPEED, 0.3f)   //faster chicken (default 0.25)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.9f)
                 .add(Attributes.FOLLOW_RANGE, 30f)
                 .build();
@@ -192,7 +192,7 @@ public class RoosterFromHellEntity extends Monster {
 
         //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN ON FIRE WHEN KILLED
         if (this.wasOnFire) {
-            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
+            this.spawnAtLocation(ModItems.COLLECTOR_SLIGHTLY_OVERCOOKED_CHICKEN.get());
         }
 
 //        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN NAMED 'James'

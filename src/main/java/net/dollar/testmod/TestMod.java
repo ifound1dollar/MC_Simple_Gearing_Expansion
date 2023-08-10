@@ -211,6 +211,7 @@ public class TestMod
             event.accept(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM);
             event.accept(ModItems.COLLECTOR_POTION_OF_EVERLASTING_YOUTH);
             event.accept(ModItems.COLLECTOR_SLIGHTLY_OVERCOOKED_CHICKEN);
+            event.accept(ModItems.COLLECTOR_OBSIDIAN_DUST);
             //endregion
         }
     }

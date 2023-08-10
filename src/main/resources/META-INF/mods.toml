@@ -44,10 +44,10 @@ authors="ifound1dollar" #optional
 description='''
 This mod expands upon the vanilla gearing experience by:
  - Adding multiple new ores, metals, and jewels with decorative blocks
- - Adding multiple new early, mid, and endgame armor, tool, and weapon tiers
- - Adding an alternative method to acquiring Upgrade Templates
+ - Adding multiple new early, mid, and endgame equipment tiers
  - Adding an entirely new weapon type (Mace) with custom enchantments
- - Adding a handful of new naturally and non-naturally spawning mobs
+ - Adding an alternative method to acquiring Upgrade Templates
+ - Adding new naturally and non-naturally spawning boss mobs, each with difficult-to-acquire collectible item drops
  - Categorizing damage sources more specifically, like Blunt vs. Sharp, which is used by new mobs and gear
  - ...and more!
 '''

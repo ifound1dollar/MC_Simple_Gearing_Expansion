@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-09T03:34:31.0395002	Item Models: testmod
+// 1.20.1	2023-08-10T00:00:18.0010546	Item Models: testmod
 a54c51a7200fcb2f5cacb15a3164d1ff87dc52ae assets/testmod/models/item/basic_upgrade_template.json
 95eee8989ae92b545c3cddfff90a11cc4870fec7 assets/testmod/models/item/bronze_axe.json
 9d5b0b2518b57ef34d9a234c9f5d475416e2a568 assets/testmod/models/item/bronze_boots.json
@@ -15,6 +15,7 @@ ff51a56e3d08f668c37de0554ae5ed65507d770e assets/testmod/models/item/bronze_shove
 c2c75e263a2a943a327fad1d880c104515a46a1a assets/testmod/models/item/carbide_upgrade_smithing_template.json
 1684b6b1b722fe47719e4b528056c435c524db7b assets/testmod/models/item/carbonite_dust.json
 1f919a71aa04597fd9bcd6ec017d0c53f7feb901 assets/testmod/models/item/collector_kathleens_lost_diadem.json
+9d9e47b37fd7c7761cc507db2c739952232cd94f assets/testmod/models/item/collector_obsidian_dust.json
 a1245cacd95fd32734e972fb9614791ebd52ae40 assets/testmod/models/item/collector_potion_of_everlasting_youth.json
 d065032340b4730fbbeb0bc7df01d07131b70071 assets/testmod/models/item/collector_slightly_overcooked_chicken.json
 7e33423818a52fe847bf50b998de541e542daf93 assets/testmod/models/item/compound_gemstone.json

@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "item": "testmod:collector_kathleens_lost_diadem"
+    },
+    "title": "Uncovering the Truth",
+    "description": "Slay Larry while given his secret name, 'Kevin'",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "testmod:collection_base",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "testmod:collector_kathleens_lost_diadem"
+    },
+    "title": "The Queen's Legacy",
+    "description": "Slay Kathleen the Wicked using a Golden Hoe or Gilded Bronze Hoe",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "testmod:collection_base",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "items": [
+                "minecraft:golden_hoe",
+                "testmod:gilded_bronze_hoe"
+              ]
+            }
+          }
+        },
+        "entity": {
+          "type": "testmod:kathleen_the_wicked"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

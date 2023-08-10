@@ -93,6 +93,7 @@ public class ModBlocks {
                     UniformInt.of(2, 5)));
 
 
+    //chain does not render correctly - no transparency between links (can fix later)
     public static final RegistryObject<Block> SPECTRAL_LANTERN = registerBlock("spectral_lantern",
             () -> new ModSpectralLanternBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.METAL).forceSolidOn()

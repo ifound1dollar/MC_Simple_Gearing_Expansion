@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "testmod:steel_sword"
+    },
+    "title": "To Collect Artifacts",
+    "description": "Attack any of the new mobs from Simple Gearing Expansion",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "testmod:simple_gearing_expansion",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "types": [
+            "testmod:obsidian_golem",
+            "testmod:kathleen_the_wicked",
+            "testmod:old_lady_muff",
+            "testmod:rooster_from_hell"
+          ]
+        }
+      }
+    }
+  }
+}

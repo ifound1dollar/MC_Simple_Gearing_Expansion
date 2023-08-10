@@ -18,6 +18,11 @@ public class ModCollectorItem extends Item {
     }
 
     @Override
+    public int getMaxStackSize(ItemStack stack) {
+        return 1;
+    }
+
+    @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
         components.add(Component.literal("§6Collector item #" + numberString));
         super.appendHoverText(stack, level, components, flag);

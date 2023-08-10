@@ -35,6 +35,8 @@ public class ModItems {
             () -> new ModCollectorItem(new Item.Properties(), "2"));
     public static final RegistryObject<Item> COLLECTOR_SLIGHTLY_OVERCOOKED_CHICKEN = ITEMS.register("collector_slightly_overcooked_chicken",
             () -> new ModCollectorItem(new Item.Properties(), "3"));
+    public static final RegistryObject<Item> COLLECTOR_OBSIDIAN_DUST = ITEMS.register("collector_obsidian_dust",
+            () -> new ModCollectorItem(new Item.Properties(), "10"));
     //endregion
 
     //create RegistryObjects for new items

@@ -1,9 +1,11 @@
 package net.dollar.testmod.entity.custom;
 
+import net.dollar.testmod.enchantment.ModEnchantments;
 import net.dollar.testmod.item.ModItems;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -27,6 +29,8 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
@@ -303,6 +307,14 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         ItemEntity itementity = this.spawnAtLocation(ModItems.MOLTEN_CORE.get());
         if (itementity != null) {
             itementity.setExtendedLifetime();
+        }
+
+        //if killer player is holding Tungsten-Carbide Mace with Hardness V, drop collector item
+        ItemStack heldItem = getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND);
+        if (heldItem.getItem() == ModItems.TUNGSTEN_CARBIDE_MACE.get() &&
+                heldItem.getEnchantmentLevel(ModEnchantments.HARDNESS.get()) >= 5)
+        {
+            this.spawnAtLocation(ModItems.COLLECTOR_OBSIDIAN_DUST.get());
         }
     }
 
