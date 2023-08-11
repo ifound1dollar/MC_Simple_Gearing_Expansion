@@ -13,9 +13,9 @@
     }
   },
   "pattern": [
-    "d",
-    "i",
-    "n"
+    " d ",
+    "nin",
+    " n "
   ],
   "result": {
     "item": "minecraft:netherite_upgrade_smithing_template"

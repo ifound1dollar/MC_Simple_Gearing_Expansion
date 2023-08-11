@@ -13,9 +13,9 @@
     }
   },
   "pattern": [
-    "d",
-    "i",
-    "n"
+    " d ",
+    "nin",
+    " n "
   ],
   "result": {
     "item": "testmod:carbide_upgrade_smithing_template"

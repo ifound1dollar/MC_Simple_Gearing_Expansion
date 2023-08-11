@@ -34,7 +34,9 @@ public class ModUtils {
         }
 
         //THEN, if damage is not directly coming from a mob or player attack, can check other categories
+
         //THIS COULD BE PUT IN A MAP, DamageType:DamageCategory, FOR MUCH MORE EFFICIENT ACCESSING
+        //GOOD GOD PUT THIS IN A MAP PLEASE, if it doesn't contain key, return NONE (ternary operator)
         if (source.is(DamageTypes.ARROW) || source.is(DamageTypes.CACTUS)
                 || source.is(DamageTypes.FALLING_STALACTITE) || source.is(DamageTypes.STALAGMITE)
                 || source.is(DamageTypes.STING) || source.is(DamageTypes.SWEET_BERRY_BUSH)
