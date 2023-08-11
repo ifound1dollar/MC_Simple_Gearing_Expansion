@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-09T03:34:31.0375054	Loot Tables
+// 1.20.1	2023-08-10T19:06:57.9366093	Loot Tables
 8568dfd4d000609fff8b0ed7c73b8998da83a67c data/testmod/loot_tables/blocks/bronze_block.json
 a9ab382ef42cabefe43b9466f5661c7119788248 data/testmod/loot_tables/blocks/carbonite_ore.json
 f5b839cbf8bef48e45160af5e41f90a34b853f5a data/testmod/loot_tables/blocks/decorative_amethyst_block.json
@@ -22,4 +22,4 @@ e91c7036e0dd6115253b7d4ec6f4c6dc498b1b15 data/testmod/loot_tables/blocks/tungste
 259505365d9a3fe23dbdd5ed728aee34bd852077 data/testmod/loot_tables/entities/kathleen_the_wicked.json
 228feaf8ec331541b2a67304e77b6947b20cf607 data/testmod/loot_tables/entities/obsidian_golem.json
 e41ccfe37f396e3363f1580117cc1d65223b3175 data/testmod/loot_tables/entities/old_lady_muff.json
-8c8499a4f386949d90ecea5224b7b04cf31c8635 data/testmod/loot_tables/entities/rooster_from_hell.json
+2aad0bf9289fe23fb47524c29adbd2a090f05911 data/testmod/loot_tables/entities/the_helirooster.json

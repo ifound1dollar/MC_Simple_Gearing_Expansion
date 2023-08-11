@@ -4,7 +4,7 @@
       "item": "testmod:collector_slightly_overcooked_chicken"
     },
     "title": "Cooking Lessons",
-    "description": "Slay the Rooster from Hell while it's on fire",
+    "description": "Slay The Helirooster while it's on fire",
     "frame": "task",
     "show_toast": true,
     "annouce_to_chat": true
@@ -15,7 +15,7 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "testmod:rooster_from_hell",
+          "type": "testmod:the_helirooster",
           "flags": {
             "is_on_fire": true
           }

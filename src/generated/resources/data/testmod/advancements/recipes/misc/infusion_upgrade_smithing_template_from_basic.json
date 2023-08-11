@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "testmod:netherite_upgrade_smithing_template_from_generic"
+        "recipe": "testmod:infusion_upgrade_smithing_template_from_basic"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "testmod:netherite_upgrade_smithing_template_from_generic"
+      "testmod:infusion_upgrade_smithing_template_from_basic"
     ]
   },
   "sends_telemetry_event": false

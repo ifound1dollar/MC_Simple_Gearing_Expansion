@@ -176,12 +176,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
                 .define('i', Items.DEEPSLATE)
                 .define('n', Items.DIAMOND)
-                .pattern("ndn")
-                .pattern("nin")
-                .pattern("nnn")
+                .pattern("d")
+                .pattern("i")
+                .pattern("n")
                 .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
-                .save(consumer, TestMod.MOD_ID + ":infusion_upgrade_smithing_template_from_generic");
+                .save(consumer, TestMod.MOD_ID + ":infusion_upgrade_smithing_template_from_basic");
         //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get())
@@ -197,12 +197,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
                 .define('i', Items.OBSIDIAN)
                 .define('n', ModItems.TUNGSTEN_INGOT.get())
-                .pattern("ndn")
-                .pattern("nin")
-                .pattern("nnn")
+                .pattern("d")
+                .pattern("i")
+                .pattern("n")
                 .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
-                .save(consumer, TestMod.MOD_ID + ":carbide_upgrade_smithing_template_from_generic");
+                .save(consumer, TestMod.MOD_ID + ":carbide_upgrade_smithing_template_from_basic");
         //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get())
@@ -219,12 +219,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
                 .define('i', Items.NETHERRACK)
                 .define('n', Items.DIAMOND)
-                .pattern("ndn")
-                .pattern("nin")
-                .pattern("nnn")
+                .pattern("d")
+                .pattern("i")
+                .pattern("n")
                 .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
-                .save(consumer, TestMod.MOD_ID + ":netherite_upgrade_smithing_template_from_generic");
+                .save(consumer, TestMod.MOD_ID + ":netherite_upgrade_smithing_template_from_basic");
         //endregion
 
 

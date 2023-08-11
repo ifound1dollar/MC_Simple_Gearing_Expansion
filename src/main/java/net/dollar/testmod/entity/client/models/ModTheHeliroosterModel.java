@@ -1,10 +1,8 @@
 package net.dollar.testmod.entity.client.models;
 
 import com.google.common.collect.ImmutableList;
-import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
-import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
+import net.dollar.testmod.entity.custom.TheHeliroosterEntity;
 import net.minecraft.client.model.AgeableListModel;
-import net.minecraft.client.model.QuadrupedModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
@@ -13,7 +11,7 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
 
-public class ModRoosterFromHellModel<T extends RoosterFromHellEntity> extends AgeableListModel<T> {
+public class ModTheHeliroosterModel<T extends TheHeliroosterEntity> extends AgeableListModel<T> {
     public static final String RED_THING = "red_thing";
     private final ModelPart head;
     private final ModelPart body;
@@ -24,7 +22,7 @@ public class ModRoosterFromHellModel<T extends RoosterFromHellEntity> extends Ag
     private final ModelPart beak;
     private final ModelPart redThing;
 
-    public ModRoosterFromHellModel(ModelPart p_170490_) {
+    public ModTheHeliroosterModel(ModelPart p_170490_) {
         this.head = p_170490_.getChild("head");
         this.beak = p_170490_.getChild("beak");
         this.redThing = p_170490_.getChild("red_thing");

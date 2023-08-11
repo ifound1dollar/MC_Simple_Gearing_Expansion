@@ -2,8 +2,11 @@
   "replace": false,
   "values": [
     "testmod:carbonite_ore",
+    "testmod:deepslate_carbonite_ore",
     "testmod:tin_block",
+    "testmod:raw_tin_block",
     "testmod:tin_ore",
+    "testmod:deepslate_tin_ore",
     "testmod:bronze_block"
   ]
 }

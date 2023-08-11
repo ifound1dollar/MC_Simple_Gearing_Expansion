@@ -6,19 +6,19 @@
       "item": "testmod:basic_upgrade_template"
     },
     "i": {
-      "item": "minecraft:obsidian"
+      "item": "minecraft:netherrack"
     },
     "n": {
-      "item": "testmod:tungsten_ingot"
+      "item": "minecraft:diamond"
     }
   },
   "pattern": [
-    "ndn",
-    "nin",
-    "nnn"
+    "d",
+    "i",
+    "n"
   ],
   "result": {
-    "item": "testmod:carbide_upgrade_smithing_template"
+    "item": "minecraft:netherite_upgrade_smithing_template"
   },
   "show_notification": true
 }

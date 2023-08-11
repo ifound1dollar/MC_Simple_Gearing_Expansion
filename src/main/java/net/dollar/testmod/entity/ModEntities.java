@@ -4,7 +4,7 @@ import net.dollar.testmod.TestMod;
 import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.dollar.testmod.entity.custom.OldLadyMuffEntity;
-import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
+import net.dollar.testmod.entity.custom.TheHeliroosterEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -34,10 +34,10 @@ public class ModEntities {
             ENTITY_TYPES.register("old_lady_muff",
                     () -> EntityType.Builder.of(OldLadyMuffEntity::new, MobCategory.MONSTER)
                             .build(new ResourceLocation(TestMod.MOD_ID + "old_lady_muff").toString()));
-    public static final RegistryObject<EntityType<RoosterFromHellEntity>> ROOSTER_FROM_HELL =
-            ENTITY_TYPES.register("rooster_from_hell",
-                    () -> EntityType.Builder.of(RoosterFromHellEntity::new, MobCategory.MONSTER)
-                            .build(new ResourceLocation(TestMod.MOD_ID + "rooster_from_hell").toString()));
+    public static final RegistryObject<EntityType<TheHeliroosterEntity>> THE_HELIROOSTER =
+            ENTITY_TYPES.register("the_helirooster",
+                    () -> EntityType.Builder.of(TheHeliroosterEntity::new, MobCategory.MONSTER)
+                            .build(new ResourceLocation(TestMod.MOD_ID + "the_helirooster").toString()));
 
 
     public static void register(IEventBus eventBus) {

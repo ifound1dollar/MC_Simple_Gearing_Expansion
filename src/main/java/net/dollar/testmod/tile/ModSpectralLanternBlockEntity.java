@@ -3,11 +3,9 @@ package net.dollar.testmod.tile;
 import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.OldLadyMuffEntity;
-import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
+import net.dollar.testmod.entity.custom.TheHeliroosterEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -83,7 +81,7 @@ public class ModSpectralLanternBlockEntity extends BlockEntity {
             }
             case 2 -> {
                 context.getPlayer().sendSystemMessage(Component.literal("§dSpicy nuggets, anyone?"));
-                return new RoosterFromHellEntity(ModEntities.ROOSTER_FROM_HELL.get(), context.getLevel());
+                return new TheHeliroosterEntity(ModEntities.THE_HELIROOSTER.get(), context.getLevel());
             }
         }
     }

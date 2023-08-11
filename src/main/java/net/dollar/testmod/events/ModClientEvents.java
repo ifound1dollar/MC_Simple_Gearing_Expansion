@@ -5,18 +5,12 @@ import net.dollar.testmod.entity.ModEntities;
 import net.dollar.testmod.entity.client.renderer.ModKathleenTheWickedRenderer;
 import net.dollar.testmod.entity.client.renderer.ModObsidianGolemEntityRenderer;
 import net.dollar.testmod.entity.client.renderer.ModOldLadyMuffRenderer;
-import net.dollar.testmod.entity.client.renderer.ModRoosterFromHellRenderer;
+import net.dollar.testmod.entity.client.renderer.ModTheHeliroosterRenderer;
 import net.dollar.testmod.entity.custom.KathleenTheWickedEntity;
 import net.dollar.testmod.entity.custom.ObsidianGolemEntity;
 import net.dollar.testmod.entity.custom.OldLadyMuffEntity;
-import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
-import net.minecraft.client.renderer.entity.CowRenderer;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.PathfinderMob;
+import net.dollar.testmod.entity.custom.TheHeliroosterEntity;
 import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.animal.AbstractGolem;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -32,7 +26,7 @@ public class ModClientEvents {
 
         event.put(ModEntities.KATHLEEN_THE_WICKED.get(), KathleenTheWickedEntity.setAttributes());
         event.put(ModEntities.OLD_LADY_MUFF.get(), OldLadyMuffEntity.setAttributes());
-        event.put(ModEntities.ROOSTER_FROM_HELL.get(), RoosterFromHellEntity.setAttributes());
+        event.put(ModEntities.THE_HELIROOSTER.get(), TheHeliroosterEntity.setAttributes());
     }
 
     @SubscribeEvent
@@ -48,6 +42,6 @@ public class ModClientEvents {
 
         event.registerEntityRenderer(ModEntities.KATHLEEN_THE_WICKED.get(), ModKathleenTheWickedRenderer::new);
         event.registerEntityRenderer(ModEntities.OLD_LADY_MUFF.get(), ModOldLadyMuffRenderer::new);
-        event.registerEntityRenderer(ModEntities.ROOSTER_FROM_HELL.get(), ModRoosterFromHellRenderer::new);
+        event.registerEntityRenderer(ModEntities.THE_HELIROOSTER.get(), ModTheHeliroosterRenderer::new);
     }
 }

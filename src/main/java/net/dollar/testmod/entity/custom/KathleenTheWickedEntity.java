@@ -237,13 +237,6 @@ public class KathleenTheWickedEntity extends Monster {
                     getLastAttacker().getItemBySlot(EquipmentSlot.MAINHAND).getItem() == ModItems.GILDED_BRONZE_HOE.get()) //noinspection GrazieInspection
             {
                 this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
-
-                //DOES NOT WORK???
-//                Advancement advancement = serverPlayer.server.getAdvancements().getAdvancement(new ResourceLocation(
-//                        TestMod.MOD_ID, "collection_kathleen_the_wicked"));
-//                if (advancement != null) {
-//                    serverPlayer.getAdvancements().award(advancement, "advancement unlocked");
-//                }
             }
         }
     }

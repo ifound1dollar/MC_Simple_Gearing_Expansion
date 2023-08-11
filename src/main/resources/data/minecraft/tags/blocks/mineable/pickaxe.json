@@ -3,17 +3,25 @@
   "values": [
     "testmod:ruby_block",
     "testmod:ruby_ore",
+    "testmod:deepslate_ruby_ore",
     "testmod:sapphire_block",
     "testmod:sapphire_ore",
-    "testmod:pretty_amethyst_block",
+    "testmod:deepslate_sapphire_ore",
+    "testmod:decorative_amethyst_block",
 
     "testmod:carbonite_ore",
+    "testmod:deepslate_carbonite_ore",
     "testmod:tin_block",
+    "testmod:raw_tin_block",
     "testmod:tin_ore",
+    "testmod:deepslate_tin_ore",
     "testmod:bronze_block",
     "testmod:steel_block",
     "testmod:tungsten_block",
+    "testmod:raw_tungsten_block",
     "testmod:tungsten_ore",
-    "testmod:tungsten_carbide_block"
+    "testmod:deepslate_tungsten_ore",
+
+    "testmod:spectral_lantern"
   ]
 }

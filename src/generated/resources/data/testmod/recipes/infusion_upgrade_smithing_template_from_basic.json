@@ -13,9 +13,9 @@
     }
   },
   "pattern": [
-    "ndn",
-    "nin",
-    "nnn"
+    "d",
+    "i",
+    "n"
   ],
   "result": {
     "item": "testmod:infusion_upgrade_smithing_template"

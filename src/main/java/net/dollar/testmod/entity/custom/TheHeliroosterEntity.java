@@ -1,43 +1,27 @@
 package net.dollar.testmod.entity.custom;
 
-import javax.annotation.Nullable;
-
 import net.dollar.testmod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Chicken;
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraft.world.phys.Vec3;
 
-public class RoosterFromHellEntity extends Monster {
+public class TheHeliroosterEntity extends Monster {
     private int ticksSinceLastAttack = 0;
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
 
-    public RoosterFromHellEntity(EntityType<? extends Monster> entityType, Level level) {
+    public TheHeliroosterEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -51,7 +35,7 @@ public class RoosterFromHellEntity extends Monster {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 120)
                 .add(Attributes.ATTACK_DAMAGE, 14f)     //Normal, Easy/Hard values are auto-scaled
-                .add(Attributes.MOVEMENT_SPEED, 0.3f)   //faster chicken (default 0.25)
+                .add(Attributes.MOVEMENT_SPEED, 0.35f)   //faster chicken (default 0.25)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.9f)
                 .add(Attributes.FOLLOW_RANGE, 30f)
                 .build();
@@ -98,13 +82,15 @@ public class RoosterFromHellEntity extends Monster {
         float f = this.getAttackDamage();
         float f1 = (int)f > 0 ? f / 2.0F + (float)this.random.nextInt((int)f) : f;
         boolean flag = targetEntity.hurt(this.damageSources().mobAttack(this), f1);
-        if (flag) {
+        if (flag) //noinspection GrazieInspection
+        {
             this.doEnchantDamageEffects(this, targetEntity);
 
-            if (targetEntity instanceof LivingEntity livingEntity) {
-                //SET TARGET ON FIRE FOR 5s
-                livingEntity.setRemainingFireTicks(100);
-            }
+//            //DON'T DO THIS ANYMORE
+//            if (targetEntity instanceof LivingEntity livingEntity) {
+//                //SET TARGET ON FIRE FOR 5s
+//                livingEntity.setRemainingFireTicks(100);
+//            }
         }
 
         this.playSound(SoundEvents.BLAZE_HURT, 1.0F, 1.0F);

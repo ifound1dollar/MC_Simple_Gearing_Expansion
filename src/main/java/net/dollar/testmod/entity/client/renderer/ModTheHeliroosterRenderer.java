@@ -1,7 +1,7 @@
 package net.dollar.testmod.entity.client.renderer;
 
-import net.dollar.testmod.entity.client.models.ModRoosterFromHellModel;
-import net.dollar.testmod.entity.custom.RoosterFromHellEntity;
+import net.dollar.testmod.entity.client.models.ModTheHeliroosterModel;
+import net.dollar.testmod.entity.custom.TheHeliroosterEntity;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -12,16 +12,16 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class ModRoosterFromHellRenderer extends MobRenderer<RoosterFromHellEntity, ModRoosterFromHellModel<RoosterFromHellEntity>> {
+public class ModTheHeliroosterRenderer extends MobRenderer<TheHeliroosterEntity, ModTheHeliroosterModel<TheHeliroosterEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
             "textures/entity/chicken.png");
 
-    public ModRoosterFromHellRenderer(EntityRendererProvider.Context context) {
-        super(context, new ModRoosterFromHellModel<>(context.bakeLayer(ModelLayers.CHICKEN)), 0.3f);  //shadow radius
+    public ModTheHeliroosterRenderer(EntityRendererProvider.Context context) {
+        super(context, new ModTheHeliroosterModel<>(context.bakeLayer(ModelLayers.CHICKEN)), 0.3f);  //shadow radius
     }
 
     @Override
-    public ResourceLocation getTextureLocation(RoosterFromHellEntity p_114482_) {
+    public ResourceLocation getTextureLocation(TheHeliroosterEntity p_114482_) {
         return TEXTURE;
     }
 
