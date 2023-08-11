@@ -70,10 +70,10 @@ public class ModUtils {
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollInfusedDiamondOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
-        //roll chance to remove Slowness from and apply Speed to user (attacker) for 3 seconds
+        //roll chance to remove Slowness from and apply Speed to user (attacker) for 4 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             attacker.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 61));
+            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80));
         }
     }
 
@@ -84,10 +84,10 @@ public class ModUtils {
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollNetheriteOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
-        //roll chance to apply Wither effect to target (attackedEntity) for 3 seconds
+        //roll chance to apply Wither effect to target (attackedEntity) for 4 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             //apply level 2 wither for once-per-second damage tick
-            attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 61, 1));
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 1));
         }
     }
 
@@ -98,10 +98,10 @@ public class ModUtils {
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollTungstenCarbideOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
-        //roll chance to apply Slowness effect to target (attackedEntity) for 3 seconds
+        //roll chance to apply Slowness effect to target (attackedEntity) for 4 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             //apply level 2 slow (third argument) for 30% reduction, 15%/level
-            attackedEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 61, 1));
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 1));
         }
     }
 }

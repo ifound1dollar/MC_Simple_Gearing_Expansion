@@ -68,7 +68,7 @@ public class KathleenTheWickedEntity extends Monster {
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 120)
-                .add(Attributes.ATTACK_DAMAGE, 16f)     //Normal, Easy/Hard values are auto-scaled
+                .add(Attributes.ATTACK_DAMAGE, 15f)     //Normal, Easy/Hard values are auto-scaled
                 .add(Attributes.MOVEMENT_SPEED, 0.25f)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.9f)
                 .add(Attributes.FOLLOW_RANGE, 30f)
@@ -106,8 +106,8 @@ public class KathleenTheWickedEntity extends Monster {
             this.doEnchantDamageEffects(this, targetEntity);
 
             if (targetEntity instanceof LivingEntity livingEntity) {
-                //WITHER TARGET FOR 3s
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1));
+                //WITHER TARGET FOR 4s
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 1));
             }
         }
 

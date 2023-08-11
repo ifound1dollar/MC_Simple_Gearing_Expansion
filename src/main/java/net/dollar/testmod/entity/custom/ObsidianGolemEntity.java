@@ -166,20 +166,20 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
             this.doEnchantDamageEffects(this, targetEntity);
 
             if (targetEntity instanceof LivingEntity livingEntity) {
-                //CHANCE TO APPLY EFFECT TO TARGET HERE, 50% chance on-hit
-                if (this.random.nextInt(100) < 50) {
+                //CHANCE TO APPLY EFFECT TO TARGET HERE, 67% chance on-hit
+                if (this.random.nextInt(100) < 67) {
                     //APPLY ONE OF THESE TWO EFFECTS
                     if (this.random.nextBoolean()) {
                         //apply only level 1 slow, 15%/level (30% was a bit too much)
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, 0));
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 0));
                     } else {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60));
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 80));
                     }
                 }
 
                 //ALSO CHANCE TO SET TARGET ON FIRE BASED ON % MISSING HP + 10% (LOOSELY CORRESPONDS TO CRACKINESS)
                 if (this.random.nextFloat() > (this.getHealth() / this.getMaxHealth()) - 0.1f) {
-                    livingEntity.setSecondsOnFire(3);
+                    livingEntity.setSecondsOnFire(4);
                 }
             }
         }
