@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.dollar.testmod.block.ModBlocks;
 import net.dollar.testmod.config.ModCommonConfigs;
 import net.dollar.testmod.entity.ModEntities;
+import net.dollar.testmod.loot.ModLootModifiers;
 import net.dollar.testmod.tile.ModTileEntities;
 import net.dollar.testmod.enchantment.ModEnchantments;
 import net.dollar.testmod.item.ModCreativeModeTabs;
@@ -40,6 +41,7 @@ public class TestMod
         ModEnchantments.register(modEventBus);
         ModTileEntities.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

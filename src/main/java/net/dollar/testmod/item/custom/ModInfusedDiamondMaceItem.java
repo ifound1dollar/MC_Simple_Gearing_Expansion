@@ -6,15 +6,11 @@ import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.item.ModMaceItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,12 +33,6 @@ public class ModInfusedDiamondMaceItem extends ModMaceItem implements IInfusedDi
         ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker,
                 ModCommonConfigs.INFUSED_DIAMOND_EFFECT_CHANCE.get()); //blunt, default 15
         return super.hurtEnemy(stack, attackedEntity, attacker);
-    }
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return super.canApplyAtEnchantingTable(stack, enchantment)
-                || enchantment == ModEnchantments.MENDING_VERY_RARE.get();
     }
 
     @Override

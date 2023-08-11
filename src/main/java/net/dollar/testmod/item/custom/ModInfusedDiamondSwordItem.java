@@ -5,11 +5,7 @@ import net.dollar.testmod.enchantment.ModEnchantments;
 import net.dollar.testmod.util.IInfusedDiamondItem;
 import net.dollar.testmod.util.ModUtils;
 import net.minecraft.network.chat.Component;
-import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -37,12 +33,6 @@ public class ModInfusedDiamondSwordItem extends SwordItem implements IInfusedDia
         ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker,
                 ModCommonConfigs.INFUSED_DIAMOND_EFFECT_CHANCE.get()); //sharp, default 15
         return super.hurtEnemy(stack, attackedEntity, attacker);
-    }
-
-    @Override
-    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        return super.canApplyAtEnchantingTable(stack, enchantment)
-                || enchantment == ModEnchantments.MENDING_VERY_RARE.get();
     }
 
     @Override
