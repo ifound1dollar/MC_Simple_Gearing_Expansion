@@ -15,7 +15,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TestMod.MOD_ID);
 
-    public static RegistryObject<CreativeModeTab> SGE_TAB = CREATIVE_MODE_TABS.register("sge_tab",
+    public static RegistryObject<CreativeModeTab> SIMPLEGEAR_TAB = CREATIVE_MODE_TABS.register("simplegear_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RUBY.get()))
                     .title(Component.literal("Simple Gearing Expansion")).build());
 

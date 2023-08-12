@@ -72,7 +72,7 @@ public class TestMod
         }*/
 
         //add to TEST_TAB
-        if (event.getTab() == ModCreativeModeTabs.SGE_TAB.get()) {
+        if (event.getTab() == ModCreativeModeTabs.SIMPLEGEAR_TAB.get()) {
             //region BLOCKS
             event.accept(ModBlocks.CARBONITE_ORE);
             event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
