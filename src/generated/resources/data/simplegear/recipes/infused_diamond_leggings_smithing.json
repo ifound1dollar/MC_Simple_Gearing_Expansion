@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "simplegear:infused_gemstone"
+  },
+  "base": {
+    "item": "minecraft:diamond_leggings"
+  },
+  "result": {
+    "item": "simplegear:infused_diamond_leggings"
+  },
+  "template": {
+    "item": "simplegear:infusion_upgrade_smithing_template"
+  }
+}

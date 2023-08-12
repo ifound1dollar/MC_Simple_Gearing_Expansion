@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_carbide_upgrade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "simplegear:tungsten_carbide_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "simplegear:tungsten_carbide_helmet_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_carbide_upgrade",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "simplegear:tungsten_carbide_helmet_smithing"
+    ]
+  },
+  "sends_telemetry_event": false
+}

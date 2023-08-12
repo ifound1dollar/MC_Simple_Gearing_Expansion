@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "simplegear:block/spectral_lantern"
+    },
+    "hanging=true": {
+      "model": "simplegear:block/spectral_lantern_hanging"
+    }
+  }
+}

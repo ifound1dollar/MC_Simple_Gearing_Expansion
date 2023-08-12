@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "simplegear:item/collector_obsidian_dust"
+  }
+}

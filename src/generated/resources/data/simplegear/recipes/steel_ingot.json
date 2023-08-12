@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "simplegear:steel_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "simplegear:steel_ingot"
+  }
+}

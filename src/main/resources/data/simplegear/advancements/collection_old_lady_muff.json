@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:collector_potion_of_everlasting_youth"
+    },
+    "title": "Forever Young",
+    "description": "Slay Old Lady Muff while she's affected by Regeneration, Speed, and Strength",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "simplegear:collection_base",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "simplegear:old_lady_muff",
+          "effects": {
+            "minecraft:regeneration": {},
+            "minecraft:speed": {},
+            "minecraft:strength": {}
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

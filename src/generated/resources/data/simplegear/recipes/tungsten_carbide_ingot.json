@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "simplegear:tungsten_ingot"
+    },
+    {
+      "item": "simplegear:tungsten_ingot"
+    },
+    {
+      "item": "simplegear:tungsten_ingot"
+    },
+    {
+      "item": "simplegear:tungsten_ingot"
+    },
+    {
+      "item": "simplegear:carbonite_dust"
+    },
+    {
+      "item": "simplegear:carbonite_dust"
+    },
+    {
+      "item": "simplegear:carbonite_dust"
+    },
+    {
+      "item": "simplegear:carbonite_dust"
+    },
+    {
+      "item": "simplegear:molten_core"
+    }
+  ],
+  "result": {
+    "item": "simplegear:tungsten_carbide_ingot"
+  }
+}

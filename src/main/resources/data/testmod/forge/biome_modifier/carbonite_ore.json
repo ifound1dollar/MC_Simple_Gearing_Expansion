@@ -1,9 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#is_overworld",
-  "features": [
-    "testmod:carbonite_ore_upper_placed",
-    "testmod:carbonite_ore_lower_placed"
-  ],
-  "step": "underground_ores"
-}

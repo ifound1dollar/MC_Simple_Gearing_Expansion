@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "simplegear:tin_ingot"
+    }
+  },
+  "pattern": [
+    " d",
+    "d "
+  ],
+  "result": {
+    "item": "simplegear:tin_shears"
+  },
+  "show_notification": true
+}

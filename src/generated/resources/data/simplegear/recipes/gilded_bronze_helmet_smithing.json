@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "simplegear:bronze_helmet"
+  },
+  "result": {
+    "item": "simplegear:gilded_bronze_helmet"
+  },
+  "template": {
+    "item": "simplegear:gilded_upgrade_smithing_template"
+  }
+}

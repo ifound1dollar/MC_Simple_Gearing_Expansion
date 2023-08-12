@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:steel_sword"
+    },
+    "title": "To Collect Artifacts",
+    "description": "Attack any of the new mobs from Simple Gearing Expansion",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "simplegear:simple_gearing_expansion",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "types": [
+            "simplegear:obsidian_golem",
+            "simplegear:kathleen_the_wicked",
+            "simplegear:old_lady_muff",
+            "simplegear:rooster_from_hell"
+          ]
+        }
+      }
+    }
+  }
+}

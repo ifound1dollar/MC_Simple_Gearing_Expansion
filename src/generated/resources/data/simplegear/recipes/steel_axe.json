@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "simplegear:steel_ingot"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "dd",
+    "di",
+    " i"
+  ],
+  "result": {
+    "item": "simplegear:steel_axe"
+  },
+  "show_notification": true
+}

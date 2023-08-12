@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:infused_gemstone"
+    },
+    "title": "§bSimple Gearing Expansion",
+    "description": "Obtain any new equipment material from Simple Gearing Expansion",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true,
+    "background": "simplegear:textures/block/tungsten_block.png"
+  },
+  "criteria": {
+    "location": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "simplegear:ruby",
+              "simplegear:sapphire",
+              "simplegear:carbonite_dust",
+              "simplegear:raw_tin",
+              "simplegear:tin_ingot",
+              "simplegear:bronze_compound",
+              "simplegear:bronze_ingot",
+              "simplegear:steel_compound",
+              "simplegear:steel_ingot",
+              "simplegear:raw_tungsten",
+              "simplegear:tungsten_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

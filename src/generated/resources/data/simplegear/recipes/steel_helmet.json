@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "simplegear:steel_ingot"
+    }
+  },
+  "pattern": [
+    "ddd",
+    "d d"
+  ],
+  "result": {
+    "item": "simplegear:steel_helmet"
+  },
+  "show_notification": true
+}

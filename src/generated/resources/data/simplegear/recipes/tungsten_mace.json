@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "simplegear:tungsten_ingot"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " dd",
+    " id",
+    "i  "
+  ],
+  "result": {
+    "item": "simplegear:tungsten_mace"
+  },
+  "show_notification": true
+}

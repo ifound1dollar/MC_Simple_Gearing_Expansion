@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "simplegear:infused_gemstone"
+  },
+  "base": {
+    "item": "simplegear:diamond_mace"
+  },
+  "result": {
+    "item": "simplegear:infused_diamond_mace"
+  },
+  "template": {
+    "item": "simplegear:infusion_upgrade_smithing_template"
+  }
+}

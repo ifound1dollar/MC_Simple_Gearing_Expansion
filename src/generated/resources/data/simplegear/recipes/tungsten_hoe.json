@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "simplegear:tungsten_ingot"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "dd",
+    " i",
+    " i"
+  ],
+  "result": {
+    "item": "simplegear:tungsten_hoe"
+  },
+  "show_notification": true
+}

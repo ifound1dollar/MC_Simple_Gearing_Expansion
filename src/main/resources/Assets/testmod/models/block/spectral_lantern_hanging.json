@@ -1,7 +1,0 @@
-{
-  "parent": "testmod:block/template_spectral_lantern_hanging",
-  "textures": {
-    "material": "testmod:block/normal_lantern",
-    "color": "testmod:block/spectral_lantern"
-  }
-}

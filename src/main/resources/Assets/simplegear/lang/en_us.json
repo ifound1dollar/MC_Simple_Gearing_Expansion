@@ -1,0 +1,147 @@
+{
+  "block.simplegear.ruby_block": "Ruby Block",
+  "block.simplegear.ruby_ore": "Ruby Ore",
+  "block.simplegear.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.simplegear.sapphire_block": "Sapphire Block",
+  "block.simplegear.sapphire_ore": "Sapphire Ore",
+  "block.simplegear.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.simplegear.decorative_amethyst_block": "Decorative Amethyst Block",
+
+  "block.simplegear.carbonite_block": "Carbonite Block",
+  "block.simplegear.carbonite_ore": "Carbonite Ore",
+  "block.simplegear.deepslate_carbonite_ore": "Deepslate Carbonite Ore",
+  "block.simplegear.tin_block": "Tin Block",
+  "block.simplegear.raw_tin_block": "Raw Tin Block",
+  "block.simplegear.tin_ore": "Tin Ore",
+  "block.simplegear.deepslate_tin_ore": "Deepslate Tin Ore",
+  "block.simplegear.bronze_block": "Bronze Block",
+  "block.simplegear.steel_block": "Steel Block",
+  "block.simplegear.tungsten_block": "Tungsten Block",
+  "block.simplegear.raw_tungsten_block": "Raw Tungsten Block",
+  "block.simplegear.tungsten_ore": "Tungsten Ore",
+  "block.simplegear.deepslate_tungsten_ore": "Deepslate Tungsten Ore",
+
+  "block.simplegear.spectral_lantern": "Spectral Lantern",
+
+
+
+  "item.simplegear.obsidian_golem_spawn_egg": "Obsidian Golem Spawn Egg",
+  "item.simplegear.tin_shears": "Tin Shears",
+
+  "item.simplegear.ruby": "Ruby",
+  "item.simplegear.sapphire": "Sapphire",
+  "item.simplegear.carbonite_dust": "Carbonite Dust",
+  "item.simplegear.raw_tin": "Raw Tin",
+  "item.simplegear.tin_ingot": "Tin Ingot",
+  "item.simplegear.bronze_compound": "Bronze Compound",
+  "item.simplegear.bronze_ingot": "Bronze Ingot",
+  "item.simplegear.steel_compound": "Steel Compound",
+  "item.simplegear.steel_ingot": "Steel Ingot",
+  "item.simplegear.raw_tungsten": "Raw Tungsten",
+  "item.simplegear.tungsten_ingot": "Tungsten Ingot",
+
+  "item.simplegear.compound_gemstone": "Compound Gemstone",
+  "item.simplegear.infused_gemstone": "Infused Gemstone",
+  "item.simplegear.molten_core": "Molten Core",
+  "item.simplegear.tungsten_carbide_ingot": "Tungsten-Carbide Ingot",
+
+  "item.simplegear.basic_upgrade_template": "Basic Upgrade Template",
+  "item.simplegear.gilded_upgrade_smithing_template": "Gilded Upgrade Smithing Template",
+  "item.simplegear.carbide_upgrade_smithing_template": "Carbide Upgrade Smithing Template",
+  "item.simplegear.infusion_upgrade_smithing_template": "Infusion Upgrade Smithing Template",
+
+
+
+  "item.simplegear.stone_mace": "Stone Mace",
+  "item.simplegear.iron_mace": "Iron Mace",
+  "item.simplegear.gold_mace": "Gold Mace",
+  "item.simplegear.diamond_mace": "Diamond Mace",
+  "item.simplegear.netherite_mace": "Netherite Mace",
+
+  "item.simplegear.bronze_helmet": "Bronze Helmet",
+  "item.simplegear.bronze_chestplate": "Bronze Chestplate",
+  "item.simplegear.bronze_leggings": "Bronze Leggings",
+  "item.simplegear.bronze_boots": "Bronze Boots",
+  "item.simplegear.bronze_axe": "Bronze Axe",
+  "item.simplegear.bronze_hoe": "Bronze Hoe",
+  "item.simplegear.bronze_mace": "Bronze Mace",
+  "item.simplegear.bronze_pickaxe": "Bronze Pickaxe",
+  "item.simplegear.bronze_shovel": "Bronze Shovel",
+  "item.simplegear.bronze_sword": "Bronze Sword",
+
+  "item.simplegear.gilded_bronze_helmet": "Gilded Bronze Helmet",
+  "item.simplegear.gilded_bronze_chestplate": "Gilded Bronze Chestplate",
+  "item.simplegear.gilded_bronze_leggings": "Gilded Bronze Leggings",
+  "item.simplegear.gilded_bronze_boots": "Gilded Bronze Boots",
+  "item.simplegear.gilded_bronze_axe": "Gilded Bronze Axe",
+  "item.simplegear.gilded_bronze_hoe": "Gilded Bronze Hoe",
+  "item.simplegear.gilded_bronze_mace": "Gilded Bronze Mace",
+  "item.simplegear.gilded_bronze_pickaxe": "Gilded Bronze Pickaxe",
+  "item.simplegear.gilded_bronze_shovel": "Gilded Bronze Shovel",
+  "item.simplegear.gilded_bronze_sword": "Gilded Bronze Sword",
+
+  "item.simplegear.steel_helmet": "Steel Helmet",
+  "item.simplegear.steel_chestplate": "Steel Chestplate",
+  "item.simplegear.steel_leggings": "Steel Leggings",
+  "item.simplegear.steel_boots": "Steel Boots",
+  "item.simplegear.steel_axe": "Steel Axe",
+  "item.simplegear.steel_hoe": "Steel Hoe",
+  "item.simplegear.steel_mace": "Steel Mace",
+  "item.simplegear.steel_pickaxe": "Steel Pickaxe",
+  "item.simplegear.steel_shovel": "Steel Shovel",
+  "item.simplegear.steel_sword": "Steel Sword",
+
+  "item.simplegear.tungsten_helmet": "Tungsten Helmet",
+  "item.simplegear.tungsten_chestplate": "Tungsten Chestplate",
+  "item.simplegear.tungsten_leggings": "Tungsten Leggings",
+  "item.simplegear.tungsten_boots": "Tungsten Boots",
+  "item.simplegear.tungsten_axe": "Tungsten Axe",
+  "item.simplegear.tungsten_hoe": "Tungsten Hoe",
+  "item.simplegear.tungsten_mace": "Tungsten Mace",
+  "item.simplegear.tungsten_pickaxe": "Tungsten Pickaxe",
+  "item.simplegear.tungsten_shovel": "Tungsten Shovel",
+  "item.simplegear.tungsten_sword": "Tungsten Sword",
+
+  "item.simplegear.infused_diamond_helmet": "Infused Diamond Helmet",
+  "item.simplegear.infused_diamond_chestplate": "Infused Diamond Chestplate",
+  "item.simplegear.infused_diamond_leggings": "Infused Diamond Leggings",
+  "item.simplegear.infused_diamond_boots": "Infused Diamond Boots",
+  "item.simplegear.infused_diamond_axe": "Infused Diamond Axe",
+  "item.simplegear.infused_diamond_hoe": "Infused Diamond Hoe",
+  "item.simplegear.infused_diamond_mace": "Infused Diamond Mace",
+  "item.simplegear.infused_diamond_pickaxe": "Infused Diamond Pickaxe",
+  "item.simplegear.infused_diamond_shovel": "Infused Diamond Shovel",
+  "item.simplegear.infused_diamond_sword": "Infused Diamond Sword",
+
+  "item.simplegear.tungsten_carbide_helmet": "Tungsten-Carbide Helmet",
+  "item.simplegear.tungsten_carbide_chestplate": "Tungsten-Carbide Chestplate",
+  "item.simplegear.tungsten_carbide_leggings": "Tungsten-Carbide Leggings",
+  "item.simplegear.tungsten_carbide_boots": "Tungsten-Carbide Boots",
+  "item.simplegear.tungsten_carbide_axe": "Tungsten-Carbide Axe",
+  "item.simplegear.tungsten_carbide_hoe": "Tungsten-Carbide Hoe",
+  "item.simplegear.tungsten_carbide_mace": "Tungsten-Carbide Mace",
+  "item.simplegear.tungsten_carbide_pickaxe": "Tungsten-Carbide Pickaxe",
+  "item.simplegear.tungsten_carbide_shovel": "Tungsten-Carbide Shovel",
+  "item.simplegear.tungsten_carbide_sword": "Tungsten-Carbide Sword",
+
+  "item.simplegear.collector_kathleens_lost_diadem": "Kathleen's Lost Diadem",
+  "item.simplegear.collector_potion_of_everlasting_youth": "Potion of Everlasting Youth",
+  "item.simplegear.collector_slightly_overcooked_chicken": "Slightly Overcooked Chicken",
+
+
+
+  "enchantment.simplegear.hardness": "Hardness",
+  "enchantment.simplegear.poison_edge": "Poison Edge",
+  "enchantment.simplegear.mending_very_rare": "Mending",
+
+
+
+  "entity.simplegear.obsidian_golem": "Obsidian Golem",
+  "entity.simplegear.kathleen_the_wicked": "Kathleen the Wicked",
+  "entity.simplegear.old_lady_muff": "Old Lady Muff",
+  "entity.simplegear.rooster_from_hell": "Rooster from Hell",
+
+
+
+  "creativemodetab.sge_tab": "Simple Gearing Expansion", "comment1": "THIS LINE IS UNUSED CURRENTLY"
+}

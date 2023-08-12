@@ -1,10 +1,10 @@
 {
   "replace": false,
   "entries": [
-    "testmod:basic_upgrade_template_common",
-    "testmod:basic_upgrade_template_uncommon",
-    "testmod:basic_upgrade_template_rare",
-    "testmod:final_upgrade_templates_uncommon",
-    "testmod:final_upgrade_templates_rare"
+    "simplegear:basic_upgrade_template_common",
+    "simplegear:basic_upgrade_template_uncommon",
+    "simplegear:basic_upgrade_template_rare",
+    "simplegear:final_upgrade_templates_uncommon",
+    "simplegear:final_upgrade_templates_rare"
   ]
 }

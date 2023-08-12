@@ -1,34 +1,34 @@
 {
   "replace": false,
   "values": [
-    "testmod:bronze_helmet",
-    "testmod:bronze_chestplate",
-    "testmod:bronze_leggings",
-    "testmod:bronze_boots",
+    "simplegear:bronze_helmet",
+    "simplegear:bronze_chestplate",
+    "simplegear:bronze_leggings",
+    "simplegear:bronze_boots",
 
-    "testmod:gilded_bronze_helmet",
-    "testmod:gilded_bronze_chestplate",
-    "testmod:gilded_bronze_leggings",
-    "testmod:gilded_bronze_boots",
+    "simplegear:gilded_bronze_helmet",
+    "simplegear:gilded_bronze_chestplate",
+    "simplegear:gilded_bronze_leggings",
+    "simplegear:gilded_bronze_boots",
 
-    "testmod:steel_helmet",
-    "testmod:steel_chestplate",
-    "testmod:steel_leggings",
-    "testmod:steel_boots",
+    "simplegear:steel_helmet",
+    "simplegear:steel_chestplate",
+    "simplegear:steel_leggings",
+    "simplegear:steel_boots",
 
-    "testmod:tungsten_helmet",
-    "testmod:tungsten_chestplate",
-    "testmod:tungsten_leggings",
-    "testmod:tungsten_boots",
+    "simplegear:tungsten_helmet",
+    "simplegear:tungsten_chestplate",
+    "simplegear:tungsten_leggings",
+    "simplegear:tungsten_boots",
 
-    "testmod:tungsten_carbide_helmet",
-    "testmod:tungsten_carbide_chestplate",
-    "testmod:tungsten_carbide_leggings",
-    "testmod:tungsten_carbide_boots",
+    "simplegear:tungsten_carbide_helmet",
+    "simplegear:tungsten_carbide_chestplate",
+    "simplegear:tungsten_carbide_leggings",
+    "simplegear:tungsten_carbide_boots",
 
-    "testmod:infused_diamond_helmet",
-    "testmod:infused_diamond_chestplate",
-    "testmod:infused_diamond_leggings",
-    "testmod:infused_diamond_boots"
+    "simplegear:infused_diamond_helmet",
+    "simplegear:infused_diamond_chestplate",
+    "simplegear:infused_diamond_leggings",
+    "simplegear:infused_diamond_boots"
   ]
 }

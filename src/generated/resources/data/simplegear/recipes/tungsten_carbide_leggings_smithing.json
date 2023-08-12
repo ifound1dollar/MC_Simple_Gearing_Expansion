@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "simplegear:tungsten_carbide_ingot"
+  },
+  "base": {
+    "item": "simplegear:tungsten_leggings"
+  },
+  "result": {
+    "item": "simplegear:tungsten_carbide_leggings"
+  },
+  "template": {
+    "item": "simplegear:carbide_upgrade_smithing_template"
+  }
+}

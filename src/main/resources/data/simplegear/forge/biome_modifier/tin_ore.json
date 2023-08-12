@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#is_overworld",
+  "features": [
+    "simplegear:tin_ore_placed",
+    "simplegear:tin_ore_small_placed"
+  ],
+  "step": "underground_ores"
+}

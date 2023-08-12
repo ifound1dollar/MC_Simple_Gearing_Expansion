@@ -1,0 +1,7 @@
+{
+  "parent": "simplegear:block/template_spectral_lantern_hanging",
+  "textures": {
+    "material": "simplegear:block/normal_lantern",
+    "color": "simplegear:block/spectral_lantern"
+  }
+}

@@ -20,9 +20,9 @@ build
 # other
 eclipse
 run
-src/main/resources/Assets/testmod/textures/block/TEMP
-src/main/resources/Assets/testmod/textures/item/TEMP
-src/main/resources/Assets/testmod/textures/models/armor/TEMP
+src/main/resources/Assets/simplegear/textures/block/TEMP
+src/main/resources/Assets/simplegear/textures/item/TEMP
+src/main/resources/Assets/simplegear/textures/models/armor/TEMP
 
 # Files from Forge MDK
 forge*changelog.txt

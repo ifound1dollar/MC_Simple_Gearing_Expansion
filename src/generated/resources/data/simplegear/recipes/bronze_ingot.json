@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "simplegear:bronze_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "simplegear:bronze_ingot"
+  }
+}

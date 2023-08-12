@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "simplegear:basic_upgrade_template"
+    },
+    "i": {
+      "item": "minecraft:deepslate"
+    },
+    "n": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    " d ",
+    "nin",
+    " n "
+  ],
+  "result": {
+    "item": "simplegear:infusion_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

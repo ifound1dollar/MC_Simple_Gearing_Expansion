@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "simplegear:steel_ingot"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "d",
+    "i",
+    "i"
+  ],
+  "result": {
+    "item": "simplegear:steel_shovel"
+  },
+  "show_notification": true
+}

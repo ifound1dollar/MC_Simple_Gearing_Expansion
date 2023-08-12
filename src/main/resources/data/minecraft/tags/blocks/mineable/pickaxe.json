@@ -1,27 +1,27 @@
 {
   "replace": false,
   "values": [
-    "testmod:ruby_block",
-    "testmod:ruby_ore",
-    "testmod:deepslate_ruby_ore",
-    "testmod:sapphire_block",
-    "testmod:sapphire_ore",
-    "testmod:deepslate_sapphire_ore",
-    "testmod:decorative_amethyst_block",
+    "simplegear:ruby_block",
+    "simplegear:ruby_ore",
+    "simplegear:deepslate_ruby_ore",
+    "simplegear:sapphire_block",
+    "simplegear:sapphire_ore",
+    "simplegear:deepslate_sapphire_ore",
+    "simplegear:decorative_amethyst_block",
 
-    "testmod:carbonite_ore",
-    "testmod:deepslate_carbonite_ore",
-    "testmod:tin_block",
-    "testmod:raw_tin_block",
-    "testmod:tin_ore",
-    "testmod:deepslate_tin_ore",
-    "testmod:bronze_block",
-    "testmod:steel_block",
-    "testmod:tungsten_block",
-    "testmod:raw_tungsten_block",
-    "testmod:tungsten_ore",
-    "testmod:deepslate_tungsten_ore",
+    "simplegear:carbonite_ore",
+    "simplegear:deepslate_carbonite_ore",
+    "simplegear:tin_block",
+    "simplegear:raw_tin_block",
+    "simplegear:tin_ore",
+    "simplegear:deepslate_tin_ore",
+    "simplegear:bronze_block",
+    "simplegear:steel_block",
+    "simplegear:tungsten_block",
+    "simplegear:raw_tungsten_block",
+    "simplegear:tungsten_ore",
+    "simplegear:deepslate_tungsten_ore",
 
-    "testmod:spectral_lantern"
+    "simplegear:spectral_lantern"
   ]
 }

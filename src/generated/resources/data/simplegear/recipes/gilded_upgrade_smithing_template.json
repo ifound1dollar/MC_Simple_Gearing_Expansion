@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "item": "simplegear:bronze_ingot"
+    },
+    "i": {
+      "item": "minecraft:stone"
+    },
+    "n": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "ndn",
+    "nin",
+    "nnn"
+  ],
+  "result": {
+    "item": "simplegear:gilded_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

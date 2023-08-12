@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "simplegear:bronze_ingot"
+    }
+  },
+  "pattern": [
+    "d d",
+    "ddd",
+    "ddd"
+  ],
+  "result": {
+    "item": "simplegear:bronze_chestplate"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:collector_slightly_overcooked_chicken"
+    },
+    "title": "Cooking Lessons",
+    "description": "Slay The Helirooster while it's on fire",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "simplegear:collection_base",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "simplegear:the_helirooster",
+          "flags": {
+            "is_on_fire": true
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

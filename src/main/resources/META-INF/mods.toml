@@ -6,7 +6,7 @@
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml" #mandatory
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
-loaderVersion="[45,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+loaderVersion="[47,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="MIT License"
@@ -15,7 +15,7 @@ issueTrackerURL="https://github.com/ifound1dollar/MC_Simple_Gearing_Expansion/is
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="testmod" #mandatory
+modId="simplegear" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
@@ -27,7 +27,7 @@ displayName="Simple Gearing Expansion" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://github.com/ifound1dollar/MC_Simple_Gearing_Expansion" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
+logoFile="curseforge_icon.png" #optional
 # A text field displayed in the mod UI
 #credits="Thanks for this example mod goes to Java" #optional
 # A text field displayed in the mod UI
@@ -42,8 +42,8 @@ authors="ifound1dollar" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This mod expands upon the vanilla gearing experience by:
- - Adding multiple new ores, metals, and jewels with decorative blocks
+This mod expands the vanilla gearing experience by:
+ - Adding multiple new ores, metals, and jewels with corresponding items and blocks
  - Adding multiple new early, mid, and endgame equipment tiers
  - Adding an entirely new weapon type (Mace) with custom enchantments
  - Adding an alternative method to acquiring Upgrade Templates
@@ -52,7 +52,7 @@ This mod expands upon the vanilla gearing experience by:
  - ...and more!
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.testmod]] #optional
+[[dependencies.simplegear]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -64,7 +64,7 @@ This mod expands upon the vanilla gearing experience by:
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.testmod]]
+[[dependencies.simplegear]]
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version

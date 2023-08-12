@@ -1,12 +1,12 @@
 {
   "replace": false,
   "values": [
-    "testmod:carbonite_ore",
-    "testmod:deepslate_carbonite_ore",
-    "testmod:tin_block",
-    "testmod:raw_tin_block",
-    "testmod:tin_ore",
-    "testmod:deepslate_tin_ore",
-    "testmod:bronze_block"
+    "simplegear:carbonite_ore",
+    "simplegear:deepslate_carbonite_ore",
+    "simplegear:tin_block",
+    "simplegear:raw_tin_block",
+    "simplegear:tin_ore",
+    "simplegear:deepslate_tin_ore",
+    "simplegear:bronze_block"
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:collector_obsidian_dust"
+    },
+    "title": "Pulverizing Obsidian",
+    "description": "Slay an Obsidian Golem using a Tungsten-Carbide Mace with Hardness V",
+    "frame": "task",
+    "show_toast": true,
+    "annouce_to_chat": true
+  },
+  "parent": "simplegear:collection_base",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "items": [
+                "simplegear:tungsten_carbide_mace"
+              ],
+              "enchantments": [
+                {
+                  "enchantment": "simplegear:hardness",
+                  "levels": 5
+                }
+              ]
+            }
+          }
+        },
+        "entity": {
+          "type": "simplegear:obsidian_golem"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}
