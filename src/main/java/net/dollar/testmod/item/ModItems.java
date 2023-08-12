@@ -160,9 +160,9 @@ public class ModItems {
     public static final RegistryObject<Item> STEEL_PICKAXE = ITEMS.register("steel_pickaxe",
             () -> new PickaxeItem(ModTiers.Tools.STEEL, 1, -2.8f, new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_PICKAXE = ITEMS.register("tungsten_pickaxe",
-            () -> new PickaxeItem(ModTiers.Tools.TUNGSTEN, 1, -3.1f, new Item.Properties()));   //slow
+            () -> new PickaxeItem(ModTiers.Tools.TUNGSTEN, 1, -3.0f, new Item.Properties()));   //slow
     public static final RegistryObject<Item> TUNGSTEN_CARBIDE_PICKAXE = ITEMS.register("tungsten_carbide_pickaxe",
-            () -> new ModTungstenCarbidePickaxeItem(ModTiers.Tools.TUNGSTEN_CARBIDE, 1, -3.1f,
+            () -> new ModTungstenCarbidePickaxeItem(ModTiers.Tools.TUNGSTEN_CARBIDE, 1, -3.0f,
                     new Item.Properties()));    //slow
     public static final RegistryObject<Item> INFUSED_DIAMOND_PICKAXE = ITEMS.register("infused_diamond_pickaxe",
             () -> new ModInfusedDiamondPickaxeItem(ModTiers.Tools.INFUSED_DIAMOND, 1, -2.6f,

@@ -45,7 +45,7 @@ public class ModTiers {
         public static final Tier TUNGSTEN = new ForgeTier(
                 3,
                 1561,
-                5.0f,
+                7.0f,
                 4f,
                 9,
                 BlockTags.NEEDS_DIAMOND_TOOL,
@@ -55,7 +55,7 @@ public class ModTiers {
         public static final Tier TUNGSTEN_CARBIDE = new ForgeTier(
                 4,
                 2501,
-                5.0f,
+                7.0f,
                 6f,
                 12,
                 Tags.Blocks.NEEDS_NETHERITE_TOOL,

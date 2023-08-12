@@ -1,7 +1,8 @@
 package net.dollar.testmod.util;
 
-import net.minecraft.tags.TagKey;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -11,10 +12,49 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class ModUtils {
     public enum DamageCategory { NONE, BLUNT, SHARP, MAGIC, FIRE, EXPLOSION }
+
+    //declare and initialize map here, which is used to categorize damage source with enum above
+//    public static HashMap<ResourceKey<DamageType>, DamageCategory> map;
+//    static {
+//        map = new HashMap<>();
+//        map.put(DamageTypes.ARROW, DamageCategory.SHARP);
+//        map.put(DamageTypes.CACTUS, DamageCategory.SHARP);
+//        map.put(DamageTypes.FALLING_STALACTITE, DamageCategory.SHARP);
+//        map.put(DamageTypes.STALAGMITE, DamageCategory.SHARP);
+//        map.put(DamageTypes.STING, DamageCategory.SHARP);
+//        map.put(DamageTypes.SWEET_BERRY_BUSH, DamageCategory.SHARP);
+//        map.put(DamageTypes.THORNS, DamageCategory.SHARP);
+//        map.put(DamageTypes.TRIDENT, DamageCategory.SHARP);
+//
+//        map.put(DamageTypes.FALLING_ANVIL, DamageCategory.BLUNT);
+//        map.put(DamageTypes.FALLING_BLOCK, DamageCategory.BLUNT);
+//        map.put(DamageTypes.FLY_INTO_WALL, DamageCategory.BLUNT);
+//        map.put(DamageTypes.MOB_PROJECTILE, DamageCategory.BLUNT);
+//        map.put(DamageTypes.THROWN, DamageCategory.BLUNT);
+//
+//        map.put(DamageTypes.DRAGON_BREATH, DamageCategory.MAGIC);
+//        map.put(DamageTypes.INDIRECT_MAGIC, DamageCategory.MAGIC);
+//        map.put(DamageTypes.MAGIC, DamageCategory.MAGIC);
+//        map.put(DamageTypes.SONIC_BOOM, DamageCategory.MAGIC);
+//        map.put(DamageTypes.WITHER, DamageCategory.MAGIC);
+//
+//        map.put(DamageTypes.FIREBALL, DamageCategory.FIRE);
+//        map.put(DamageTypes.HOT_FLOOR, DamageCategory.FIRE);
+//        map.put(DamageTypes.IN_FIRE, DamageCategory.FIRE);
+//        map.put(DamageTypes.LAVA, DamageCategory.FIRE);
+//        map.put(DamageTypes.ON_FIRE, DamageCategory.FIRE);
+//        map.put(DamageTypes.UNATTRIBUTED_FIREBALL, DamageCategory.FIRE);
+//
+//        map.put(DamageTypes.EXPLOSION, DamageCategory.EXPLOSION);
+//        map.put(DamageTypes.FIREWORKS, DamageCategory.EXPLOSION);
+//        map.put(DamageTypes.PLAYER_EXPLOSION, DamageCategory.EXPLOSION);
+//        map.put(DamageTypes.WITHER_SKULL, DamageCategory.EXPLOSION);
+//    }
 
     public static DamageCategory getDamageCategory(DamageSource source)
     {
@@ -35,8 +75,8 @@ public class ModUtils {
 
         //THEN, if damage is not directly coming from a mob or player attack, can check other categories
 
-        //THIS COULD BE PUT IN A MAP, DamageType:DamageCategory, FOR MUCH MORE EFFICIENT ACCESSING
-        //GOOD GOD PUT THIS IN A MAP PLEASE, if it doesn't contain key, return NONE (ternary operator)
+        //CANNOT BE EASILY PUT IN A MAP, typeHolder() SHOULD NOT WORK
+//        return map.getOrDefault(source.typeHolder(), DamageCategory.NONE);
         if (source.is(DamageTypes.ARROW) || source.is(DamageTypes.CACTUS)
                 || source.is(DamageTypes.FALLING_STALACTITE) || source.is(DamageTypes.STALAGMITE)
                 || source.is(DamageTypes.STING) || source.is(DamageTypes.SWEET_BERRY_BUSH)

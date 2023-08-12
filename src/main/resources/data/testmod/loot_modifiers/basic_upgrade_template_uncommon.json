@@ -34,11 +34,11 @@
         },
         {
           "condition": "forge:loot_table_id",
-          "loot_table_id": "minecraft:chests/stronghold_corridor"
+          "loot_table_id": "minecraft:chests/stronghold_crossing"
         },
         {
           "condition": "forge:loot_table_id",
-          "loot_table_id": "minecraft:chests/stronghold_crossing"
+          "loot_table_id": "minecraft:chests/stronghold_library"
         },
         {
           "condition": "forge:loot_table_id",

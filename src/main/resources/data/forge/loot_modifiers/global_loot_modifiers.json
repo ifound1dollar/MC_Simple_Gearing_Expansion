@@ -3,6 +3,8 @@
   "entries": [
     "testmod:basic_upgrade_template_common",
     "testmod:basic_upgrade_template_uncommon",
-    "testmod:basic_upgrade_template_rare"
+    "testmod:basic_upgrade_template_rare",
+    "testmod:final_upgrade_templates_uncommon",
+    "testmod:final_upgrade_templates_rare"
   ]
 }
