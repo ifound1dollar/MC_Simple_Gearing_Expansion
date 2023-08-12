@@ -27,7 +27,7 @@ displayName="Simple Gearing Expansion" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://github.com/ifound1dollar/MC_Simple_Gearing_Expansion" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="curseforge_icon.png" #optional
+logoFile="SIMPLE-GEARING-EXPANSION_header.png" #optional
 # A text field displayed in the mod UI
 #credits="Thanks for this example mod goes to Java" #optional
 # A text field displayed in the mod UI
