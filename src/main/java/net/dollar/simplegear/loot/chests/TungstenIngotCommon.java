@@ -1,4 +1,4 @@
-package net.dollar.simplegear.loot.custom;
+package net.dollar.simplegear.loot.chests;
 
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
@@ -15,10 +15,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class BasicUpgradeTemplateUncommon extends LootModifier {
-    public static final Supplier<Codec<BasicUpgradeTemplateUncommon>> CODEC = Suppliers.memoize(() ->
+public class TungstenIngotCommon extends LootModifier {
+    public static final Supplier<Codec<TungstenIngotCommon>> CODEC = Suppliers.memoize(() ->
             RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec()
-                    .fieldOf("item").forGetter(m -> m.item)).apply(inst, BasicUpgradeTemplateUncommon::new)));
+                    .fieldOf("item").forGetter(m -> m.item)).apply(inst, TungstenIngotCommon::new)));
     final Item item;
 
     /**
@@ -26,16 +26,19 @@ public class BasicUpgradeTemplateUncommon extends LootModifier {
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    protected BasicUpgradeTemplateUncommon(LootItemCondition[] conditionsIn, Item item) {
+    protected TungstenIngotCommon(LootItemCondition[] conditionsIn, Item item) {
         super(conditionsIn);
         this.item = item;
     }
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        //uncommon is 50% chance to add ONE
+        //common is 50% chance to add ONE TO THREE
         if (context.getRandom().nextFloat() < 0.5f) {
-            generatedLoot.add(new ItemStack(item, 1));
+            int randomInt = context.getRandom().nextInt(0, 3);
+            for (int i = 0; i <= randomInt; i++) {
+                generatedLoot.add(new ItemStack(item, 1));
+            }
         }
         return generatedLoot;
     }

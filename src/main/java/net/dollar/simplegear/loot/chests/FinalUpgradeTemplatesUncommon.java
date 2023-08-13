@@ -1,4 +1,4 @@
-package net.dollar.simplegear.loot.custom;
+package net.dollar.simplegear.loot.chests;
 
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
@@ -15,30 +15,38 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class BasicUpgradeTemplateCommon extends LootModifier {
-    public static final Supplier<Codec<BasicUpgradeTemplateCommon>> CODEC = Suppliers.memoize(() ->
-            RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec()
-                    .fieldOf("item").forGetter(m -> m.item)).apply(inst, BasicUpgradeTemplateCommon::new)));
+public class FinalUpgradeTemplatesUncommon extends LootModifier {
+    //this codec includes both fields 'item' and 'item2' in the JSON file, allowing any of the two to be added to loot
+    public static final Supplier<Codec<FinalUpgradeTemplatesUncommon>> CODEC = Suppliers.memoize(() ->
+            RecordCodecBuilder.create(inst -> codecStart(inst)
+                    .and(ForgeRegistries.ITEMS.getCodec()
+                            .fieldOf("item").forGetter(m -> m.item))
+                    .and(ForgeRegistries.ITEMS.getCodec()
+                            .fieldOf("item2").forGetter(m -> m.item))
+                    .apply(inst, FinalUpgradeTemplatesUncommon::new)));
     final Item item;
+    final Item item2;
 
     /**
      * Constructs a LootModifier.
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    protected BasicUpgradeTemplateCommon(LootItemCondition[] conditionsIn, Item item) {
+    protected FinalUpgradeTemplatesUncommon(LootItemCondition[] conditionsIn, Item item, Item item2) {
         super(conditionsIn);
         this.item = item;
+        this.item2 = item2;
     }
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        //common is 60% chance to add ONE, then another 50% chance to add ANOTHER
-        if (context.getRandom().nextFloat() < 0.6f) {
-            generatedLoot.add(new ItemStack(item, 1));
-
+        //rare is 50% chance to add ONE
+        if (context.getRandom().nextFloat() < 0.5f) {
+            //will choose either Infused Diamond or Tungsten-Carbide here
             if (context.getRandom().nextBoolean()) {
                 generatedLoot.add(new ItemStack(item, 1));
+            } else {
+                generatedLoot.add(new ItemStack(item2, 1));
             }
         }
         return generatedLoot;

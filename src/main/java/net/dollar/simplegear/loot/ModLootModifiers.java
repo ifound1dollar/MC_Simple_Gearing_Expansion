@@ -2,7 +2,7 @@ package net.dollar.simplegear.loot;
 
 import com.mojang.serialization.Codec;
 import net.dollar.simplegear.SimpleGearingExpansion;
-import net.dollar.simplegear.loot.custom.*;
+import net.dollar.simplegear.loot.chests.*;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +30,9 @@ public class ModLootModifiers {
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> FINAL_UPGRADE_TEMPLATES_RARE =
             LOOT_MODIFIER_SERIALIZERS.register("final_upgrade_templates_rare",
                     FinalUpgradeTemplatesRare.CODEC);
+    public static final RegistryObject<Codec<? extends IGlobalLootModifier>> TUNGSTEN_INGOT_COMMON =
+            LOOT_MODIFIER_SERIALIZERS.register("tungsten_ingot_common",
+                    TungstenIngotCommon.CODEC);
 
 
 

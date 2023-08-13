@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "simplegear:spectral_shrine",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1642136474,
+    "spacing": 15,
+    "separation": 7,
+    "type": "minecraft:random_spread"
+  }
+}

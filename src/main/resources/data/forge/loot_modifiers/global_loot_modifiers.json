@@ -5,6 +5,7 @@
     "simplegear:basic_upgrade_template_uncommon",
     "simplegear:basic_upgrade_template_rare",
     "simplegear:final_upgrade_templates_uncommon",
-    "simplegear:final_upgrade_templates_rare"
+    "simplegear:final_upgrade_templates_rare",
+    "simplegear:tungsten_ingot_common"
   ]
 }

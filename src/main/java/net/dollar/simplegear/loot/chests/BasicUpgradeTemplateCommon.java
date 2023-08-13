@@ -1,4 +1,4 @@
-package net.dollar.simplegear.loot.custom;
+package net.dollar.simplegear.loot.chests;
 
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
@@ -15,10 +15,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class BasicUpgradeTemplateRare extends LootModifier {
-    public static final Supplier<Codec<BasicUpgradeTemplateRare>> CODEC = Suppliers.memoize(() ->
+public class BasicUpgradeTemplateCommon extends LootModifier {
+    public static final Supplier<Codec<BasicUpgradeTemplateCommon>> CODEC = Suppliers.memoize(() ->
             RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec()
-                    .fieldOf("item").forGetter(m -> m.item)).apply(inst, BasicUpgradeTemplateRare::new)));
+                    .fieldOf("item").forGetter(m -> m.item)).apply(inst, BasicUpgradeTemplateCommon::new)));
     final Item item;
 
     /**
@@ -26,16 +26,20 @@ public class BasicUpgradeTemplateRare extends LootModifier {
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    protected BasicUpgradeTemplateRare(LootItemCondition[] conditionsIn, Item item) {
+    protected BasicUpgradeTemplateCommon(LootItemCondition[] conditionsIn, Item item) {
         super(conditionsIn);
         this.item = item;
     }
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        //rare is 33% chance to add ONE
-        if (context.getRandom().nextFloat() < (1.0f / 3.0f)) {
+        //common is 60% chance to add ONE, then another 50% chance to add ANOTHER
+        if (context.getRandom().nextFloat() < 0.6f) {
             generatedLoot.add(new ItemStack(item, 1));
+
+            if (context.getRandom().nextBoolean()) {
+                generatedLoot.add(new ItemStack(item, 1));
+            }
         }
         return generatedLoot;
     }
