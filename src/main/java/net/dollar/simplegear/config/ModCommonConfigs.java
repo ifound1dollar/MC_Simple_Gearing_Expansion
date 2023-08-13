@@ -21,6 +21,7 @@ public class ModCommonConfigs {
     public static final ForgeConfigSpec.ConfigValue<Integer> TUNGSTEN_ORE_VEIN_SIZE;
     //endregion
     //region Endgame Tier Tool/Weapon Effect Chances AND Armor Set Damage Reduction
+    public static final ForgeConfigSpec.ConfigValue<Integer> ENDGAME_TIER_EFFECT_SECONDS;
     public static final ForgeConfigSpec.ConfigValue<Integer> INFUSED_DIAMOND_EFFECT_CHANCE;
     public static final ForgeConfigSpec.ConfigValue<Integer> INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION;
     public static final ForgeConfigSpec.ConfigValue<Integer> NETHERITE_EFFECT_CHANCE;
@@ -78,8 +79,13 @@ public class ModCommonConfigs {
 
         BUILDER.pop();
         //endregion
-        //region Endgame Tier Tool/Weapon Effect Chances AND Armor Set Damage Reduction
-        BUILDER.push("Endgame Tier Tool/Weapon Effect Chances AND Armor Set Damage Reduction");
+        //region Endgame Equipment Tiers
+        BUILDER.push("Endgame Equipment Tiers");
+
+        BUILDER.push("All tiers");
+        ENDGAME_TIER_EFFECT_SECONDS = BUILDER.comment("Duration (in seconds) of effect applied by endgame tools and weapons")
+                        .defineInRange("Duration", 4, 1, 15);
+        BUILDER.pop();
 
         BUILDER.push("Infused Diamond tier");
         INFUSED_DIAMOND_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with Infused Diamond tools and weapons")

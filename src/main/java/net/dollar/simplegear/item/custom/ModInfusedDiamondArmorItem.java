@@ -1,7 +1,6 @@
 package net.dollar.simplegear.item.custom;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
-import net.dollar.simplegear.enchantment.ModEnchantments;
 import net.dollar.simplegear.item.ModItems;
 import net.dollar.simplegear.util.IDamageHandlingArmor;
 import net.dollar.simplegear.util.IInfusedDiamondItem;
@@ -15,8 +14,6 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -73,7 +70,6 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
 
     @Override
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(Component.literal(String.format("§5Full Set: %s%% Magic damage reduction",
-                ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get())));
+        p_41423_.add(ModUtils.getInfusedDiamondEquipmentTooltip(true));
     }
 }

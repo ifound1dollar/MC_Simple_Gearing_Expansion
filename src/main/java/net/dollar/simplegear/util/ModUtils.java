@@ -1,8 +1,8 @@
 package net.dollar.simplegear.util;
 
-import net.minecraft.resources.ResourceKey;
+import net.dollar.simplegear.config.ModCommonConfigs;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -12,7 +12,6 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 
-import java.util.HashMap;
 import java.util.Random;
 
 public class ModUtils {
@@ -115,9 +114,26 @@ public class ModUtils {
         //roll chance to remove Slowness from and apply Speed to user (attacker) for 4 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             attacker.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80));
+            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get() * 20));
         }
     }
+    /**
+     * Generates tooltip to be appended to all Infused Diamond equipment, different for armor and tools/weapons
+     * @param isArmor Whether tooltip should be generated for armor or tools/weapons
+     * @return Generated tooltip as Component
+     */
+    public static Component getInfusedDiamondEquipmentTooltip(boolean isArmor) {
+        if (isArmor) {
+            return Component.literal(String.format("§5Full Set: %s%% Magic damage reduction",
+                    ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get()));
+        } else {
+            return Component.literal(String.format("§5Chance on-hit: User gains Speed for %ss",
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get()));
+        }
+    }
+
+
 
     /**
      * Rolls chance to apply special effect on attack using Netherite tools/armor, and applies when applicable
@@ -128,10 +144,27 @@ public class ModUtils {
     public static void rollNetheriteOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
         //roll chance to apply Wither effect to target (attackedEntity) for 4 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
-            //apply level 2 wither for once-per-second damage tick
-            attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER, 80, 1));
+            //apply level 2 wither for once-per-second damage tick (duration +1 so ticks 4 times)
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.WITHER,
+                    (ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get() * 20) + 1, 1));
         }
     }
+    /**
+     * Generates tooltip to be appended to all Netherite equipment, different for armor and tools/weapons
+     * @param isArmor Whether tooltip should be generated for armor or tools/weapons
+     * @return Generated tooltip as Component
+     */
+    public static Component getNetheriteEquipmentTooltip(boolean isArmor) {
+        if (isArmor) {
+            return Component.literal(String.format("§4Full Set: %s%% Fire damage reduction",
+                    ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get()));
+        } else {
+            return Component.literal(String.format("§4Chance on-hit: Wither target for %ss",
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get()));
+        }
+    }
+
+
 
     /**
      * Rolls chance to apply special effect on attack using Tungsten-Carbide tools/armor, and applies when applicable
@@ -143,7 +176,23 @@ public class ModUtils {
         //roll chance to apply Slowness effect to target (attackedEntity) for 4 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             //apply level 2 slow (third argument) for 30% reduction, 15%/level
-            attackedEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 1));
+            attackedEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get() * 20, 1));
         }
     }
+    /**
+     * Generates tooltip to be appended to all Tungsten-Carbide equipment, different for armor and tools/weapons
+     * @param isArmor Whether tooltip should be generated for armor or tools/weapons
+     * @return Generated tooltip as Component
+     */
+    public static Component getTungstenCarbideEquipmentTooltip(boolean isArmor) {
+        if (isArmor) {
+            return Component.literal(String.format("§8Full Set: %s%% Explosion damage reduction",
+                    ModCommonConfigs.TUNGSTEN_CARBIDE_EXPLOSION_DAMAGE_REDUCTION.get()));
+        } else {
+            return Component.literal(String.format("§8Chance on-hit: Slow target for %ss",
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get()));
+        }
+    }
+
 }
