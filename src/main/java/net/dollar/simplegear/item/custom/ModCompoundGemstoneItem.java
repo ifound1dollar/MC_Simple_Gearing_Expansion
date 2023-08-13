@@ -22,10 +22,6 @@ public class ModCompoundGemstoneItem extends Item implements IInfusedDiamondItem
         if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof ModSpectralLanternBlockEntity tile) {
             //CONSUME only if method within ShrineBlockTile returned true, otherwise PASS below
             if (tile.attemptSpawnBoss(context)) {
-//                context.getLevel().playLocalSound(context.getClickedPos(), SoundEvents.ENCHANTMENT_TABLE_USE,
-//                        SoundSource.BLOCKS, 5.0f, 1.0f, true);
-                //ABOVE ALWAYS FAILS BECAUSE METHOD WILL NEVER RETURN SUCCESSFUL CLIENT-SIDE
-
                 return InteractionResult.CONSUME;
             }
         }

@@ -29,14 +29,14 @@ public class ModItems {
             () -> new ShearsItem(new Item.Properties().durability(150)));   //Iron is 238 (for some reason)
 
     //region COLLECTOR ITEMS
-    public static final RegistryObject<Item> COLLECTOR_KATHLEENS_LOST_DIADEM = ITEMS.register("collector_kathleens_lost_diadem",
-            () -> new ModCollectorItem(new Item.Properties(), "1"));
-    public static final RegistryObject<Item> COLLECTOR_POTION_OF_EVERLASTING_YOUTH = ITEMS.register("collector_potion_of_everlasting_youth",
-            () -> new ModCollectorItem(new Item.Properties(), "2"));
-    public static final RegistryObject<Item> COLLECTOR_SLIGHTLY_OVERCOOKED_CHICKEN = ITEMS.register("collector_slightly_overcooked_chicken",
-            () -> new ModCollectorItem(new Item.Properties(), "3"));
     public static final RegistryObject<Item> COLLECTOR_OBSIDIAN_DUST = ITEMS.register("collector_obsidian_dust",
-            () -> new ModCollectorItem(new Item.Properties(), "10"));
+            () -> new ModCollectorItem(new Item.Properties(), "1"));
+    public static final RegistryObject<Item> COLLECTOR_KATHLEENS_LOST_DIADEM = ITEMS.register("collector_kathleens_lost_diadem",
+            () -> new ModCollectorItem(new Item.Properties(), "2"));
+    public static final RegistryObject<Item> COLLECTOR_POTION_OF_EVERLASTING_YOUTH = ITEMS.register("collector_potion_of_everlasting_youth",
+            () -> new ModCollectorItem(new Item.Properties(), "3"));
+    public static final RegistryObject<Item> COLLECTOR_SLIGHTLY_OVERCOOKED_CHICKEN = ITEMS.register("collector_slightly_overcooked_chicken",
+            () -> new ModCollectorItem(new Item.Properties(), "4"));
     //endregion
 
     //create RegistryObjects for new items
