@@ -10,6 +10,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * Handles registering new creative mode tab(s), run automatically as creative mode tabs are registered.
+ */
 @Mod.EventBusSubscriber(modid = SimpleGearingExpansion.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -19,7 +22,13 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RUBY.get()))
                     .title(Component.literal("Simple Gearing Expansion")).build());
 
-    public static void register(IEventBus bus) {
-        CREATIVE_MODE_TABS.register(bus);
+
+
+    /**
+     * Register new creative mode tab(s).
+     * @param eventBus Main event bus
+     */
+    public static void register(IEventBus eventBus) {
+        CREATIVE_MODE_TABS.register(eventBus);
     }
 }

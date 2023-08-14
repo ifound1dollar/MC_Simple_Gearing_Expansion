@@ -12,17 +12,23 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * Used specifically for the Tungsten-Carbide Hoe, which has custom on-hit effect chance, is fire
+ *  and explosion resistant, and has custom hover text.
+ */
 public class ModTungstenCarbideHoeItem extends HoeItem {
     public ModTungstenCarbideHoeItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
+
+
     /**
-     * Performs normal hurtEnemy operations but with chance to apply additional effect(s)
-     * @param stack ItemStack of this item
-     * @param attackedEntity Attacked living entity
-     * @param attacker Attacker (holder) living entity
-     * @return Whether attack was successful???
+     * Performs normal hurtEnemy operations but with chance to apply additional effect(s).
+     * @param stack ItemStack of this Item
+     * @param attackedEntity Attacked (target) living entity
+     * @param attacker Attacker (user) living entity
+     * @return Whether attack was successfully performed
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
@@ -31,19 +37,34 @@ public class ModTungstenCarbideHoeItem extends HoeItem {
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 
+    /**
+     * Gets whether Entities of this Item are resistant to fire and lava (true).
+     * @return Whether this Item is fire-resistant.
+     */
     @Override
     public boolean isFireResistant() {
         return true;
     }
 
+    /**
+     * Gets whether Entities of this Item can be hurt by a specific DamageSource (false for Fire and Explosion).
+     * @param source DamageSource being checked
+     * @return Whether this Item can be hurt by the DamageSource
+     */
     @Override
     public boolean canBeHurtBy(DamageSource source) {
         //entity cannot be destroyed by explosions or fire
         return !(source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION));
     }
 
-    @Override
-    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(ModUtils.getTungstenCarbideEquipmentTooltip(false));
+    /**
+     * Appends text (as Component) to the Item's hover tooltip (on-hit effect info).
+     * @param stack ItemStack corresponding to this Item
+     * @param level Active level
+     * @param components List of Components that make up the tooltip
+     * @param flag TooltipFlag determining whether NORMAL or ADVANCED
+     */
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        components.add(ModUtils.getTungstenCarbideEquipmentTooltip(false));
     }
 }

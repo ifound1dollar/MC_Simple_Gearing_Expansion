@@ -16,27 +16,40 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * Used specifically for the Infused Diamond Shovel, which has custom on-hit effect chance and
+ *  custom hover text.
+ */
 public class ModInfusedDiamondShovelItem extends ShovelItem implements IInfusedDiamondItem {
     public ModInfusedDiamondShovelItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
+
+
     /**
-     * Performs normal hurtEnemy operations but with chance to apply additional effect(s)
-     * @param stack ItemStack of this item
-     * @param attackedEntity Attacked living entity
-     * @param attacker Attacker (holder) living entity
-     * @return Whether attack was successful???
+     * Performs normal hurtEnemy operations but with chance to apply additional effect(s).
+     * @param stack ItemStack of this Item
+     * @param attackedEntity Attacked (target) living entity
+     * @param attacker Attacker (user) living entity
+     * @return Whether attack was successfully performed
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
         ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker,
-                ModCommonConfigs.INFUSED_DIAMOND_EFFECT_CHANCE.get()); //blunt, default 15
+                ModCommonConfigs.INFUSED_DIAMOND_EFFECT_CHANCE.get()); //blunt, default 17
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 
+    /**
+     * Appends text (as Component) to the Item's hover tooltip (on-hit effect info).
+     * @param stack ItemStack corresponding to this Item
+     * @param level Active level
+     * @param components List of Components that make up the tooltip
+     * @param flag TooltipFlag determining whether NORMAL or ADVANCED
+     */
     @Override
-    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(ModUtils.getInfusedDiamondEquipmentTooltip(false));
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        components.add(ModUtils.getInfusedDiamondEquipmentTooltip(false));
     }
 }

@@ -19,20 +19,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * Used specifically for Infused Diamond armor items, which check for full-set equipped, conditionally reduce Magic
+ *  damage taken, and have custom hover text.
+ */
 public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHandlingArmor, IInfusedDiamondItem {
     boolean isFullSet;
-
 
     public ModInfusedDiamondArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
         super(p_40386_, p_266831_, p_40388_);
     }
 
 
+
     /**
-     * Checks each tick if the player has a full set of this armor
+     * Checks each tick if the player has a full set of Infused Diamond armor.
      * @param stack The ItemStack associated with this Object
      * @param level Active level/world
-     * @param player Player this armor item is attached to
+     * @param player Player this armor item is equipped on
      */
     @Override
     public void onArmorTick(ItemStack stack, Level level, Player player) {
@@ -47,11 +51,10 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
     }
 
-
     /**
-     * Intercepts the damage operation and reduces damage from a certain source
-     * @param entity The attacked LivingEntity (wearer)
-     * @param slot Equipment slot of this item
+     * Intercepts the damage taken operation to reduce Magic damage taken.
+     * @param entity Attacked LivingEntity (wearer)
+     * @param slot EquipmentSlot of this item
      * @param source Source of damage to be dealt
      * @param amount Initial damage amount
      * @return Updated damage amount
@@ -68,8 +71,15 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         return amount;  //if reaches here, return original amount
     }
 
+    /**
+     * Appends text (as Component) to the Item's hover tooltip.
+     * @param stack ItemStack corresponding to this Item
+     * @param level Active level
+     * @param components List of Components that make up the tooltip
+     * @param flag TooltipFlag determining whether NORMAL or ADVANCED
+     */
     @Override
-    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(ModUtils.getInfusedDiamondEquipmentTooltip(true));
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        components.add(ModUtils.getInfusedDiamondEquipmentTooltip(true));
     }
 }

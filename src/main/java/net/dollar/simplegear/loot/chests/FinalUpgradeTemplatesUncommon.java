@@ -31,6 +31,8 @@ public class FinalUpgradeTemplatesUncommon extends LootModifier {
     final Item item;
     final Item item2;
 
+
+
     /**
      * Constructs a FinalUpgradeTemplateUncommon object.
      * @param conditionsIn The ILootConditions that need to be matched before the loot is modified

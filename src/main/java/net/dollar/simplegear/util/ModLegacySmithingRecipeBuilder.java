@@ -17,6 +17,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 
+/**
+ * Was originally used in 1.19.4 build to continue using pre-1.20 Smithing Table. Deprecated starting with
+ *  Minecraft version 1.20+.
+ */
 @Deprecated
 public class ModLegacySmithingRecipeBuilder {
     private final Ingredient base;

@@ -12,7 +12,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-
+/**
+ * Handles registering new items and re-registering vanilla items (if custom functionality needs to be added).
+ */
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, SimpleGearingExpansion.MOD_ID);
@@ -283,7 +285,10 @@ public class ModItems {
     //endregion
 
 
-    //register new items and vanilla items overridden by the mod
+    /**
+     * Register new Items and vanilla Items overridden by the mod
+     * @param eventBus Main event bus
+     */
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
         VANILLA_ITEMS.register(eventBus);

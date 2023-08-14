@@ -25,10 +25,12 @@ public class BasicUpgradeTemplateRare extends LootModifier {
                     .fieldOf("item").forGetter(m -> m.item)).apply(inst, BasicUpgradeTemplateRare::new)));
     final Item item;
 
+
+
     /**
      * Constructs a BasicUpgradeTemplateRare object.
      * @param conditionsIn The ILootConditions that need to be matched before the loot is modified
-     * @param item The item that will be injected into the generated loot
+     * @param item The item that may be injected into the generated loot
      */
     protected BasicUpgradeTemplateRare(LootItemCondition[] conditionsIn, Item item) {
         super(conditionsIn);

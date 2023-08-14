@@ -17,7 +17,7 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 /**
- * PlacedFeatures determine the height range and distribution of generated ores
+ * PlacedFeatures determine the height range and distribution of generated ores.
  */
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED_KEY = createKey("ruby_ore_placed");
@@ -30,6 +30,11 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> TUNGSTEN_ORE_SMALL_PLACED_KEY = createKey("tungsten_ore_small_placed");
 
 
+
+    /**
+     * Registers new PlacedFeatures using one of two helper methods.
+     * @param context BootstrapContext of type ConfiguredFeature
+     */
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         //USE THIS METHOD ONLY WHEN GENERATING DATA
         bootstrapHelperNoConfig(context);
@@ -158,8 +163,8 @@ public class ModPlacedFeatures {
 
 
     /**
-     * Generates a Placed Feature ResourceKey
-     * @param name String corresponding to the Placed Feature's ResourceLocation
+     * Generates a Placed Feature ResourceKey.
+     * @param name String corresponding to the PlacedFeature's ResourceLocation
      * @return The generated ResourceKey
      */
     private static ResourceKey<PlacedFeature> createKey(String name) {
@@ -167,7 +172,7 @@ public class ModPlacedFeatures {
     }
 
     /**
-     * Registers a new Placed Feature
+     * Registers a new Placed Feature.
      * @param context The PlacedFeature's BoostrapContext
      * @param key ResourceKey of the PlacedFeature to register
      * @param configuration Holder of corresponding ConfiguredFeature (from ModConfiguredFeatures)

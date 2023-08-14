@@ -9,7 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * Handles registering new TileEntities, which are spawned on Block placement and allow custom data per-instance
+ * Handles registering new TileEntities, which are spawned on Block placement and allow custom data per-instance.
  */
 public class ModTileEntities {
     public static final DeferredRegister<BlockEntityType<?>> TILE_ENTITY_TYPES = DeferredRegister.create(
@@ -23,7 +23,7 @@ public class ModTileEntities {
 
 
     /**
-     * Register new tile entities
+     * Register new tile entities.
      * @param eventBus Main event bus
      */
     public static void register(IEventBus eventBus) {

@@ -27,14 +27,15 @@ import org.slf4j.Logger;
 public class SimpleGearingExpansion
 {
     public static final String MOD_ID = "simplegear";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
+
 
 
     public SimpleGearingExpansion()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        //register new items in ModItems class and new blocks in ModBlocks class
+        //register all new items, blocks, enchantments, etc.
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -42,9 +43,6 @@ public class SimpleGearingExpansion
         ModTileEntities.register(modEventBus);
         ModEntities.register(modEventBus);
         ModLootModifiers.register(modEventBus);
-
-        // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -55,16 +53,17 @@ public class SimpleGearingExpansion
         //config registration
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ModCommonConfigs.SPEC,
                 "simple_gearing_expansion-common.toml");
-    }
+        //ADD CLIENT CONFIG HERE IF/WHEN APPLICABLE
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
 
+
+        // Register the commonSetup method for modloading
+        modEventBus.addListener(this::commonSetup);
     }
 
     /**
-     * Add new items to any creative mode tab
-     * @param event Event run when creative mode tab contents are built
+     * Add new items to creative mode tab(s).
+     * @param event Event fired when creative mode tab contents are built
      */
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
@@ -220,6 +219,13 @@ public class SimpleGearingExpansion
             event.accept(ModItems.COLLECTOR_SLIGHTLY_OVERCOOKED_CHICKEN);
             //endregion
         }
+    }
+
+
+
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

@@ -22,7 +22,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import java.util.List;
 
 /**
- * ConfiguredFeatures determine which blocks that generated ores can replace AND the size of the veins
+ * ConfiguredFeatures determine which blocks that generated ores can replace AND the size of the veins.
  */
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby_ore");
@@ -34,6 +34,11 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> TUNGSTEN_ORE_SMALL_KEY = registerKey("tungsten_ore_small");
 
 
+
+    /**
+     * Registers new ConfiguredFeatures using one of two helper methods.
+     * @param context BootstrapContext of type ConfiguredFeature
+     */
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         //USE THIS METHOD ONLY WHEN GENERATING DATA
         bootstrapHelperNoConfig(context);
@@ -45,7 +50,7 @@ public class ModConfiguredFeatures {
     /**
      * Helper to perform bootstrap operations WITHOUT config (configs cannot be used in registries if
      * generating data using runData). USE ONLY WHEN GENERATING DATA, ELSE USE WITH CONFIGS HELPER METHOD.
-     * @param context BootstrapContext of type ConfiguredFeature, taken directly from bootstrap() method
+     * @param context BootstrapContext of type ConfiguredFeature, passed from bootstrap() method
      */
     public static void bootstrapHelperNoConfig(BootstapContext<ConfiguredFeature<?, ?>> context) {
         //define valid ore replacements here
@@ -100,7 +105,7 @@ public class ModConfiguredFeatures {
     /**
      * Helper to perform bootstrap operations WITH config (configs can only be used in registries when
      * NOT generating data using runData). ALWAYS USE WITH PUBLISHED PRODUCT, NEVER USE WITHOUT CONFIG HELPER METHOD.
-     * @param context BootstrapContext of type ConfiguredFeature, taken directly from bootstrap() method
+     * @param context BootstrapContext of type ConfiguredFeature, passed from bootstrap() method
      */
     public static void bootstrapHelperWithConfig(BootstapContext<ConfiguredFeature<?, ?>> context) {
         //define valid ore replacements here
@@ -155,8 +160,8 @@ public class ModConfiguredFeatures {
 
 
     /**
-     * Generates a Configured Feature ResourceKey
-     * @param name String corresponding to the GeneratedFeature's ResourceLocation
+     * Generates a ConfiguredFeature ResourceKey.
+     * @param name String corresponding to the ConfiguredFeature's ResourceLocation
      * @return The generated ResourceKey
      */
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
@@ -164,7 +169,7 @@ public class ModConfiguredFeatures {
     }
 
     /**
-     * Registers a new ConfiguredFeature ResourceKey
+     * Registers a new ConfiguredFeature ResourceKey.
      * @param context The ConfiguredFeature's BoostrapContext
      * @param key ResourceKey of the ConfiguredFeature to register
      * @param feature Feature type (ex. ORE)

@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * Handles registering new GlobalLootModifiers, which inject additional loot into generated vanilla loot scenarios
+ * Handles registering new GlobalLootModifiers, which inject additional loot into generated vanilla loot scenarios.
  */
 public class ModLootModifiers {
     public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
@@ -40,7 +40,7 @@ public class ModLootModifiers {
 
 
     /**
-     * Register new loot modifiers
+     * Register new loot modifiers.
      * @param bus Main event bus
      */
     public static void register(IEventBus bus) {
