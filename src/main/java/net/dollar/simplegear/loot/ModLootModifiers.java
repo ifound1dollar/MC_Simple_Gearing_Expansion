@@ -9,6 +9,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * Handles registering new GlobalLootModifiers, which inject additional loot into generated vanilla loot scenarios
+ */
 public class ModLootModifiers {
     public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
             DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, SimpleGearingExpansion.MOD_ID);
@@ -36,8 +39,10 @@ public class ModLootModifiers {
 
 
 
-
-
+    /**
+     * Register new loot modifiers
+     * @param bus Main event bus
+     */
     public static void register(IEventBus bus) {
         LOOT_MODIFIER_SERIALIZERS.register(bus);
     }

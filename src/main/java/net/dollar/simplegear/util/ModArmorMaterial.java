@@ -8,6 +8,18 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
+/**
+ * Custom armor material record, implements ArmorMaterial (Forge does not have simple method to make new
+ *  ArmorMaterials like it does with ForgeTiers)
+ * @param name Name of new ArmorMaterial, is used for ResourceLocation
+ * @param durabilityMultiplier Integer multiplied by DURABILITY_PER_SLOT [B, L, C, H] to determine actual durability
+ * @param protection Array of protection values per slot [B, L, C, H]
+ * @param enchantability Enchantment value (Table use)
+ * @param equipsound Equip sound played on clients
+ * @param toughness Toughness value
+ * @param knockbackResistance Knockback resistance, range 0-1
+ * @param repairIngredient Ingredient applied in an Anvil to repair the armor piece
+ */
 public record ModArmorMaterial(String name, int durabilityMultiplier, int[] protection, int enchantability,
                                SoundEvent equipsound, float toughness, float knockbackResistance,
                                Supplier<Ingredient> repairIngredient) implements ArmorMaterial {

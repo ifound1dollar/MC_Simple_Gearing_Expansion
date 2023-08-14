@@ -22,7 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
+//IMPORTANT: The value here should match an entry in the META-INF/mods.toml file
 @Mod(SimpleGearingExpansion.MOD_ID)
 public class SimpleGearingExpansion
 {
@@ -62,6 +62,10 @@ public class SimpleGearingExpansion
 
     }
 
+    /**
+     * Add new items to any creative mode tab
+     * @param event Event run when creative mode tab contents are built
+     */
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         //FOR NOW, KEEP ALL NEW ITEMS IN NEW TAB BELOW

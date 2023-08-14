@@ -14,47 +14,18 @@ import net.minecraft.world.item.SwordItem;
 
 import java.util.Random;
 
+/**
+ * Contains a number of helper methods used in various parts of the mod
+ */
 public class ModUtils {
     public enum DamageCategory { NONE, BLUNT, SHARP, MAGIC, FIRE, EXPLOSION }
 
-    //declare and initialize map here, which is used to categorize damage source with enum above
-//    public static HashMap<ResourceKey<DamageType>, DamageCategory> map;
-//    static {
-//        map = new HashMap<>();
-//        map.put(DamageTypes.ARROW, DamageCategory.SHARP);
-//        map.put(DamageTypes.CACTUS, DamageCategory.SHARP);
-//        map.put(DamageTypes.FALLING_STALACTITE, DamageCategory.SHARP);
-//        map.put(DamageTypes.STALAGMITE, DamageCategory.SHARP);
-//        map.put(DamageTypes.STING, DamageCategory.SHARP);
-//        map.put(DamageTypes.SWEET_BERRY_BUSH, DamageCategory.SHARP);
-//        map.put(DamageTypes.THORNS, DamageCategory.SHARP);
-//        map.put(DamageTypes.TRIDENT, DamageCategory.SHARP);
-//
-//        map.put(DamageTypes.FALLING_ANVIL, DamageCategory.BLUNT);
-//        map.put(DamageTypes.FALLING_BLOCK, DamageCategory.BLUNT);
-//        map.put(DamageTypes.FLY_INTO_WALL, DamageCategory.BLUNT);
-//        map.put(DamageTypes.MOB_PROJECTILE, DamageCategory.BLUNT);
-//        map.put(DamageTypes.THROWN, DamageCategory.BLUNT);
-//
-//        map.put(DamageTypes.DRAGON_BREATH, DamageCategory.MAGIC);
-//        map.put(DamageTypes.INDIRECT_MAGIC, DamageCategory.MAGIC);
-//        map.put(DamageTypes.MAGIC, DamageCategory.MAGIC);
-//        map.put(DamageTypes.SONIC_BOOM, DamageCategory.MAGIC);
-//        map.put(DamageTypes.WITHER, DamageCategory.MAGIC);
-//
-//        map.put(DamageTypes.FIREBALL, DamageCategory.FIRE);
-//        map.put(DamageTypes.HOT_FLOOR, DamageCategory.FIRE);
-//        map.put(DamageTypes.IN_FIRE, DamageCategory.FIRE);
-//        map.put(DamageTypes.LAVA, DamageCategory.FIRE);
-//        map.put(DamageTypes.ON_FIRE, DamageCategory.FIRE);
-//        map.put(DamageTypes.UNATTRIBUTED_FIREBALL, DamageCategory.FIRE);
-//
-//        map.put(DamageTypes.EXPLOSION, DamageCategory.EXPLOSION);
-//        map.put(DamageTypes.FIREWORKS, DamageCategory.EXPLOSION);
-//        map.put(DamageTypes.PLAYER_EXPLOSION, DamageCategory.EXPLOSION);
-//        map.put(DamageTypes.WITHER_SKULL, DamageCategory.EXPLOSION);
-//    }
 
+    /**
+     * Takes a vanilla DamageSource and determines which custom DamageCategory it should fall under
+     * @param source Vanilla DamageSource
+     * @return The determined DamageCategory (NONE if inconclusive)
+     */
     public static DamageCategory getDamageCategory(DamageSource source)
     {
         //FIRST, check if source is from a mob or player (will check for held item in this case)
@@ -73,9 +44,6 @@ public class ModUtils {
         }
 
         //THEN, if damage is not directly coming from a mob or player attack, can check other categories
-
-        //CANNOT BE EASILY PUT IN A MAP, typeHolder() SHOULD NOT WORK
-//        return map.getOrDefault(source.typeHolder(), DamageCategory.NONE);
         if (source.is(DamageTypes.ARROW) || source.is(DamageTypes.CACTUS)
                 || source.is(DamageTypes.FALLING_STALACTITE) || source.is(DamageTypes.STALAGMITE)
                 || source.is(DamageTypes.STING) || source.is(DamageTypes.SWEET_BERRY_BUSH)
