@@ -25,10 +25,12 @@ public class TungstenIngotCommon extends LootModifier {
                     .fieldOf("item").forGetter(m -> m.item)).apply(inst, TungstenIngotCommon::new)));
     final Item item;
 
+
+
     /**
      * Constructs a TungstenIngotCommon object.
      * @param conditionsIn The ILootConditions that need to be matched before the loot is modified
-     * @param item The item that will be injected into the generated loot
+     * @param item The item that may be injected into the generated loot
      */
     protected TungstenIngotCommon(LootItemCondition[] conditionsIn, Item item) {
         super(conditionsIn);

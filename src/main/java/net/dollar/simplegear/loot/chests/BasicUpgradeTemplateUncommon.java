@@ -25,10 +25,12 @@ public class BasicUpgradeTemplateUncommon extends LootModifier {
                     .fieldOf("item").forGetter(m -> m.item)).apply(inst, BasicUpgradeTemplateUncommon::new)));
     final Item item;
 
+
+
     /**
      * Constructs a BasicUpgradeTemplateUncommon object.
      * @param conditionsIn The ILootConditions that need to be matched before the loot is modified
-     * @param item The item that will be injected into the generated loot
+     * @param item The item that may be injected into the generated loot
      */
     protected BasicUpgradeTemplateUncommon(LootItemCondition[] conditionsIn, Item item) {
         super(conditionsIn);

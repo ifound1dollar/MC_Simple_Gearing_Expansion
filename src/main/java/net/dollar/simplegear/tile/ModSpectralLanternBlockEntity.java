@@ -16,7 +16,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 /**
- * Custom block entity for the Spectral Lantern, which allows interaction and conditional boss mob spawning
+ * Custom block entity for the Spectral Lantern, which allows interaction and conditional boss mob spawning.
  */
 public class ModSpectralLanternBlockEntity extends BlockEntity {
     private Instant lastUsedInstant = Instant.MIN;  //far past, allow to work instantly
@@ -79,7 +79,7 @@ public class ModSpectralLanternBlockEntity extends BlockEntity {
     }
 
     /**
-     * Select a random boss from the pool of bosses, spawn it, send a system message, and return the new Monster Entity
+     * Select a random boss from the pool of bosses, spawn it, send a system message, and return the new Monster Entity.
      * @param context The UseOnContext generated from the player using the Compound Gemstone
      * @return The spawned boss mob (Monster)
      */

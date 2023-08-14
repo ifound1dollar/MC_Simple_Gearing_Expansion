@@ -31,6 +31,8 @@ public class FinalUpgradeTemplatesRare extends LootModifier {
     final Item item;
     final Item item2;
 
+
+
     /**
      * Constructs a FinalUpgradeTemplateRare object.
      * @param conditionsIn The ILootConditions that need to be matched before the loot is modified

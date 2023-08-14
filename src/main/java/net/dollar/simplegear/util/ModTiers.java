@@ -10,11 +10,12 @@ import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.Tags;
 
 /**
- * Definitions for both Tools and Armor of the six new equipment tiers
+ * Definitions for both Tools and Armor of the six new equipment tiers.
  */
 public class ModTiers {
     /**
-     * Tool Tiers: defines mining level, uses, mining speed, attack damage bonus, enchantment value, and repair ingredient
+     * Tool Tiers: Defines mining level, uses, mining speed, attack damage bonus, enchantment value, and
+     *  repair ingredient.
      */
     public static class Tools {
         //Identical to Iron
@@ -79,8 +80,8 @@ public class ModTiers {
     }
 
     /**
-     * Armor Tiers: defines durability multiplier, armor values (array B, L, C, H), enchantability, equip sound,
-     *  toughness, knockback resistance, and repair ingredient
+     * Armor Tiers: Defines durability multiplier, armor values (array B, L, C, H), enchantability, equip sound,
+     *  toughness, knockback resistance, and repair ingredient.
      */
     public static class Armor {
         //Identical to Iron

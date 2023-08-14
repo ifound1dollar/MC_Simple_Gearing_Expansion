@@ -28,6 +28,8 @@ public class ModMaceItem extends TieredItem implements Vanishable {
     private final float attackDamage;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
+
+
     /**
      * Constructs a new ModMaceItem object.
      * @param tier Equipment tier
@@ -45,8 +47,9 @@ public class ModMaceItem extends TieredItem implements Vanishable {
     }
 
     /**
-     * Allows typical weapon enchantments (excluding Sharpness) in addition to new Mace-only
-     *  enchantments: Hardness (replaces Sharpness, same functionality) and Poison Edge (poisons target on-hit).
+     * Allow or deny specific enchantment application to this Item. For Maces, allow all vanilla weapon
+     *  enchantments (excluding Sharpness) in addition to new Mace-only enchantments: Hardness
+     *  (replaces Sharpness, same functionality) and Poison Edge (poisons target on-hit).
      * @param stack The ItemStack attempting to be enchanted (this)
      * @param enchantment The Enchantment attempting to be applied
      * @return Whether the enchantment is allowed
@@ -112,7 +115,6 @@ public class ModMaceItem extends TieredItem implements Vanishable {
 
         return true;
     }
-
 
     /**
      * Calculate destroy speed of a specific block using this Item.

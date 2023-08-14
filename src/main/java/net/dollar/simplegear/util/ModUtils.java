@@ -15,14 +15,14 @@ import net.minecraft.world.item.SwordItem;
 import java.util.Random;
 
 /**
- * Contains a number of helper methods used in various parts of the mod
+ * Contains a handful of misc. helper methods used in various parts of the mod.
  */
 public class ModUtils {
     public enum DamageCategory { NONE, BLUNT, SHARP, MAGIC, FIRE, EXPLOSION }
 
 
     /**
-     * Takes a vanilla DamageSource and determines which custom DamageCategory it should fall under
+     * Takes a vanilla DamageSource and determines which custom DamageCategory it should fall under.
      * @param source Vanilla DamageSource
      * @return The determined DamageCategory (NONE if inconclusive)
      */
@@ -73,9 +73,9 @@ public class ModUtils {
 
 
     /**
-     * Rolls chance to apply special effect on attack using Infused Diamond tools/armor, and applies when applicable
-     * @param attackedEntity Attacked entity
-     * @param attacker Attacking (holder) entity
+     * Rolls chance to apply special effect on attack using Infused Diamond tools/armor, and applies when applicable.
+     * @param attackedEntity Attacked (target) entity
+     * @param attacker Attacking (user) entity
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollInfusedDiamondOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
@@ -87,7 +87,7 @@ public class ModUtils {
         }
     }
     /**
-     * Generates tooltip to be appended to all Infused Diamond equipment, different for armor and tools/weapons
+     * Generates tooltip to be appended to all Infused Diamond equipment, different for armor and tools/weapons.
      * @param isArmor Whether tooltip should be generated for armor or tools/weapons
      * @return Generated tooltip as Component
      */
@@ -104,9 +104,9 @@ public class ModUtils {
 
 
     /**
-     * Rolls chance to apply special effect on attack using Netherite tools/armor, and applies when applicable
-     * @param attackedEntity Attacked entity
-     * @param attacker Attacking (holder) entity
+     * Rolls chance to apply special effect on attack using Netherite tools/armor, and applies when applicable.
+     * @param attackedEntity Attacked (target) entity
+     * @param attacker Attacking (user) entity
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollNetheriteOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
@@ -118,7 +118,7 @@ public class ModUtils {
         }
     }
     /**
-     * Generates tooltip to be appended to all Netherite equipment, different for armor and tools/weapons
+     * Generates tooltip to be appended to all Netherite equipment, different for armor and tools/weapons.
      * @param isArmor Whether tooltip should be generated for armor or tools/weapons
      * @return Generated tooltip as Component
      */
@@ -136,8 +136,8 @@ public class ModUtils {
 
     /**
      * Rolls chance to apply special effect on attack using Tungsten-Carbide tools/armor, and applies when applicable
-     * @param attackedEntity Attacked entity
-     * @param attacker Attacking (holder) entity
+     * @param attackedEntity Attacked (target) entity
+     * @param attacker Attacking (user) entity
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollTungstenCarbideOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
@@ -149,7 +149,7 @@ public class ModUtils {
         }
     }
     /**
-     * Generates tooltip to be appended to all Tungsten-Carbide equipment, different for armor and tools/weapons
+     * Generates tooltip to be appended to all Tungsten-Carbide equipment, different for armor and tools/weapons.
      * @param isArmor Whether tooltip should be generated for armor or tools/weapons
      * @return Generated tooltip as Component
      */

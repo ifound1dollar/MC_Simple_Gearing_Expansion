@@ -6,17 +6,22 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 
+/**
+ * Used specifically for the Compound Gemstone, which has custom interaction when used on a Spectral Lantern.
+ */
 public class ModCompoundGemstoneItem extends Item implements IInfusedDiamondItem {
     public ModCompoundGemstoneItem(Properties p_41383_) {
         super(p_41383_);
     }
 
-//    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-//        p_41423_.add(Component.literal("§5Empowered with an ancient magic"));
-//        super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
-//    }
-
-    //this method is the first that will be called; should consume the interaction here
+    /**
+     * Handles interaction when a player right clicks something with this Item. Specifically,
+     *  when a player interacts with a Spectral Lantern while holding this Item.
+     * NOTE: This is the first method called regarding this specific interaction.
+     * @param context Generated UseOnContext
+     * @return The corresponding InteractionResult; if CONSUME, prevents all further operations
+     *  on this interaction
+     */
     @Override
     public InteractionResult useOn(UseOnContext context) {
         if (context.getLevel().getBlockEntity(context.getClickedPos()) instanceof ModSpectralLanternBlockEntity tile) {

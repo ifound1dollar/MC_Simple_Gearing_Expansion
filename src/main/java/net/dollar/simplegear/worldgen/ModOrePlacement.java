@@ -5,11 +5,11 @@ import net.minecraft.world.level.levelgen.placement.*;
 import java.util.List;
 
 /**
- * Contains helper methods for common and rare ore generation (used by ModConfiguredFeatures and ModPlacedFeatures)
+ * Contains helper methods for common and rare ore generation (used by ModConfiguredFeatures and ModPlacedFeatures).
  */
 public class ModOrePlacement {
     /**
-     * Returns list of PlacementModifiers used to generate ore block placements in the world
+     * Returns list of PlacementModifiers used to generate ore block placements in the world.
      * @param generated PlacementModifier generated in commonOrePlacement or rareOrePlacement
      * @param defined HeightRangePlacement defined by the developer
      * @return Generated List of PlacementModifiers
@@ -19,7 +19,7 @@ public class ModOrePlacement {
     }
 
     /**
-     * Returns List of PlacementModifiers, where each item is guaranteed to generate a placement
+     * Returns List of PlacementModifiers, where each item is guaranteed to generate a placement.
      * @param count Number of placements to generate
      * @param placementModifier HeightRangePlacement that determines range to generate
      * @return Generated List of PlacementModifiers
@@ -29,7 +29,7 @@ public class ModOrePlacement {
     }
 
     /**
-     * Returns list of PlacementModifiers, where each item has only a chance to generate a placement
+     * Returns list of PlacementModifiers, where each item has only a chance to generate a placement.
      * @param chance Chance to generate placement (1 / chance)
      * @param placementModifier HeightRangePlacement that determines range to generate
      * @return Generated List of PlacementModifiers

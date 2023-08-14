@@ -10,17 +10,23 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * Used specifically for the Netherite Hoe, which has custom on-hit effect chance, is fire-resistant,
+ *  and has custom hover text.
+ */
 public class ModNetheriteHoeItem extends HoeItem {
     public ModNetheriteHoeItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
+
+
     /**
-     * Performs normal hurtEnemy operations but with chance to apply additional effect(s)
-     * @param stack ItemStack of this item
-     * @param attackedEntity Attacked living entity
-     * @param attacker Attacker (holder) living entity
-     * @return Whether attack was successful???
+     * Performs normal hurtEnemy operations but with chance to apply additional effect(s).
+     * @param stack ItemStack of this Item
+     * @param attackedEntity Attacked (target) living entity
+     * @param attacker Attacker (user) living entity
+     * @return Whether attack was successfully performed
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
@@ -29,8 +35,24 @@ public class ModNetheriteHoeItem extends HoeItem {
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 
+    /**
+     * Gets whether Entities of this Item are resistant to fire and lava (true).
+     * @return Whether this Item is fire-resistant.
+     */
     @Override
-    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(ModUtils.getNetheriteEquipmentTooltip(false));
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    /**
+     * Appends text to the Item's hover tooltip (on-hit effect info).
+     * @param stack ItemStack corresponding to this Item
+     * @param level Active level
+     * @param components List of Components that make up the tooltip
+     * @param flag TooltipFlag determining whether NORMAL or ADVANCED
+     */
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        components.add(ModUtils.getNetheriteEquipmentTooltip(false));
     }
 }

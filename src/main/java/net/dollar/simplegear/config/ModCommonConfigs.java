@@ -89,7 +89,7 @@ public class ModCommonConfigs {
 
         BUILDER.push("Infused Diamond tier");
         INFUSED_DIAMOND_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with Infused Diamond tools and weapons")
-                .defineInRange("Effect Chance", 15, 0, 100);
+                .defineInRange("Effect Chance", 17, 0, 100);
         INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Magic damage reduction granted by a full set of Infused Diamond armor")
                 .defineInRange("Percent Damage Reduction", 33, 0, 100);
         BUILDER.pop();

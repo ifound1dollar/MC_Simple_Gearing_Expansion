@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Contains helper methods to generate Smithing Upgrade Template items, which have custom tooltips that require
- *  numerous ResourceLocations and styles
+ *  numerous ResourceLocations and styles.
  */
 public class ModSmithingUpgradeItemHelper {
     //region GILDED BRONZE COMPONENTS
@@ -24,6 +24,7 @@ public class ModSmithingUpgradeItemHelper {
     private static final Component GILDED_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.literal(
             "Add Gold Ingot");
     //endregion
+
     //region INFUSED DIAMOND COMPONENTS
     private static final Component INFUSION_UPGRADE = Component.literal("Infusion Upgrade")
             .withStyle(ChatFormatting.GRAY);
@@ -36,6 +37,7 @@ public class ModSmithingUpgradeItemHelper {
     private static final Component INFUSION_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.literal(
             "Add Infused Diamond");
     //endregion
+
     //region TUNGSTEN-CARBIDE COMPONENTS
     private static final Component CARBIDE_UPGRADE = Component.literal("Carbide Upgrade")
             .withStyle(ChatFormatting.GRAY);
@@ -48,6 +50,7 @@ public class ModSmithingUpgradeItemHelper {
     private static final Component CARBIDE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.literal(
             "Add Tungsten-Carbide Ingot");
     //endregion
+
     //region EMPTY SLOT RESOURCE LOCATIONS
     private static final ResourceLocation EMPTY_SLOT_HELMET = new ResourceLocation("item/empty_armor_slot_helmet");
     private static final ResourceLocation EMPTY_SLOT_CHESTPLATE = new ResourceLocation("item/empty_armor_slot_chestplate");
@@ -68,7 +71,8 @@ public class ModSmithingUpgradeItemHelper {
     //appendHoverText() IN SAME CLASS HAS super() METHOD CALLED FIRST WHICH PLACES THOSE COMPONENTS BELOW ENCHANTMENTS???
 
     /**
-     * Creates a Gilded Upgrade Smithing Template, which has special tooltips that are handled in this method and class
+     * Creates a Gilded Upgrade Smithing Template, which has special tooltips that are handled in this
+     *  method and class.
      * @return New Gilded Bronze SmithingTemplateItem
      */
     public static SmithingTemplateItem createGildedUpgradeTemplate() {
@@ -78,7 +82,8 @@ public class ModSmithingUpgradeItemHelper {
     }
 
     /**
-     * Creates an Infusion Upgrade Smithing Template, which has special tooltips that are handled in this method and class
+     * Creates an Infusion Upgrade Smithing Template, which has special tooltips that are handled in this
+     *  method and class.
      * @return New Infused Diamond SmithingTemplateItem
      */
     public static SmithingTemplateItem createInfusionUpgradeTemplate() {
@@ -88,7 +93,8 @@ public class ModSmithingUpgradeItemHelper {
     }
 
     /**
-     * Creates a Carbide Upgrade Smithing Template, which has special tooltips that are handled in this method and class
+     * Creates a Carbide Upgrade Smithing Template, which has special tooltips that are handled in this
+     *  method and class.
      * @return New Tungsten-Carbide SmithingTemplateItem
      */
     public static SmithingTemplateItem createCarbideUpgradeTemplate() {
@@ -100,7 +106,7 @@ public class ModSmithingUpgradeItemHelper {
 
 
     /**
-     * Generates a List of ResourceLocations pointing to empty equipment icons
+     * Generates a List of ResourceLocations pointing to empty equipment icons.
      * @return List of empty equipment icon ResourceLocations
      */
     private static List<ResourceLocation> createUpgradeIconList() {
@@ -108,7 +114,7 @@ public class ModSmithingUpgradeItemHelper {
     }
 
     /**
-     * Generates a List of ResourceLocations pointing to empty upgrade ingredient icons
+     * Generates a List of ResourceLocations pointing to empty upgrade ingredient icons.
      * @param isIngot Whether the upgrade material is shaped like a Diamond or an Ingot
      * @return List (single item) of empty upgrade ingredient ResourceLocations
      */

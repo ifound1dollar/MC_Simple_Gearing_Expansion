@@ -1,6 +1,5 @@
 package net.dollar.simplegear.datagen;
 
-import com.mojang.logging.LogUtils;
 import net.dollar.simplegear.SimpleGearingExpansion;
 import net.dollar.simplegear.block.ModBlocks;
 import net.dollar.simplegear.item.ModItems;
@@ -12,7 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
@@ -21,73 +19,88 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * Used to auto-generate recipe JSON files in 'src/generated' subdirectory. In-code definitions of recipes
+ *  to be generated AND their corresponding helper methods are contained within this class.
+ */
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+    private enum ToolType { AXE, HOE, MACE, PICKAXE, SHOVEL, SWORD }
+
     public ModRecipeProvider(PackOutput output) {
         super(output);
     }
 
-    private enum ToolType { AXE, HOE, MACE, PICKAXE, SHOVEL, SWORD }
 
+
+    /**
+     * Build recipes, auto-generating JSON files in 'src/generated' subdirectory. Developer defines recipes
+     *  to generate within this method.
+     * @param consumer Consumer of FinishedRecipe
+     */
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         //region Ores, smelting AND blasting
-        oreSmelting(consumer, List.of(ModBlocks.RUBY_ORE.get()), RecipeCategory.MISC,
+        smeltingRecipeBuilder(consumer, ModBlocks.RUBY_ORE.get(), RecipeCategory.MISC,
                 ModItems.RUBY.get(), 1.0f, 200, "ruby" );
-        oreBlasting(consumer, List.of(ModBlocks.RUBY_ORE.get()), RecipeCategory.MISC,
+        blastingRecipeBuilder(consumer, ModBlocks.RUBY_ORE.get(), RecipeCategory.MISC,
                 ModItems.RUBY.get(), 1.0f, 100, "ruby" );
-        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_RUBY_ORE.get()), RecipeCategory.MISC,
+        smeltingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_RUBY_ORE.get(), RecipeCategory.MISC,
                 ModItems.RUBY.get(), 1.0f, 200, "ruby" );
-        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_RUBY_ORE.get()), RecipeCategory.MISC,
+        blastingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_RUBY_ORE.get(), RecipeCategory.MISC,
                 ModItems.RUBY.get(), 1.0f, 100, "ruby" );
-        oreSmelting(consumer, List.of(ModBlocks.SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+
+        smeltingRecipeBuilder(consumer, ModBlocks.SAPPHIRE_ORE.get(), RecipeCategory.MISC,
                 ModItems.SAPPHIRE.get(), 1.0f, 200, "sapphire" );
-        oreBlasting(consumer, List.of(ModBlocks.SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+        blastingRecipeBuilder(consumer, ModBlocks.SAPPHIRE_ORE.get(), RecipeCategory.MISC,
                 ModItems.SAPPHIRE.get(), 1.0f, 100, "sapphire" );
-        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+        smeltingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), RecipeCategory.MISC,
                 ModItems.SAPPHIRE.get(), 1.0f, 200, "sapphire" );
-        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()), RecipeCategory.MISC,
+        blastingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), RecipeCategory.MISC,
                 ModItems.SAPPHIRE.get(), 1.0f, 100, "sapphire" );
 
-        oreSmelting(consumer, List.of(ModBlocks.CARBONITE_ORE.get()), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust" );
-        oreBlasting(consumer, List.of(ModBlocks.CARBONITE_ORE.get()), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust" );
-        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_CARBONITE_ORE.get()), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust" );
-        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_CARBONITE_ORE.get()), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust" );
+        smeltingRecipeBuilder(consumer, ModBlocks.CARBONITE_ORE.get(), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust");
+        blastingRecipeBuilder(consumer, ModBlocks.CARBONITE_ORE.get(), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust");
+        smeltingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_CARBONITE_ORE.get(), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust");
+        blastingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_CARBONITE_ORE.get(), RecipeCategory.MISC,
+                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust");
 
-        oreSmelting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
-                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
-        oreBlasting(consumer, List.of(ModBlocks.TIN_ORE.get()), RecipeCategory.MISC,
-                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
-        oreSmelting(consumer, List.of(ModBlocks.DEEPSLATE_TIN_ORE.get()), RecipeCategory.MISC,
-                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
-        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_TIN_ORE.get()), RecipeCategory.MISC,
-                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
+        smeltingRecipeBuilder(consumer, ModBlocks.TIN_ORE.get(), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot");
+        blastingRecipeBuilder(consumer, ModBlocks.TIN_ORE.get(), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot");
+        smeltingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_TIN_ORE.get(), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot");
+        blastingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_TIN_ORE.get(), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot");
+        smeltingRecipeBuilder(consumer, ModItems.RAW_TIN.get(), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot");
+        blastingRecipeBuilder(consumer, ModItems.RAW_TIN.get(), RecipeCategory.MISC,
+                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot");
 
-        oreSmelting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
-                ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot" );
-        oreBlasting(consumer, List.of(ModItems.RAW_TIN.get()), RecipeCategory.MISC,
-                ModItems.TIN_INGOT.get(), 0.7f, 100, "tin_ingot" );
-        oreSmelting(consumer, List.of(ModItems.BRONZE_COMPOUND.get()), RecipeCategory.MISC,
-                ModItems.BRONZE_INGOT.get(), 0.7f, 200, "bronze_ingot" );
-        oreBlasting(consumer, List.of(ModItems.BRONZE_COMPOUND.get()), RecipeCategory.MISC,
-                ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot" );
+        smeltingRecipeBuilder(consumer, ModItems.BRONZE_COMPOUND.get(), RecipeCategory.MISC,
+                ModItems.BRONZE_INGOT.get(), 0.7f, 200, "bronze_ingot");
+        blastingRecipeBuilder(consumer, ModItems.BRONZE_COMPOUND.get(), RecipeCategory.MISC,
+                ModItems.BRONZE_INGOT.get(), 0.7f, 100, "bronze_ingot");
         //endregion
+
         //region Ores, blasting ONLY
-        oreBlasting(consumer, List.of(ModItems.STEEL_COMPOUND.get()), RecipeCategory.MISC,
-                ModItems.STEEL_INGOT.get(), 0.7f, 100, "steel_ingot" );
-        oreBlasting(consumer, List.of(ModBlocks.TUNGSTEN_ORE.get()), RecipeCategory.MISC,
-                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
-        oreBlasting(consumer, List.of(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get()), RecipeCategory.MISC,
-                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
-        oreBlasting(consumer, List.of(ModItems.RAW_TUNGSTEN.get()), RecipeCategory.MISC,
-                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot" );
+        blastingRecipeBuilder(consumer, ModItems.STEEL_COMPOUND.get(), RecipeCategory.MISC,
+                ModItems.STEEL_INGOT.get(), 0.7f, 100, "steel_ingot");
+
+        blastingRecipeBuilder(consumer, ModBlocks.TUNGSTEN_ORE.get(), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot");
+        blastingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get(), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot");
+        blastingRecipeBuilder(consumer, ModItems.RAW_TUNGSTEN.get(), RecipeCategory.MISC,
+                ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot");
         //endregion
+
+
 
         //region Basic nine-block storage recipes
         //NOTE: FIRST IS FOR BLOCK->ITEM, SECOND IS FOR ITEM->BLOCK
@@ -227,6 +240,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //endregion
 
 
+
         //region VANILLA TIER MACES
         toolRecipeBuilder(consumer, ToolType.MACE, Items.COBBLESTONE, ModItems.STONE_MACE.get(),
                 "has_cobblestone");
@@ -240,6 +254,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.DIAMOND_MACE.get(), Items.NETHERITE_INGOT, RecipeCategory.COMBAT,
                 ModItems.NETHERITE_MACE.get(), "has_netherite_ingot");
         //endregion
+
         //region BRONZE ARMOR, TOOLS
         armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.BRONZE_INGOT, ModItems.BRONZE_HELMET,
                 "has_bronze_ingot");
@@ -263,19 +278,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_SWORD.get(),
                 "has_bronze_ingot");
         //endregion
-        //region GILDED BRONZE ARMOR, TOOLS (smithing)
-//        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_HELMET.get(), Items.GOLD_INGOT,
-//                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_HELMET.get(), "has_gold_ingot");
-//        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_CHESTPLATE.get(), Items.GOLD_INGOT,
-//                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_CHESTPLATE.get(), "has_gold_ingot");
-//        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_LEGGINGS.get(), Items.GOLD_INGOT,
-//                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_LEGGINGS.get(), "has_gold_ingot");
-//        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_BOOTS.get(), Items.GOLD_INGOT,
-//                RecipeCategory.COMBAT, ModItems.GILDED_BRONZE_BOOTS.get(), "has_gold_ingot");
-//
-//        legacySmithingRecipeBuilder(consumer, ModItems.BRONZE_PICKAXE.get(), Items.GOLD_INGOT,
-//                RecipeCategory.TOOLS, ModItems.GILDED_BRONZE_PICKAXE.get(), "has_gold_ingot");
 
+        //region GILDED BRONZE ARMOR, TOOLS (smithing)
         smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.BRONZE_HELMET.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_HELMET.get(), "has_gold_ingot");
@@ -308,6 +312,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.BRONZE_SWORD.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_SWORD.get(), "has_gold_ingot");
         //endregion
+
         //region STEEL ARMOR, TOOLS
         armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.STEEL_INGOT, ModItems.STEEL_HELMET,
                 "has_steel_ingot");
@@ -331,6 +336,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.STEEL_INGOT.get(), ModItems.STEEL_SWORD.get(),
                 "has_steel_ingot");
         //endregion
+
         //region TUNGSTEN ARMOR, TOOLS
         armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_HELMET,
                 "has_tungsten_ingot");
@@ -354,16 +360,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_SWORD.get(),
                 "has_tungsten_ingot");
         //endregion
-        //region TUNGSTEN-CARBIDE ARMOR, TOOLS (smithing)
-//        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_HELMET.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
-//                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_HELMET.get(), "has_tungsten_carbide_ingot");
-//        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_CHESTPLATE.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
-//                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_CHESTPLATE.get(), "has_tungsten_carbide_ingot");
-//        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_LEGGINGS.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
-//                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_LEGGINGS.get(), "has_tungsten_carbide_ingot");
-//        legacySmithingRecipeBuilder(consumer, ModItems.TUNGSTEN_BOOTS.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(),
-//                RecipeCategory.COMBAT, ModItems.TUNGSTEN_CARBIDE_BOOTS.get(), "has_tungsten_carbide_ingot");
 
+        //region TUNGSTEN-CARBIDE ARMOR, TOOLS (smithing)
         smithingUpgradeRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.TUNGSTEN_HELMET.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_HELMET.get(), "has_carbide_upgrade");
@@ -396,19 +394,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.TUNGSTEN_SWORD.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(), RecipeCategory.COMBAT,
                 ModItems.TUNGSTEN_CARBIDE_SWORD.get(), "has_carbide_upgrade");
         //endregion
-        //region INFUSED DIAMOND ARMOR, TOOLS (smithing)
-//        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
-//                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_HELMET.get(), "has_infused_gemstone");
-//        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
-//                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_CHESTPLATE.get(), "has_infused_gemstone");
-//        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
-//                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_LEGGINGS.get(), "has_infused_gemstone");
-//        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(),
-//                RecipeCategory.COMBAT, ModItems.INFUSED_DIAMOND_BOOTS.get(), "has_infused_gemstone");
-//
-//        legacySmithingRecipeBuilder(consumer, Items.DIAMOND_PICKAXE, ModItems.INFUSED_GEMSTONE.get(),
-//                RecipeCategory.TOOLS, ModItems.INFUSED_DIAMOND_PICKAXE.get(), "has_infused_gemstone");
 
+        //region INFUSED DIAMOND ARMOR, TOOLS (smithing)
         smithingUpgradeRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
                 Items.DIAMOND_HELMET, ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
                 ModItems.INFUSED_DIAMOND_HELMET.get(), "has_infused_gemstone");
@@ -445,30 +432,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
 
-
-    //BELOW IS HOW TO MANUALLY CREATE SHAPELESS RECIPES (third shapeless() param is quantity)
-//        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RUBY_SHARD.get(), 9)
-//                .requires(ModBlocks.RUBY_BLOCK.get())
-//                .unlockedBy("has_ruby_block", inventoryTrigger(ItemPredicate.Builder.item()
-//                        .of(ModBlocks.RUBY_BLOCK.get()).build()))
-//                .save(consumer);
-
-    //BELOW IS HOW TO MANUALLY CREATE SHAPED RECIPES (third shaped() param is quantity)
-//        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.BRONZE_PICKAXE.get(), 1)
-//                .define('d', ModItems.BRONZE_INGOT.get())
-//                .define('i', Items.STICK)
-//                .pattern("ddd")
-//                .pattern(" i ")
-//                .pattern(" i ")
-//                .unlockedBy("has_bronze_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-//                        .of(ModItems.BRONZE_INGOT.get()).build()))
-//                .save(consumer);
-
-
     /**
-     * Helper to automatically generate shaped recipes for the four armor slots
+     * Helper to automatically generate shaped recipes for the four armor slots.
      * @param consumer Consumer of FinishedRecipe
-     * @param slot This armor piece's equipment slot
+     * @param slot This armor piece's EquipmentSlot
      * @param ingredient Crafting ingredient
      * @param result Crafting result
      * @param unlockedByString Tag used for unlocking crafting recipe
@@ -511,12 +478,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                             .of(ingredient.get()).build()))
                     .save(consumer);
         } else {
-            LogUtils.getLogger().debug("Invalid EquipmentSlot provided to armorRecipeBuilder.");
+            SimpleGearingExpansion.LOGGER.debug("Invalid EquipmentSlot provided to armorRecipeBuilder.");
         }
     }
 
     /**
-     * Helper to automatically generate shaped recipes for the five vanilla tool types
+     * Helper to automatically generate shaped recipes for the five vanilla tool types AND Mace.
      * @param consumer Consumer of FinishedRecipe
      * @param toolType Type of tool defined in ToolType enum
      * @param ingredient Crafting ingredient
@@ -524,8 +491,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param unlockedByString Tag used for unlocking crafting recipe
      */
     private void toolRecipeBuilder(Consumer<FinishedRecipe> consumer, ToolType toolType,
-                                   Item ingredient, Item result,
-                                   String unlockedByString) {
+                                   Item ingredient, Item result, String unlockedByString) {
         if (toolType == ToolType.AXE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)  //third param is quantity
                     .define('d', ingredient)
@@ -589,13 +555,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
     }
 
+
+
     /**
-     * Helper to automatically generate LEGACY smithing recipes for versions before 1.20
+     * Helper to automatically generate LEGACY smithing recipes for Minecraft versions before 1.20.
      * @param consumer Consumer of FinishedRecipe
      * @param upgradeItem Item being upgraded
-     * @param ingredient Ingredient to upgrade item
+     * @param ingredient Upgrade ingredient Item
      * @param category Recipe category
-     * @param result Smithing result
+     * @param result Smithing result Item
      * @param unlockedByString Tag used for unlocking smithing recipe
      */
     @Deprecated
@@ -604,17 +572,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                                                       String unlockedByString) {
         ModLegacySmithingRecipeBuilder.smithing(Ingredient.of(upgradeItem), Ingredient.of(ingredient),
                 category, result).unlocks(unlockedByString, has(ingredient))
-                .save(consumer, new ResourceLocation(SimpleGearingExpansion.MOD_ID, getItemName(result)) + "_smithing");
+                .save(consumer,new ResourceLocation(SimpleGearingExpansion.MOD_ID, getItemName(result))
+                        + "_smithing");
     }
 
     /**
-     * Helper to automatically generate smithing recipes (1.20+)
+     * Helper to automatically generate smithing recipes (1.20+).
      * @param consumer Consumer of FinishedRecipe
-     * @param template Required upgrade template
+     * @param template Required upgrade template Item
      * @param upgradeItem Item being upgraded
-     * @param ingredient Ingredient to upgrade item
+     * @param ingredient Upgrade ingredient Item
      * @param category Recipe category
-     * @param result Smithing result
+     * @param result Smithing result Item
      * @param unlockedByString Tag used for unlocking smithing recipe
      */
     private void smithingUpgradeRecipeBuilder(Consumer<FinishedRecipe> consumer, Item template, Item upgradeItem,
@@ -623,17 +592,54 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(template), Ingredient.of(upgradeItem),
                         Ingredient.of(ingredient), category, result)
                 .unlocks(unlockedByString, has(ingredient))
-                .save(consumer, new ResourceLocation(SimpleGearingExpansion.MOD_ID, getItemName(result)) + "_smithing");
+                .save(consumer, new ResourceLocation(SimpleGearingExpansion.MOD_ID, getItemName(result))
+                        + "_smithing");
     }
 
 
 
-    protected static void fourBlockStorageRecipes(Consumer<FinishedRecipe> p_249580_, RecipeCategory p_251203_, ItemLike p_251689_, RecipeCategory p_251376_, ItemLike p_248771_) {
-        fourBlockStorageRecipes(p_249580_, p_251203_, p_251689_, p_251376_, p_248771_, getSimpleRecipeName(p_248771_), (String)null, getSimpleRecipeName(p_251689_), (String)null);
+    /**
+     * Builds a smelting recipe and writes it to a JSON file.
+     * @param consumer Consumer of FinishedRecipe
+     * @param ingredientItemLike ItemLike that will be blasted
+     * @param category Recipe category
+     * @param resultItemLike ItemLike that will be produced
+     * @param xpReward XP reward per item blasted
+     * @param ticks Number of ticks required to blast
+     * @param resultItemName String, equal to result item name, that is used in JSON filename
+     */
+    protected static void smeltingRecipeBuilder(Consumer<FinishedRecipe> consumer, ItemLike ingredientItemLike,
+                                                RecipeCategory category, ItemLike resultItemLike, float xpReward,
+                                                int ticks, String resultItemName) {
+        SimpleCookingRecipeBuilder
+                .generic(Ingredient.of(ingredientItemLike), category, resultItemLike, xpReward, ticks,
+                        RecipeSerializer.SMELTING_RECIPE)
+                .group(resultItemName)
+                .unlockedBy(getHasName(ingredientItemLike), has(ingredientItemLike))
+                .save(consumer, new ResourceLocation(SimpleGearingExpansion.MOD_ID,
+                        getItemName(resultItemLike)) + "_from_smelting_" + getItemName(ingredientItemLike));
     }
-    protected static void fourBlockStorageRecipes(Consumer<FinishedRecipe> p_250423_, RecipeCategory p_250083_, ItemLike p_250042_, RecipeCategory p_248977_, ItemLike p_251911_, String p_250475_, @Nullable String p_248641_, String p_252237_, @Nullable String p_250414_) {
-        ShapelessRecipeBuilder.shapeless(p_250083_, p_250042_, 4).requires(p_251911_).group(p_250414_).unlockedBy(getHasName(p_251911_), has(p_251911_)).save(p_250423_, new ResourceLocation(SimpleGearingExpansion.MOD_ID, p_252237_));
-        ShapedRecipeBuilder.shaped(p_248977_, p_251911_).define('#', p_250042_).pattern("##").pattern("##").group(p_248641_).unlockedBy(getHasName(p_250042_), has(p_250042_)).save(p_250423_, new ResourceLocation(SimpleGearingExpansion.MOD_ID, p_250475_));
+
+    /**
+     * Builds a blasting recipe and writes it to a JSON file.
+     * @param consumer Consumer of FinishedRecipe
+     * @param ingredientItemLike ItemLike that will be blasted
+     * @param category Recipe category
+     * @param resultItemLike ItemLike that will be produced
+     * @param xpReward XP reward per item blasted
+     * @param ticks Number of ticks required to blast
+     * @param resultItemName String, equal to result item name, that is used in JSON filename
+     */
+    protected static void blastingRecipeBuilder(Consumer<FinishedRecipe> consumer, ItemLike ingredientItemLike,
+                                                RecipeCategory category, ItemLike resultItemLike, float xpReward,
+                                                int ticks, String resultItemName) {
+        SimpleCookingRecipeBuilder
+                .generic(Ingredient.of(ingredientItemLike), category, resultItemLike, xpReward, ticks,
+                        RecipeSerializer.SMELTING_RECIPE)
+                .group(resultItemName)
+                .unlockedBy(getHasName(ingredientItemLike), has(ingredientItemLike))
+                .save(consumer, new ResourceLocation(SimpleGearingExpansion.MOD_ID,
+                        getItemName(resultItemLike)) + "_from_blasting_" + getItemName(ingredientItemLike));
     }
 
 
@@ -645,19 +651,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     //To fix generation issue: Copy over all methods used in this class and then edit all instances
     // of 'new ResourceLocation()' to first take TestMod.MOD_ID, THEN the actual value.
     //  ex. 'new ResourceLocation(p_252237_)' -> 'new ResourceLocation(TestMod.MOD_ID, p_252237_)'
-    protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {
-        oreCooking(p_250654_, RecipeSerializer.SMELTING_RECIPE, p_250172_, p_250588_, p_251868_, p_250789_, p_252144_, p_251687_, "_from_smelting");
-    }
-    protected static void oreBlasting(Consumer<FinishedRecipe> p_248775_, List<ItemLike> p_251504_, RecipeCategory p_248846_, ItemLike p_249735_, float p_248783_, int p_250303_, String p_251984_) {
-        oreCooking(p_248775_, RecipeSerializer.BLASTING_RECIPE, p_251504_, p_248846_, p_249735_, p_248783_, p_250303_, p_251984_, "_from_blasting");
-    }
-    protected static void oreCooking(Consumer<FinishedRecipe> p_250791_, RecipeSerializer<? extends AbstractCookingRecipe> p_251817_, List<ItemLike> p_249619_, RecipeCategory p_251154_, ItemLike p_250066_, float p_251871_, int p_251316_, String p_251450_, String p_249236_) {
-        for(ItemLike itemlike : p_249619_) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), p_251154_, p_250066_, p_251871_, p_251316_, p_251817_).group(p_251450_).unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(p_250791_, new ResourceLocation(SimpleGearingExpansion.MOD_ID, getItemName(p_250066_)) + p_249236_ + "_" + getItemName(itemlike));
-        }
-        //must use new ResourceLocation in this method before getItemName(p_250066_) so it uses mod's package
-    }
 
     protected static void nineBlockStorageRecipes(Consumer<FinishedRecipe> p_249580_, RecipeCategory p_251203_, ItemLike p_251689_, RecipeCategory p_251376_, ItemLike p_248771_) {
         nineBlockStorageRecipes(p_249580_, p_251203_, p_251689_, p_251376_, p_248771_, getSimpleRecipeName(p_248771_), (String)null, getSimpleRecipeName(p_251689_), (String)null);
@@ -666,6 +659,5 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(p_250083_, p_250042_, 9).requires(p_251911_).group(p_250414_).unlockedBy(getHasName(p_251911_), has(p_251911_)).save(p_250423_, new ResourceLocation(SimpleGearingExpansion.MOD_ID, p_252237_));
         ShapedRecipeBuilder.shaped(p_248977_, p_251911_).define('#', p_250042_).pattern("###").pattern("###").pattern("###").group(p_248641_).unlockedBy(getHasName(p_250042_), has(p_250042_)).save(p_250423_, new ResourceLocation(SimpleGearingExpansion.MOD_ID, p_250475_));
     }
-
     //endregion
 }

@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 
 /**
  * Custom armor material record, implements ArmorMaterial (Forge does not have simple method to make new
- *  ArmorMaterials like it does with ForgeTiers)
+ *  ArmorMaterials like it does with ForgeTiers).
  * @param name Name of new ArmorMaterial, is used for ResourceLocation
  * @param durabilityMultiplier Integer multiplied by DURABILITY_PER_SLOT [B, L, C, H] to determine actual durability
  * @param protection Array of protection values per slot [B, L, C, H]

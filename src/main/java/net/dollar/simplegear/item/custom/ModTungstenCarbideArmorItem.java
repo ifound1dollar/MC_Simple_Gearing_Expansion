@@ -16,19 +16,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+/**
+ * Used specifically for Tungsten-Carbide armor items, which check for full-set equipped, conditionally reduce
+ *  Explosion damage taken, and have custom hover text.
+ */
 public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHandlingArmor {
     boolean isFullSet;
-
 
     public ModTungstenCarbideArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
         super(p_40386_, p_266831_, p_40388_);
     }
 
+
+
     /**
-     * Checks each tick if the player has a full set of this armor
+     * Checks each tick if the player has a full set of Tungsten-Carbide armor.
      * @param stack The ItemStack associated with this Object
      * @param level Active level/world
-     * @param player Player this armor item is attached to
+     * @param player Player this armor item is equipped on
      */
     @Override
     public void onArmorTick(ItemStack stack, Level level, Player player) {
@@ -44,9 +49,9 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
     }
 
     /**
-     * Intercepts the damage operation and reduces damage from a certain source
-     * @param entity The attacked LivingEntity (wearer)
-     * @param slot Equipment slot of this item
+     * Intercepts the damage taken operation to reduce Explosion damage taken.
+     * @param entity Attacked LivingEntity (wearer)
+     * @param slot EquipmentSlot of this item
      * @param source Source of damage to be dealt
      * @param amount Initial damage amount
      * @return Updated damage amount
@@ -66,19 +71,35 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
         return amount;  //if reaches here, return original amount
     }
 
+    /**
+     * Gets whether Entities of this Item are resistant to fire and lava (true).
+     * @return Whether this Item is fire-resistant.
+     */
     @Override
     public boolean isFireResistant() {
         return true;
     }
 
+    /**
+     * Gets whether Entities of this Item can be hurt by a specific DamageSource (false for Fire and Explosion).
+     * @param source DamageSource being checked
+     * @return Whether this Item can be hurt by the DamageSource
+     */
     @Override
     public boolean canBeHurtBy(DamageSource source) {
         //entity cannot be destroyed by explosions or fire
         return !(source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION));
     }
 
+    /**
+     * Appends text to the Item's hover tooltip (full-set armor bonus).
+     * @param stack ItemStack corresponding to this Item
+     * @param level Active level
+     * @param components List of Components that make up the tooltip
+     * @param flag TooltipFlag determining whether NORMAL or ADVANCED
+     */
     @Override
-    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        p_41423_.add(ModUtils.getTungstenCarbideEquipmentTooltip(true));
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        components.add(ModUtils.getTungstenCarbideEquipmentTooltip(true));
     }
 }
