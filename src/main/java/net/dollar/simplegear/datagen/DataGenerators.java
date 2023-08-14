@@ -11,8 +11,16 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Handles initializing data generators used by the mod via the GatherDataEvent.
+ */
 @Mod.EventBusSubscriber(modid = SimpleGearingExpansion.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
+    /**
+     * Creates a DataGenerator object and adds new providers corresponding to each data generator
+     *  class. Required for data generation to run.
+     * @param event Event fired on data gathering
+     */
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();

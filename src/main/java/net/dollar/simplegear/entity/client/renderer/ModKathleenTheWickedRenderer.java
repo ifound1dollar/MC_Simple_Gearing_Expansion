@@ -18,8 +18,15 @@ public class ModKathleenTheWickedRenderer extends MobRenderer<KathleenTheWickedE
         super(context, new ModKathleenTheWickedModel<>(context.bakeLayer(ModelLayers.COW)), 0.7f);  //shadow radius
     }
 
+
+
+    /**
+     * Gets texture ResourceLocation defined in top of class.
+     * @param entity KathleenTheWickedEntity being rendered
+     * @return Texture ResourceLocation
+     */
     @Override
-    public ResourceLocation getTextureLocation(KathleenTheWickedEntity p_114482_) {
+    public ResourceLocation getTextureLocation(KathleenTheWickedEntity entity) {
         return TEXTURE;
     }
 }

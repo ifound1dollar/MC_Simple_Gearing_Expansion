@@ -10,24 +10,25 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
+/**
+ * Used to auto-generate block loot JSON files in 'src/generated' subdirectory. In-code definitions
+ *  of loot tables to be generated are contained within this class.
+ */
 public class ModBlockLootTables extends BlockLootSubProvider {
     public ModBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 
-    //IMPORTANT: Must register ALL blocks added in the mod here that are not specifically noted as 'no loot table'
-    //  else it will throw an exception.
-    //ALTERNATIVELY, in ModBlocks, can add 'noLootTable()' property to a block for a block with no loot.
 
 
-
-    //generate loot tables for all blocks
+    /**
+     * Generate loot tables for each new Block.
+     */
     @Override
     protected void generate() {
         dropSelf(ModBlocks.RUBY_BLOCK.get());
         dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
         dropSelf(ModBlocks.DECORATIVE_AMETHYST_BLOCK.get());
-//        dropSelf(ModBlocks.CARBONITE_BLOCK.get());
         dropSelf(ModBlocks.TIN_BLOCK.get());
         dropSelf(ModBlocks.RAW_TIN_BLOCK.get());
         dropSelf(ModBlocks.BRONZE_BLOCK.get());
@@ -64,7 +65,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 (block) -> createOreDrop(ModBlocks.DEEPSLATE_TUNGSTEN_ORE.get(), ModItems.RAW_TUNGSTEN.get()));
     }
 
-    //this gets all known blocks from the mod as an iterator
+
+
+    /**
+     * Gets all known Blocks added by the mod as an Iterator.
+     * @return Iterator of all new Blocks
+     */
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;

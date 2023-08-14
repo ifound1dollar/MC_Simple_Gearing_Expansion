@@ -11,11 +11,21 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * Used to auto-generate item model JSON files in 'src/generated' subdirectory. In-code definitions of recipes
+ *  to be generated AND their corresponding helper methods are contained within this class.
+ */
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, SimpleGearingExpansion.MOD_ID, existingFileHelper);
     }
 
+
+
+    /**
+     * Build item models, auto-generating JSON files in 'src/generated' subdirectory. Developer defines
+     *  models to generate within this method.
+     */
     @Override
     protected void registerModels() {
         withExistingParent(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
@@ -135,6 +145,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.INFUSED_DIAMOND_SWORD);
         //endregion
 
+        //region INCOMPLETE ARMOR TRIM ITEM SUBMODEL GENERATION
 //        //tempTrimmedArmorItem(ModItems.BRONZE_HELMET, "helmet", "redstone");
 //        tempTrimmedArmorItem(ModItems.BRONZE_CHESTPLATE, "chestplate", "redstone");
 //        tempTrimmedArmorItem(ModItems.BRONZE_LEGGINGS, "leggings", "redstone");
@@ -164,15 +175,26 @@ public class ModItemModelProvider extends ItemModelProvider {
 //        tempTrimmedArmorItem(ModItems.INFUSED_DIAMOND_CHESTPLATE, "chestplate", "redstone");
 //        tempTrimmedArmorItem(ModItems.INFUSED_DIAMOND_LEGGINGS, "leggings", "redstone");
 //        tempTrimmedArmorItem(ModItems.INFUSED_DIAMOND_BOOTS, "boots", "redstone");
+        //endregion
     }
 
-    //creates an auto-generated simple item
+
+
+    /**
+     * Builds a simple item model for an Item.
+     * @param item Item the model is for
+     * @return Generated ItemModelBuilder (unused)
+     */
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated"))
                 .texture("layer0", new ResourceLocation(SimpleGearingExpansion.MOD_ID, "item/" + item.getId().getPath()));
     }
 
-    //creates an auto-generated handheld item
+    /**
+     * Builds a handheld item model for an Item.
+     * @param item Item the model is for
+     * @return Generated ItemModelBuilder (unused)
+     */
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld"))
                 .texture("layer0", new ResourceLocation(SimpleGearingExpansion.MOD_ID, "item/" + item.getId().getPath()));
@@ -180,7 +202,15 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
 
-    //creates item model for new armor items (trimmable), overriding for each trim where/when necessary
+    /**
+     * Builds armor item models for each of the ten color trims that can be applied to trimmable armor.
+     *  Implements overrides in the JSON file for each trim palette.
+     *  IMPORTANT: The JSON files created using this method are only the main item model files pointing to
+     *  sub-files where the actual texture layers are defined. These sub-files had to be generated
+     *  INCORRECTLY using tempTrimmedArmorItem(), then fixed and moved to the non-generated 'models' directory.
+     * @param item Armor item the model is for
+     * @return Generated ItemModelBuilder (unused)
+     */
     private ItemModelBuilder trimmableArmorItem(RegistryObject<Item> item) {
         //NOTE: Each override's model file is placed in its own directory for readability. See
         // resources/Assets/simplegear/models/item/[DIRECTORY NAME MATCHING ITEM]/...).
@@ -249,9 +279,20 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", new ResourceLocation(SimpleGearingExpansion.MOD_ID, "item/" + item.getId().getPath()));
     }
 
-    //This method will generate nearly-correct item model files, but texture layer 1 is incorrect and needs
-    //  the 'trimMaterial' suffix (cannot be done because it is not a valid ResourceLocation YET). The
-    //  suffix must be added manually with find & replace, then placed in the non-generated 'models' directory.
+    /**
+     * Builds NEARLY CORRECT item model files for each armor trim palette applied to trimmable armor items.
+     *  Main JSON files that point to these files are correctly generated using the trimmableArmorItem()
+     *  method, BUT these must be manually edited after generation. This method can be used to generate
+     *  the files themselves for efficiency, but each file has an incorrect texture 'layer1' that needs
+     *  the 'trimMaterial' suffix (ex. '_quartz'). This suffix cannot be used when generating with runData
+     *  because the ResourceLocations with the suffix do not exist until a Minecraft instance
+     *  is running. The suffix must be added to each file manually with find & replace, then moved to
+     *  the non-generated 'assets/simplegear/models/items' directory.
+     * @param item Armor item the model is for
+     * @param armorPiece Specific armor piece the trim is applied to (ex. 'leggings')
+     * @param trimMaterial Trim material string (ex. 'redstone')
+     * @return Generated ItemModelBuilder (unused)
+     */
     @Deprecated
     private ItemModelBuilder tempTrimmedArmorItem(RegistryObject<Item> item, String armorPiece, String trimMaterial) {
         return withExistingParent(item.getId().getPath() + "_" + trimMaterial + "_trim",

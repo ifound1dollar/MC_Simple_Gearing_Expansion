@@ -13,9 +13,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * Handles registering new mob entities.
+ */
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, SimpleGearingExpansion.MOD_ID);
+
 
 
     public static final RegistryObject<EntityType<ObsidianGolemEntity>> OBSIDIAN_GOLEM =
@@ -24,7 +28,6 @@ public class ModEntities {
                             .fireImmune()
                             .sized(1.67f, 3.33f)   //roughly 1.25x Iron Golem hitbox size, but narrower
                             .build(new ResourceLocation(SimpleGearingExpansion.MOD_ID + "obsidian_golem").toString()));
-
 
     public static final RegistryObject<EntityType<KathleenTheWickedEntity>> KATHLEEN_THE_WICKED =
             ENTITY_TYPES.register("kathleen_the_wicked",
@@ -40,6 +43,11 @@ public class ModEntities {
                             .build(new ResourceLocation(SimpleGearingExpansion.MOD_ID + "the_helirooster").toString()));
 
 
+
+    /**
+     * Register new mob entities.
+     * @param eventBus Main event bus
+     */
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

@@ -11,6 +11,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Defines Old Lady Muff model, copied almost directly from WitchModel.
+ * @param <T> OldLadyMuffEntity that this model applies to
+ */
 @OnlyIn(Dist.CLIENT)
 public class ModOldLadyMuffModel<T extends Entity> extends VillagerModel<T> {
     private boolean holdingItem;
@@ -18,6 +22,8 @@ public class ModOldLadyMuffModel<T extends Entity> extends VillagerModel<T> {
     public ModOldLadyMuffModel(ModelPart p_171055_) {
         super(p_171055_);
     }
+
+
 
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = VillagerModel.createBodyModel();

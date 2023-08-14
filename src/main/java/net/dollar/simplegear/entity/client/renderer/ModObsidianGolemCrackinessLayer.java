@@ -15,6 +15,9 @@ import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Handles Crackiness layer applied to ModObsidianGolemEntityRenderer.
+ */
 @OnlyIn(Dist.CLIENT)
 public class ModObsidianGolemCrackinessLayer extends RenderLayer<ObsidianGolemEntity, ModObsidianGolemModel<ObsidianGolemEntity>> {
     private static final Map<IronGolem.Crackiness, ResourceLocation> resourceLocations = ImmutableMap.of(
@@ -26,12 +29,16 @@ public class ModObsidianGolemCrackinessLayer extends RenderLayer<ObsidianGolemEn
         super(p_117135_);
     }
 
-    public void render(PoseStack p_117148_, MultiBufferSource p_117149_, int p_117150_, ObsidianGolemEntity p_117151_, float p_117152_, float p_117153_, float p_117154_, float p_117155_, float p_117156_, float p_117157_) {
-        if (!p_117151_.isInvisible()) {
-            IronGolem.Crackiness irongolem$crackiness = p_117151_.getCrackiness();
+
+
+    public void render(PoseStack poseStack, MultiBufferSource source, int p_117150_,
+                       ObsidianGolemEntity entity, float p_117152_, float p_117153_, float p_117154_,
+                       float p_117155_, float p_117156_, float p_117157_) {
+        if (!entity.isInvisible()) {
+            IronGolem.Crackiness irongolem$crackiness = entity.getCrackiness();
             if (irongolem$crackiness != IronGolem.Crackiness.NONE) {
                 ResourceLocation resourcelocation = resourceLocations.get(irongolem$crackiness);
-                renderColoredCutoutModel(this.getParentModel(), resourcelocation, p_117148_, p_117149_, p_117150_, p_117151_, 1.0F, 1.0F, 1.0F);
+                renderColoredCutoutModel(this.getParentModel(), resourcelocation, poseStack, source, p_117150_, entity, 1.0F, 1.0F, 1.0F);
             }
         }
     }

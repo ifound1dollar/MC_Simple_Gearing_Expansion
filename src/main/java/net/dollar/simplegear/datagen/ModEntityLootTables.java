@@ -10,21 +10,23 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.stream.Stream;
 
+/**
+ * Used to auto-generate entity loot JSON files in 'src/generated' subdirectory. In-code definitions
+ *  of loot tables to be generated are contained within this class.
+ */
 public class ModEntityLootTables extends EntityLootSubProvider {
     protected ModEntityLootTables() {
         super(FeatureFlags.REGISTRY.allFlags());
     }
 
 
-    //generate loot tables for entities
+
+    /**
+     * Generate loot tables for each new Entity.
+     */
     @Override
     public void generate() {
-//        add(ModEntities.OBSIDIAN_GOLEM.get(), LootTable.lootTable().withPool(LootPool.lootPool()
-//                        .setRolls(ConstantValue.exactly(1.0F))
-//                        .add(LootItem.lootTableItem(ModItems.MOLTEN_CORE.get()).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
-//                        .when(LootItemKilledByPlayerCondition.killedByPlayer())));
-
-        add(ModEntities.OBSIDIAN_GOLEM.get(), LootTable.lootTable());   //drops custom loot (method) instead of this^
+        add(ModEntities.OBSIDIAN_GOLEM.get(), LootTable.lootTable());   //empty loot table, drops custom loot in class
 
         add(ModEntities.KATHLEEN_THE_WICKED.get(), LootTable.lootTable());
         add(ModEntities.OLD_LADY_MUFF.get(), LootTable.lootTable());
@@ -33,7 +35,10 @@ public class ModEntityLootTables extends EntityLootSubProvider {
 
 
 
-    //this gets all known entities from the mod as a stream
+    /**
+     * Gets all known EntityTypes added by the mod as a Stream.
+     * @return Stream of mod's EntityTypes
+     */
     @Override
     protected @NotNull Stream<EntityType<?>> getKnownEntityTypes() {
         return ModEntities.ENTITY_TYPES.getEntries().stream().map(RegistryObject::get);

@@ -46,6 +46,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Custom boss Monster entity, spawned manually via Compound Gemstone interaction with a Spectral Lantern.
+ */
 public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
     private static final UUID SPEED_MODIFIER_DRINKING_UUID = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
     private static final AttributeModifier SPEED_MODIFIER_DRINKING = new AttributeModifier(SPEED_MODIFIER_DRINKING_UUID, "Drinking speed penalty", -0.25D, AttributeModifier.Operation.ADDITION);
@@ -61,6 +64,10 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
     }
 
 
+
+    /**
+     * Register mob goals (AI).
+     */
     @Override
     protected void registerGoals() {
         //NOTE: smaller numbers (first argument) imply higher priority
@@ -71,8 +78,10 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
     }
 
-
-
+    /**
+     * Set mob attributes, like MAX_HEALTH, FOLLOW_RANGE, etc.
+     * @return Newly created AttributeSupplier
+     */
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 120)
@@ -82,31 +91,67 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
                 .build();
     }
 
+    /**
+     * Decreases air supply while the mob is underwater (infinite).
+     * @param value Original air supply value
+     * @return New air supply value
+     */
+    @Override
+    protected int decreaseAirSupply(int value) {
+        return value;
+    }
+
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.getEntityData().define(DATA_USING_ITEM, false);
     }
 
+    /**
+     * Gets ambient sound produced by this Monster.
+     * @return Ambient SoundEvent
+     */
     protected SoundEvent getAmbientSound() {
         return SoundEvents.WITCH_AMBIENT;
     }
 
+    /**
+     * Gets hurt sound produced by this Monster.
+     * @param source DamageSource of damage being dealt
+     * @return Hurt SoundEvent
+     */
     protected SoundEvent getHurtSound(DamageSource source) {
         return SoundEvents.WITCH_HURT;
     }
 
+    /**
+     * Gets death sound produced by this Monster.
+     * @return Death SoundEvent
+     */
     protected SoundEvent getDeathSound() {
         return SoundEvents.WITCH_DEATH;
     }
 
-    public void setUsingItem(boolean p_34164_) {
-        this.getEntityData().set(DATA_USING_ITEM, p_34164_);
+
+
+    /**
+     * Set whether this Monster is currently using an item.
+     * @param isUsing Value to set
+     */
+    public void setUsingItem(boolean isUsing) {
+        this.getEntityData().set(DATA_USING_ITEM, isUsing);
     }
 
+    /**
+     * Get whether this Monster is currently drinking a potion.
+     * @return Whether this Monster is drinking a potion
+     */
     public boolean isDrinkingPotion() {
         return this.getEntityData().get(DATA_USING_ITEM);
     }
 
+    /**
+     * Performs per-tick AI operations. Checks whether this Monster should begin drinking a potion.
+     */
     public void aiStep() {
         if (!this.level().isClientSide && this.isAlive()) {
             if (this.isDrinkingPotion()) {
@@ -157,6 +202,10 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
         super.aiStep();
     }
 
+    /**
+     * Spawns witch particles around this Monster's head.
+     * @param p_34138_ Unknown
+     */
     public void handleEntityEvent(byte p_34138_) {
         if (p_34138_ == 15) {
             for(int i = 0; i < this.random.nextInt(35) + 10; ++i) {
@@ -165,22 +214,32 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
         } else {
             super.handleEntityEvent(p_34138_);
         }
-
     }
 
-    protected float getDamageAfterMagicAbsorb(DamageSource p_34149_, float p_34150_) {
-        p_34150_ = super.getDamageAfterMagicAbsorb(p_34149_, p_34150_);
-        if (p_34149_.getEntity() == this) {
-            p_34150_ = 0.0F;
+    /**
+     * Intercepts damage taken by this Monster to reduce damage taken from WITCH_RESISTANT_TO damage type tag.
+     * @param source DamageSource of damage being audited
+     * @param damageValue Original damage value
+     * @return New damage value
+     */
+    protected float getDamageAfterMagicAbsorb(DamageSource source, float damageValue) {
+        damageValue = super.getDamageAfterMagicAbsorb(source, damageValue);
+        if (source.getEntity() == this) {
+            damageValue = 0.0F;
         }
 
-        if (p_34149_.is(DamageTypeTags.WITCH_RESISTANT_TO)) {
-            p_34150_ *= 0.15F;
+        if (source.is(DamageTypeTags.WITCH_RESISTANT_TO)) {
+            damageValue *= 0.15F;
         }
 
-        return p_34150_;
+        return damageValue;
     }
 
+    /**
+     * Performed ranged attack on the current target. Here, throws various harmful potions.
+     * @param livingEntity Target LivingEntity
+     * @param p_34144_ Unknown
+     */
     public void performRangedAttack(LivingEntity livingEntity, float p_34144_) {
         //by default, can only attack when not drinking; Old Lady Muff can do both at the same time
         Vec3 vec3 = livingEntity.getDeltaMovement();
@@ -209,18 +268,37 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
 
     }
 
+    /**
+     * Get y height of this Monster's eyes while standing.
+     * @param pose Current pose
+     * @param dimensions This Monster Entity's dimensions
+     * @return Y height of eyes
+     */
     protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
         return 1.62F;
     }
 
-
+    /**
+     * Performs default hurt operations like taking damage, playing hurt sound, etc.
+     * @param source DamageSource of damage being dealt
+     * @param value Original amount of damage
+     * @return Whether hurt operation was completed successfully
+     */
     @Override
-    protected int decreaseAirSupply(int p_21303_) {
-        return p_21303_;
+    public boolean hurt(DamageSource source, float value) {
+//        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
+//            value *= 0.67f;  //reduce Sharp damage by 33%
+//        }
+
+        return super.hurt(source, value);
     }
 
 
 
+    /**
+     * Performs any per-tick operations of this Entity. Here, checks that this has a valid target, despawning
+     *  if not. Ticks down initial 5s spawn delay and, when over, calls endSpawnDelay().
+     */
     @Override
     public void tick() {
         //NOTE: Must check despawn before delay because otherwise reloading a single player world would
@@ -246,6 +324,9 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
         super.tick();
     }
 
+    /**
+     * Ends initial 5s spawn delay: removes invisibility and silence, sets AttackGoal, and spawns particle.
+     */
     private void endSpawnDelay() {
         this.setInvisible(false);
         this.setSilent(false);
@@ -259,6 +340,9 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
                 0.0D, 0.0D, 0.0D);
     }
 
+    /**
+     * Spawns particle effect when despawned.
+     */
     @Override
     public void onRemovedFromWorld() {
         this.level().addParticle(ParticleTypes.POOF,
@@ -270,13 +354,24 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
 
 
 
+    /**
+     * Gets whether this Monster should show its name over its head (true).
+     * @return Whether it should show its name
+     */
     @Override
     public boolean shouldShowName() {
         return true;
     }
 
+    /**
+     * Drops custom loot from this Monster when slain by a player. Also checks certain conditions to
+     *  determine whether this should drop a custom collector item.
+     * @param source DamageSource of killing blow
+     * @param lootingLevel Looting level of slaying weapon
+     * @param killedByPlayer Whether this was killed by a player
+     */
     @Override
-    protected void dropCustomDeathLoot(DamageSource source, int p_21386_, boolean p_21387_) {
+    protected void dropCustomDeathLoot(DamageSource source, int lootingLevel, boolean killedByPlayer) {
         if (!(this.getLastAttacker() instanceof Player)) {
             //only drop if last attacker was Player
             return;
@@ -293,11 +388,6 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
                 this.hasEffect(MobEffects.DAMAGE_BOOST)) {
             this.spawnAtLocation(ModItems.COLLECTOR_POTION_OF_EVERLASTING_YOUTH.get());
         }
-
-//        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN ON FIRE WHEN KILLED
-//        if (this.wasOnFire) {
-//            this.spawnAtLocation(ModItems.COLLECTOR_KATHLEENS_LOST_DIADEM.get());
-//        }
 
 //        //THIS IS THE METHOD TO DROP COLLECTOR ITEM WHEN NAMED 'Kevin'
 //        if (this.getCustomName() != null && this.getCustomName().getString().equals("Kevin")) {
@@ -329,12 +419,20 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
 //        }
     }
 
+    /**
+     * Gets experience drop from this Monster on death.
+     * @return Amount of experience reward
+     */
     @Override
     public int getExperienceReward() {
         //WitherBoss drops 50xp on death
         return 50;
     }
 
+    /**
+     * Gets maximum distance that this Monster will voluntarily drop during pathfinding.
+     * @return Maximum fall distance
+     */
     @Override
     public int getMaxFallDistance() {
         return 10;  //can always fall 10 blocks with no concern

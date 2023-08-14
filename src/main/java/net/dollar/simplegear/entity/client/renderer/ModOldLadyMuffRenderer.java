@@ -11,6 +11,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Handles Old Lady Muff rendering, supporting custom texture.
+ */
 @OnlyIn(Dist.CLIENT)
 public class ModOldLadyMuffRenderer extends MobRenderer<OldLadyMuffEntity, ModOldLadyMuffModel<OldLadyMuffEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
@@ -20,8 +23,15 @@ public class ModOldLadyMuffRenderer extends MobRenderer<OldLadyMuffEntity, ModOl
         super(context, new ModOldLadyMuffModel<>(context.bakeLayer(ModelLayers.WITCH)), 0.5f);  //shadow radius
     }
 
+
+
+    /**
+     * Gets texture ResourceLocation defined in top of class.
+     * @param entity OldLadyMuffEntity being rendered
+     * @return Texture ResourceLocation
+     */
     @Override
-    public ResourceLocation getTextureLocation(OldLadyMuffEntity p_114482_) {
+    public ResourceLocation getTextureLocation(OldLadyMuffEntity entity) {
         return TEXTURE;
     }
 }

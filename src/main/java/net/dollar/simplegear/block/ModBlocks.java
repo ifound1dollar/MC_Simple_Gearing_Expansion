@@ -1,6 +1,5 @@
 package net.dollar.simplegear.block;
 
-
 import net.dollar.simplegear.SimpleGearingExpansion;
 import net.dollar.simplegear.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -17,9 +16,13 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+/**
+ * Handles registering new Blocks.
+ */
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, SimpleGearingExpansion.MOD_ID);
+
 
 
     //basic blocks, do nothing special
@@ -104,18 +107,34 @@ public class ModBlocks {
 
 
 
-    //register actual block
+    /**
+     * Registers new Block and calls helper method to generate corresponding Item.
+     * @param name Name of new block
+     * @param block Actual Block (via supplier)
+     * @return Generated Block RegistryObject
+     */
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
 
-    //registers item corresponding to this block
+    /**
+     * Registers new Item corresponding to a newly registered Block.
+     * @param name Name of new Block
+     * @param block Block RegistryObject (just generated)
+     * @return Generated Item RegistryObject
+     */
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
+
+
+    /**
+     * Register new Blocks.
+     * @param eventBus Main event bus
+     */
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

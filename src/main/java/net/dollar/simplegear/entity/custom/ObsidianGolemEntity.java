@@ -40,6 +40,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Custom boss Monster entity, naturally spawning very low in the world.
+ */
 public class ObsidianGolemEntity extends Monster implements NeutralMob {
     private int attackAnimationTick;
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
@@ -55,6 +58,10 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
     }
 
 
+
+    /**
+     * Register mob goals (AI).
+     */
     @Override
     protected void registerGoals() {
         //NOTE: smaller numbers (first argument) imply higher priority
@@ -73,6 +80,15 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
 
+    /**
+     * Checks whether a spawn attempt is valid, specifically whether it is below a specific y-value.
+     * @param entityType EntityType of ObsidianGolemEntity (this)
+     * @param accessor Active LevelAccessor
+     * @param spawnType Type of mob spawn (NATURAL)
+     * @param blockPos Position of spawn attempt being queried
+     * @param randomSource RandomSource instance
+     * @return Whether the spawn attempt is valid
+     */
     public static boolean checkObsidianGolemSpawnRules(EntityType<ObsidianGolemEntity> entityType, LevelAccessor accessor,
                                                        MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
         //only valid spawn very low in the world
@@ -85,6 +101,10 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
 
 
 
+    /**
+     * Set mob attributes, like MAX_HEALTH, FOLLOW_RANGE, etc.
+     * @return Newly created AttributeSupplier
+     */
     public static AttributeSupplier setAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 240)
@@ -95,11 +115,19 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
                 .build();
     }
 
+    /**
+     * Decreases air supply while the mob is underwater (infinite).
+     * @param value Original air supply value
+     * @return New air supply value
+     */
     @Override
-    protected int decreaseAirSupply(int p_21303_) {
-        return p_21303_;
+    protected int decreaseAirSupply(int value) {
+        return value;
     }
 
+    /**
+     * Performs per-tick AI operations. Updates attackAnimationTick and persistentAnger (neutral mob).
+     */
     public void aiStep() {
         super.aiStep();
         if (this.attackAnimationTick > 0) {
@@ -122,23 +150,41 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
     }
 
 
-
+    /**
+     * Begins counting persistent anger, called when a LivingEntity attacks this Monster.
+     */
     public void startPersistentAngerTimer() {
         this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.random));
     }
 
-    public void setRemainingPersistentAngerTime(int p_28859_) {
-        this.remainingPersistentAngerTime = p_28859_;
+    /**
+     * Sets current remaining persistent anger time.
+     * @param value New persistent anger time
+     */
+    public void setRemainingPersistentAngerTime(int value) {
+        this.remainingPersistentAngerTime = value;
     }
 
+    /**
+     * Gets current remaining persistent anger time.
+     * @return Current remaining persistent anger time.
+     */
     public int getRemainingPersistentAngerTime() {
         return this.remainingPersistentAngerTime;
     }
 
-    public void setPersistentAngerTarget(@javax.annotation.Nullable UUID p_28855_) {
-        this.persistentAngerTarget = p_28855_;
+    /**
+     * Sets current persistent anger target via UUID.
+     * @param targetUUID UUID of new persistent anger target
+     */
+    public void setPersistentAngerTarget(@javax.annotation.Nullable UUID targetUUID) {
+        this.persistentAngerTarget = targetUUID;
     }
 
+    /**
+     * Gets current persistent target UUID.
+     * @return Current persistent target UUID
+     */
     @javax.annotation.Nullable
     public UUID getPersistentAngerTarget() {
         return this.persistentAngerTarget;
@@ -146,10 +192,47 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
 
 
 
+    /**
+     * Gets hurt sound produced by this Monster.
+     * @param source DamageSource of damage being dealt
+     * @return Hurt SoundEvent
+     */
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.IRON_GOLEM_HURT;
+    }
+
+    /**
+     * Gets death sound produced by this Monster.
+     * @return Death SoundEvent
+     */
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.IRON_GOLEM_DEATH;
+    }
+
+    /**
+     * Plays step sound of this Monster.
+     * @param blockPos Position being stepped on
+     * @param blockState Blockstate of block at position being stepped on
+     */
+    protected void playStepSound(BlockPos blockPos, BlockState blockState) {
+        this.playSound(SoundEvents.IRON_GOLEM_STEP, 1.0F, 1.0F);
+    }
+
+
+
+    /**
+     * Gets ATTACK_DAMAGE attribute assigned to this Monster.
+     * @return ATTACK_DAMAGE attribute as float
+     */
     private float getAttackDamage() {
         return (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
     }
 
+    /**
+     * Performs attack operations like checking for attack timer, dealing damage to target, and playing sound.
+     * @param targetEntity Target Entity
+     * @return Whether attack was performed successfully
+     */
     @Override
     public boolean doHurtTarget(Entity targetEntity) {
         //can only attack once every 2 seconds, then resets counter
@@ -188,6 +271,13 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         return flag;
     }
 
+    /**
+     * Performs default hurt operations like taking damage, playing hurt sound, etc. Here, reduces
+     *  Sharp damage taken and updates visual crackiness.
+     * @param source DamageSource of damage being dealt
+     * @param value Original amount of damage
+     * @return Whether hurt operation was completed successfully
+     */
     @Override
     public boolean hurt(DamageSource source, float value) {
         if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.SHARP) {
@@ -203,27 +293,29 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         return flag;
     }
 
+    /**
+     * Gets Crackiness enum value based on percent current Health.
+     * @return IronGolem.Crackiness value
+     */
     public IronGolem.Crackiness getCrackiness() {
         return IronGolem.Crackiness.byFraction(this.getHealth() / this.getMaxHealth());
     }
 
+    /**
+     * Gets current attack animation tick.
+     * @return Current attack animation tick
+     */
     public int getAttackAnimationTick() {
         return this.attackAnimationTick;
     }
 
-    protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.IRON_GOLEM_HURT;
-    }
-
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.IRON_GOLEM_DEATH;
-    }
-
-    protected void playStepSound(BlockPos p_28864_, BlockState p_28865_) {
-        this.playSound(SoundEvents.IRON_GOLEM_STEP, 1.0F, 1.0F);
-    }
 
 
+    /**
+     * Performs any per-tick operations of this Entity. Here, checks if this Monster has not been
+     *  able to attack for at least 3s. If it hasn't, rolls a chance each tick to blind and slow all
+     *  nearby LivingEntities then teleport toward its target.
+     */
     @Override
     public void tick() {
         super.tick();
@@ -245,6 +337,9 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         }
     }
 
+    /**
+     * Applies Blindness and Slowness effects to all nearby LivingEntities, then plays aggressive sound.
+     */
     private void blindAndSlowNearbyLivingEntities() {
         //blind and slow for 3s all players within 25 blocks
         double x = this.position().x;
@@ -265,6 +360,11 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         }
     }
 
+    /**
+     * Teleports this Monster either toward or directly on top of its target, depending on param value.
+     * @param target Target to teleport toward / on top of
+     * @param onTop Whether to teleport directly on top
+     */
     private void teleportTowardTarget(LivingEntity target, boolean onTop) {
         if (onTop) {
             //teleport directly on top of target, +- 0.5 blocks
@@ -280,7 +380,7 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
 
             //if now in attack range, should delay 0.5s before allowing attack
             //IMPORTANT: Must happen only here BECAUSE: when teleporting directly onto target, must attack
-            //  immediately to prevent cheesing (ex. knock off of pillar).
+            //  much faster to prevent cheesing (ex. knock off of pillar).
             if (this.isWithinMeleeAttackRange(target)) {
                 ticksSinceLastAttack = 30;
             }
@@ -289,15 +389,26 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
     }
 
 
-
+    /**
+     * Determines whether this Monster can be affected by a specific MobEffect.
+     * @param effectInstance MobEffectInstance to check validity of
+     * @return Whether the MobEffect can be applied to this Monster
+     */
     @Override
     public boolean canBeAffected(MobEffectInstance effectInstance) {
         MobEffect mobeffect = effectInstance.getEffect();
         return mobeffect != MobEffects.POISON && mobeffect != MobEffects.WITHER && mobeffect != MobEffects.HUNGER;
     }
 
+    /**
+     * Drops custom loot from this Monster when slain by a player. Also checks certain conditions to
+     *  determine whether this should drop a custom collector item.
+     * @param source DamageSource of killing blow
+     * @param lootingLevel Looting level of slaying weapon
+     * @param killedByPlayer Whether this was killed by a player
+     */
     @Override
-    protected void dropCustomDeathLoot(DamageSource p_21385_, int p_21386_, boolean p_21387_) {
+    protected void dropCustomDeathLoot(DamageSource source, int lootingLevel, boolean killedByPlayer) {
         if (!(this.getLastAttacker() instanceof Player)) {
             //only drop if last attacker was Player
             return;
@@ -318,12 +429,20 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         }
     }
 
+    /**
+     * Gets experience drop from this Monster on death.
+     * @return Amount of experience reward
+     */
     @Override
     public int getExperienceReward() {
         //WitherBoss drops 50xp on death
         return 50;
     }
 
+    /**
+     * Gets maximum distance that this Monster will voluntarily drop during pathfinding.
+     * @return Maximum fall distance
+     */
     @Override
     public int getMaxFallDistance() {
         return 10;  //can always fall 10 blocks with no concern

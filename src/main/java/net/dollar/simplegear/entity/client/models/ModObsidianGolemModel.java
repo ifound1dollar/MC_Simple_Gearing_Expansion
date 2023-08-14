@@ -4,7 +4,14 @@ import net.dollar.simplegear.entity.custom.ObsidianGolemEntity;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Defines Obsidian Golem model, copied largely from IronGolemModel but without flower layer.
+ * @param <T> ObsidianGolemEntity that this model applies to
+ */
+@OnlyIn(Dist.CLIENT)
 public class ModObsidianGolemModel<T extends ObsidianGolemEntity> extends HierarchicalModel<T> {
     private final ModelPart root;
     private final ModelPart head;
@@ -21,6 +28,8 @@ public class ModObsidianGolemModel<T extends ObsidianGolemEntity> extends Hierar
         this.rightLeg = p_170697_.getChild("right_leg");
         this.leftLeg = p_170697_.getChild("left_leg");
     }
+
+
 
     public ModelPart root() {
         return this.root;

@@ -18,16 +18,24 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.HashMap;
 import java.util.UUID;
 
+/**
+ * Handles events fired on LivingEntity death, LivingEntity drops, and Player clone operations. Primary
+ *  purpose of this class is to not drop Infused Diamond items if the player dies to the void.
+ */
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class InfusedDiamondDeathHandler {
-    private static HashMap<UUID, ItemStack[]> inventories = new HashMap<>();
+public class ModDeathDropsAndCloneEvents {
+    private static HashMap<UUID, ItemStack[]> storedInventories = new HashMap<>();
 
+
+
+    /**
+     * Stores any and all Infused Diamond items from a player's inventory upon death caused by falling
+     *  into the void, so they can be re-added (Infused Diamond feature).
+     *  NOTE: This is the first of three steps to keep Infused Diamond items in the player's inventory.
+     * @param event Event fired whenever a LivingEntity dies.
+     */
     @SubscribeEvent
     public static void playerDeathHandler(LivingDeathEvent event) {
-        //THIS METHOD WILL STORE ALL INFUSED DIAMOND ITEMS IN THE 'inventories' HASHMAP TO BE RE-ADDED
-        //  TO THE DEAD PLAYER'S INVENTORY IF AND ONLY IF THE CAUSE OF DEATH WAS VOID.
-        //This is the first of three steps to keep Infused Diamond items in the player's inventory.
-
         //if keepInventory true, do nothing special upon death
         if (event.getEntity().level().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
             return;
@@ -48,17 +56,20 @@ public class InfusedDiamondDeathHandler {
 
             //finally, add array of ItemStacks to 'inventories' HashMap IF an Infused Diamond item was found
             if (foundInfusedDiamondItem) {
-                inventories.put(player.getUUID(), itemStacks);
+                storedInventories.put(player.getUUID(), itemStacks);
             }
         }
     }
 
+    /**
+     * TWO OPERATIONS: 1) Rolls small chance to add a single Basic Upgrade Template to a Monster's
+     *  drops on death. 2) Accesses stored HashMap of player inventories and adds player's Infused
+     *  Diamond items back into their inventory on void death (when valid).
+     *  NOTE: This is the second of three steps to keep Infused Diamond items in the player's inventory.
+     * @param event Event fired when a LivingEntity drops all items on death
+     */
     @SubscribeEvent
     public static void dropsHandler(LivingDropsEvent event) {
-        //THIS METHOD PERFORMS TWO OPERATIONS:
-        //  1. ROLL SMALL CHANCE TO DROP GENERIC UPGRADE TEMPLATE FROM PLAYER SLAIN MONSTERS
-        //  2. HANDLE PLACING INFUSED DIAMOND ITEMS BACK IN PLAYER'S INVENTORY (CONDITIONALLY)
-
         if (event.getEntity() instanceof Monster monster) {
             //HERE, will roll a very small chance to drop a Generic Upgrade Template from a Monster
             //  that was slain by the player.
@@ -86,12 +97,12 @@ public class InfusedDiamondDeathHandler {
                 return;
             }
             //if this player does not have items stored in 'inventories' map, had no Infused Diamond items
-            if (!inventories.containsKey(player.getUUID())) {
+            if (!storedInventories.containsKey(player.getUUID())) {
                 return;
             }
 
             //iterate through all 41 valid slots and add items stored in 'inventories' back to player inventory
-            ItemStack[] itemStacks = inventories.get(player.getUUID());
+            ItemStack[] itemStacks = storedInventories.get(player.getUUID());
             for (int i = 0; i < 41; i++) {
                 if (itemStacks[i] != null) {
                     player.getInventory().setItem(i, itemStacks[i]);
@@ -99,18 +110,25 @@ public class InfusedDiamondDeathHandler {
             }
 
             //CRITICAL to remove old entry immediately
-            inventories.remove(player.getUUID());
+            storedInventories.remove(player.getUUID());
         }
     }
 
+    /**
+     * Clones old player's inventory to new player upon clone event IF the player was dead; by default,
+     *  inventories are not cloned so must be done manually.
+     *  NOTE: This is the third of three steps to keep Infused Diamond items in the player's inventory.
+     * @param event Event fired when a player is cloned (death or changed dimensions)
+     */
     @SubscribeEvent
     public static void playerCloneHandler(PlayerEvent.Clone event) {
-        //THIS METHOD WILL ENSURE THAT THE OLD PLAYER'S INVENTORY (WHICH IS NOW ONLY INFUSED DIAMOND
-        //  ITEMS) IS CLONED TO THE NEW PLAYER'S INVENTORY.
-        //This is the third of three steps to keep Infused Diamond items in the player's inventory.
-
         //if keepInventory true, do nothing special upon respawn
         if (event.getEntity().level().getGameRules().getRule(GameRules.RULE_KEEPINVENTORY).get()) {
+            return;
+        }
+
+        //if was not death, do nothing
+        if (!event.isWasDeath()) {
             return;
         }
 

@@ -8,11 +8,20 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
+/**
+ * Used to auto-generate blockstate JSON files in 'src/generated' subdirectory. In-code definitions of
+ *  blockstates and block models to be generated are contained within this class.
+ */
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, SimpleGearingExpansion.MOD_ID, exFileHelper);
     }
 
+
+
+    /**
+     * Generate states and models for each new Block.
+     */
     @Override
     protected void registerStatesAndModels() {
         basicBlockWithItem(ModBlocks.RUBY_BLOCK);
@@ -23,7 +32,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         basicBlockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
         basicBlockWithItem(ModBlocks.DECORATIVE_AMETHYST_BLOCK);
 
-//        basicBlockWithItem(ModBlocks.CARBONITE_BLOCK);
         basicBlockWithItem(ModBlocks.CARBONITE_ORE);
         basicBlockWithItem(ModBlocks.DEEPSLATE_CARBONITE_ORE);
         basicBlockWithItem(ModBlocks.TIN_BLOCK);
@@ -38,7 +46,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         basicBlockWithItem(ModBlocks.DEEPSLATE_TUNGSTEN_ORE);
     }
 
-    //this method will produce a basic item corresponding to the block
+
+
+    /**
+     * Builds a basic blockstate JSON file and block model JSON file for the Block.
+     * @param blockRegistryObject Block the blockstate and model are for
+     */
     private void basicBlockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }

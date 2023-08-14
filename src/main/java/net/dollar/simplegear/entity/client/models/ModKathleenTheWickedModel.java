@@ -11,11 +11,20 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Defines Kathleen the Wicked model, copied almost directly from CowModel.
+ * @param <T> KathleenTheWickedEntity that this model applies to
+ */
+@OnlyIn(Dist.CLIENT)
 public class ModKathleenTheWickedModel<T extends KathleenTheWickedEntity> extends QuadrupedModel<T> {
     public ModKathleenTheWickedModel(ModelPart p_170515_) {
         super(p_170515_, false, 10.0F, 4.0F, 2.0F, 2.0F, 24);
     }
+
+
 
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();

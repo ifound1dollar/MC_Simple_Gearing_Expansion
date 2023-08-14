@@ -2,6 +2,10 @@ package net.dollar.simplegear.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
+/**
+ * Handles new common (both sides) configs for the mod, which can be used anywhere for any purpose
+ *  (ex. Ore generation frequency).
+ */
 public class ModCommonConfigs {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec SPEC;
@@ -32,6 +36,7 @@ public class ModCommonConfigs {
 
 
 
+    //ACTUALLY CREATE CONFIG FILE HERE
     static {
         BUILDER.push("Common configs for Simple Gearing Expansion");
         BUILDER.pop();

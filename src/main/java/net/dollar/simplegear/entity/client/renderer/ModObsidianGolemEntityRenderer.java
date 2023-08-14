@@ -11,6 +11,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Handles Old Lady Muff rendering, supporting custom texture. Also implements custom render scale.
+ */
 @OnlyIn(Dist.CLIENT)
 public class ModObsidianGolemEntityRenderer extends MobRenderer<ObsidianGolemEntity, ModObsidianGolemModel<ObsidianGolemEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
@@ -21,11 +24,24 @@ public class ModObsidianGolemEntityRenderer extends MobRenderer<ObsidianGolemEnt
         this.addLayer(new ModObsidianGolemCrackinessLayer(this));   //add custom crackiness layer
     }
 
+
+
+    /**
+     * Gets texture ResourceLocation defined in top of class.
+     * @param entity ObsidianGolemEntity being rendered
+     * @return Texture ResourceLocation
+     */
     @Override
-    public ResourceLocation getTextureLocation(ObsidianGolemEntity p_114482_) {
+    public ResourceLocation getTextureLocation(ObsidianGolemEntity entity) {
         return TEXTURE;
     }
 
+    /**
+     * Sets scale of this rendered Entity.
+     * @param entity ObsidianGolemEntity being rendered
+     * @param poseStack PoseStack corresponding to this renderer
+     * @param p_115316_ Unknown
+     */
     @Override
     protected void scale(ObsidianGolemEntity entity, PoseStack poseStack, float p_115316_) {
         //scaling this will change the size of the actual model & texture

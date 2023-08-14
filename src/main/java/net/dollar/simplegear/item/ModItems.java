@@ -13,7 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 /**
- * Handles registering new items and re-registering vanilla items (if custom functionality needs to be added).
+ * Handles registering new Items and re-registering vanilla Items (if custom functionality needs to be added).
  */
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -23,7 +23,7 @@ public class ModItems {
 
 
 
-
+    //random stuff
     public static final RegistryObject<Item> OBSIDIAN_GOLEM_SPAWN_EGG = ITEMS.register("obsidian_golem_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.OBSIDIAN_GOLEM, 0x12031E, 0xED4D0E,
                     new Item.Properties()));

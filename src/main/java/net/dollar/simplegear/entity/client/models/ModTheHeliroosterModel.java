@@ -10,7 +10,14 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Defines The Helirooster model, copied almost directly from ChickenModel.
+ * @param <T> TheHeliroosterEntity that this model applies to
+ */
+@OnlyIn(Dist.CLIENT)
 public class ModTheHeliroosterModel<T extends TheHeliroosterEntity> extends AgeableListModel<T> {
     public static final String RED_THING = "red_thing";
     private final ModelPart head;
@@ -32,6 +39,8 @@ public class ModTheHeliroosterModel<T extends TheHeliroosterEntity> extends Agea
         this.rightWing = p_170490_.getChild("right_wing");
         this.leftWing = p_170490_.getChild("left_wing");
     }
+
+
 
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();

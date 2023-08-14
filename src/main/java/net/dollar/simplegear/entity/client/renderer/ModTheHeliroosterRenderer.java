@@ -11,6 +11,10 @@ import net.minecraft.world.entity.animal.Chicken;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * CLIENT-ONLY. Handles The Helirooster rendering, supporting custom texture. Wings play a perpetual
+ *  rotating animation; it's not a bug, it's a feature.
+ */
 @OnlyIn(Dist.CLIENT)
 public class ModTheHeliroosterRenderer extends MobRenderer<TheHeliroosterEntity, ModTheHeliroosterModel<TheHeliroosterEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(
@@ -20,8 +24,14 @@ public class ModTheHeliroosterRenderer extends MobRenderer<TheHeliroosterEntity,
         super(context, new ModTheHeliroosterModel<>(context.bakeLayer(ModelLayers.CHICKEN)), 0.3f);  //shadow radius
     }
 
+
+    /**
+     * Gets texture ResourceLocation defined in top of class.
+     * @param entity TheHeliroosterEntity being rendered
+     * @return Texture ResourceLocation
+     */
     @Override
-    public ResourceLocation getTextureLocation(TheHeliroosterEntity p_114482_) {
+    public ResourceLocation getTextureLocation(TheHeliroosterEntity entity) {
         return TEXTURE;
     }
 
