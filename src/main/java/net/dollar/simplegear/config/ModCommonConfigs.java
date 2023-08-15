@@ -1,10 +1,10 @@
 package net.dollar.simplegear.config;
 
+import com.electronwill.nightconfig.core.Config;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 /**
- * Handles new common (both sides) configs for the mod, which can be used anywhere for any purpose
- *  (ex. Ore generation frequency).
+ * Handles creating new common (both sides) configs file for the mod.
  */
 public class ModCommonConfigs {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
@@ -12,19 +12,7 @@ public class ModCommonConfigs {
 
 
 
-    //region Ore Generation
-    public static final ForgeConfigSpec.ConfigValue<Integer> CARBONITE_ORE_VEINS_PER_CHUNK;
-    public static final ForgeConfigSpec.ConfigValue<Integer> CARBONITE_ORE_VEIN_SIZE;
-    public static final ForgeConfigSpec.ConfigValue<Integer> RUBY_ORE_VEINS_PER_CHUNK;
-    public static final ForgeConfigSpec.ConfigValue<Integer> RUBY_ORE_VEIN_SIZE;
-    public static final ForgeConfigSpec.ConfigValue<Integer> SAPPHIRE_ORE_VEINS_PER_CHUNK;
-    public static final ForgeConfigSpec.ConfigValue<Integer> SAPPHIRE_ORE_VEIN_SIZE;
-    public static final ForgeConfigSpec.ConfigValue<Integer> TIN_ORE_VEINS_PER_CHUNK;
-    public static final ForgeConfigSpec.ConfigValue<Integer> TIN_ORE_VEIN_SIZE;
-    public static final ForgeConfigSpec.ConfigValue<Integer> TUNGSTEN_ORE_VEINS_PER_CHUNK;
-    public static final ForgeConfigSpec.ConfigValue<Integer> TUNGSTEN_ORE_VEIN_SIZE;
-    //endregion
-    //region Endgame Tier Tool/Weapon Effect Chances AND Armor Set Damage Reduction
+    //region Endgame Equipment Tier configs
     public static final ForgeConfigSpec.ConfigValue<Integer> ENDGAME_TIER_EFFECT_SECONDS;
     public static final ForgeConfigSpec.ConfigValue<Integer> INFUSED_DIAMOND_EFFECT_CHANCE;
     public static final ForgeConfigSpec.ConfigValue<Integer> INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION;
@@ -38,81 +26,41 @@ public class ModCommonConfigs {
 
     //ACTUALLY CREATE CONFIG FILE HERE
     static {
-        BUILDER.push("Common configs for Simple Gearing Expansion");
-        BUILDER.pop();
-
+        Config.setInsertionOrderPreserved(true);
 
 
         //DEFINE CONFIGS HERE
-        //region Ore Generation
-        BUILDER.push("Ore Generation");
-
-        BUILDER.push("Carbonite Ore");
-        CARBONITE_ORE_VEINS_PER_CHUNK = BUILDER.comment("Number of Carbonite Ore veins that will spawn per chunk")
-                .define("Veins Per Chunk", 16);
-        CARBONITE_ORE_VEIN_SIZE = BUILDER.comment("Size of Carbonite Ore veins")
-                .defineInRange("Vein Size", 4, 2, 10);
-        BUILDER.pop();
-
-        BUILDER.push("Ruby Ore");
-        RUBY_ORE_VEINS_PER_CHUNK = BUILDER.comment("Number of Ruby Ore veins that will spawn per chunk")
-                .define("Veins Per Chunk", 7);
-        RUBY_ORE_VEIN_SIZE = BUILDER.comment("Size of Ruby Ore veins")
-                .defineInRange("Vein Size", 3, 2, 10);
-        BUILDER.pop();
-
-        BUILDER.push("Sapphire Ore");
-        SAPPHIRE_ORE_VEINS_PER_CHUNK = BUILDER.comment("Number of Sapphire Ore veins that will spawn per chunk")
-                .define("Veins Per Chunk", 7);
-        SAPPHIRE_ORE_VEIN_SIZE = BUILDER.comment("Size of Sapphire Ore veins")
-                .defineInRange("Vein Size", 3, 2, 10);
-        BUILDER.pop();
-
-        BUILDER.push("Tin Ore");
-        TIN_ORE_VEINS_PER_CHUNK = BUILDER.comment("Number of Tin Ore veins that will spawn per chunk")
-                        .define("Veins Per Chunk", 12);
-        TIN_ORE_VEIN_SIZE = BUILDER.comment("Size of regular Tin Ore veins")
-                        .defineInRange("Vein Size", 6, 3, 20);
-        BUILDER.pop();
-
-        BUILDER.push("Tungsten Ore");
-        TUNGSTEN_ORE_VEINS_PER_CHUNK = BUILDER.comment("Number of Tungsten Ore veins that will spawn per chunk")
-                .define("Veins Per Chunk", 14); //NOTE: includes rare ore generation (way less)
-        TUNGSTEN_ORE_VEIN_SIZE = BUILDER.comment("Size of regular Tungsten Ore veins")
-                .defineInRange("Vein Size", 12, 4, 20);
-        BUILDER.pop();
-
-        BUILDER.pop();
-        //endregion
         //region Endgame Equipment Tiers
-        BUILDER.push("Endgame Equipment Tiers");
-
-        BUILDER.push("All tiers");
+        BUILDER.comment("Endgame Equipment Tiers").push("endgame_tiers");
         ENDGAME_TIER_EFFECT_SECONDS = BUILDER.comment("Duration (in seconds) of effect applied by endgame tools and weapons")
-                        .defineInRange("Duration", 4, 1, 15);
+                        .defineInRange("endgame_tool_effect_duration", 4, 1, 10);
         BUILDER.pop();
 
-        BUILDER.push("Infused Diamond tier");
-        INFUSED_DIAMOND_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with Infused Diamond tools and weapons")
-                .defineInRange("Effect Chance", 17, 0, 100);
-        INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Magic damage reduction granted by a full set of Infused Diamond armor")
-                .defineInRange("Percent Damage Reduction", 33, 0, 100);
+        BUILDER.comment("Infused Diamond tier").push("infused_diamond");
+        INFUSED_DIAMOND_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with" +
+                        " Infused Diamond tools and weapons")
+                .defineInRange("infused_diamond_effect_chance", 17, 0, 100);
+        INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Magic damage reduction" +
+                        " granted by a full set of Infused Diamond armor")
+                .defineInRange("infused_diamond_damage_reduction", 33, 0, 100);
         BUILDER.pop();
 
-        BUILDER.push("Netherite tier");
-        NETHERITE_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with Netherite tools and weapons")
-                .defineInRange("Effect Chance", 20, 0, 100);
-        NETHERITE_FIRE_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Fire damage reduction granted by a full set of Netherite armor")
-                .defineInRange("Percent Damage Reduction", 33, 0, 100);
+        BUILDER.comment("Netherite tier").push("netherite");
+        NETHERITE_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with Netherite" +
+                        " tools and weapons")
+                .defineInRange("netherite_effect_chance", 20, 0, 100);
+        NETHERITE_FIRE_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Fire damage reduction granted by a" +
+                        " full set of Netherite armor")
+                .defineInRange("netherite_damage_reduction", 33, 0, 100);
         BUILDER.pop();
 
-        BUILDER.push("Tungsten-Carbide tier");
-        TUNGSTEN_CARBIDE_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with Tungsten-Carbide tools and weapons")
-                .defineInRange("Effect Chance", 25, 0, 100);
-        TUNGSTEN_CARBIDE_EXPLOSION_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Explosion damage reduction granted by a full set of Tungsten-Carbide armor")
-                .defineInRange("Percent Damage Reduction", 33, 0, 100);
-        BUILDER.pop();
-
+        BUILDER.comment("Tungsten-Carbide tier").push("tungsten_carbide");
+        TUNGSTEN_CARBIDE_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit" +
+                        " with Tungsten-Carbide tools and weapons")
+                .defineInRange("tungsten_carbide_effect_chance", 25, 0, 100);
+        TUNGSTEN_CARBIDE_EXPLOSION_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Explosion damage" +
+                        " reduction granted by a full set of Tungsten-Carbide armor")
+                .defineInRange("tungsten_carbide_damage_reduction", 33, 0, 100);
         BUILDER.pop();
         //endregion
 
