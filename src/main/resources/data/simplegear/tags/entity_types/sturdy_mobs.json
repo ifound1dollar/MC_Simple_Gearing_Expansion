@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:giant",
+    "minecraft:iron_golem",
+    "minecraft:polar_bear",
+    "minecraft:ravager",
+    "minecraft:turtle",
+    "minecraft:warden",
+    "simplegear:obsidian_golem"
+  ]
+}

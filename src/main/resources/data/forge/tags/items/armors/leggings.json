@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "simplegear:bronze_leggings",
+    "simplegear:gilded_bronze_leggings",
+    "simplegear:steel_leggings",
+    "simplegear:tungsten_leggings",
+    "simplegear:infused_diamond_leggings",
+    "simplegear:tungsten_carbide_leggings"
+  ]
+}

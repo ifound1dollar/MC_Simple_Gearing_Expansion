@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "simplegear:bronze_helmet",
+    "simplegear:gilded_bronze_helmet",
+    "simplegear:steel_helmet",
+    "simplegear:tungsten_helmet",
+    "simplegear:infused_diamond_helmet",
+    "simplegear:tungsten_carbide_helmet"
+  ]
+}

@@ -53,6 +53,6 @@ public class ModNetheriteHoeItem extends HoeItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(ModUtils.getNetheriteEquipmentTooltip(false));
+        ModUtils.appendNetheriteEquipmentTooltip(components, false);
     }
 }
