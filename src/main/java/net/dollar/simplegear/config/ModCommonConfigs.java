@@ -12,6 +12,7 @@ public class ModCommonConfigs {
 
 
 
+    public static final ForgeConfigSpec.ConfigValue<Integer> BASIC_UPGRADE_TEMPLATE_DROP_CHANCE;
     //region Endgame Equipment Tier configs
     public static final ForgeConfigSpec.ConfigValue<Integer> ENDGAME_WEAPON_BONUS_DAMAGE;
     public static final ForgeConfigSpec.ConfigValue<Integer> ENDGAME_TIER_EFFECT_SECONDS;
@@ -31,6 +32,12 @@ public class ModCommonConfigs {
 
 
         //DEFINE CONFIGS HERE
+
+        BUILDER.comment("Basic Upgrade Template").push("basic_upgrade_template");
+        BASIC_UPGRADE_TEMPLATE_DROP_CHANCE = BUILDER.comment("Drop chance (%) of Basic Upgrade Template from Monsters")
+                .defineInRange("basic_template_drop_chance", 1, 0, 100);
+        BUILDER.pop();
+
         //region Endgame Equipment Tiers
         BUILDER.comment("Endgame Equipment Tiers").push("endgame_tiers");
         ENDGAME_WEAPON_BONUS_DAMAGE = BUILDER.comment("Bonus damage (%) dealt by endgame weapons to certain mob types")

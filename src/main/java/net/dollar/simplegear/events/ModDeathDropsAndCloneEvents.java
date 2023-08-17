@@ -1,5 +1,6 @@
 package net.dollar.simplegear.events;
 
+import net.dollar.simplegear.config.ModCommonConfigs;
 import net.dollar.simplegear.item.ModItems;
 import net.dollar.simplegear.util.IInfusedDiamondItem;
 import net.minecraft.server.level.ServerPlayer;
@@ -79,8 +80,9 @@ public class ModDeathDropsAndCloneEvents {
                 return;
             }
 
-            //roll 1% chance to add ONE Generic Upgrade Template item entity as an additional drop
-            if (event.getEntity().getRandom().nextFloat() < 0.01) {
+            //roll chance (from config) to add ONE Generic Upgrade Template item entity as an additional drop
+            if (event.getEntity().getRandom().nextInt(0, 100)
+                    < ModCommonConfigs.BASIC_UPGRADE_TEMPLATE_DROP_CHANCE.get()) {
                 event.getDrops().add(new ItemEntity(monster.level(), monster.getX(), monster.getY(), monster.getZ(),
                         new ItemStack(ModItems.BASIC_UPGRADE_TEMPLATE.get())));
             }
