@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:tungsten_carbide_chestplate"
+    },
+    "title": "Cover Me with Tungsten-Carbide",
+    "description": "Equip a full set of Tungsten-Carbide armor",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "simplegear:armor_set_tungsten",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": [
+                "simplegear:tungsten_carbide_helmet"
+              ]
+            },
+            "chest": {
+              "items": [
+                "simplegear:tungsten_carbide_chestplate"
+              ]
+            },
+            "legs": {
+              "items": [
+                "simplegear:tungsten_carbide_leggings"
+              ]
+            },
+            "feet": {
+              "items": [
+                "simplegear:tungsten_carbide_boots"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

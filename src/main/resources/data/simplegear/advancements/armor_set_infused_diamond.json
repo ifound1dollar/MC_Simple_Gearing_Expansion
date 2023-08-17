@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:infused_diamond_chestplate"
+    },
+    "title": "Cover Me with Infused Diamond",
+    "description": "Equip a full set of Infused Diamond armor",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "simplegear:armor_set_diamond",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": [
+                "simplegear:infused_diamond_helmet"
+              ]
+            },
+            "chest": {
+              "items": [
+                "simplegear:infused_diamond_chestplate"
+              ]
+            },
+            "legs": {
+              "items": [
+                "simplegear:infused_diamond_leggings"
+              ]
+            },
+            "feet": {
+              "items": [
+                "simplegear:infused_diamond_boots"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}

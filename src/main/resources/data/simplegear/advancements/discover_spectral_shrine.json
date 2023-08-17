@@ -1,23 +1,23 @@
 {
   "display": {
     "icon": {
-      "item": "simplegear:infused_gemstone"
+      "item": "simplegear:spectral_lantern"
     },
-    "title": "§bSimple Gearing Expansion",
-    "description": "Joyous Journeys!",
+    "title": "A Spectral Discovery",
+    "description": "Discover a Spectral Shrine",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "background": "simplegear:textures/block/tungsten_block.png",
-    "hidden": false
+    "hidden": true
   },
+  "parent": "simplegear:simple_gearing_expansion",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:location",
       "conditions": {
         "player": {
           "location": {
-            "dimension": "minecraft:overworld"
+            "structure": "simplegear:spectral_shrine"
           }
         }
       }
