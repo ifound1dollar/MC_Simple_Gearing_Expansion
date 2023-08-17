@@ -100,6 +100,6 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(ModUtils.getTungstenCarbideEquipmentTooltip(true));
+        ModUtils.appendTungstenCarbideEquipmentTooltip(components, true);
     }
 }

@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "simplegear:stone_mace",
+    "simplegear:iron_mace",
+    "simplegear:gold_mace",
+    "simplegear:diamond_mace",
+    "simplegear:netherite_mace",
+    "simplegear:bronze_mace",
+    "simplegear:gilded_bronze_mace",
+    "simplegear:steel_mace",
+    "simplegear:tungsten_mace",
+    "simplegear:infused_diamond_mace",
+    "simplegear:tungsten_carbide_mace"
+  ]
+}

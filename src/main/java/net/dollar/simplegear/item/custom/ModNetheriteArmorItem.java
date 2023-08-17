@@ -94,7 +94,7 @@ public class ModNetheriteArmorItem extends ArmorItem implements IDamageHandlingA
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(ModUtils.getNetheriteEquipmentTooltip(true));
+        ModUtils.appendNetheriteEquipmentTooltip(components, true);
     }
 
 }

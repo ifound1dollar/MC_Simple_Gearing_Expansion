@@ -12,6 +12,7 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -87,17 +88,20 @@ public class ModUtils {
         }
     }
     /**
-     * Generates tooltip to be appended to all Infused Diamond equipment, different for armor and tools/weapons.
+     * Generates special tooltip for all Infused Diamond equipment and appends to Component list,
+     *  different for armor and tools/weapons.
+     * @param components List of Components to be appended
      * @param isArmor Whether tooltip should be generated for armor or tools/weapons
-     * @return Generated tooltip as Component
      */
-    public static Component getInfusedDiamondEquipmentTooltip(boolean isArmor) {
+    public static void appendInfusedDiamondEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            return Component.literal(String.format("§5Full Set: %s%% Magic damage reduction",
-                    ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get()));
+            components.add(Component.literal(String.format("§5> Full Set: %s%% Magic damage reduction",
+                    ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get())));
         } else {
-            return Component.literal(String.format("§5Chance on-hit: User gains Speed for %ss",
-                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get()));
+            components.add(Component.literal(String.format("§5> Chance on-hit: User gains Speed for %ss",
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
+            components.add(Component.literal(String.format("§5> Deals %s%% bonus damage to End mobs",
+                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
 
@@ -118,17 +122,20 @@ public class ModUtils {
         }
     }
     /**
-     * Generates tooltip to be appended to all Netherite equipment, different for armor and tools/weapons.
+     * Generates special tooltip for all Infused Diamond equipment and appends to Component list,
+     *  different for armor and tools/weapons.
+     * @param components List of Components to be appended
      * @param isArmor Whether tooltip should be generated for armor or tools/weapons
-     * @return Generated tooltip as Component
      */
-    public static Component getNetheriteEquipmentTooltip(boolean isArmor) {
+    public static void appendNetheriteEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            return Component.literal(String.format("§4Full Set: %s%% Fire damage reduction",
-                    ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get()));
+            components.add(Component.literal(String.format("§4> Full Set: %s%% Fire damage reduction",
+                    ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get())));
         } else {
-            return Component.literal(String.format("§4Chance on-hit: Wither target for %ss",
-                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get()));
+            components.add(Component.literal(String.format("§4> Chance on-hit: Wither target for %ss",
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
+            components.add(Component.literal(String.format("§4> Deals %s%% bonus damage to Nether mobs",
+                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
 
@@ -149,18 +156,20 @@ public class ModUtils {
         }
     }
     /**
-     * Generates tooltip to be appended to all Tungsten-Carbide equipment, different for armor and tools/weapons.
+     * Generates special tooltip for all Infused Diamond equipment and appends to Component list,
+     *  different for armor and tools/weapons.
+     * @param components List of Components to be appended
      * @param isArmor Whether tooltip should be generated for armor or tools/weapons
-     * @return Generated tooltip as Component
      */
-    public static Component getTungstenCarbideEquipmentTooltip(boolean isArmor) {
+    public static void appendTungstenCarbideEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            return Component.literal(String.format("§8Full Set: %s%% Explosion damage reduction",
-                    ModCommonConfigs.TUNGSTEN_CARBIDE_EXPLOSION_DAMAGE_REDUCTION.get()));
+            components.add(Component.literal(String.format("§8> Full Set: %s%% Explosion damage reduction",
+                    ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get())));
         } else {
-            return Component.literal(String.format("§8Chance on-hit: Slow target for %ss",
-                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get()));
+            components.add(Component.literal(String.format("§8> Chance on-hit: Slow target for %ss",
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
+            components.add(Component.literal(String.format("§8> Deals %s%% bonus damage to Sturdy mobs",
+                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
-
 }

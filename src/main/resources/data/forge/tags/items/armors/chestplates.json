@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "simplegear:bronze_chestplate",
+    "simplegear:gilded_bronze_chestplate",
+    "simplegear:steel_chestplate",
+    "simplegear:tungsten_chestplate",
+    "simplegear:infused_diamond_chestplate",
+    "simplegear:tungsten_carbide_chestplate"
+  ]
+}

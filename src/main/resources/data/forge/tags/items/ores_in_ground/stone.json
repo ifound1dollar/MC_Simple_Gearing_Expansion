@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "simplegear:ruby_ore",
+    "simplegear:sapphire_ore",
+    "simplegear:carbonite_ore",
+    "simplegear:tin_ore",
+    "simplegear:tungsten_ore"
+  ]
+}

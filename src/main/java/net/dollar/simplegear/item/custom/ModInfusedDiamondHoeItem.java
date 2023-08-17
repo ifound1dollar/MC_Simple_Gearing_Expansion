@@ -50,6 +50,6 @@ public class ModInfusedDiamondHoeItem extends HoeItem implements IInfusedDiamond
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(ModUtils.getInfusedDiamondEquipmentTooltip(false));
+        ModUtils.appendInfusedDiamondEquipmentTooltip(components, false);
     }
 }

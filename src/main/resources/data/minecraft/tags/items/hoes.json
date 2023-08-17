@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "simplegear:bronze_hoe",
+    "simplegear:gilded_bronze_hoe",
+    "simplegear:steel_hoe",
+    "simplegear:tungsten_hoe",
+    "simplegear:infused_diamond_hoe",
+    "simplegear:tungsten_carbide_hoe"
+  ]
+}

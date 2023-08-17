@@ -65,6 +65,6 @@ public class ModTungstenCarbideSwordItem extends SwordItem {
      * @param flag TooltipFlag determining whether NORMAL or ADVANCED
      */
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(ModUtils.getTungstenCarbideEquipmentTooltip(false));
+        ModUtils.appendTungstenCarbideEquipmentTooltip(components, false);
     }
 }

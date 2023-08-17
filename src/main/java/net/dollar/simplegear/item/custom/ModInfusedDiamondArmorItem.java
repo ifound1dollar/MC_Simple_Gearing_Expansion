@@ -80,6 +80,6 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(ModUtils.getInfusedDiamondEquipmentTooltip(true));
+        ModUtils.appendInfusedDiamondEquipmentTooltip(components, true);
     }
 }
