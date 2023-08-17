@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:steel_chestplate"
+    },
+    "title": "Cover Me with Steel",
+    "description": "Equip a full set of Steel armor",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "simplegear:armor_set_iron",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": [
+                "simplegear:steel_helmet"
+              ]
+            },
+            "chest": {
+              "items": [
+                "simplegear:steel_chestplate"
+              ]
+            },
+            "legs": {
+              "items": [
+                "simplegear:steel_leggings"
+              ]
+            },
+            "feet": {
+              "items": [
+                "simplegear:steel_boots"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 25
+  }
+}

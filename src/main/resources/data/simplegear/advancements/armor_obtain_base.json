@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:steel_helmet"
+    },
+    "title": "Suit Up, But Better!",
+    "description": "Obtain any new armor item from Simple Gearing Expansion",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "simplegear:simple_gearing_expansion",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "simplegear:bronze_helmet",
+              "simplegear:gilded_bronze_helmet",
+              "simplegear:steel_helmet",
+              "simplegear:tungsten_helmet",
+              "simplegear:infused_diamond_helmet",
+              "simplegear:tungsten_carbide_helmet",
+
+              "simplegear:bronze_chestplate",
+              "simplegear:gilded_bronze_chestplate",
+              "simplegear:steel_chestplate",
+              "simplegear:tungsten_chestplate",
+              "simplegear:infused_diamond_chestplate",
+              "simplegear:tungsten_carbide_chestplate",
+
+              "simplegear:bronze_leggings",
+              "simplegear:gilded_bronze_leggings",
+              "simplegear:steel_leggings",
+              "simplegear:tungsten_leggings",
+              "simplegear:infused_diamond_leggings",
+              "simplegear:tungsten_carbide_leggings",
+
+              "simplegear:bronze_boots",
+              "simplegear:gilded_bronze_boots",
+              "simplegear:steel_boots",
+              "simplegear:tungsten_boots",
+              "simplegear:infused_diamond_boots",
+              "simplegear:tungsten_carbide_boots"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

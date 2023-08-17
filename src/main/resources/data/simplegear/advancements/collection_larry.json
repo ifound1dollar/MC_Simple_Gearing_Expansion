@@ -7,7 +7,7 @@
     "description": "Slay Larry while given his secret name, 'Kevin', then pick up his Secret Identity",
     "frame": "task",
     "show_toast": true,
-    "annouce_to_chat": true
+    "announce_to_chat": true
   },
   "parent": "simplegear:collection_base",
   "criteria": {

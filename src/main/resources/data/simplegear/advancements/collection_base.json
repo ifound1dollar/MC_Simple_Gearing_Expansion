@@ -4,10 +4,10 @@
       "item": "simplegear:steel_sword"
     },
     "title": "To Collect Artifacts",
-    "description": "Attack any of the new mobs from Simple Gearing Expansion",
+    "description": "Attack any new mob from Simple Gearing Expansion",
     "frame": "task",
     "show_toast": true,
-    "annouce_to_chat": true
+    "announce_to_chat": true
   },
   "parent": "simplegear:simple_gearing_expansion",
   "criteria": {
