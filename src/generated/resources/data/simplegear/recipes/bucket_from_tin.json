@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "d": {
-      "item": "simplegear:tin_ingot"
+      "tag": "forge:ingots/tin"
     }
   },
   "pattern": [

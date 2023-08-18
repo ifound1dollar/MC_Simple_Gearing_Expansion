@@ -3,10 +3,10 @@
   "category": "equipment",
   "key": {
     "d": {
-      "item": "minecraft:gold_ingot"
+      "tag": "forge:ingots/gold"
     },
     "i": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     }
   },
   "pattern": [

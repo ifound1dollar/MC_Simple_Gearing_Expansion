@@ -3,16 +3,16 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:copper_ingot"
+      "tag": "forge:ingots/copper"
     },
     {
-      "item": "minecraft:copper_ingot"
+      "tag": "forge:ingots/copper"
     },
     {
-      "item": "minecraft:copper_ingot"
+      "tag": "forge:ingots/copper"
     },
     {
-      "item": "simplegear:tin_ingot"
+      "tag": "forge:ingots/tin"
     }
   ],
   "result": {

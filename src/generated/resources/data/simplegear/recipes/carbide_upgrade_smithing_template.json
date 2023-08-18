@@ -6,7 +6,7 @@
       "item": "simplegear:carbide_upgrade_smithing_template"
     },
     "i": {
-      "item": "minecraft:obsidian"
+      "tag": "forge:obsidian"
     },
     "n": {
       "item": "simplegear:tungsten_ingot"

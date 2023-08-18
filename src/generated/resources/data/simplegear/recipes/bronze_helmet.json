@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "d": {
-      "item": "simplegear:bronze_ingot"
+      "tag": "forge:ingots/bronze"
     }
   },
   "pattern": [

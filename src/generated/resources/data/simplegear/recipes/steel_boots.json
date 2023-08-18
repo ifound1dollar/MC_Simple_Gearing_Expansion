@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "d": {
-      "item": "simplegear:steel_ingot"
+      "tag": "forge:ingots/steel"
     }
   },
   "pattern": [

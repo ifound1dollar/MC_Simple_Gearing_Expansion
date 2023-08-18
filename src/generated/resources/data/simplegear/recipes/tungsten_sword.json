@@ -3,10 +3,10 @@
   "category": "equipment",
   "key": {
     "d": {
-      "item": "simplegear:tungsten_ingot"
+      "tag": "forge:ingots/tungsten"
     },
     "i": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     }
   },
   "pattern": [

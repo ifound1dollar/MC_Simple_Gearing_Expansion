@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "d": {
-      "item": "simplegear:tungsten_ingot"
+      "tag": "forge:ingots/tungsten"
     }
   },
   "pattern": [

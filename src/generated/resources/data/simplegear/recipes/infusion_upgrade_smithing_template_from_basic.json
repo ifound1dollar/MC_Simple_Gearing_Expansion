@@ -6,10 +6,10 @@
       "item": "simplegear:basic_upgrade_template"
     },
     "i": {
-      "item": "minecraft:deepslate"
+      "tag": "forge:deepslate"
     },
     "n": {
-      "item": "minecraft:diamond"
+      "tag": "forge:gems/diamond"
     }
   },
   "pattern": [

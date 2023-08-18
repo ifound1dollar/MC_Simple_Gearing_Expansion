@@ -6,10 +6,10 @@
       "item": "simplegear:basic_upgrade_template"
     },
     "i": {
-      "item": "minecraft:netherrack"
+      "tag": "forge:netherrack"
     },
     "n": {
-      "item": "minecraft:diamond"
+      "tag": "forge:gems/diamond"
     }
   },
   "pattern": [

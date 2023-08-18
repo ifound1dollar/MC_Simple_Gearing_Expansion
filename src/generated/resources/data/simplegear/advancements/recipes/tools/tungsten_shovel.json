@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "simplegear:tungsten_ingot"
-            ]
+            "tag": "forge:ingots/tungsten"
           }
         ]
       },

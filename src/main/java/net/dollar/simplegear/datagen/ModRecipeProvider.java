@@ -4,16 +4,19 @@ import net.dollar.simplegear.SimpleGearingExpansion;
 import net.dollar.simplegear.block.ModBlocks;
 import net.dollar.simplegear.item.ModItems;
 import net.dollar.simplegear.util.ModLegacySmithingRecipeBuilder;
+import net.dollar.simplegear.util.ModTags;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -126,58 +129,58 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //region Misc.
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BUCKET, 1)
-                .define('d', ModItems.TIN_INGOT.get())
+                .define('d', ModTags.Items.FORGE_INGOTS_TIN)
                 .pattern("   ")
                 .pattern("d d")
                 .pattern(" d ")
                 .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.TIN_INGOT.get()).build()))
+                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":bucket_from_tin");
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TIN_SHEARS.get(), 1)
-                .define('d', ModItems.TIN_INGOT.get())
+                .define('d', ModTags.Items.FORGE_INGOTS_TIN)
                 .pattern(" d")
                 .pattern("d ")
                 .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.TIN_INGOT.get()).build()))
+                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
                 .save(consumer);
         //endregion
 
         //region Compounds and Gemstone (shapeless)
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)
-                .requires(Items.COPPER_INGOT, 3)
-                .requires(ModItems.TIN_INGOT.get())
-                .unlockedBy("has_raw_tin", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.RAW_TIN.get()).build()))
+                .requires(Ingredient.of(Tags.Items.INGOTS_COPPER), 3)
+                .requires(ModTags.Items.FORGE_INGOTS_TIN)
+                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STEEL_COMPOUND.get(), 1)
-                .requires(Items.IRON_INGOT, 1)
-                .requires(ModItems.CARBONITE_DUST.get())
+                .requires(Tags.Items.INGOTS_IRON)
+                .requires(ModTags.Items.FORGE_DUSTS_CARBONITE)
                 .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.CARBONITE_DUST.get()).build()))
+                        .of(ModTags.Items.FORGE_DUSTS_CARBONITE).build()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COMPOUND_GEMSTONE.get(), 1)
-                .requires(Items.AMETHYST_SHARD)
-                .requires(Items.EMERALD)
-                .requires(ModItems.RUBY.get())
-                .requires(ModItems.SAPPHIRE.get())
-                .requires(Items.DIAMOND)
+                .requires(Tags.Items.GEMS_AMETHYST)
+                .requires(Tags.Items.GEMS_EMERALD)
+                .requires(ModTags.Items.FORGE_GEMS_RUBY)
+                .requires(ModTags.Items.FORGE_GEMS_SAPPHIRE)
+                .requires(Tags.Items.GEMS_DIAMOND)
                 .unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(Items.DIAMOND).build()))
+                        .of(Tags.Items.GEMS_DIAMOND).build()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1)
-                .requires(ModItems.TUNGSTEN_INGOT.get(), 4)
-                .requires(ModItems.CARBONITE_DUST.get(), 4)
+                .requires(Ingredient.of(ModTags.Items.FORGE_INGOTS_TUNGSTEN), 4)
+                .requires(Ingredient.of(ModTags.Items.FORGE_DUSTS_CARBONITE), 4)
                 .requires(ModItems.MOLTEN_CORE.get(), 1)
-                .unlockedBy("has_superheated_core", inventoryTrigger(ItemPredicate.Builder.item()
+                .unlockedBy("has_molten_core", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.MOLTEN_CORE.get()).build()))
                 .save(consumer);
         //endregion
 
         //region Upgrade Templates
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(), 1)
-                .define('d', ModItems.BRONZE_INGOT.get())
-                .define('i', Items.STONE)
-                .define('n', Items.GOLD_NUGGET)
+                .define('d', ModTags.Items.FORGE_INGOTS_BRONZE)
+                .define('i', Tags.Items.STONE)
+                .define('n', Tags.Items.NUGGETS_GOLD)
                 .pattern("ndn")
                 .pattern("nin")
                 .pattern("nnn")
@@ -186,19 +189,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 1)
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
-                .define('i', Items.DEEPSLATE)
-                .define('n', Items.DIAMOND)
+                .define('i', ModTags.Items.FORGE_DEEPSLATE)
+                .define('n', Tags.Items.GEMS_DIAMOND)
                 .pattern(" d ")
                 .pattern("nin")
                 .pattern(" n ")
-                .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
+                .unlockedBy("has_basic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":infusion_upgrade_smithing_template_from_basic");
         //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get())
-                .define('i', Items.DEEPSLATE)
-                .define('n', Items.DIAMOND)
+                .define('i', ModTags.Items.FORGE_DEEPSLATE)
+                .define('n', Tags.Items.GEMS_DIAMOND)
                 .pattern("ndn")
                 .pattern("nin")
                 .pattern("nnn")
@@ -207,18 +210,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 1)
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
-                .define('i', Items.OBSIDIAN)
+                .define('i', Tags.Items.OBSIDIAN)
                 .define('n', ModItems.TUNGSTEN_INGOT.get())
                 .pattern(" d ")
                 .pattern("nin")
                 .pattern(" n ")
-                .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
+                .unlockedBy("has_basic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":carbide_upgrade_smithing_template_from_basic");
         //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('d', ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get())
-                .define('i', Items.OBSIDIAN)
+                .define('i', Tags.Items.OBSIDIAN)
                 .define('n', ModItems.TUNGSTEN_INGOT.get())
                 .pattern("ndn")
                 .pattern("nin")
@@ -229,12 +232,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //NOTE: below recipe has custom name for clarity purposes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, 1)
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
-                .define('i', Items.NETHERRACK)
-                .define('n', Items.DIAMOND)
+                .define('i', Tags.Items.NETHERRACK)
+                .define('n', Tags.Items.GEMS_DIAMOND)
                 .pattern(" d ")
                 .pattern("nin")
                 .pattern(" n ")
-                .unlockedBy("has_generic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
+                .unlockedBy("has_basic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":netherite_upgrade_smithing_template_from_basic");
         //endregion
@@ -242,122 +245,123 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
         //region VANILLA TIER MACES
-        toolRecipeBuilder(consumer, ToolType.MACE, Items.COBBLESTONE, ModItems.STONE_MACE.get(),
+        toolRecipeBuilder(consumer, ToolType.MACE, Tags.Items.COBBLESTONE, ModItems.STONE_MACE.get(),
                 "has_cobblestone");
-        toolRecipeBuilder(consumer, ToolType.MACE, Items.IRON_INGOT, ModItems.IRON_MACE.get(),
+        toolRecipeBuilder(consumer, ToolType.MACE, Tags.Items.INGOTS_IRON, ModItems.IRON_MACE.get(),
                 "has_iron_ingot");
-        toolRecipeBuilder(consumer, ToolType.MACE, Items.GOLD_INGOT, ModItems.GOLD_MACE.get(),
+        toolRecipeBuilder(consumer, ToolType.MACE, Tags.Items.INGOTS_GOLD, ModItems.GOLD_MACE.get(),
                 "has_gold_ingot");
-        toolRecipeBuilder(consumer, ToolType.MACE, Items.DIAMOND, ModItems.DIAMOND_MACE.get(),
+        toolRecipeBuilder(consumer, ToolType.MACE, Tags.Items.GEMS_DIAMOND, ModItems.DIAMOND_MACE.get(),
                 "has_diamond");
-        smithingUpgradeRecipeBuilder(consumer, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
-                ModItems.DIAMOND_MACE.get(), Items.NETHERITE_INGOT, RecipeCategory.COMBAT,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.DIAMOND_MACE.get(), Tags.Items.INGOTS_NETHERITE, RecipeCategory.COMBAT,
                 ModItems.NETHERITE_MACE.get(), "has_netherite_ingot");
         //endregion
 
         //region BRONZE ARMOR, TOOLS
-        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.BRONZE_INGOT, ModItems.BRONZE_HELMET,
+        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_HELMET,
                 "has_bronze_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModItems.BRONZE_INGOT, ModItems.BRONZE_CHESTPLATE,
+        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_CHESTPLATE,
                 "has_bronze_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModItems.BRONZE_INGOT, ModItems.BRONZE_LEGGINGS,
+        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_LEGGINGS,
                 "has_bronze_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.BRONZE_INGOT, ModItems.BRONZE_BOOTS,
+        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_BOOTS,
                 "has_bronze_ingot");
 
-        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_AXE.get(),
+        toolRecipeBuilder(consumer, ToolType.AXE, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_AXE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_HOE.get(),
+        toolRecipeBuilder(consumer, ToolType.HOE, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_HOE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_MACE.get(),
+        toolRecipeBuilder(consumer, ToolType.MACE, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_MACE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_PICKAXE.get(),
+        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_PICKAXE.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_SHOVEL.get(),
+        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_SHOVEL.get(),
                 "has_bronze_ingot");
-        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.BRONZE_INGOT.get(), ModItems.BRONZE_SWORD.get(),
+        toolRecipeBuilder(consumer, ToolType.SWORD, ModTags.Items.FORGE_INGOTS_BRONZE, ModItems.BRONZE_SWORD.get(),
                 "has_bronze_ingot");
         //endregion
 
         //region GILDED BRONZE ARMOR, TOOLS (smithing)
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_HELMET.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
+        //NOTE: Gilded Bronze can use a Gold Ingot TAG ingredient
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_HELMET.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_HELMET.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_CHESTPLATE.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_CHESTPLATE.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_CHESTPLATE.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_LEGGINGS.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_LEGGINGS.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_LEGGINGS.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_BOOTS.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_BOOTS.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_BOOTS.get(), "has_gold_ingot");
 
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_AXE.get(), Items.GOLD_INGOT, RecipeCategory.TOOLS,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_AXE.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.TOOLS,
                 ModItems.GILDED_BRONZE_AXE.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_HOE.get(), Items.GOLD_INGOT, RecipeCategory.TOOLS,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_HOE.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.TOOLS,
                 ModItems.GILDED_BRONZE_HOE.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_MACE.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_MACE.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_MACE.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_PICKAXE.get(), Items.GOLD_INGOT, RecipeCategory.TOOLS,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_PICKAXE.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.TOOLS,
                 ModItems.GILDED_BRONZE_PICKAXE.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_SHOVEL.get(), Items.GOLD_INGOT, RecipeCategory.TOOLS,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_SHOVEL.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.TOOLS,
                 ModItems.GILDED_BRONZE_SHOVEL.get(), "has_gold_ingot");
-        smithingUpgradeRecipeBuilder(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
-                ModItems.BRONZE_SWORD.get(), Items.GOLD_INGOT, RecipeCategory.COMBAT,
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, ModItems.GILDED_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.BRONZE_SWORD.get(), Tags.Items.INGOTS_GOLD, RecipeCategory.COMBAT,
                 ModItems.GILDED_BRONZE_SWORD.get(), "has_gold_ingot");
         //endregion
 
         //region STEEL ARMOR, TOOLS
-        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.STEEL_INGOT, ModItems.STEEL_HELMET,
+        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_HELMET,
                 "has_steel_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModItems.STEEL_INGOT, ModItems.STEEL_CHESTPLATE,
+        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_CHESTPLATE,
                 "has_steel_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModItems.STEEL_INGOT, ModItems.STEEL_LEGGINGS,
+        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_LEGGINGS,
                 "has_steel_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.STEEL_INGOT, ModItems.STEEL_BOOTS,
+        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_BOOTS,
                 "has_steel_ingot");
 
-        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_AXE.get(),
+        toolRecipeBuilder(consumer, ToolType.AXE, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_AXE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_HOE.get(),
+        toolRecipeBuilder(consumer, ToolType.HOE, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_HOE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_MACE.get(),
+        toolRecipeBuilder(consumer, ToolType.MACE, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_MACE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.STEEL_INGOT.get(), ModItems.STEEL_PICKAXE.get(),
+        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_PICKAXE.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.STEEL_INGOT.get(), ModItems.STEEL_SHOVEL.get(),
+        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_SHOVEL.get(),
                 "has_steel_ingot");
-        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.STEEL_INGOT.get(), ModItems.STEEL_SWORD.get(),
+        toolRecipeBuilder(consumer, ToolType.SWORD, ModTags.Items.FORGE_INGOTS_STEEL, ModItems.STEEL_SWORD.get(),
                 "has_steel_ingot");
         //endregion
 
         //region TUNGSTEN ARMOR, TOOLS
-        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_HELMET,
+        armorRecipeBuilder(consumer, EquipmentSlot.HEAD, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_HELMET,
                 "has_tungsten_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_CHESTPLATE,
+        armorRecipeBuilder(consumer, EquipmentSlot.CHEST, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_CHESTPLATE,
                 "has_tungsten_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_LEGGINGS,
+        armorRecipeBuilder(consumer, EquipmentSlot.LEGS, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_LEGGINGS,
                 "has_tungsten_ingot");
-        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModItems.TUNGSTEN_INGOT, ModItems.TUNGSTEN_BOOTS,
+        armorRecipeBuilder(consumer, EquipmentSlot.FEET, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_BOOTS,
                 "has_tungsten_ingot");
 
-        toolRecipeBuilder(consumer, ToolType.AXE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_AXE.get(),
+        toolRecipeBuilder(consumer, ToolType.AXE, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_AXE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.HOE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_HOE.get(),
+        toolRecipeBuilder(consumer, ToolType.HOE, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_HOE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.MACE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_MACE.get(),
+        toolRecipeBuilder(consumer, ToolType.MACE, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_MACE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_PICKAXE.get(),
+        toolRecipeBuilder(consumer, ToolType.PICKAXE, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_PICKAXE.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_SHOVEL.get(),
+        toolRecipeBuilder(consumer, ToolType.SHOVEL, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_SHOVEL.get(),
                 "has_tungsten_ingot");
-        toolRecipeBuilder(consumer, ToolType.SWORD, ModItems.TUNGSTEN_INGOT.get(), ModItems.TUNGSTEN_SWORD.get(),
+        toolRecipeBuilder(consumer, ToolType.SWORD, ModTags.Items.FORGE_INGOTS_TUNGSTEN, ModItems.TUNGSTEN_SWORD.get(),
                 "has_tungsten_ingot");
         //endregion
 
@@ -441,41 +445,41 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param unlockedByString Tag used for unlocking crafting recipe
      */
     private void armorRecipeBuilder(Consumer<FinishedRecipe> consumer, EquipmentSlot slot,
-                                    RegistryObject<Item> ingredient, RegistryObject<Item> result,
+                                    TagKey<Item> ingredient, RegistryObject<Item> result,
                                     String unlockedByString) {
         if (slot == EquipmentSlot.HEAD) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get(), 1)  //third param is quantity
-                    .define('d', ingredient.get())
+                    .define('d', ingredient)
                     .pattern("ddd")
                     .pattern("d d")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (slot == EquipmentSlot.CHEST) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get(), 1)
-                    .define('d', ingredient.get())
+                    .define('d', ingredient)
                     .pattern("d d")
                     .pattern("ddd")
                     .pattern("ddd")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (slot == EquipmentSlot.LEGS) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get(), 1)
-                    .define('d', ingredient.get())
+                    .define('d', ingredient)
                     .pattern("ddd")
                     .pattern("d d")
                     .pattern("d d")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else if (slot == EquipmentSlot.FEET) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get(), 1)
-                    .define('d', ingredient.get())
+                    .define('d', ingredient)
                     .pattern("d d")
                     .pattern("d d")
                     .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient.get()).build()))
+                            .of(ingredient).build()))
                     .save(consumer);
         } else {
             SimpleGearingExpansion.LOGGER.debug("Invalid EquipmentSlot provided to armorRecipeBuilder.");
@@ -491,11 +495,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param unlockedByString Tag used for unlocking crafting recipe
      */
     private void toolRecipeBuilder(Consumer<FinishedRecipe> consumer, ToolType toolType,
-                                   Item ingredient, Item result, String unlockedByString) {
+                                   TagKey<Item> ingredient, Item result, String unlockedByString) {
         if (toolType == ToolType.AXE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)  //third param is quantity
                     .define('d', ingredient)
-                    .define('i', Items.STICK)
+                    .define('i', Tags.Items.RODS_WOODEN)
                     .pattern("dd")
                     .pattern("di")
                     .pattern(" i")
@@ -505,7 +509,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         } else if (toolType == ToolType.HOE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
                     .define('d', ingredient)
-                    .define('i', Items.STICK)
+                    .define('i', Tags.Items.RODS_WOODEN)
                     .pattern("dd")
                     .pattern(" i")
                     .pattern(" i")
@@ -515,7 +519,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         } else if (toolType == ToolType.MACE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result, 1)
                     .define('d', ingredient)
-                    .define('i', Items.STICK)
+                    .define('i', Tags.Items.RODS_WOODEN)
                     .pattern(" dd")
                     .pattern(" id")
                     .pattern("i  ")
@@ -525,7 +529,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         } else if (toolType == ToolType.PICKAXE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
                     .define('d', ingredient)
-                    .define('i', Items.STICK)
+                    .define('i', Tags.Items.RODS_WOODEN)
                     .pattern("ddd")
                     .pattern(" i ")
                     .pattern(" i ")
@@ -535,7 +539,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         } else if (toolType == ToolType.SHOVEL) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
                     .define('d', ingredient)
-                    .define('i', Items.STICK)
+                    .define('i', Tags.Items.RODS_WOODEN)
                     .pattern("d")
                     .pattern("i")
                     .pattern("i")
@@ -545,7 +549,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         } else if (toolType == ToolType.SWORD) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result, 1)
                     .define('d', ingredient)
-                    .define('i', Items.STICK)
+                    .define('i', Tags.Items.RODS_WOODEN)
                     .pattern("d")
                     .pattern("d")
                     .pattern("i")
@@ -559,6 +563,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     /**
      * Helper to automatically generate LEGACY smithing recipes for Minecraft versions before 1.20.
+     *  NOTE: Smithing recipes are specifically item-to-item, and should never use tags.
      * @param consumer Consumer of FinishedRecipe
      * @param upgradeItem Item being upgraded
      * @param ingredient Upgrade ingredient Item
@@ -577,7 +582,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     /**
-     * Helper to automatically generate smithing recipes (1.20+).
+     * Helper to automatically generate smithing recipes (1.20+). NOTE: Smithing recipes are
+     *  specifically item-to-item, and should never use tags.
      * @param consumer Consumer of FinishedRecipe
      * @param template Required upgrade template Item
      * @param upgradeItem Item being upgraded
@@ -596,10 +602,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         + "_smithing");
     }
 
+    private void smithingUpgradeRecipeBuilderTagIngredient(Consumer<FinishedRecipe> consumer, Item template, Item upgradeItem,
+                                                        TagKey<Item> ingredient, RecipeCategory category, Item result,
+                                                        String unlockedByString) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(template), Ingredient.of(upgradeItem),
+                        Ingredient.of(ingredient), category, result)
+                .unlocks(unlockedByString, has(ingredient))
+                .save(consumer, new ResourceLocation(SimpleGearingExpansion.MOD_ID, getItemName(result))
+                        + "_smithing");
+    }
+
 
 
     /**
-     * Builds a smelting recipe and writes it to a JSON file.
+     * Builds a smelting recipe and writes it to a JSON file. NOTE: Smelting and Blasting recipes are
+     *  specifically item-to-item, and should never use tags.
      * @param consumer Consumer of FinishedRecipe
      * @param ingredientItemLike ItemLike that will be blasted
      * @param category Recipe category
@@ -621,7 +638,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     /**
-     * Builds a blasting recipe and writes it to a JSON file.
+     * Builds a blasting recipe and writes it to a JSON file. NOTE: Smelting and Blasting recipes are
+     *  specifically item-to-item, and should never use tags.
      * @param consumer Consumer of FinishedRecipe
      * @param ingredientItemLike ItemLike that will be blasted
      * @param category Recipe category

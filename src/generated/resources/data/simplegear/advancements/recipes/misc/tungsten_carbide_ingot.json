@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_superheated_core": {
+    "has_molten_core": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_superheated_core",
+      "has_molten_core",
       "has_the_recipe"
     ]
   ],

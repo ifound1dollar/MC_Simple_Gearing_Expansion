@@ -6,7 +6,7 @@
       "item": "simplegear:basic_upgrade_template"
     },
     "i": {
-      "item": "minecraft:obsidian"
+      "tag": "forge:obsidian"
     },
     "n": {
       "item": "simplegear:tungsten_ingot"

@@ -25,7 +25,7 @@ import java.util.UUID;
  */
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModDeathDropsAndCloneEvents {
-    private static HashMap<UUID, ItemStack[]> storedInventories = new HashMap<>();
+    private static final HashMap<UUID, ItemStack[]> storedInventories = new HashMap<>();
 
 
 

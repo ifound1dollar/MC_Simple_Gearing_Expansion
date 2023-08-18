@@ -11,9 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "simplegear:tin_ingot"
-            ]
+            "tag": "forge:ingots/tin"
           }
         ]
       },

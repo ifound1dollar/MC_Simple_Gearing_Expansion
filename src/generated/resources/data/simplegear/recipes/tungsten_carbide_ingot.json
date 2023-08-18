@@ -3,28 +3,28 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "simplegear:tungsten_ingot"
+      "tag": "forge:ingots/tungsten"
     },
     {
-      "item": "simplegear:tungsten_ingot"
+      "tag": "forge:ingots/tungsten"
     },
     {
-      "item": "simplegear:tungsten_ingot"
+      "tag": "forge:ingots/tungsten"
     },
     {
-      "item": "simplegear:tungsten_ingot"
+      "tag": "forge:ingots/tungsten"
     },
     {
-      "item": "simplegear:carbonite_dust"
+      "tag": "forge:dusts/carbonite"
     },
     {
-      "item": "simplegear:carbonite_dust"
+      "tag": "forge:dusts/carbonite"
     },
     {
-      "item": "simplegear:carbonite_dust"
+      "tag": "forge:dusts/carbonite"
     },
     {
-      "item": "simplegear:carbonite_dust"
+      "tag": "forge:dusts/carbonite"
     },
     {
       "item": "simplegear:molten_core"

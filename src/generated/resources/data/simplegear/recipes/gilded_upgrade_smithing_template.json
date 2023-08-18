@@ -3,13 +3,13 @@
   "category": "misc",
   "key": {
     "d": {
-      "item": "simplegear:bronze_ingot"
+      "tag": "forge:ingots/bronze"
     },
     "i": {
-      "item": "minecraft:stone"
+      "tag": "forge:stone"
     },
     "n": {
-      "item": "minecraft:gold_nugget"
+      "tag": "forge:nuggets/gold"
     }
   },
   "pattern": [
