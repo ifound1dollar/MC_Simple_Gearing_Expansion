@@ -103,7 +103,6 @@ public class ModTags {
 
 
 
-
         /**
          * Generate a forge item tag. NOTE: ItemTags.create() method auto-inserts the 'item/' path
          *  before the JSON file name.
