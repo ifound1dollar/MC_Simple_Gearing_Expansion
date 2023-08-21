@@ -1,4 +1,4 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.infused;
 
 import net.dollar.simplegear.tile.ModSpectralLanternBlockEntity;
 import net.dollar.simplegear.util.IInfusedDiamondItem;

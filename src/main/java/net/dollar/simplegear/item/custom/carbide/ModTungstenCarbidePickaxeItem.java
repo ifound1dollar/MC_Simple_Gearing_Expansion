@@ -1,4 +1,4 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.carbide;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
 import net.dollar.simplegear.util.ModUtils;

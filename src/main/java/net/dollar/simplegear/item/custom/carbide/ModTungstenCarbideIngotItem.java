@@ -1,4 +1,4 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.carbide;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.DamageTypeTags;
@@ -12,10 +12,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Used specifically for the Netherite Ingot, which is fire-resistant and has custom hover text.
+ * Used specifically for the Tungsten-Carbide Ingot, which is fire and explosion resistant and has
+ *  custom hover text.
  */
-public class ModNetheriteIngotItem extends Item {
-    public ModNetheriteIngotItem(Properties p_41383_) {
+public class ModTungstenCarbideIngotItem extends Item {
+    public ModTungstenCarbideIngotItem(Properties p_41383_) {
         super(p_41383_);
     }
 
@@ -31,6 +32,17 @@ public class ModNetheriteIngotItem extends Item {
     }
 
     /**
+     * Gets whether Entities of this Item can be hurt by a specific DamageSource (false for Fire and Explosion).
+     * @param source DamageSource being checked
+     * @return Whether this Item can be hurt by the DamageSource
+     */
+    @Override
+    public boolean canBeHurtBy(DamageSource source) {
+        //entity cannot be destroyed by explosions or fire
+        return !(source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_EXPLOSION));
+    }
+
+    /**
      * Appends text to the Item's hover tooltip (lore).
      * @param stack ItemStack corresponding to this Item
      * @param level Active level
@@ -39,6 +51,6 @@ public class ModNetheriteIngotItem extends Item {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§4Nether metal, impervious to heat"));
+        components.add(Component.literal("§8The densest material known to exist"));
     }
 }

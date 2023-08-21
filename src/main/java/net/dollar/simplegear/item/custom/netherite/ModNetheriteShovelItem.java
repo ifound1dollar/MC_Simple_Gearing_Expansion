@@ -1,4 +1,4 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.netherite;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
 import net.dollar.simplegear.util.ModUtils;
@@ -11,11 +11,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Used specifically for the Netherite Hoe, which has custom on-hit effect chance, is fire-resistant,
+ * Used specifically for the Netherite Shovel, which has custom on-hit effect chance, is fire-resistant,
  *  and has custom hover text.
  */
-public class ModNetheriteHoeItem extends HoeItem {
-    public ModNetheriteHoeItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
+public class ModNetheriteShovelItem extends ShovelItem {
+    public ModNetheriteShovelItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 

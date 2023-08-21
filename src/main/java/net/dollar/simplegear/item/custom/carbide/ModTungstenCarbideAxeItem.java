@@ -1,12 +1,12 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.carbide;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
-import net.dollar.simplegear.item.ModMaceItem;
 import net.dollar.simplegear.util.ModUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
@@ -16,11 +16,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Used specifically for the Tungsten-Carbide Mace, which has custom on-hit effect chance, is fire
+ * Used specifically for the Tungsten-Carbide Axe, which has custom on-hit effect chance, is fire
  *  and explosion resistant, and has custom hover text.
  */
-public class ModTungstenCarbideMaceItem extends ModMaceItem {
-    public ModTungstenCarbideMaceItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
+public class ModTungstenCarbideAxeItem extends AxeItem {
+    public ModTungstenCarbideAxeItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
@@ -36,7 +36,7 @@ public class ModTungstenCarbideMaceItem extends ModMaceItem {
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
         ModUtils.rollTungstenCarbideOnHitAndApply(attackedEntity, attacker,
-                ModCommonConfigs.TUNGSTEN_CARBIDE_EFFECT_CHANCE.get()); //blunt, default 25
+                ModCommonConfigs.TUNGSTEN_CARBIDE_EFFECT_CHANCE.get()); //sharp, default 25
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 

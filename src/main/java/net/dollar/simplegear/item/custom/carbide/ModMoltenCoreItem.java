@@ -1,4 +1,4 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.carbide;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;

@@ -1,4 +1,4 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.carbide;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
 import net.dollar.simplegear.util.ModUtils;
@@ -13,11 +13,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Used specifically for the Tungsten-Carbide Hoe, which has custom on-hit effect chance, is fire
+ * Used specifically for the Tungsten-Carbide Shovel, which has custom on-hit effect chance, is fire
  *  and explosion resistant, and has custom hover text.
  */
-public class ModTungstenCarbideHoeItem extends HoeItem {
-    public ModTungstenCarbideHoeItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
+public class ModTungstenCarbideShovelItem extends ShovelItem {
+    public ModTungstenCarbideShovelItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 

@@ -1,27 +1,24 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.netherite;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
-import net.dollar.simplegear.enchantment.ModEnchantments;
-import net.dollar.simplegear.util.IInfusedDiamondItem;
 import net.dollar.simplegear.util.ModUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 /**
- * Used specifically for the Infused Diamond Pickaxe, which has custom on-hit effect chance and
- *  custom hover text.
+ * Used specifically for the Netherite Axe, which has custom on-hit effect chance, is fire-resistant,
+ *  and has custom hover text.
  */
-public class ModInfusedDiamondPickaxeItem extends PickaxeItem implements IInfusedDiamondItem {
-    public ModInfusedDiamondPickaxeItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
+public class ModNetheriteAxeItem extends AxeItem {
+    public ModNetheriteAxeItem(Tier p_42961_, float p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
@@ -36,13 +33,22 @@ public class ModInfusedDiamondPickaxeItem extends PickaxeItem implements IInfuse
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
-        ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker,
-                ModCommonConfigs.INFUSED_DIAMOND_EFFECT_CHANCE.get()); //blunt, default 17
+        ModUtils.rollNetheriteOnHitAndApply(attackedEntity, attacker,
+                ModCommonConfigs.NETHERITE_EFFECT_CHANCE.get()); //sharp, default 20
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 
     /**
-     * Appends text (as Component) to the Item's hover tooltip (on-hit effect info).
+     * Gets whether Entities of this Item are resistant to fire and lava (true).
+     * @return Whether this Item is fire-resistant.
+     */
+    @Override
+    public boolean isFireResistant() {
+        return true;
+    }
+
+    /**
+     * Appends text to the Item's hover tooltip (on-hit effect info).
      * @param stack ItemStack corresponding to this Item
      * @param level Active level
      * @param components List of Components that make up the tooltip
@@ -50,6 +56,6 @@ public class ModInfusedDiamondPickaxeItem extends PickaxeItem implements IInfuse
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        ModUtils.appendInfusedDiamondEquipmentTooltip(components, false);
+        ModUtils.appendNetheriteEquipmentTooltip(components, false);
     }
 }

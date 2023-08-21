@@ -1,21 +1,27 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.infused;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
+import net.dollar.simplegear.enchantment.ModEnchantments;
+import net.dollar.simplegear.util.IInfusedDiamondItem;
 import net.dollar.simplegear.util.ModUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 /**
- * Used specifically for the Netherite Sword, which has custom on-hit effect chance, is fire-resistant,
- *  and has custom hover text.
+ * Used specifically for the Infused Diamond Hoe, which has custom on-hit effect chance and
+ *  custom hover text.
  */
-public class ModNetheriteSwordItem extends SwordItem {
-    public ModNetheriteSwordItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
+public class ModInfusedDiamondHoeItem extends HoeItem implements IInfusedDiamondItem {
+    public ModInfusedDiamondHoeItem(Tier p_42961_, int p_42962_, float p_42963_, Properties p_42964_) {
         super(p_42961_, p_42962_, p_42963_, p_42964_);
     }
 
@@ -30,22 +36,13 @@ public class ModNetheriteSwordItem extends SwordItem {
      */
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity attackedEntity, LivingEntity attacker) {
-        ModUtils.rollNetheriteOnHitAndApply(attackedEntity, attacker,
-                ModCommonConfigs.NETHERITE_EFFECT_CHANCE.get()); //sharp, default 20
+        ModUtils.rollInfusedDiamondOnHitAndApply(attackedEntity, attacker,
+                ModCommonConfigs.INFUSED_DIAMOND_EFFECT_CHANCE.get()); //blunt, default 17
         return super.hurtEnemy(stack, attackedEntity, attacker);
     }
 
     /**
-     * Gets whether Entities of this Item are resistant to fire and lava (true).
-     * @return Whether this Item is fire-resistant.
-     */
-    @Override
-    public boolean isFireResistant() {
-        return true;
-    }
-
-    /**
-     * Appends text to the Item's hover tooltip (on-hit effect info).
+     * Appends text (as Component) to the Item's hover tooltip (on-hit effect info).
      * @param stack ItemStack corresponding to this Item
      * @param level Active level
      * @param components List of Components that make up the tooltip
@@ -53,6 +50,6 @@ public class ModNetheriteSwordItem extends SwordItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        ModUtils.appendNetheriteEquipmentTooltip(components, false);
+        ModUtils.appendInfusedDiamondEquipmentTooltip(components, false);
     }
 }

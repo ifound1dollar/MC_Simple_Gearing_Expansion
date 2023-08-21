@@ -1,7 +1,8 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.netherite;
 
-import net.dollar.simplegear.util.IInfusedDiamondItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -11,22 +12,21 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Used specifically for the Infused Diamond item, which has enchantment glint and custom hover text.
+ * Used specifically for the Netherite Ingot, which is fire-resistant and has custom hover text.
  */
-public class ModInfusedDiamondItem extends Item implements IInfusedDiamondItem {
-    public ModInfusedDiamondItem(Properties p_41383_) {
+public class ModNetheriteIngotItem extends Item {
+    public ModNetheriteIngotItem(Properties p_41383_) {
         super(p_41383_);
     }
 
 
 
     /**
-     * Gets whether this Item should render with enchantment glint (true).
-     * @param stack ItemStack of this Item
-     * @return Whether this item has enchantment glint
+     * Gets whether Entities of this Item are resistant to fire and lava (true).
+     * @return Whether this Item is fire-resistant.
      */
     @Override
-    public boolean isFoil(ItemStack stack) {
+    public boolean isFireResistant() {
         return true;
     }
 
@@ -39,6 +39,6 @@ public class ModInfusedDiamondItem extends Item implements IInfusedDiamondItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§5Empowered with an ancient magic"));
+        components.add(Component.literal("§4Nether metal, impervious to heat"));
     }
 }

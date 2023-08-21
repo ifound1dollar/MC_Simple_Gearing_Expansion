@@ -1,9 +1,8 @@
-package net.dollar.simplegear.item.custom;
+package net.dollar.simplegear.item.custom.netherite;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
 import net.dollar.simplegear.item.ModItems;
 import net.dollar.simplegear.util.IDamageHandlingArmor;
-import net.dollar.simplegear.util.IInfusedDiamondItem;
 import net.dollar.simplegear.util.ModUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,20 +19,20 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Used specifically for Infused Diamond armor items, which check for full-set equipped, conditionally reduce Magic
+ * Used specifically for Netherite armor items, which check for full-set equipped, conditionally reduce Fire
  *  damage taken, and have custom hover text.
  */
-public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHandlingArmor, IInfusedDiamondItem {
+public class ModNetheriteArmorItem extends ArmorItem implements IDamageHandlingArmor {
     boolean isFullSet;
 
-    public ModInfusedDiamondArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
+    public ModNetheriteArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
         super(p_40386_, p_266831_, p_40388_);
     }
 
 
 
     /**
-     * Checks each tick if the player has a full set of Infused Diamond armor.
+     * Checks each tick if the player has a full set of Netherite armor.
      * @param stack The ItemStack associated with this Object
      * @param level Active level/world
      * @param player Player this armor item is equipped on
@@ -44,15 +43,21 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         if (level.isClientSide || LivingEntity.getEquipmentSlotForItem(stack) != EquipmentSlot.CHEST) { return; }
 
         //check for correct equipment, then set isFullSet accordingly
-        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.INFUSED_DIAMOND_HELMET.get();
-        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.INFUSED_DIAMOND_CHESTPLATE.get();
-        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.INFUSED_DIAMOND_LEGGINGS.get();
-        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.INFUSED_DIAMOND_BOOTS.get();
+        boolean hasHelmet = player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.NETHERITE_HELMET.get();
+        boolean hasChestplate = player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.NETHERITE_CHESTPLATE.get();
+        boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.NETHERITE_LEGGINGS.get();
+        boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.NETHERITE_BOOTS.get();
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
+
+        //TEMP
+        if (isFullSet) {
+            player.sendSystemMessage(Component.literal("Netherite Armor full set"));
+        }
+        //TEMP
     }
 
     /**
-     * Intercepts the damage taken operation to reduce Magic damage taken.
+     * Intercepts the damage taken operation to reduce Fire damage taken.
      * @param entity Attacked LivingEntity (wearer)
      * @param slot EquipmentSlot of this item
      * @param source Source of damage to be dealt
@@ -64,11 +69,20 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
         //if not chestplate OR not full set, do not alter damage
         if (slot != EquipmentSlot.CHEST || !isFullSet) { return amount; }
 
-        //if taking damage from Magic source, reduce damage taken
-        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.MAGIC) {
-            return amount * (1 - (float)(ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get() / 100));
+        //if taking damage from fire source, reduce damage taken
+        if (ModUtils.getDamageCategory(source) == ModUtils.DamageCategory.FIRE) {
+            return amount * (1 - (float)(ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get() / 100));
         }
         return amount;  //if reaches here, return original amount
+    }
+
+    /**
+     * Gets whether Entities of this Item are destroyed by lava.
+     * @return Whether this Item is fire-resistant.
+     */
+    @Override
+    public boolean isFireResistant() {
+        return true;
     }
 
     /**
@@ -80,6 +94,7 @@ public class ModInfusedDiamondArmorItem extends ArmorItem implements IDamageHand
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        ModUtils.appendInfusedDiamondEquipmentTooltip(components, true);
+        ModUtils.appendNetheriteEquipmentTooltip(components, true);
     }
+
 }

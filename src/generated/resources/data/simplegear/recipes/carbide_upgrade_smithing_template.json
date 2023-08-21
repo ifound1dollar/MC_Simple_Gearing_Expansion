@@ -9,7 +9,7 @@
       "tag": "forge:obsidian"
     },
     "n": {
-      "item": "simplegear:tungsten_ingot"
+      "tag": "forge:ingots/tungsten"
     }
   },
   "pattern": [
