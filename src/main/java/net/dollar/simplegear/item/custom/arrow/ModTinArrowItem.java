@@ -1,11 +1,16 @@
 package net.dollar.simplegear.item.custom.arrow;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
  * Used specifically for the Tin-Tipped arrow Item, which is only the inventory item and should
@@ -42,4 +47,18 @@ public class ModTinArrowItem extends ArrowItem {
     public boolean isInfinite(ItemStack stack, ItemStack bow, Player player) {
         return false;
     }
+
+    /**
+     * Appends text to the Item's hover tooltip.
+     * @param stack ItemStack corresponding to this Item
+     * @param level Active level
+     * @param components List of Components that make up the tooltip
+     * @param flag TooltipFlag determining whether NORMAL or ADVANCED
+     */
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        components.add(Component.literal("§7> +1 Damage "));
+        super.appendHoverText(stack, level, components, flag);
+    }
+
 }

@@ -3,6 +3,7 @@ package net.dollar.simplegear.item;
 import net.dollar.simplegear.SimpleGearingExpansion;
 import net.dollar.simplegear.entity.ModEntities;
 import net.dollar.simplegear.item.custom.*;
+import net.dollar.simplegear.item.custom.arrow.ModTinArrowItem;
 import net.dollar.simplegear.item.custom.carbide.*;
 import net.dollar.simplegear.item.custom.infused.*;
 import net.dollar.simplegear.item.custom.netherite.*;
@@ -89,6 +90,12 @@ public class ModItems {
     //re-register Netherite Ingot with a custom tooltip
     public static final RegistryObject<Item> NETHERITE_INGOT = VANILLA_ITEMS.register("netherite_ingot",
             () -> new ModNetheriteIngotItem(new Item.Properties()));
+    //endregion
+
+
+    //region Arrows
+    public static final RegistryObject<Item> TIN_ARROW = ITEMS.register("tin_arrow",
+            () -> new ModTinArrowItem(new Item.Properties()));
     //endregion
 
 

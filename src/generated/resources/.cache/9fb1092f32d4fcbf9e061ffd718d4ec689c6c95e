@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-21T13:06:24.4350944	Recipes
+// 1.20.1	2023-09-03T00:04:35.1364226	Recipes
 fc70838687bf842fe9a85e6e543f4bbf812d0b3d data/simplegear/advancements/recipes/building_blocks/amethyst_shard.json
 2ae20a32268b9af4dbd4933096737d673837ac84 data/simplegear/advancements/recipes/building_blocks/bronze_ingot.json
 a83372485fa34577a07271bd59be3b29ca8bc03b data/simplegear/advancements/recipes/building_blocks/raw_tin.json
@@ -37,6 +37,7 @@ ed14650929f1b0d788d3210bbac5c78a8dc68974 data/simplegear/advancements/recipes/co
 3b13a504a22a2e3be5c8c21cf9931b98d5ddc880 data/simplegear/advancements/recipes/combat/steel_mace.json
 802b83e69bd2d3e1955efd3d744112bf426f4284 data/simplegear/advancements/recipes/combat/steel_sword.json
 c0af2bcfc1669eec83ab03d53d01776efde04a58 data/simplegear/advancements/recipes/combat/stone_mace.json
+8e32e98781ebc0b5e2f5b380bb4db08dac74660c data/simplegear/advancements/recipes/combat/tin_arrow.json
 99bf2ceb95fcd96f6d6511d1befb3689bdb6b957 data/simplegear/advancements/recipes/combat/tungsten_boots.json
 de3eb8bc9d489649b1fd25e532cba734a3fcdc64 data/simplegear/advancements/recipes/combat/tungsten_carbide_boots_smithing.json
 3c170692fbed482c8f13b5d41cb83080686e8113 data/simplegear/advancements/recipes/combat/tungsten_carbide_chestplate_smithing.json
@@ -202,6 +203,7 @@ b2d836927864f07395e8e53130725a009617dd2a data/simplegear/recipes/steel_pickaxe.j
 5a55d27588d408ccae625c11f1352103f668237e data/simplegear/recipes/steel_shovel.json
 9149f42a38efb0924ed2a8024a3607926802ca3f data/simplegear/recipes/steel_sword.json
 0cbccd991b20b47cc9baf5cfb7992db5538a3132 data/simplegear/recipes/stone_mace.json
+f66c1f04de23f5119601b6187c93e210a01432bf data/simplegear/recipes/tin_arrow.json
 0577b3c1192d7a334f75cb95a847c08ed7b6ecd4 data/simplegear/recipes/tin_block.json
 38704242580789f2e0c1e6907f5b9e5fee1151e5 data/simplegear/recipes/tin_ingot.json
 2f2790624d0ecc15515e11473ae5f731c5f0de9a data/simplegear/recipes/tin_ingot_from_blasting_deepslate_tin_ore.json

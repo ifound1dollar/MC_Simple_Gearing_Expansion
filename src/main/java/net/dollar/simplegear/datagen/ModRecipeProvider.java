@@ -244,6 +244,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 
 
+        //region ARROWS
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TIN_ARROW.get(), 4)
+                .define('d', ModItems.TIN_INGOT.get())
+                .define('i', Tags.Items.RODS_WOODEN)
+                .define('n', Tags.Items.FEATHERS)
+                .pattern("d")
+                .pattern("i")
+                .pattern("n")
+                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModItems.TIN_INGOT.get()).build()))
+                .save(consumer);
+        //endregion
+
+
+
         //region VANILLA TIER MACES
         toolRecipeBuilder(consumer, ToolType.MACE, Tags.Items.COBBLESTONE, ModItems.STONE_MACE.get(),
                 "has_cobblestone");

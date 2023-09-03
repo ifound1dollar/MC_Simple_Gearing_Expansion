@@ -1,8 +1,11 @@
 package net.dollar.simplegear.item.custom.arrow;
 
+import net.dollar.simplegear.entity.ModEntities;
+import net.dollar.simplegear.item.ModItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.SpectralArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
@@ -13,8 +16,11 @@ import net.minecraft.world.phys.EntityHitResult;
  *  inventory item. Tin-Tipped arrows have no custom behavior but deal bonus damage.
  */
 public class ModTinArrowProjectile extends AbstractArrow {
-    protected ModTinArrowProjectile(Level level, LivingEntity livingEntity) {
-        super(EntityType.ARROW, livingEntity, level);
+    public ModTinArrowProjectile(EntityType<? extends ModTinArrowProjectile> entityType, Level level) {
+        super(entityType, level);
+    }
+    public ModTinArrowProjectile(Level level, LivingEntity livingEntity) {
+        super(ModEntities.TIN_ARROW.get(), livingEntity, level);
         setBaseDamage(3.0d);    //BASE ARROW DAMAGE IS 2
     }
 
@@ -48,8 +54,6 @@ public class ModTinArrowProjectile extends AbstractArrow {
      */
     @Override
     protected ItemStack getPickupItem() {
-        //return new ItemStack(ModItems.TIN_TIPPED_ARROW.get());
-
-        return null;
+        return new ItemStack(ModItems.TIN_ARROW.get());
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-12T04:25:55.9622735	Item Models: simplegear
+// 1.20.1	2023-09-03T00:03:49.9795759	Item Models: simplegear
 2b6b45d5b6cc2e494c698d18bff9a04cbd524400 assets/simplegear/models/item/basic_upgrade_template.json
 c975b8ba95fb8f1a11ddc18f189c9f23d8fe4fd1 assets/simplegear/models/item/bronze_axe.json
 eb2b92dd78b88fa6aaa700ddeb8c38944010b3c2 assets/simplegear/models/item/bronze_boots.json
@@ -65,6 +65,7 @@ ccb8590f74cf144d54142ee14bc2d2b1d8ed3252 assets/simplegear/models/item/steel_pic
 6da7014fd30ab2a5c78ff577c986d46e4f077a36 assets/simplegear/models/item/steel_shovel.json
 4099c5ee410e82a86063b5065eea296cb4cfd58a assets/simplegear/models/item/steel_sword.json
 3490d29c5d6d8043f4ed77f57c4abdb17826e38c assets/simplegear/models/item/stone_mace.json
+8ec9334883a337a4f18565dc3d8e438ff73ad805 assets/simplegear/models/item/tin_arrow.json
 a6eb6572d2a8692fd5a6f619e5c4880ad6e2a16c assets/simplegear/models/item/tin_ingot.json
 247c8bea9e4f42c9048896ad83c06c43b835288d assets/simplegear/models/item/tin_shears.json
 569558073d30f564b557cf04ae5c1f861ddfc0bd assets/simplegear/models/item/tungsten_axe.json

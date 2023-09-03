@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "item": "simplegear:tin_ingot"
+    },
+    "i": {
+      "tag": "forge:rods/wooden"
+    },
+    "n": {
+      "tag": "forge:feathers"
+    }
+  },
+  "pattern": [
+    "d",
+    "i",
+    "n"
+  ],
+  "result": {
+    "count": 4,
+    "item": "simplegear:tin_arrow"
+  },
+  "show_notification": true
+}
