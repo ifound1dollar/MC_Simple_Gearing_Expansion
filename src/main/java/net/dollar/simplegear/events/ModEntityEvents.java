@@ -2,10 +2,7 @@ package net.dollar.simplegear.events;
 
 import net.dollar.simplegear.SimpleGearingExpansion;
 import net.dollar.simplegear.entity.ModEntities;
-import net.dollar.simplegear.entity.client.renderer.ModKathleenTheWickedRenderer;
-import net.dollar.simplegear.entity.client.renderer.ModObsidianGolemEntityRenderer;
-import net.dollar.simplegear.entity.client.renderer.ModOldLadyMuffRenderer;
-import net.dollar.simplegear.entity.client.renderer.ModTheHeliroosterRenderer;
+import net.dollar.simplegear.entity.client.renderer.*;
 import net.dollar.simplegear.entity.custom.KathleenTheWickedEntity;
 import net.dollar.simplegear.entity.custom.ObsidianGolemEntity;
 import net.dollar.simplegear.entity.custom.OldLadyMuffEntity;
@@ -54,6 +51,8 @@ public class ModEntityEvents {
      */
     @SubscribeEvent
     public static void entityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.TIN_ARROW.get(), ModTinArrowRenderer::new);
+
         event.registerEntityRenderer(ModEntities.OBSIDIAN_GOLEM.get(), ModObsidianGolemEntityRenderer::new);
 
         event.registerEntityRenderer(ModEntities.KATHLEEN_THE_WICKED.get(), ModKathleenTheWickedRenderer::new);

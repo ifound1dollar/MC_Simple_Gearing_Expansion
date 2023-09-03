@@ -62,6 +62,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE);
         //endregion
 
+        //region ARROWS
+        simpleItem(ModItems.TIN_ARROW);
+        //endregion
+
         //region ARMORS
         trimmableArmorItem(ModItems.BRONZE_HELMET);
         trimmableArmorItem(ModItems.BRONZE_CHESTPLATE);

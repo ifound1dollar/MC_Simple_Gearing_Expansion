@@ -131,6 +131,11 @@ public class SimpleGearingExpansion
             //endregion
 
 
+            //region ARROWS
+            event.accept(ModItems.TIN_ARROW);
+            //endregion
+
+
             //region NEW VANILLA TIER MACES
             event.accept(ModItems.STONE_MACE);
             event.accept(ModItems.IRON_MACE);
