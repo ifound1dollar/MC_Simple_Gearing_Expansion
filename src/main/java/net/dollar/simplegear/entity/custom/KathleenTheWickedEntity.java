@@ -30,6 +30,8 @@ public class KathleenTheWickedEntity extends Monster {
     private int ticksSinceLastAttack = 0;
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
+    private int autoDespawnDelayTicks = 300;    //15 sec
+
 
 
     public KathleenTheWickedEntity(EntityType<? extends Monster> type, Level level) {
@@ -168,16 +170,20 @@ public class KathleenTheWickedEntity extends Monster {
      */
     @Override
     public void tick() {
-        //NOTE: Must check despawn before delay because otherwise reloading a single player world would
-        //  cause the mob to wait the full 5s before despawning (constructor is called on reload).
-
-        //if target is null OR current target is a player in creative mode, despawn
+        //handle despawn conditions
         if (!level().isClientSide) {
-            if (getTarget() == null || (getTarget() instanceof Player player && player.isCreative())) {
-                remove(RemovalReason.DISCARDED);
+            //if target is null, tick down auto-despawn delay
+            if (getTarget() == null) {
+                autoDespawnDelayTicks--;
+
+                //if delay now <= 0, despawn
+                if (autoDespawnDelayTicks <= 0) {
+                    remove(RemovalReason.DISCARDED);
+                }
             }
         }
 
+        //handle initial spawn delay (applies only when spawning from Spectral Lantern)
         if (isAwaitingSpawnDelay) {
             spawnDelayTicks--;
             if (spawnDelayTicks <= 0) {

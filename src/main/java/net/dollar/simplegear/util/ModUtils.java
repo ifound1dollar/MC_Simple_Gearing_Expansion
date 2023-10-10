@@ -1,7 +1,9 @@
 package net.dollar.simplegear.util;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
+import net.dollar.simplegear.entity.client.renderer.ModTungstenArrowRenderer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -10,15 +12,21 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 
 import java.util.List;
 import java.util.Random;
+import java.util.function.Predicate;
 
 /**
  * Contains a handful of misc. helper methods used in various parts of the mod.
  */
 public class ModUtils {
+    //This predicate is used by Heavy Bows/Crossbows to allow firing of Heavy Arrows.
+    public static final Predicate<ItemStack> HEAVY_ARROW_ONLY = (itemStack) -> itemStack.is(ModTags.Items.ARROWS_HEAVY);
+
+
     public enum DamageCategory { NONE, BLUNT, SHARP, MAGIC, FIRE, EXPLOSION }
 
 
@@ -95,12 +103,12 @@ public class ModUtils {
      */
     public static void appendInfusedDiamondEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            components.add(Component.literal(String.format("§5> Full Set: %s%% Magic damage reduction",
+            components.add(Component.literal(String.format("§5> Full Set: -%s%% Magic damage taken",
                     ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get())));
         } else {
-            components.add(Component.literal(String.format("§5> Chance on-hit: User gains Speed for %ss",
+            components.add(Component.literal(String.format("§5> Chance on-hit: Gain Speed for %ss",
                     ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
-            components.add(Component.literal(String.format("§5> Deals %s%% bonus damage to End mobs",
+            components.add(Component.literal(String.format("§5> +%s%% damage to End mobs",
                     ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
@@ -129,12 +137,12 @@ public class ModUtils {
      */
     public static void appendNetheriteEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            components.add(Component.literal(String.format("§4> Full Set: %s%% Fire damage reduction",
+            components.add(Component.literal(String.format("§4> Full Set: -%s%% Fire damage taken",
                     ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get())));
         } else {
             components.add(Component.literal(String.format("§4> Chance on-hit: Wither target for %ss",
                     ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
-            components.add(Component.literal(String.format("§4> Deals %s%% bonus damage to Nether mobs",
+            components.add(Component.literal(String.format("§4> +%s%% damage to Nether mobs",
                     ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
@@ -163,12 +171,12 @@ public class ModUtils {
      */
     public static void appendTungstenCarbideEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            components.add(Component.literal(String.format("§8> Full Set: %s%% Explosion damage reduction",
+            components.add(Component.literal(String.format("§8> Full Set: -%s%% Explosion damage",
                     ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get())));
         } else {
             components.add(Component.literal(String.format("§8> Chance on-hit: Slow target for %ss",
                     ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
-            components.add(Component.literal(String.format("§8> Deals %s%% bonus damage to Sturdy mobs",
+            components.add(Component.literal(String.format("§8> +%s%% damage to Sturdy mobs",
                     ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }

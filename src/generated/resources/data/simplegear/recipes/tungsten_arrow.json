@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "d": {
-      "tag": "forge:ingots/tin"
+      "tag": "forge:ingots/tungsten"
     },
     "i": {
       "tag": "forge:rods/wooden"
@@ -19,7 +19,7 @@
   ],
   "result": {
     "count": 4,
-    "item": "simplegear:tin_arrow"
+    "item": "simplegear:tungsten_arrow"
   },
   "show_notification": true
 }

@@ -64,6 +64,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //region ARROWS
         simpleItem(ModItems.TIN_ARROW);
+        simpleItem(ModItems.TUNGSTEN_ARROW);
         //endregion
 
         //region ARMORS
@@ -100,6 +101,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         //region HANDHELD ITEMS
         handheldItem(ModItems.TIN_SHEARS);
+        handheldItem(ModItems.TUNGSTEN_SHEARS);
 
         handheldItem(ModItems.BRONZE_AXE);
         handheldItem(ModItems.GILDED_BRONZE_AXE);

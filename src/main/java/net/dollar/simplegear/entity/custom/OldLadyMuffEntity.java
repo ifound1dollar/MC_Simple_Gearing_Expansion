@@ -52,11 +52,12 @@ import java.util.UUID;
 public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
     private static final UUID SPEED_MODIFIER_DRINKING_UUID = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
     private static final AttributeModifier SPEED_MODIFIER_DRINKING = new AttributeModifier(SPEED_MODIFIER_DRINKING_UUID, "Drinking speed penalty", -0.25D, AttributeModifier.Operation.ADDITION);
-    private static final EntityDataAccessor<Boolean> DATA_USING_ITEM = SynchedEntityData.defineId(Witch.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> DATA_USING_ITEM = SynchedEntityData.defineId(OldLadyMuffEntity.class, EntityDataSerializers.BOOLEAN);
     private int usingTime;
 
     private int spawnDelayTicks = 100;
     private boolean isAwaitingSpawnDelay = true;
+    private int autoDespawnDelayTicks = 300;    //15 sec
 
 
     public OldLadyMuffEntity(EntityType<? extends Monster> type, Level level) {
@@ -301,16 +302,20 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
      */
     @Override
     public void tick() {
-        //NOTE: Must check despawn before delay because otherwise reloading a single player world would
-        //  cause the mob to wait the full 5s before despawning (constructor is called on reload).
-
-        //if target is null OR current target is a player in creative mode, despawn
+        //handle despawn conditions
         if (!level().isClientSide) {
-            if (getTarget() == null || (getTarget() instanceof Player player && player.isCreative())) {
-                remove(RemovalReason.DISCARDED);
+            //if target is null, tick down auto-despawn delay
+            if (getTarget() == null) {
+                autoDespawnDelayTicks--;
+
+                //if delay now <= 0, despawn
+                if (autoDespawnDelayTicks <= 0) {
+                    remove(RemovalReason.DISCARDED);
+                }
             }
         }
 
+        //handle initial spawn delay (applies only when spawning from Spectral Lantern)
         if (isAwaitingSpawnDelay) {
             spawnDelayTicks--;
             if (spawnDelayTicks <= 0) {

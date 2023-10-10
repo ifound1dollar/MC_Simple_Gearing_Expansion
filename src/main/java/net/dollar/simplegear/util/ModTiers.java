@@ -138,7 +138,7 @@ public class ModTiers {
                 25,
                 SoundEvents.ARMOR_EQUIP_DIAMOND,
                 2.5f,
-                0.5f,
+                0.05f,
                 () -> Ingredient.of(ModItems.COMPOUND_GEMSTONE.get())
         );
 
@@ -150,7 +150,7 @@ public class ModTiers {
                 12,
                 SoundEvents.ARMOR_EQUIP_NETHERITE,
                 3.0f,
-                1.0f,
+                0.1f,
                 () -> Ingredient.of(ModItems.TUNGSTEN_INGOT.get())
         );
     }

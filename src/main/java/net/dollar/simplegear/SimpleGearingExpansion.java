@@ -105,6 +105,7 @@ public class SimpleGearingExpansion
 
             //region BASIC ITEMS
             event.accept(ModItems.TIN_SHEARS);
+            event.accept(ModItems.TUNGSTEN_SHEARS);
             event.accept(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG);
 
             event.accept(ModItems.RUBY);
@@ -133,6 +134,7 @@ public class SimpleGearingExpansion
 
             //region ARROWS
             event.accept(ModItems.TIN_ARROW);
+            event.accept(ModItems.TUNGSTEN_ARROW);
             //endregion
 
 

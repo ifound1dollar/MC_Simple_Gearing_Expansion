@@ -5,23 +5,22 @@ import net.dollar.simplegear.item.ModItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.SpectralArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 
 /**
- * Used specifically for the Tin Arrow projectile, which is the actual projectile and not the
- *  inventory item. Tin Arrows have no custom behavior but deal bonus damage.
+ * Used specifically for the Tungsten Arrow projectile, which is the actual projectile and not the
+ *  inventory item. Tungsten Arrows have no custom behavior but deal bonus damage.
  */
-public class ModTinArrowProjectile extends AbstractArrow {
-    public ModTinArrowProjectile(EntityType<? extends ModTinArrowProjectile> entityType, Level level) {
+public class ModTungstenArrowProjectile extends AbstractArrow {
+    public ModTungstenArrowProjectile(EntityType<? extends ModTungstenArrowProjectile> entityType, Level level) {
         super(entityType, level);
     }
-    public ModTinArrowProjectile(Level level, LivingEntity livingEntity) {
-        super(ModEntities.TIN_ARROW.get(), livingEntity, level);
-        setBaseDamage(3.0d);    //BASE ARROW DAMAGE IS 2
+    public ModTungstenArrowProjectile(Level level, LivingEntity livingEntity) {
+        super(ModEntities.TUNGSTEN_ARROW.get(), livingEntity, level);
+        setBaseDamage(4.0d);    //BASE ARROW DAMAGE IS 2
     }
 
 
@@ -54,6 +53,6 @@ public class ModTinArrowProjectile extends AbstractArrow {
      */
     @Override
     protected ItemStack getPickupItem() {
-        return new ItemStack(ModItems.TIN_ARROW.get());
+        return new ItemStack(ModItems.TUNGSTEN_ARROW.get());
     }
 }

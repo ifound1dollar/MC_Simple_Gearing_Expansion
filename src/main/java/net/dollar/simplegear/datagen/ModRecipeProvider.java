@@ -143,6 +143,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TUNGSTEN_SHEARS.get(), 1)
+                .define('d', ModTags.Items.FORGE_INGOTS_TUNGSTEN)
+                .pattern(" d")
+                .pattern("d ")
+                .unlockedBy("has_tungsten_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
+                .save(consumer);
         //endregion
 
         //region Compounds and Gemstone (shapeless)
@@ -246,14 +253,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //region ARROWS
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TIN_ARROW.get(), 4)
-                .define('d', ModItems.TIN_INGOT.get())
+                .define('d', ModTags.Items.FORGE_INGOTS_TIN)
                 .define('i', Tags.Items.RODS_WOODEN)
                 .define('n', Tags.Items.FEATHERS)
                 .pattern("d")
                 .pattern("i")
                 .pattern("n")
                 .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.TIN_INGOT.get()).build()))
+                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TUNGSTEN_ARROW.get(), 4)
+                .define('d', ModTags.Items.FORGE_INGOTS_TUNGSTEN)
+                .define('i', Tags.Items.RODS_WOODEN)
+                .define('n', Tags.Items.FEATHERS)
+                .pattern("d")
+                .pattern("i")
+                .pattern("n")
+                .unlockedBy("has_tungsten_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
                 .save(consumer);
         //endregion
 

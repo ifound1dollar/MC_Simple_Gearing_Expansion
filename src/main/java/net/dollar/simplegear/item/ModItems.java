@@ -4,6 +4,7 @@ import net.dollar.simplegear.SimpleGearingExpansion;
 import net.dollar.simplegear.entity.ModEntities;
 import net.dollar.simplegear.item.custom.*;
 import net.dollar.simplegear.item.custom.arrow.ModTinArrowItem;
+import net.dollar.simplegear.item.custom.arrow.ModTungstenArrowItem;
 import net.dollar.simplegear.item.custom.carbide.*;
 import net.dollar.simplegear.item.custom.infused.*;
 import net.dollar.simplegear.item.custom.netherite.*;
@@ -32,7 +33,9 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.OBSIDIAN_GOLEM, 0x12031E, 0xED4D0E,
                     new Item.Properties()));
     public static final RegistryObject<Item> TIN_SHEARS = ITEMS.register("tin_shears",
-            () -> new ShearsItem(new Item.Properties().durability(150)));   //Iron is 238 (for some reason)
+            () -> new ShearsItem(new Item.Properties().durability(200)));   //Iron is 238 (for some reason)
+    public static final RegistryObject<Item> TUNGSTEN_SHEARS = ITEMS.register("tungsten_shears",
+            () -> new ShearsItem(new Item.Properties().durability(750)));   //Iron is 238 (for some reason)
 
     //region COLLECTOR ITEMS
     public static final RegistryObject<Item> COLLECTOR_OBSIDIAN_DUST = ITEMS.register("collector_obsidian_dust",
@@ -96,6 +99,8 @@ public class ModItems {
     //region Arrows
     public static final RegistryObject<Item> TIN_ARROW = ITEMS.register("tin_arrow",
             () -> new ModTinArrowItem(new Item.Properties()));
+    public static final RegistryObject<Item> TUNGSTEN_ARROW = ITEMS.register("tungsten_arrow",
+            () -> new ModTungstenArrowItem(new Item.Properties()));
     //endregion
 
 

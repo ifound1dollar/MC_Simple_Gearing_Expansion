@@ -27,6 +27,7 @@
 
   "item.simplegear.obsidian_golem_spawn_egg": "Obsidian Golem Spawn Egg",
   "item.simplegear.tin_shears": "Tin Shears",
+  "item.simplegear.tungsten_shears": "Tungsten Shears",
 
   "item.simplegear.ruby": "Ruby",
   "item.simplegear.sapphire": "Sapphire",
@@ -53,6 +54,7 @@
 
 
   "item.simplegear.tin_arrow": "Tin Arrow",
+  "item.simplegear.tungsten_arrow": "Tungsten Arrow",
 
   "item.simplegear.stone_mace": "Stone Mace",
   "item.simplegear.iron_mace": "Iron Mace",
@@ -141,9 +143,9 @@
   "entity.simplegear.obsidian_golem": "Obsidian Golem",
   "entity.simplegear.kathleen_the_wicked": "Kathleen the Wicked",
   "entity.simplegear.old_lady_muff": "Old Lady Muff",
-  "entity.simplegear.rooster_from_hell": "Rooster from Hell",
+  "entity.simplegear.the_helirooster": "The Helirooster",
 
 
 
-  "creativemodetab.sge_tab": "Simple Gearing Expansion", "comment1": "THIS LINE IS UNUSED CURRENTLY"
+  "creativemodetab.simplegear_tab": "Simple Gearing Expansion", "comment1": "THIS LINE IS UNUSED CURRENTLY"
 }

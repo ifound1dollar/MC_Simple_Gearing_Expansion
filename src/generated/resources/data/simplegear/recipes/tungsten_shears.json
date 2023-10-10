@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "tag": "forge:ingots/tungsten"
+    }
+  },
+  "pattern": [
+    " d",
+    "d "
+  ],
+  "result": {
+    "item": "simplegear:tungsten_shears"
+  },
+  "show_notification": true
+}

@@ -13,12 +13,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Used specifically for the Tin Arrow Item, which is only the inventory item and should
+ * Used specifically for the Tungsten Arrow Item, which is only the inventory item and should
  *  not be mistaken for the projectile. General use is to spawn the correct projectile on
  *  projectile weapon fire.
  */
-public class ModTinArrowItem extends ArrowItem {
-    public ModTinArrowItem(Properties properties) {
+public class ModTungstenArrowItem extends ArrowItem {
+    public ModTungstenArrowItem(Properties properties) {
         super(properties);
     }
 
@@ -33,7 +33,7 @@ public class ModTinArrowItem extends ArrowItem {
      */
     @Override
     public AbstractArrow createArrow(Level level, ItemStack stack, LivingEntity livingEntity) {
-        return new ModTinArrowProjectile(level, livingEntity);
+        return new ModTungstenArrowProjectile(level, livingEntity);
     }
 
     /**
@@ -57,7 +57,8 @@ public class ModTinArrowItem extends ArrowItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7> +1 Damage "));
+        components.add(Component.literal("§8Heavy Arrow "));
+        components.add(Component.literal("§7> +2 Damage "));
         super.appendHoverText(stack, level, components, flag);
     }
 

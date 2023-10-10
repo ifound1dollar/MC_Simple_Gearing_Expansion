@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "simplegear:tin_arrow"
+        "recipe": "simplegear:tungsten_shears"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_tin_ingot": {
+    "has_tungsten_ingot": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:ingots/tin"
+            "tag": "forge:ingots/tungsten"
           }
         ]
       },
@@ -20,13 +20,13 @@
   },
   "requirements": [
     [
-      "has_tin_ingot",
+      "has_tungsten_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "simplegear:tin_arrow"
+      "simplegear:tungsten_shears"
     ]
   },
   "sends_telemetry_event": false

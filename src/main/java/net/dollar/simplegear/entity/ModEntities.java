@@ -6,6 +6,7 @@ import net.dollar.simplegear.entity.custom.ObsidianGolemEntity;
 import net.dollar.simplegear.entity.custom.OldLadyMuffEntity;
 import net.dollar.simplegear.entity.custom.TheHeliroosterEntity;
 import net.dollar.simplegear.item.custom.arrow.ModTinArrowProjectile;
+import net.dollar.simplegear.item.custom.arrow.ModTungstenArrowProjectile;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -30,6 +31,13 @@ public class ModEntities {
                             .clientTrackingRange(4)
                             .updateInterval(20)
                             .build(new ResourceLocation(SimpleGearingExpansion.MOD_ID + "tin_arrow").toString()));
+    public static final RegistryObject<EntityType<ModTungstenArrowProjectile>> TUNGSTEN_ARROW =
+            ENTITY_TYPES.register("tungsten_arrow",
+                    () -> EntityType.Builder.<ModTungstenArrowProjectile>of(ModTungstenArrowProjectile::new, MobCategory.MISC)
+                            .sized(0.5F, 0.5F)
+                            .clientTrackingRange(4)
+                            .updateInterval(20)
+                            .build(new ResourceLocation(SimpleGearingExpansion.MOD_ID + "tungsten_arrow").toString()));
 
 
 

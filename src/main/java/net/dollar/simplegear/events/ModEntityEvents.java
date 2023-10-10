@@ -52,6 +52,7 @@ public class ModEntityEvents {
     @SubscribeEvent
     public static void entityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.TIN_ARROW.get(), ModTinArrowRenderer::new);
+        event.registerEntityRenderer(ModEntities.TUNGSTEN_ARROW.get(), ModTungstenArrowRenderer::new);
 
         event.registerEntityRenderer(ModEntities.OBSIDIAN_GOLEM.get(), ModObsidianGolemEntityRenderer::new);
 
