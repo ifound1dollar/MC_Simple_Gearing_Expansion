@@ -1,0 +1,6 @@
+{
+    "parent": "simplegear:item/steel_crossbow",
+    "textures": {
+        "layer0": "simplegear:item/steel_crossbow_pulling_0"
+    }
+}

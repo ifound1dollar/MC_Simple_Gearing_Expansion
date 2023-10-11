@@ -5,7 +5,9 @@ import net.dollar.simplegear.entity.ModEntities;
 import net.dollar.simplegear.item.custom.*;
 import net.dollar.simplegear.item.custom.arrow.ModTinArrowItem;
 import net.dollar.simplegear.item.custom.arrow.ModTungstenArrowItem;
+import net.dollar.simplegear.item.custom.bow.ModSteelBowItem;
 import net.dollar.simplegear.item.custom.carbide.*;
+import net.dollar.simplegear.item.custom.crossbow.ModSteelCrossbowItem;
 import net.dollar.simplegear.item.custom.infused.*;
 import net.dollar.simplegear.item.custom.netherite.*;
 import net.dollar.simplegear.util.ModSmithingUpgradeItemHelper;
@@ -101,6 +103,14 @@ public class ModItems {
             () -> new ModTinArrowItem(new Item.Properties()));
     public static final RegistryObject<Item> TUNGSTEN_ARROW = ITEMS.register("tungsten_arrow",
             () -> new ModTungstenArrowItem(new Item.Properties()));
+    //endregion
+    //region Bows
+    public static final RegistryObject<Item> STEEL_BOW = ITEMS.register("steel_bow",
+            () -> new ModSteelBowItem(new Item.Properties().durability(600)));   //default is 384
+    //endregion
+    //region Crossbows
+    public static final RegistryObject<Item> STEEL_CROSSBOW = ITEMS.register("steel_crossbow",
+            () -> new ModSteelCrossbowItem(new Item.Properties().durability(750)));   //default is 465
     //endregion
 
 

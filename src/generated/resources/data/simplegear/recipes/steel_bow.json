@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "d": {
+      "tag": "forge:rods/wooden"
+    },
+    "i": {
+      "tag": "forge:ingots/steel"
+    },
+    "n": {
+      "tag": "forge:string"
+    }
+  },
+  "pattern": [
+    " in",
+    "d n",
+    " in"
+  ],
+  "result": {
+    "item": "simplegear:steel_bow"
+  },
+  "show_notification": true
+}

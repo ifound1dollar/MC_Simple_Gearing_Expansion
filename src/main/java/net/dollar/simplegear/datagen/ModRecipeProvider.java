@@ -273,6 +273,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
                 .save(consumer);
         //endregion
+        //region BOWS
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STEEL_BOW.get(), 1)
+                .define('d', Tags.Items.RODS_WOODEN)
+                .define('i', ModTags.Items.FORGE_INGOTS_STEEL)
+                .define('n', Tags.Items.STRING)
+                .pattern(" in")
+                .pattern("d n")
+                .pattern(" in")
+                .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
+                .save(consumer);
+        //endregion
+        //region CROSSBOWS
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STEEL_CROSSBOW.get(), 1)
+                .define('d', Tags.Items.RODS_WOODEN)
+                .define('i', ModTags.Items.FORGE_INGOTS_STEEL)
+                .define('n', Tags.Items.STRING)
+                .define('t', Items.TRIPWIRE_HOOK)
+                .pattern("iii")
+                .pattern("ntn")
+                .pattern(" d ")
+                .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
+                .save(consumer);
+        //endregion
 
 
 

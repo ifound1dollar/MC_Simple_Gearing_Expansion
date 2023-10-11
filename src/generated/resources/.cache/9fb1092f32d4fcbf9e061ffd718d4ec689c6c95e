@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-10T03:37:35.6865208	Recipes
+// 1.20.1	2023-10-11T06:11:42.2134634	Recipes
 fc70838687bf842fe9a85e6e543f4bbf812d0b3d data/simplegear/advancements/recipes/building_blocks/amethyst_shard.json
 2ae20a32268b9af4dbd4933096737d673837ac84 data/simplegear/advancements/recipes/building_blocks/bronze_ingot.json
 a83372485fa34577a07271bd59be3b29ca8bc03b data/simplegear/advancements/recipes/building_blocks/raw_tin.json
@@ -31,7 +31,9 @@ dae3c179ac558eaaac7ac6d8e60b5aebac0abd14 data/simplegear/advancements/recipes/co
 25adfadd967e105a0fe1e15f201764c95ac63998 data/simplegear/advancements/recipes/combat/iron_mace.json
 65e2ac0d6fad822a554e93fdfead19082500af34 data/simplegear/advancements/recipes/combat/netherite_mace_smithing.json
 d43632382dedc7c2a94a3f948584cc795c80198e data/simplegear/advancements/recipes/combat/steel_boots.json
+8cc0ca3e521159ae195a3301e0669ed749e6280c data/simplegear/advancements/recipes/combat/steel_bow.json
 34a2a80685cad2deb4ea8f14bb850aa64671093c data/simplegear/advancements/recipes/combat/steel_chestplate.json
+e6f6665d766b80181dadd3ddd4bd08e97f7a263c data/simplegear/advancements/recipes/combat/steel_crossbow.json
 ed14650929f1b0d788d3210bbac5c78a8dc68974 data/simplegear/advancements/recipes/combat/steel_helmet.json
 86b5da7d300eaf5c765a6886793bb32c0789f2a5 data/simplegear/advancements/recipes/combat/steel_leggings.json
 3b13a504a22a2e3be5c8c21cf9931b98d5ddc880 data/simplegear/advancements/recipes/combat/steel_mace.json
@@ -193,8 +195,10 @@ de2d4f4d929f42160e43b1d4c71bb1a636ad44ec data/simplegear/recipes/sapphire_from_s
 ce918606d1b16add6cd0f4c26391467dc7c61868 data/simplegear/recipes/steel_axe.json
 efa9e4fb4579f27bcd17d4e38b00e64a9e1c95a4 data/simplegear/recipes/steel_block.json
 329eee9877a9970b60e31b4a52163cb67395d711 data/simplegear/recipes/steel_boots.json
+6bc544d909610430f5a202f67a839a1d9367f653 data/simplegear/recipes/steel_bow.json
 3f83c090b65ef708e386eb6c2431363bbba71b13 data/simplegear/recipes/steel_chestplate.json
 576da518571b2b1a724a4b55ac5e51eeabb365b5 data/simplegear/recipes/steel_compound.json
+5ad4bfb151d3428f1b3530217eddcdd612bea62a data/simplegear/recipes/steel_crossbow.json
 89224886b19598fe7586f84af50291ae99cd0110 data/simplegear/recipes/steel_helmet.json
 7a9dd179c12652b0b86e1d37a09511f3c31d0f96 data/simplegear/recipes/steel_hoe.json
 ad5bddd0f769afd2172705ed6a269dfc443c50b6 data/simplegear/recipes/steel_ingot.json

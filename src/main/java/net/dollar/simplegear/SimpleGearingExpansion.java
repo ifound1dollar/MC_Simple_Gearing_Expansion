@@ -9,6 +9,7 @@ import net.dollar.simplegear.tile.ModTileEntities;
 import net.dollar.simplegear.enchantment.ModEnchantments;
 import net.dollar.simplegear.item.ModCreativeModeTabs;
 import net.dollar.simplegear.item.ModItems;
+import net.dollar.simplegear.util.ModItemProperties;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -180,6 +181,8 @@ public class SimpleGearingExpansion
             event.accept(ModItems.STEEL_PICKAXE);
             event.accept(ModItems.STEEL_SHOVEL);
             event.accept(ModItems.STEEL_SWORD);
+            event.accept(ModItems.STEEL_BOW);
+            event.accept(ModItems.STEEL_CROSSBOW);
             //endregion
             //region TUNGSTEN ARMOR/TOOLS
             event.accept(ModItems.TUNGSTEN_HELMET);
@@ -241,7 +244,8 @@ public class SimpleGearingExpansion
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            //sets up proper bow/crossbow item rendering
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

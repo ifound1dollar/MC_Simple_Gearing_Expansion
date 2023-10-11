@@ -1,7 +1,6 @@
 package net.dollar.simplegear.util;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
-import net.dollar.simplegear.entity.client.renderer.ModTungstenArrowRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -10,10 +9,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 
 import java.util.List;
 import java.util.Random;
@@ -23,8 +19,11 @@ import java.util.function.Predicate;
  * Contains a handful of misc. helper methods used in various parts of the mod.
  */
 public class ModUtils {
-    //This predicate is used by Heavy Bows/Crossbows to allow firing of Heavy Arrows.
-    public static final Predicate<ItemStack> HEAVY_ARROW_ONLY = (itemStack) -> itemStack.is(ModTags.Items.ARROWS_HEAVY);
+    //These predicates are used by Heavy Bows/Crossbows to allow firing of Heavy Arrows.
+    public static final Predicate<ItemStack> HEAVY_AND_LIGHT_ARROWS = (itemStack) ->
+            (itemStack.is(ModTags.Items.ARROWS_HEAVY) || itemStack.is(ItemTags.ARROWS));
+    public static final Predicate<ItemStack> HEAVY_AND_LIGHT_ARROWS_OR_FIREWORK = HEAVY_AND_LIGHT_ARROWS.or((itemStack) ->
+            itemStack.is(Items.FIREWORK_ROCKET));
 
 
     public enum DamageCategory { NONE, BLUNT, SHARP, MAGIC, FIRE, EXPLOSION }
