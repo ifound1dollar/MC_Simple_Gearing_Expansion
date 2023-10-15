@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "simplegear:steel_crossbow"
+    "simplegear:steel_crossbow",
+    "simplegear:infused_diamond_crossbow",
+    "simplegear:netherite_crossbow",
+    "simplegear:tungsten_carbide_crossbow"
   ]
 }

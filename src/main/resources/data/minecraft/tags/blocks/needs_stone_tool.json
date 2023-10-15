@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "simplegear:carbonite_ore",
-    "simplegear:deepslate_carbonite_ore",
     "simplegear:tin_block",
     "simplegear:raw_tin_block",
     "simplegear:tin_ore",

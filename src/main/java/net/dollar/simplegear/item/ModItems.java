@@ -76,7 +76,7 @@ public class ModItems {
             ITEMS.register("carbide_upgrade_smithing_template", ModSmithingUpgradeItemHelper::createCarbideUpgradeTemplate);
 
     public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke",
-            () -> new Item(new Item.Properties()));
+            () -> new ModCoalCokeItem(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",

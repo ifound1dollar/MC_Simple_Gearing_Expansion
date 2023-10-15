@@ -60,5 +60,4 @@ public class ModTinArrowItem extends ArrowItem {
         components.add(Component.literal("§7> +25% damage "));
         super.appendHoverText(stack, level, components, flag);
     }
-
 }

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "simplegear:steel_bow"
+    "simplegear:steel_bow",
+    "simplegear:infused_diamond_bow",
+    "simplegear:netherite_bow",
+    "simplegear:tungsten_carbide_bow"
   ]
 }

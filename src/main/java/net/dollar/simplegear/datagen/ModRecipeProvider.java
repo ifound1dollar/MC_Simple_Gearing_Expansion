@@ -9,6 +9,7 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -244,6 +245,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.TIN_ARROW.get(), 4)
+                .requires(Ingredient.of(Items.ARROW), 4)    //regular arrow specifically
+                .requires(Ingredient.of(ModTags.Items.FORGE_INGOTS_TIN), 1)
+                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
+                .save(consumer, SimpleGearingExpansion.MOD_ID + ":tin_arrow_from_regular");
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TUNGSTEN_ARROW.get(), 4)
                 .define('d', ModTags.Items.FORGE_INGOTS_TUNGSTEN)
                 .define('i', Tags.Items.RODS_WOODEN)
@@ -254,6 +261,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_tungsten_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.TUNGSTEN_ARROW.get(), 4)
+                .requires(Ingredient.of(Items.ARROW), 4)
+                .requires(Ingredient.of(ModTags.Items.FORGE_INGOTS_TUNGSTEN), 1)
+                .unlockedBy("has_tungsten_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
+                .save(consumer, SimpleGearingExpansion.MOD_ID + ":tungsten_arrow_from_regular");
         //endregion
         //region BOWS
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STEEL_BOW.get(), 1)
