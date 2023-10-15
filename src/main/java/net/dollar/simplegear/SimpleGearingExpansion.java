@@ -21,7 +21,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 //IMPORTANT: The value here should match an entry in the META-INF/mods.toml file
@@ -77,8 +76,8 @@ public class SimpleGearingExpansion
         //add to TEST_TAB
         if (event.getTab() == ModCreativeModeTabs.SIMPLEGEAR_TAB.get()) {
             //region BLOCKS
-            event.accept(ModBlocks.CARBONITE_ORE);
-            event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
+//            event.accept(ModBlocks.CARBONITE_ORE);
+//            event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
             event.accept(ModBlocks.SAPPHIRE_ORE);
@@ -105,13 +104,11 @@ public class SimpleGearingExpansion
 
 
             //region BASIC ITEMS
-            event.accept(ModItems.TIN_SHEARS);
-            event.accept(ModItems.TUNGSTEN_SHEARS);
             event.accept(ModItems.OBSIDIAN_GOLEM_SPAWN_EGG);
 
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.CARBONITE_DUST);
+            event.accept(ModItems.COAL_COKE);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_INGOT);
             event.accept(ModItems.BRONZE_COMPOUND);
@@ -136,6 +133,26 @@ public class SimpleGearingExpansion
             //region ARROWS
             event.accept(ModItems.TIN_ARROW);
             event.accept(ModItems.TUNGSTEN_ARROW);
+            //endregion
+            //region BOWS
+            event.accept(ModItems.STEEL_BOW);
+            event.accept(ModItems.INFUSED_DIAMOND_BOW);
+            event.accept(ModItems.NETHERITE_BOW);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_BOW);
+            //endregion
+            //region CROSSBOWS
+            event.accept(ModItems.STEEL_CROSSBOW);
+            event.accept(ModItems.INFUSED_DIAMOND_CROSSBOW);
+            event.accept(ModItems.NETHERITE_CROSSBOW);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_CROSSBOW);
+            //endregion
+
+
+            //region SHEARS
+            event.accept(ModItems.STEEL_SHEARS);
+            event.accept(ModItems.INFUSED_DIAMOND_SHEARS);
+            event.accept(ModItems.NETHERITE_SHEARS);
+            event.accept(ModItems.TUNGSTEN_CARBIDE_SHEARS);
             //endregion
 
 

@@ -46,7 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MOLTEN_CORE);
         simpleItem(ModItems.TUNGSTEN_CARBIDE_INGOT);
 
-        simpleItem(ModItems.CARBONITE_DUST);
+        simpleItem(ModItems.COAL_COKE);
         simpleItem(ModItems.RAW_TIN);
         simpleItem(ModItems.TIN_INGOT);
         simpleItem(ModItems.BRONZE_COMPOUND);
@@ -66,6 +66,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TIN_ARROW);
         simpleItem(ModItems.TUNGSTEN_ARROW);
         //endregion
+        //NOTE: Bows and Crossbows require custom JSON, so is not generated (is done manually)
 
         //region ARMORS
         trimmableArmorItem(ModItems.BRONZE_HELMET);
@@ -100,8 +101,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         //endregion
 
         //region HANDHELD ITEMS
-        handheldItem(ModItems.TIN_SHEARS);
-        handheldItem(ModItems.TUNGSTEN_SHEARS);
+        //NOTE: Bows and Crossbows require custom JSON, so is not generated (is done manually)
+        handheldItem(ModItems.STEEL_SHEARS);
+        handheldItem(ModItems.INFUSED_DIAMOND_SHEARS);
+        handheldItem(ModItems.NETHERITE_SHEARS);
+        handheldItem(ModItems.TUNGSTEN_CARBIDE_SHEARS);
 
         handheldItem(ModItems.BRONZE_AXE);
         handheldItem(ModItems.GILDED_BRONZE_AXE);

@@ -5,6 +5,9 @@
     "simplegear:netherite_mace",
     "minecraft:netherite_pickaxe",
     "minecraft:netherite_shovel",
-    "minecraft:netherite_sword"
+    "minecraft:netherite_sword",
+    "simplegear:netherite_bow",
+    "simplegear:netherite_crossbow",
+    "simplegear:netherite_shears"
   ]
 }

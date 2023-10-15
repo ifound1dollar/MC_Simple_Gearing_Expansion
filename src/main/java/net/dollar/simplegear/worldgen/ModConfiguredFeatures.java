@@ -24,7 +24,7 @@ import java.util.List;
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CARBONITE_ORE_KEY = registerKey("carbonite_ore");
+//    public static final ResourceKey<ConfiguredFeature<?, ?>> CARBONITE_ORE_KEY = registerKey("carbonite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TIN_ORE_KEY = registerKey("tin_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TIN_ORE_SMALL_KEY = registerKey("tin_ore_small");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TUNGSTEN_ORE_KEY = registerKey("tungsten_ore");
@@ -49,10 +49,10 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(stoneReplaceables, ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState())
         );
-        List<OreConfiguration.TargetBlockState> carboniteOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.CARBONITE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_CARBONITE_ORE.get().defaultBlockState())
-        );
+//        List<OreConfiguration.TargetBlockState> carboniteOres = List.of(
+//                OreConfiguration.target(stoneReplaceables, ModBlocks.CARBONITE_ORE.get().defaultBlockState()),
+//                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_CARBONITE_ORE.get().defaultBlockState())
+//        );
         List<OreConfiguration.TargetBlockState> tinOres = List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.TIN_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_TIN_ORE.get().defaultBlockState())
@@ -66,8 +66,8 @@ public class ModConfiguredFeatures {
         //OPTIONAL FLOAT PARAM IS CHANCE PER BLOCK TO FAIL WHEN EXPOSED TO AIR
 
         //3 is equivalent to Emerald vein size
-        register(context, CARBONITE_ORE_KEY, Feature.ORE, new OreConfiguration(carboniteOres,
-                4));   //default 4
+//        register(context, CARBONITE_ORE_KEY, Feature.ORE, new OreConfiguration(carboniteOres,
+//                4));   //default 4
         register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(rubyOres,
                 3));        //default 3
         register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(sapphireOres,

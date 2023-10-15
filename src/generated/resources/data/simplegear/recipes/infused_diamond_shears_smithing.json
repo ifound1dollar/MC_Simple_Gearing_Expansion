@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "simplegear:infused_gemstone"
+  },
+  "base": {
+    "item": "simplegear:steel_shears"
+  },
+  "result": {
+    "item": "simplegear:infused_diamond_shears"
+  },
+  "template": {
+    "item": "simplegear:infusion_upgrade_smithing_template"
+  }
+}

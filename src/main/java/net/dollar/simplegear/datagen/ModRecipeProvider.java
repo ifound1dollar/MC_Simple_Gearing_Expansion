@@ -63,15 +63,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         blastingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), RecipeCategory.MISC,
                 ModItems.SAPPHIRE.get(), 1.0f, 100, "sapphire" );
 
-        smeltingRecipeBuilder(consumer, ModBlocks.CARBONITE_ORE.get(), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust");
-        blastingRecipeBuilder(consumer, ModBlocks.CARBONITE_ORE.get(), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust");
-        smeltingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_CARBONITE_ORE.get(), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 200, "carbonite_dust");
-        blastingRecipeBuilder(consumer, ModBlocks.DEEPSLATE_CARBONITE_ORE.get(), RecipeCategory.MISC,
-                ModItems.CARBONITE_DUST.get(), 0.7f, 100, "carbonite_dust");
-
         smeltingRecipeBuilder(consumer, ModBlocks.TIN_ORE.get(), RecipeCategory.MISC,
                 ModItems.TIN_INGOT.get(), 0.7f, 200, "tin_ingot");
         blastingRecipeBuilder(consumer, ModBlocks.TIN_ORE.get(), RecipeCategory.MISC,
@@ -101,6 +92,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot");
         blastingRecipeBuilder(consumer, ModItems.RAW_TUNGSTEN.get(), RecipeCategory.MISC,
                 ModItems.TUNGSTEN_INGOT.get(), 1.0f, 100, "tungsten_ingot");
+        //endregion
+
+        //region Other blasting
+        blastingRecipeBuilder(consumer, Items.COAL, RecipeCategory.MISC,
+                ModItems.COAL_COKE.get(), 0.7f, 100, "coal_coke");
         //endregion
 
 
@@ -136,20 +132,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":bucket_from_tin");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TIN_SHEARS.get(), 1)
-                .define('d', ModTags.Items.FORGE_INGOTS_TIN)
-                .pattern(" d")
-                .pattern("d ")
-                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TUNGSTEN_SHEARS.get(), 1)
-                .define('d', ModTags.Items.FORGE_INGOTS_TUNGSTEN)
-                .pattern(" d")
-                .pattern("d ")
-                .unlockedBy("has_tungsten_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
-                .save(consumer);
         //endregion
 
         //region Compounds and Gemstone (shapeless)
@@ -284,6 +266,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
                 .save(consumer);
+        smithingUpgradeRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.STEEL_BOW.get(), ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_BOW.get(), "has_infused_gemstone");
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.STEEL_BOW.get(), Tags.Items.INGOTS_NETHERITE, RecipeCategory.COMBAT,
+                ModItems.NETHERITE_BOW.get(), "has_netherite_ingot");
+        smithingUpgradeRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.STEEL_BOW.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_CARBIDE_BOW.get(), "has_tungsten_carbide_ingot");
         //endregion
         //region CROSSBOWS
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STEEL_CROSSBOW.get(), 1)
@@ -297,6 +288,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
                 .save(consumer);
+        smithingUpgradeRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.STEEL_CROSSBOW.get(), ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
+                ModItems.INFUSED_DIAMOND_CROSSBOW.get(), "has_infused_gemstone");
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.STEEL_CROSSBOW.get(), Tags.Items.INGOTS_NETHERITE, RecipeCategory.COMBAT,
+                ModItems.NETHERITE_CROSSBOW.get(), "has_netherite_ingot");
+        smithingUpgradeRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.STEEL_CROSSBOW.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(), RecipeCategory.COMBAT,
+                ModItems.TUNGSTEN_CARBIDE_CROSSBOW.get(), "has_tungsten_carbide_ingot");
+        //endregion
+        //region SHEARS
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STEEL_SHEARS.get(), 1)
+                .define('d', ModTags.Items.FORGE_INGOTS_STEEL)
+                .pattern(" d")
+                .pattern("d ")
+                .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
+                .save(consumer);
+        smithingUpgradeRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.STEEL_SHEARS.get(), ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.TOOLS,
+                ModItems.INFUSED_DIAMOND_SHEARS.get(), "has_infused_gemstone");
+        smithingUpgradeRecipeBuilderTagIngredient(consumer, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                ModItems.STEEL_SHEARS.get(), Tags.Items.INGOTS_NETHERITE, RecipeCategory.TOOLS,
+                ModItems.NETHERITE_SHEARS.get(), "has_netherite_ingot");
+        smithingUpgradeRecipeBuilder(consumer, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(),
+                ModItems.STEEL_SHEARS.get(), ModItems.TUNGSTEN_CARBIDE_INGOT.get(), RecipeCategory.TOOLS,
+                ModItems.TUNGSTEN_CARBIDE_SHEARS.get(), "has_tungsten_carbide_ingot");
         //endregion
 
 

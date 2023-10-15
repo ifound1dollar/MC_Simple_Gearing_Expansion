@@ -1,8 +1,6 @@
-// 1.20.1	2023-08-12T04:25:55.9572872	Loot Tables
+// 1.20.1	2023-10-14T17:14:33.2750249	Loot Tables
 eaa4bae7c44c85f6e9de02b457d95f6e283f30f5 data/simplegear/loot_tables/blocks/bronze_block.json
-e7f07390265951311ed7e675fe26dff0863ac2a1 data/simplegear/loot_tables/blocks/carbonite_ore.json
 ec097412e166e14ab4120b04f22d1c9026d61dcb data/simplegear/loot_tables/blocks/decorative_amethyst_block.json
-0353372c3c987d796461491878566541b0fe69b8 data/simplegear/loot_tables/blocks/deepslate_carbonite_ore.json
 406b52f20bef9678fcf9ad620c26676bb5a2d8b3 data/simplegear/loot_tables/blocks/deepslate_ruby_ore.json
 9625a7451ab6cdde6557e338b0b52944cc7c39dc data/simplegear/loot_tables/blocks/deepslate_sapphire_ore.json
 a2c5ff55556246bea56a8cebb4f318b0bf51b9ca data/simplegear/loot_tables/blocks/deepslate_tin_ore.json

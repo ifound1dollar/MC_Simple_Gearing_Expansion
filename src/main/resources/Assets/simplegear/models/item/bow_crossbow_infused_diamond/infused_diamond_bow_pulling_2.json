@@ -1,0 +1,6 @@
+{
+    "parent": "simplegear:item/infused_diamond_bow",
+    "textures": {
+        "layer0": "simplegear:item/infused_diamond_bow_pulling_2"
+    }
+}

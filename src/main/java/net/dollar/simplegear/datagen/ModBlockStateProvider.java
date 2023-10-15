@@ -32,8 +32,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         basicBlockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
         basicBlockWithItem(ModBlocks.DECORATIVE_AMETHYST_BLOCK);
 
-        basicBlockWithItem(ModBlocks.CARBONITE_ORE);
-        basicBlockWithItem(ModBlocks.DEEPSLATE_CARBONITE_ORE);
+//        basicBlockWithItem(ModBlocks.CARBONITE_ORE);
+//        basicBlockWithItem(ModBlocks.DEEPSLATE_CARBONITE_ORE);
         basicBlockWithItem(ModBlocks.TIN_BLOCK);
         basicBlockWithItem(ModBlocks.RAW_TIN_BLOCK);
         basicBlockWithItem(ModBlocks.TIN_ORE);

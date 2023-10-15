@@ -5,9 +5,15 @@ import net.dollar.simplegear.entity.ModEntities;
 import net.dollar.simplegear.item.custom.*;
 import net.dollar.simplegear.item.custom.arrow.ModTinArrowItem;
 import net.dollar.simplegear.item.custom.arrow.ModTungstenArrowItem;
+import net.dollar.simplegear.item.custom.bow.ModInfusedDiamondBowItem;
+import net.dollar.simplegear.item.custom.bow.ModNetheriteBowItem;
 import net.dollar.simplegear.item.custom.bow.ModSteelBowItem;
+import net.dollar.simplegear.item.custom.bow.ModTungstenCarbideBowItem;
 import net.dollar.simplegear.item.custom.carbide.*;
+import net.dollar.simplegear.item.custom.crossbow.ModInfusedDiamondCrossbowItem;
+import net.dollar.simplegear.item.custom.crossbow.ModNetheriteCrossbowItem;
 import net.dollar.simplegear.item.custom.crossbow.ModSteelCrossbowItem;
+import net.dollar.simplegear.item.custom.crossbow.ModTungstenCarbideCrossbowItem;
 import net.dollar.simplegear.item.custom.infused.*;
 import net.dollar.simplegear.item.custom.netherite.*;
 import net.dollar.simplegear.util.ModSmithingUpgradeItemHelper;
@@ -34,10 +40,6 @@ public class ModItems {
     public static final RegistryObject<Item> OBSIDIAN_GOLEM_SPAWN_EGG = ITEMS.register("obsidian_golem_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.OBSIDIAN_GOLEM, 0x12031E, 0xED4D0E,
                     new Item.Properties()));
-    public static final RegistryObject<Item> TIN_SHEARS = ITEMS.register("tin_shears",
-            () -> new ShearsItem(new Item.Properties().durability(200)));   //Iron is 238 (for some reason)
-    public static final RegistryObject<Item> TUNGSTEN_SHEARS = ITEMS.register("tungsten_shears",
-            () -> new ShearsItem(new Item.Properties().durability(750)));   //Iron is 238 (for some reason)
 
     //region COLLECTOR ITEMS
     public static final RegistryObject<Item> COLLECTOR_OBSIDIAN_DUST = ITEMS.register("collector_obsidian_dust",
@@ -50,7 +52,6 @@ public class ModItems {
             () -> new ModCollectorItem(new Item.Properties(), "4"));
     //endregion
 
-    //create RegistryObjects for new items
     //region BASIC ITEMS
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
@@ -74,7 +75,7 @@ public class ModItems {
     public static final RegistryObject<Item> CARBIDE_UPGRADE_SMITHING_TEMPLATE =
             ITEMS.register("carbide_upgrade_smithing_template", ModSmithingUpgradeItemHelper::createCarbideUpgradeTemplate);
 
-    public static final RegistryObject<Item> CARBONITE_DUST = ITEMS.register("carbonite_dust",
+    public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties()));
@@ -107,10 +108,33 @@ public class ModItems {
     //region Bows
     public static final RegistryObject<Item> STEEL_BOW = ITEMS.register("steel_bow",
             () -> new ModSteelBowItem(new Item.Properties().durability(600)));   //default is 384
+    public static final RegistryObject<Item> INFUSED_DIAMOND_BOW = ITEMS.register("infused_diamond_bow",
+            () -> new ModInfusedDiamondBowItem(new Item.Properties().durability(1600)));
+    public static final RegistryObject<Item> NETHERITE_BOW = ITEMS.register("netherite_bow",
+            () -> new ModNetheriteBowItem(new Item.Properties().durability(1600)));
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_BOW = ITEMS.register("tungsten_carbide_bow",
+            () -> new ModTungstenCarbideBowItem(new Item.Properties().durability(1600)));
     //endregion
     //region Crossbows
     public static final RegistryObject<Item> STEEL_CROSSBOW = ITEMS.register("steel_crossbow",
             () -> new ModSteelCrossbowItem(new Item.Properties().durability(750)));   //default is 465
+    public static final RegistryObject<Item> INFUSED_DIAMOND_CROSSBOW = ITEMS.register("infused_diamond_crossbow",
+            () -> new ModInfusedDiamondCrossbowItem(new Item.Properties().durability(2000)));
+    public static final RegistryObject<Item> NETHERITE_CROSSBOW = ITEMS.register("netherite_crossbow",
+            () -> new ModNetheriteCrossbowItem(new Item.Properties().durability(2000)));
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_CROSSBOW = ITEMS.register("tungsten_carbide_crossbow",
+            () -> new ModTungstenCarbideCrossbowItem(new Item.Properties().durability(2000)));
+    //endregion
+    //region Shears
+    public static final RegistryObject<Item> STEEL_SHEARS = ITEMS.register("steel_shears",
+            () -> new ShearsItem(new Item.Properties().durability(600)));   //Iron is 238 (for some reason)
+    public static final RegistryObject<Item> INFUSED_DIAMOND_SHEARS = ITEMS.register("infused_diamond_shears",
+            () -> new ShearsItem(new Item.Properties().durability(2000)));
+    public static final RegistryObject<Item> NETHERITE_SHEARS = ITEMS.register("netherite_shears",
+            () -> new ShearsItem(new Item.Properties().durability(2000)));
+    public static final RegistryObject<Item> TUNGSTEN_CARBIDE_SHEARS = ITEMS.register("tungsten_carbide_shears",
+            () -> new ShearsItem(new Item.Properties().durability(2000)));
+
     //endregion
 
 

@@ -86,14 +86,14 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
                     .strength(4.5f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)));
-    public static final RegistryObject<Block> CARBONITE_ORE = registerBlock("carbonite_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
-                    .strength(3f).requiresCorrectToolForDrops(),
-                    UniformInt.of(2, 5)));
-    public static final RegistryObject<Block> DEEPSLATE_CARBONITE_ORE = registerBlock("deepslate_carbonite_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
-                    .strength(4.5f).requiresCorrectToolForDrops(),
-                    UniformInt.of(2, 5)));
+//    public static final RegistryObject<Block> CARBONITE_ORE = registerBlock("carbonite_ore",
+//            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+//                    .strength(3f).requiresCorrectToolForDrops(),
+//                    UniformInt.of(2, 5)));
+//    public static final RegistryObject<Block> DEEPSLATE_CARBONITE_ORE = registerBlock("deepslate_carbonite_ore",
+//            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
+//                    .strength(4.5f).requiresCorrectToolForDrops(),
+//                    UniformInt.of(2, 5)));
 
 
     //chain does not render correctly - no transparency between links (can fix later)

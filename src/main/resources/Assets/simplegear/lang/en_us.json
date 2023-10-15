@@ -7,8 +7,6 @@
   "block.simplegear.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
   "block.simplegear.decorative_amethyst_block": "Decorative Amethyst Block",
 
-  "block.simplegear.carbonite_block": "Carbonite Block",
-  "block.simplegear.carbonite_ore": "Carbonite Ore",
   "block.simplegear.deepslate_carbonite_ore": "Deepslate Carbonite Ore",
   "block.simplegear.tin_block": "Tin Block",
   "block.simplegear.raw_tin_block": "Raw Tin Block",
@@ -26,12 +24,9 @@
 
 
   "item.simplegear.obsidian_golem_spawn_egg": "Obsidian Golem Spawn Egg",
-  "item.simplegear.tin_shears": "Tin Shears",
-  "item.simplegear.tungsten_shears": "Tungsten Shears",
 
   "item.simplegear.ruby": "Ruby",
   "item.simplegear.sapphire": "Sapphire",
-  "item.simplegear.carbonite_dust": "Carbonite Dust",
   "item.simplegear.raw_tin": "Raw Tin",
   "item.simplegear.tin_ingot": "Tin Ingot",
   "item.simplegear.bronze_compound": "Bronze Compound",
@@ -41,6 +36,7 @@
   "item.simplegear.raw_tungsten": "Raw Tungsten",
   "item.simplegear.tungsten_ingot": "Tungsten Ingot",
 
+  "item.simplegear.coal_coke": "Coal Coke",
   "item.simplegear.compound_gemstone": "Compound Gemstone",
   "item.simplegear.infused_gemstone": "Infused Gemstone",
   "item.simplegear.molten_core": "Molten Core",
@@ -55,6 +51,21 @@
 
   "item.simplegear.tin_arrow": "Tin Arrow",
   "item.simplegear.tungsten_arrow": "Tungsten Arrow",
+
+  "item.simplegear.steel_bow": "Steel Bow",
+  "item.simplegear.infused_diamond_bow": "Infused Diamond Bow",
+  "item.simplegear.netherite_bow": "Netherite Bow",
+  "item.simplegear.tungsten_carbide_bow": "Tungsten-Carbide Bow",
+
+  "item.simplegear.steel_crossbow": "Steel Crossbow",
+  "item.simplegear.infused_diamond_crossbow": "Infused Diamond Crossbow",
+  "item.simplegear.netherite_crossbow": "Netherite Crossbow",
+  "item.simplegear.tungsten_carbide_crossbow": "Tungsten-Carbide Crossbow",
+
+  "item.simplegear.steel_shears": "Steel Shears",
+  "item.simplegear.infused_diamond_shears": "Infused Diamond Shears",
+  "item.simplegear.netherite_shears": "Netherite Shears",
+  "item.simplegear.tungsten_carbide_shears": "Tungsten-Carbide Shears",
 
   "item.simplegear.stone_mace": "Stone Mace",
   "item.simplegear.iron_mace": "Iron Mace",
@@ -94,8 +105,6 @@
   "item.simplegear.steel_pickaxe": "Steel Pickaxe",
   "item.simplegear.steel_shovel": "Steel Shovel",
   "item.simplegear.steel_sword": "Steel Sword",
-  "item.simplegear.steel_bow": "Steel Bow",
-  "item.simplegear.steel_crossbow": "Steel Crossbow",
 
   "item.simplegear.tungsten_helmet": "Tungsten Helmet",
   "item.simplegear.tungsten_chestplate": "Tungsten Chestplate",

@@ -1,0 +1,6 @@
+{
+    "parent": "simplegear:item/tungsten_carbide_crossbow",
+    "textures": {
+        "layer0": "simplegear:item/tungsten_carbide_crossbow_arrow"
+    }
+}

@@ -1,7 +1,13 @@
 package net.dollar.simplegear.util;
 
 import net.dollar.simplegear.config.ModCommonConfigs;
+import net.dollar.simplegear.item.ModItems;
+import net.dollar.simplegear.item.custom.crossbow.ModInfusedDiamondCrossbowItem;
+import net.dollar.simplegear.item.custom.crossbow.ModNetheriteCrossbowItem;
+import net.dollar.simplegear.item.custom.crossbow.ModSteelCrossbowItem;
+import net.dollar.simplegear.item.custom.crossbow.ModTungstenCarbideCrossbowItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -80,6 +86,23 @@ public class ModUtils {
 
 
 
+    public static int getCrossbowChargeDurationTicks(Item item, ItemStack crossbowItemStack) {
+        if (item == ModItems.STEEL_CROSSBOW.get()) {
+            return ModSteelCrossbowItem.getChargeDuration(crossbowItemStack);
+        } else if (item == ModItems.INFUSED_DIAMOND_CROSSBOW.get()) {
+            return ModInfusedDiamondCrossbowItem.getChargeDuration(crossbowItemStack);
+        } else if (item == ModItems.NETHERITE_CROSSBOW.get()) {
+            return ModNetheriteCrossbowItem.getChargeDuration(crossbowItemStack);
+        } else if (item == ModItems.TUNGSTEN_CARBIDE_CROSSBOW.get()) {
+            return ModTungstenCarbideCrossbowItem.getChargeDuration(crossbowItemStack);
+        }
+
+        //should never reach here, but if it does, return default (25, modified by Quick Charge)
+        return CrossbowItem.getChargeDuration(crossbowItemStack);
+    }
+
+
+
     /**
      * Rolls chance to apply special effect on attack using Infused Diamond tools/armor, and applies when applicable.
      * @param attackedEntity Attacked (target) entity
@@ -107,8 +130,8 @@ public class ModUtils {
         } else {
             components.add(Component.literal(String.format("§5> Chance on-hit: Gain Speed for %ss",
                     ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
-            components.add(Component.literal(String.format("§5> +%s%% damage to End mobs",
-                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
+//            components.add(Component.literal(String.format("§5> +%s%% damage to End mobs",
+//                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
 
@@ -141,8 +164,8 @@ public class ModUtils {
         } else {
             components.add(Component.literal(String.format("§4> Chance on-hit: Wither target for %ss",
                     ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
-            components.add(Component.literal(String.format("§4> +%s%% damage to Nether mobs",
-                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
+//            components.add(Component.literal(String.format("§4> +%s%% damage to Nether mobs",
+//                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
 
@@ -175,8 +198,8 @@ public class ModUtils {
         } else {
             components.add(Component.literal(String.format("§8> Chance on-hit: Slow target for %ss",
                     ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
-            components.add(Component.literal(String.format("§8> +%s%% damage to Sturdy mobs",
-                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
+//            components.add(Component.literal(String.format("§8> +%s%% damage to Sturdy mobs",
+//                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
         }
     }
 }

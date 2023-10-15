@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": {
+      "tag": "forge:ingots/steel"
+    }
+  },
+  "pattern": [
+    " d",
+    "d "
+  ],
+  "result": {
+    "item": "simplegear:steel_shears"
+  },
+  "show_notification": true
+}

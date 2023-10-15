@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "simplegear:steel_shears",
+    "simplegear:infused_diamond_shears",
+    "simplegear:netherite_shears",
+    "simplegear:tungsten_carbide_shears"
+  ]
+}

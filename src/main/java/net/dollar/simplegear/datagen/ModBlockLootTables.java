@@ -49,10 +49,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModItems.SAPPHIRE.get()));
 
-        add(ModBlocks.CARBONITE_ORE.get(),
-                (block) -> createOreDrop(ModBlocks.CARBONITE_ORE.get(), ModItems.CARBONITE_DUST.get()));
-        add(ModBlocks.DEEPSLATE_CARBONITE_ORE.get(),
-                (block) -> createOreDrop(ModBlocks.DEEPSLATE_CARBONITE_ORE.get(), ModItems.CARBONITE_DUST.get()));
+//        add(ModBlocks.CARBONITE_ORE.get(),
+//                (block) -> createOreDrop(ModBlocks.CARBONITE_ORE.get(), ModItems.COAL_COKE.get()));
+//        add(ModBlocks.DEEPSLATE_CARBONITE_ORE.get(),
+//                (block) -> createOreDrop(ModBlocks.DEEPSLATE_CARBONITE_ORE.get(), ModItems.COAL_COKE.get()));
 
         add(ModBlocks.TIN_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get()));

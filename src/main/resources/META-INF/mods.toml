@@ -19,7 +19,7 @@ modId="simplegear" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="1.3.2-1.20.1" #mandatory
+version="1.4.0-1.20.1" #mandatory
  # A display name for the mod
 displayName="Simple Gearing Expansion" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
@@ -46,6 +46,7 @@ description='''
  - Adding multiple new ores, metals, and jewels with corresponding items and blocks
  - Adding multiple new early, mid, and endgame equipment tiers
  - Adding an entirely new weapon type (Mace) with custom enchantments
+ - Expanding the ranged weapon system to include Light and Heavy Arrows, Crossbows, and Bows
  - Easing the process of acquiring Smithing Upgrade Templates
  - Adding new naturally and non-naturally spawning boss mobs, each with difficult-to-acquire collectible item drops
  - Categorizing damage sources more specifically, like Blunt vs. Sharp, which is used by new mobs and gear

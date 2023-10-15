@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/carbonite",
     "#forge:ores/ruby",
     "#forge:ores/sapphire",
     "#forge:ores/tin",

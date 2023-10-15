@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "simplegear:tungsten_carbide_shears"
+    },
+    "title": "Really Thick Wool",
+    "description": "Upgrade a set of Shears from Steel to Infused Diamond, Netherite, or Tungsten-Carbide",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "simplegear:simple_gearing_expansion",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "simplegear:infused_diamond_shears",
+              "simplegear:netherite_shears",
+              "simplegear:tungsten_carbide_shears"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

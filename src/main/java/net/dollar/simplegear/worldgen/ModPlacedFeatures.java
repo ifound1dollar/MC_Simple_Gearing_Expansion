@@ -22,8 +22,8 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> RUBY_ORE_PLACED_KEY = createKey("ruby_ore_placed");
     public static final ResourceKey<PlacedFeature> SAPPHIRE_ORE_PLACED_KEY = createKey("sapphire_ore_placed");
-    public static final ResourceKey<PlacedFeature> CARBONITE_ORE_LOWER_PLACED_KEY = createKey("carbonite_ore_lower_placed");
-    public static final ResourceKey<PlacedFeature> CARBONITE_ORE_UPPER_PLACED_KEY = createKey("carbonite_ore_upper_placed");
+//    public static final ResourceKey<PlacedFeature> CARBONITE_ORE_LOWER_PLACED_KEY = createKey("carbonite_ore_lower_placed");
+//    public static final ResourceKey<PlacedFeature> CARBONITE_ORE_UPPER_PLACED_KEY = createKey("carbonite_ore_upper_placed");
     public static final ResourceKey<PlacedFeature> TIN_ORE_PLACED_KEY = createKey("tin_ore_placed");
     public static final ResourceKey<PlacedFeature> TIN_ORE_SMALL_PLACED_KEY = createKey("tin_ore_small_placed");
     public static final ResourceKey<PlacedFeature> TUNGSTEN_ORE_PLACED_KEY = createKey("tungsten_ore_placed");
@@ -41,16 +41,16 @@ public class ModPlacedFeatures {
         //FIRST PARAM IS VEIN COUNT PER CHUNK, SECOND TWO ARE HEIGHT RANGE WHICH CAN BE TRIANGULAR OR UNIFORM
 
         //uncommon but not rare (only small veins)
-        register(context, CARBONITE_ORE_UPPER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CARBONITE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(5,
-                        HeightRangePlacement.triangle(
-                                VerticalAnchor.absolute(-16),
-                                VerticalAnchor.absolute(64))));
-        register(context, CARBONITE_ORE_LOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CARBONITE_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(5,
-                        HeightRangePlacement.uniform(
-                                VerticalAnchor.absolute(-64),
-                                VerticalAnchor.absolute(16))));
+//        register(context, CARBONITE_ORE_UPPER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CARBONITE_ORE_KEY),
+//                ModOrePlacement.commonOrePlacement(5,
+//                        HeightRangePlacement.triangle(
+//                                VerticalAnchor.absolute(-16),
+//                                VerticalAnchor.absolute(64))));
+//        register(context, CARBONITE_ORE_LOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CARBONITE_ORE_KEY),
+//                ModOrePlacement.commonOrePlacement(5,
+//                        HeightRangePlacement.uniform(
+//                                VerticalAnchor.absolute(-64),
+//                                VerticalAnchor.absolute(16))));
 
         //both are as rare as small Diamond BUT triangle base is 16 higher (but very small veins)
         register(context, RUBY_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBY_ORE_KEY),

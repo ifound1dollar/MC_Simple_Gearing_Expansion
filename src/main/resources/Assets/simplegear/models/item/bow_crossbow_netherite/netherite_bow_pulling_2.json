@@ -1,0 +1,6 @@
+{
+    "parent": "simplegear:item/netherite_bow",
+    "textures": {
+        "layer0": "simplegear:item/netherite_bow_pulling_2"
+    }
+}
