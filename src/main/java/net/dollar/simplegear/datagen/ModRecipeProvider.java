@@ -3,13 +3,11 @@ package net.dollar.simplegear.datagen;
 import net.dollar.simplegear.SimpleGearingExpansion;
 import net.dollar.simplegear.block.ModBlocks;
 import net.dollar.simplegear.item.ModItems;
-import net.dollar.simplegear.util.ModLegacySmithingRecipeBuilder;
 import net.dollar.simplegear.util.ModTags;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -44,7 +42,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param consumer Consumer of FinishedRecipe
      */
     @Override
-    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull RecipeOutput consumer) {
         //region Ores, smelting AND blasting
         smeltingRecipeBuilder(consumer, ModBlocks.RUBY_ORE.get(), RecipeCategory.MISC,
                 ModItems.RUBY.get(), 1.0f, 200, "ruby" );
@@ -130,8 +128,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("   ")
                 .pattern("d d")
                 .pattern(" d ")
-                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
+                .unlockedBy("has_tin_ingot", has(ModTags.Items.FORGE_INGOTS_TIN))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":bucket_from_tin");
         //endregion
 
@@ -139,14 +136,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BRONZE_COMPOUND.get(), 3)
                 .requires(Ingredient.of(Tags.Items.INGOTS_COPPER), 3)
                 .requires(ModTags.Items.FORGE_INGOTS_TIN)
-                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
+                .unlockedBy("has_tin_ingot", has(ModTags.Items.FORGE_INGOTS_TIN))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STEEL_COMPOUND.get(), 1)
                 .requires(Tags.Items.INGOTS_IRON)
                 .requires(ModTags.Items.FORGE_DUSTS_CARBONITE)
-                .unlockedBy("has_carbonite_dust", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_DUSTS_CARBONITE).build()))
+                .unlockedBy("has_carbonite_dust", has(ModTags.Items.FORGE_DUSTS_CARBONITE))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COMPOUND_GEMSTONE.get(), 1)
                 .requires(Tags.Items.GEMS_AMETHYST)
@@ -154,15 +149,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModTags.Items.FORGE_GEMS_RUBY)
                 .requires(ModTags.Items.FORGE_GEMS_SAPPHIRE)
                 .requires(Tags.Items.GEMS_DIAMOND)
-                .unlockedBy("has_diamond", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(Tags.Items.GEMS_DIAMOND).build()))
+                .unlockedBy("has_diamond", has(Tags.Items.GEMS_DIAMOND))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1)
                 .requires(Ingredient.of(ModTags.Items.FORGE_INGOTS_TUNGSTEN), 4)
                 .requires(Ingredient.of(ModTags.Items.FORGE_DUSTS_CARBONITE), 4)
                 .requires(ModItems.MOLTEN_CORE.get(), 1)
-                .unlockedBy("has_molten_core", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.MOLTEN_CORE.get()).build()))
+                .unlockedBy("has_molten_core", has(ModItems.MOLTEN_CORE.get()))
                 .save(consumer);
         //endregion
 
@@ -174,8 +167,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("ndn")
                 .pattern("nin")
                 .pattern("nnn")
-                .unlockedBy("has_bronze_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.BRONZE_INGOT.get()).build()))
+                .unlockedBy("has_bronze_ingot", has(ModItems.BRONZE_INGOT.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 1)
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
@@ -184,8 +176,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" d ")
                 .pattern("nin")
                 .pattern(" n ")
-                .unlockedBy("has_basic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
+                .unlockedBy("has_basic_upgrade_template", has(ModItems.BASIC_UPGRADE_TEMPLATE.get()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":infusion_upgrade_smithing_template_from_basic");
         //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(), 2)
@@ -195,8 +186,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("ndn")
                 .pattern("nin")
                 .pattern("nnn")
-                .unlockedBy("has_infusion_upgrade_smithing_template", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get()).build()))
+                .unlockedBy("has_infusion_upgrade_smithing_template", has(ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 1)
                 .define('d', ModItems.BASIC_UPGRADE_TEMPLATE.get())
@@ -205,8 +195,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" d ")
                 .pattern("nin")
                 .pattern(" n ")
-                .unlockedBy("has_basic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
+                .unlockedBy("has_basic_upgrade_template", has(ModItems.BASIC_UPGRADE_TEMPLATE.get()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":carbide_upgrade_smithing_template_from_basic");
         //NOTE: above second param to 'save' method is required to avoid duplicate recipe below
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
@@ -216,8 +205,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("ndn")
                 .pattern("nin")
                 .pattern("nnn")
-                .unlockedBy("has_carbide_upgrade_smithing_template", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get()).build()))
+                .unlockedBy("has_carbide_upgrade_smithing_template", has(ModItems.CARBIDE_UPGRADE_SMITHING_TEMPLATE.get()))
                 .save(consumer);
         //NOTE: below recipe has custom name for clarity purposes
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, 1)
@@ -227,8 +215,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" d ")
                 .pattern("nin")
                 .pattern(" n ")
-                .unlockedBy("has_basic_upgrade_template", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModItems.BASIC_UPGRADE_TEMPLATE.get()).build()))
+                .unlockedBy("has_basic_upgrade_template", has(ModItems.BASIC_UPGRADE_TEMPLATE.get()))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":netherite_upgrade_smithing_template_from_basic");
         //endregion
 
@@ -242,14 +229,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("d")
                 .pattern("i")
                 .pattern("n")
-                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
+                .unlockedBy("has_tin_ingot", has(ModTags.Items.FORGE_INGOTS_TIN))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.TIN_ARROW.get(), 4)
                 .requires(Ingredient.of(Items.ARROW), 4)    //regular arrow specifically
                 .requires(Ingredient.of(ModTags.Items.FORGE_INGOTS_TIN), 1)
-                .unlockedBy("has_tin_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TIN).build()))
+                .unlockedBy("has_tin_ingot", has(ModTags.Items.FORGE_INGOTS_TIN))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":tin_arrow_from_regular");
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TUNGSTEN_ARROW.get(), 4)
                 .define('d', ModTags.Items.FORGE_INGOTS_TUNGSTEN)
@@ -258,14 +243,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("d")
                 .pattern("i")
                 .pattern("n")
-                .unlockedBy("has_tungsten_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
+                .unlockedBy("has_tungsten_ingot", has(ModTags.Items.FORGE_INGOTS_TUNGSTEN))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.COMBAT, ModItems.TUNGSTEN_ARROW.get(), 4)
                 .requires(Ingredient.of(Items.ARROW), 4)
                 .requires(Ingredient.of(ModTags.Items.FORGE_INGOTS_TUNGSTEN), 1)
-                .unlockedBy("has_tungsten_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_TUNGSTEN).build()))
+                .unlockedBy("has_tungsten_ingot", has(ModTags.Items.FORGE_INGOTS_TUNGSTEN))
                 .save(consumer, SimpleGearingExpansion.MOD_ID + ":tungsten_arrow_from_regular");
         //endregion
         //region BOWS
@@ -276,8 +259,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" in")
                 .pattern("d n")
                 .pattern(" in")
-                .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
+                .unlockedBy("has_steel_ingot", has(ModTags.Items.FORGE_INGOTS_STEEL))
                 .save(consumer);
         smithingUpgradeRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.STEEL_BOW.get(), ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
@@ -298,8 +280,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("iii")
                 .pattern("ntn")
                 .pattern(" d ")
-                .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
+                .unlockedBy("has_steel_ingot", has(ModTags.Items.FORGE_INGOTS_STEEL))
                 .save(consumer);
         smithingUpgradeRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.STEEL_CROSSBOW.get(), ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.COMBAT,
@@ -316,8 +297,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('d', ModTags.Items.FORGE_INGOTS_STEEL)
                 .pattern(" d")
                 .pattern("d ")
-                .unlockedBy("has_steel_ingot", inventoryTrigger(ItemPredicate.Builder.item()
-                        .of(ModTags.Items.FORGE_INGOTS_STEEL).build()))
+                .unlockedBy("has_steel_ingot", has(ModTags.Items.FORGE_INGOTS_STEEL))
                 .save(consumer);
         smithingUpgradeRecipeBuilder(consumer, ModItems.INFUSION_UPGRADE_SMITHING_TEMPLATE.get(),
                 ModItems.STEEL_SHEARS.get(), ModItems.INFUSED_GEMSTONE.get(), RecipeCategory.TOOLS,
@@ -532,7 +512,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param result Crafting result
      * @param unlockedByString Tag used for unlocking crafting recipe
      */
-    private void armorRecipeBuilder(Consumer<FinishedRecipe> consumer, EquipmentSlot slot,
+    private void armorRecipeBuilder(RecipeOutput consumer, EquipmentSlot slot,
                                     TagKey<Item> ingredient, RegistryObject<Item> result,
                                     String unlockedByString) {
         if (slot == EquipmentSlot.HEAD) {
@@ -540,8 +520,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .define('d', ingredient)
                     .pattern("ddd")
                     .pattern("d d")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (slot == EquipmentSlot.CHEST) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get(), 1)
@@ -549,8 +528,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("d d")
                     .pattern("ddd")
                     .pattern("ddd")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (slot == EquipmentSlot.LEGS) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get(), 1)
@@ -558,16 +536,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("ddd")
                     .pattern("d d")
                     .pattern("d d")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (slot == EquipmentSlot.FEET) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result.get(), 1)
                     .define('d', ingredient)
                     .pattern("d d")
                     .pattern("d d")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else {
             SimpleGearingExpansion.LOGGER.debug("Invalid EquipmentSlot provided to armorRecipeBuilder.");
@@ -582,7 +558,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param result Crafting result
      * @param unlockedByString Tag used for unlocking crafting recipe
      */
-    private void toolRecipeBuilder(Consumer<FinishedRecipe> consumer, ToolType toolType,
+    private void toolRecipeBuilder(RecipeOutput consumer, ToolType toolType,
                                    TagKey<Item> ingredient, Item result, String unlockedByString) {
         if (toolType == ToolType.AXE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)  //third param is quantity
@@ -591,8 +567,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("dd")
                     .pattern("di")
                     .pattern(" i")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (toolType == ToolType.HOE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
@@ -601,8 +576,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("dd")
                     .pattern(" i")
                     .pattern(" i")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (toolType == ToolType.MACE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result, 1)
@@ -611,8 +585,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern(" dd")
                     .pattern(" id")
                     .pattern("i  ")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (toolType == ToolType.PICKAXE) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
@@ -621,8 +594,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("ddd")
                     .pattern(" i ")
                     .pattern(" i ")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (toolType == ToolType.SHOVEL) {
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result, 1)
@@ -631,8 +603,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("d")
                     .pattern("i")
                     .pattern("i")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         } else if (toolType == ToolType.SWORD) {
             ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result, 1)
@@ -641,34 +612,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .pattern("d")
                     .pattern("d")
                     .pattern("i")
-                    .unlockedBy(unlockedByString, inventoryTrigger(ItemPredicate.Builder.item()
-                            .of(ingredient).build()))
+                    .unlockedBy(unlockedByString, has(ingredient))
                     .save(consumer);
         }
     }
 
 
-
-    /**
-     * Helper to automatically generate LEGACY smithing recipes for Minecraft versions before 1.20.
-     *  NOTE: Smithing recipes are specifically item-to-item, and should never use tags.
-     * @param consumer Consumer of FinishedRecipe
-     * @param upgradeItem Item being upgraded
-     * @param ingredient Upgrade ingredient Item
-     * @param category Recipe category
-     * @param result Smithing result Item
-     * @param unlockedByString Tag used for unlocking smithing recipe
-     */
-    @Deprecated
-    private void legacySmithingRecipeBuilder(Consumer<FinishedRecipe> consumer, Item upgradeItem,
-                                                      Item ingredient, RecipeCategory category, Item result,
-                                                      String unlockedByString) {
-        ModLegacySmithingRecipeBuilder.smithing(Ingredient.of(upgradeItem), Ingredient.of(ingredient),
-                category, result).unlocks(unlockedByString, has(ingredient))
-                .save(consumer,new ResourceLocation(SimpleGearingExpansion.MOD_ID, getItemName(result))
-                        + "_smithing");
-    }
-
+    
     /**
      * Helper to automatically generate smithing recipes (1.20+). NOTE: Smithing recipes are
      *  specifically item-to-item, and should never use tags.
@@ -680,7 +630,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param result Smithing result Item
      * @param unlockedByString Tag used for unlocking smithing recipe
      */
-    private void smithingUpgradeRecipeBuilder(Consumer<FinishedRecipe> consumer, Item template, Item upgradeItem,
+    private void smithingUpgradeRecipeBuilder(RecipeOutput consumer, Item template, Item upgradeItem,
                                               Item ingredient, RecipeCategory category, Item result,
                                               String unlockedByString) {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(template), Ingredient.of(upgradeItem),
@@ -690,7 +640,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         + "_smithing");
     }
 
-    private void smithingUpgradeRecipeBuilderTagIngredient(Consumer<FinishedRecipe> consumer, Item template, Item upgradeItem,
+    private void smithingUpgradeRecipeBuilderTagIngredient(RecipeOutput consumer, Item template, Item upgradeItem,
                                                         TagKey<Item> ingredient, RecipeCategory category, Item result,
                                                         String unlockedByString) {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(template), Ingredient.of(upgradeItem),
@@ -713,7 +663,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param ticks Number of ticks required to blast
      * @param resultItemName String, equal to result item name, that is used in JSON filename
      */
-    protected static void smeltingRecipeBuilder(Consumer<FinishedRecipe> consumer, ItemLike ingredientItemLike,
+    protected static void smeltingRecipeBuilder(RecipeOutput consumer, ItemLike ingredientItemLike,
                                                 RecipeCategory category, ItemLike resultItemLike, float xpReward,
                                                 int ticks, String resultItemName) {
         SimpleCookingRecipeBuilder
@@ -736,7 +686,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param ticks Number of ticks required to blast
      * @param resultItemName String, equal to result item name, that is used in JSON filename
      */
-    protected static void blastingRecipeBuilder(Consumer<FinishedRecipe> consumer, ItemLike ingredientItemLike,
+    protected static void blastingRecipeBuilder(RecipeOutput consumer, ItemLike ingredientItemLike,
                                                 RecipeCategory category, ItemLike resultItemLike, float xpReward,
                                                 int ticks, String resultItemName) {
         SimpleCookingRecipeBuilder
@@ -758,10 +708,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     // of 'new ResourceLocation()' to first take TestMod.MOD_ID, THEN the actual value.
     //  ex. 'new ResourceLocation(p_252237_)' -> 'new ResourceLocation(TestMod.MOD_ID, p_252237_)'
 
-    protected static void nineBlockStorageRecipes(Consumer<FinishedRecipe> p_249580_, RecipeCategory p_251203_, ItemLike p_251689_, RecipeCategory p_251376_, ItemLike p_248771_) {
+    protected static void nineBlockStorageRecipes(RecipeOutput p_249580_, RecipeCategory p_251203_, ItemLike p_251689_, RecipeCategory p_251376_, ItemLike p_248771_) {
         nineBlockStorageRecipes(p_249580_, p_251203_, p_251689_, p_251376_, p_248771_, getSimpleRecipeName(p_248771_), (String)null, getSimpleRecipeName(p_251689_), (String)null);
     }
-    protected static void nineBlockStorageRecipes(Consumer<FinishedRecipe> p_250423_, RecipeCategory p_250083_, ItemLike p_250042_, RecipeCategory p_248977_, ItemLike p_251911_, String p_250475_, @Nullable String p_248641_, String p_252237_, @Nullable String p_250414_) {
+    protected static void nineBlockStorageRecipes(RecipeOutput p_250423_, RecipeCategory p_250083_, ItemLike p_250042_, RecipeCategory p_248977_, ItemLike p_251911_, String p_250475_, @Nullable String p_248641_, String p_252237_, @Nullable String p_250414_) {
         ShapelessRecipeBuilder.shapeless(p_250083_, p_250042_, 9).requires(p_251911_).group(p_250414_).unlockedBy(getHasName(p_251911_), has(p_251911_)).save(p_250423_, new ResourceLocation(SimpleGearingExpansion.MOD_ID, p_252237_));
         ShapedRecipeBuilder.shaped(p_248977_, p_251911_).define('#', p_250042_).pattern("###").pattern("###").pattern("###").group(p_248641_).unlockedBy(getHasName(p_250042_), has(p_250042_)).save(p_250423_, new ResourceLocation(SimpleGearingExpansion.MOD_ID, p_250475_));
     }

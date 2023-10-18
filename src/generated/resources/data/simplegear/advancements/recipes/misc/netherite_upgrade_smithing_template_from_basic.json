@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_basic_upgrade_template",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_basic_upgrade_template"
     ]
   ],
   "rewards": {

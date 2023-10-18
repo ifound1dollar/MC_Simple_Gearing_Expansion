@@ -169,7 +169,7 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
                         }
                     }
 
-                    this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(SPEED_MODIFIER_DRINKING);
+                    this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(SPEED_MODIFIER_DRINKING.getId());
                 }
             } else {
                 Potion potion = null;
@@ -190,7 +190,7 @@ public class OldLadyMuffEntity extends Monster implements RangedAttackMob {
                     }
 
                     AttributeInstance attributeinstance = this.getAttribute(Attributes.MOVEMENT_SPEED);
-                    attributeinstance.removeModifier(SPEED_MODIFIER_DRINKING);
+                    attributeinstance.removeModifier(SPEED_MODIFIER_DRINKING.getId());
                     attributeinstance.addTransientModifier(SPEED_MODIFIER_DRINKING);
                 }
             }

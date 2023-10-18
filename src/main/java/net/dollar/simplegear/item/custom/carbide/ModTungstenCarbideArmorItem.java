@@ -30,13 +30,15 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
 
 
     /**
-     * Checks each tick if the player has a full set of Tungsten-Carbide armor.
+     * Checks each tick if the player has a full set of Netherite armor.
      * @param stack The ItemStack associated with this Object
      * @param level Active level/world
      * @param player Player this armor item is equipped on
+     * @param slotIndex The index of this ItemStack's active slot
+     * @param selectedIndex The index of the selected slot
      */
     @Override
-    public void onArmorTick(ItemStack stack, Level level, Player player) {
+    public void onInventoryTick(ItemStack stack, Level level, Player player, int slotIndex, int selectedIndex) {
         //do nothing if on client side OR if not chestplate (isFullSet will never be true on clients)
         if (level.isClientSide || LivingEntity.getEquipmentSlotForItem(stack) != EquipmentSlot.CHEST) { return; }
 
@@ -46,6 +48,8 @@ public class ModTungstenCarbideArmorItem extends ArmorItem implements IDamageHan
         boolean hasLeggings = player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.TUNGSTEN_CARBIDE_LEGGINGS.get();
         boolean hasBoots = player.getItemBySlot(EquipmentSlot.FEET).getItem() == ModItems.TUNGSTEN_CARBIDE_BOOTS.get();
         isFullSet = hasHelmet && hasChestplate && hasLeggings && hasBoots;
+
+        super.onInventoryTick(stack, level, player, slotIndex, selectedIndex);
     }
 
     /**

@@ -67,17 +67,25 @@ public class ObsidianGolemEntity extends Monster implements NeutralMob {
         //NOTE: smaller numbers (first argument) imply higher priority
 
         //speedModifier, followingTargetEvenIfNotSeen
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0d, true) {
-            @Override
-            protected double getAttackReachSqr(LivingEntity p_25556_) {
-                return super.getAttackReachSqr(p_25556_) / 1.5; //cut attack range down
-            }
-        });
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0d, true));
         //speedModifier
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0d));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+    }
+
+    /**
+     * Returns the Mob's bounding box as AABB object. Can be adjusted from default using this method.
+     * @return The Mob's bounding box
+     */
+    @Override
+    protected AABB getAttackBoundingBox() {
+        AABB temp = super.getAttackBoundingBox();
+        temp.deflate(temp.getXsize() / 3d, temp.getYsize() / 3d,
+                temp.getZsize() / 3d);
+
+        return temp;
     }
 
     /**
