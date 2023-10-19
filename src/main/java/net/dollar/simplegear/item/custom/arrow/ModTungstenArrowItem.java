@@ -57,8 +57,7 @@ public class ModTungstenArrowItem extends ArrowItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7Heavy Arrow "));
-        components.add(Component.literal("§7> +50% damage "));
+        components.add(Component.literal("§7> +75% damage "));
         super.appendHoverText(stack, level, components, flag);
     }
 

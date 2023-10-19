@@ -21,7 +21,7 @@ public class ModTinArrowProjectile extends AbstractArrow {
     }
     public ModTinArrowProjectile(Level level, LivingEntity livingEntity) {
         super(ModEntities.TIN_ARROW.get(), livingEntity, level);
-        setBaseDamage(2.5d);    //BASE ARROW DAMAGE MULTIPLIER IS 2
+        setBaseDamage(3.0d);    //BASE ARROW DAMAGE MULTIPLIER IS 2
     }
 
 

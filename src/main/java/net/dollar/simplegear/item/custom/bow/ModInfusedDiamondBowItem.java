@@ -127,7 +127,7 @@ public class ModInfusedDiamondBowItem extends BowItem implements IInfusedDiamond
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS;
+        return ARROW_ONLY;
     }
 
     /**
@@ -137,8 +137,8 @@ public class ModInfusedDiamondBowItem extends BowItem implements IInfusedDiamond
      * @return The modified or replacement AbstractArrow
      */
     public AbstractArrow customArrow(AbstractArrow arrow) {
-        //increase arrow's damage by BASE 30% (base is 2.0)
-        arrow.setBaseDamage(arrow.getBaseDamage() + 0.6d);
+        //increase arrow's damage by BASE 40% (base is 2.0)
+        arrow.setBaseDamage(arrow.getBaseDamage() + 0.8d);
         return arrow;
     }
 
@@ -182,8 +182,7 @@ public class ModInfusedDiamondBowItem extends BowItem implements IInfusedDiamond
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7Heavy Bow "));
-        components.add(Component.literal("§5> +30% damage"));
+        components.add(Component.literal("§5> +40% damage"));
         components.add(Component.literal("§5> Draws 20% faster"));
         super.appendHoverText(stack, level, components, flag);
     }

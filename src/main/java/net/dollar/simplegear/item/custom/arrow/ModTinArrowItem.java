@@ -57,7 +57,7 @@ public class ModTinArrowItem extends ArrowItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7> +25% damage "));
+        components.add(Component.literal("§7> +50% damage "));
         super.appendHoverText(stack, level, components, flag);
     }
 }

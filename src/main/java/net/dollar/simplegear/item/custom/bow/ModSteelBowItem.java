@@ -124,7 +124,7 @@ public class ModSteelBowItem extends BowItem {
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS;
+        return ARROW_ONLY;
     }
 
     /**
@@ -154,7 +154,6 @@ public class ModSteelBowItem extends BowItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7Heavy Bow "));
         super.appendHoverText(stack, level, components, flag);
     }
 }

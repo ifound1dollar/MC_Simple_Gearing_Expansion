@@ -20,7 +20,7 @@ public class ModTungstenArrowProjectile extends AbstractArrow {
     }
     public ModTungstenArrowProjectile(Level level, LivingEntity livingEntity) {
         super(ModEntities.TUNGSTEN_ARROW.get(), livingEntity, level);
-        setBaseDamage(3.0d);    //BASE ARROW DAMAGE IS 2
+        setBaseDamage(3.5d);    //BASE ARROW DAMAGE IS 2
     }
 
 

@@ -63,7 +63,7 @@ public class ModInfusedDiamondCrossbowItem extends CrossbowItem implements IInfu
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getSupportedHeldProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS_OR_FIREWORK;
+        return ARROW_OR_FIREWORK;
     }
 
     /**
@@ -71,7 +71,7 @@ public class ModInfusedDiamondCrossbowItem extends CrossbowItem implements IInfu
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS;
+        return ARROW_ONLY;
     }
 
 
@@ -270,8 +270,8 @@ public class ModInfusedDiamondCrossbowItem extends CrossbowItem implements IInfu
             abstractarrow.setPierceLevel((byte)i);
         }
 
-        //increase arrow's damage by BASE 30% (base is 2.0)
-        abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + 0.6d);
+        //increase arrow's damage by BASE 40% (base is 2.0)
+        abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + 0.8d);
         return abstractarrow;
     }
 
@@ -391,8 +391,7 @@ public class ModInfusedDiamondCrossbowItem extends CrossbowItem implements IInfu
      */
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7Heavy Crossbow "));
-        components.add(Component.literal("§5> +30% damage"));
+        components.add(Component.literal("§5> +40% damage"));
         components.add(Component.literal("§5> Charges 20% faster"));
         super.appendHoverText(itemStack, level, components, flag);
     }
