@@ -14,7 +14,6 @@ public class ModCommonConfigs {
 
     public static final ForgeConfigSpec.ConfigValue<Integer> BASIC_UPGRADE_TEMPLATE_DROP_CHANCE;
     //region Endgame Equipment Tier configs
-    public static final ForgeConfigSpec.ConfigValue<Integer> ENDGAME_WEAPON_BONUS_DAMAGE;
     public static final ForgeConfigSpec.ConfigValue<Integer> ENDGAME_TIER_EFFECT_SECONDS;
     public static final ForgeConfigSpec.ConfigValue<Integer> INFUSED_DIAMOND_EFFECT_CHANCE;
     public static final ForgeConfigSpec.ConfigValue<Integer> INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION;
@@ -40,8 +39,6 @@ public class ModCommonConfigs {
 
         //region Endgame Equipment Tiers
         BUILDER.comment("Endgame Equipment Tiers").push("endgame_tiers");
-        ENDGAME_WEAPON_BONUS_DAMAGE = BUILDER.comment("Bonus damage (%) dealt by endgame weapons to certain mob types")
-                .defineInRange("endgame_weapon_bonus_damage", 10, 0, 100);
         ENDGAME_TIER_EFFECT_SECONDS = BUILDER.comment("Duration (in seconds) of effect applied by endgame tools and weapons")
                         .defineInRange("endgame_tool_effect_duration", 4, 1, 10);
         BUILDER.pop();
