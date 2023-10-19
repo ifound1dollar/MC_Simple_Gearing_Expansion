@@ -6,8 +6,8 @@
     "title": "§bSimple Gearing Expansion",
     "description": "Joyous Journeys!",
     "frame": "task",
-    "show_toast": true,
-    "announce_to_chat": true,
+    "show_toast": false,
+    "announce_to_chat": false,
     "background": "simplegear:textures/block/tungsten_block.png",
     "hidden": false
   },
