@@ -64,7 +64,7 @@ public class ModSteelCrossbowItem extends CrossbowItem {
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getSupportedHeldProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS_OR_FIREWORK;
+        return ARROW_OR_FIREWORK;
     }
 
     /**
@@ -72,7 +72,7 @@ public class ModSteelCrossbowItem extends CrossbowItem {
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS;
+        return ARROW_ONLY;
     }
 
 
@@ -390,7 +390,6 @@ public class ModSteelCrossbowItem extends CrossbowItem {
      */
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7Heavy Crossbow "));
         super.appendHoverText(itemStack, level, components, flag);
     }
 

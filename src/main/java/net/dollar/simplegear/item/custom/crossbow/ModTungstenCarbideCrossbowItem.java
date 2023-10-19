@@ -62,7 +62,7 @@ public class ModTungstenCarbideCrossbowItem extends CrossbowItem {
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getSupportedHeldProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS_OR_FIREWORK;
+        return ARROW_OR_FIREWORK;
     }
 
     /**
@@ -70,7 +70,7 @@ public class ModTungstenCarbideCrossbowItem extends CrossbowItem {
      * @return The ItemStack Predicate
      */
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return ModUtils.HEAVY_AND_LIGHT_ARROWS;
+        return ARROW_ONLY;
     }
 
 
@@ -269,8 +269,8 @@ public class ModTungstenCarbideCrossbowItem extends CrossbowItem {
             abstractarrow.setPierceLevel((byte)i);
         }
 
-        //increase arrow's damage by BASE 50% (base is 2.0)
-        abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + 1.0d);
+        //increase arrow's damage by BASE 60% (base is 2.0)
+        abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + 1.2d);
         return abstractarrow;
     }
 
@@ -390,8 +390,7 @@ public class ModTungstenCarbideCrossbowItem extends CrossbowItem {
      */
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
-        components.add(Component.literal("§7Heavy Crossbow "));
-        components.add(Component.literal("§8> +50% damage"));
+        components.add(Component.literal("§8> +60% damage"));
         components.add(Component.literal("§8> Charges 20% slower"));
         super.appendHoverText(itemStack, level, components, flag);
     }

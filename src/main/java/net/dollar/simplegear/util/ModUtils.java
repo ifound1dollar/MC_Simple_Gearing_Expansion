@@ -26,10 +26,10 @@ import java.util.function.Predicate;
  */
 public class ModUtils {
     //These predicates are used by Heavy Bows/Crossbows to allow firing of Heavy Arrows.
-    public static final Predicate<ItemStack> HEAVY_AND_LIGHT_ARROWS = (itemStack) ->
-            (itemStack.is(ModTags.Items.ARROWS_HEAVY) || itemStack.is(ItemTags.ARROWS));
-    public static final Predicate<ItemStack> HEAVY_AND_LIGHT_ARROWS_OR_FIREWORK = HEAVY_AND_LIGHT_ARROWS.or((itemStack) ->
-            itemStack.is(Items.FIREWORK_ROCKET));
+//    public static final Predicate<ItemStack> HEAVY_AND_LIGHT_ARROWS = (itemStack) ->
+//            (itemStack.is(ModTags.Items.ARROWS_HEAVY) || itemStack.is(ItemTags.ARROWS));
+//    public static final Predicate<ItemStack> HEAVY_AND_LIGHT_ARROWS_OR_FIREWORK = HEAVY_AND_LIGHT_ARROWS.or((itemStack) ->
+//            itemStack.is(Items.FIREWORK_ROCKET));
 
 
     public enum DamageCategory { NONE, BLUNT, SHARP, MAGIC, FIRE, EXPLOSION }
@@ -110,11 +110,11 @@ public class ModUtils {
      * @param targetEffectChance Chance out of 100 to apply this effect
      */
     public static void rollInfusedDiamondOnHitAndApply(LivingEntity attackedEntity, LivingEntity attacker, int targetEffectChance) {
-        //roll chance to remove Slowness from and apply Speed to user (attacker) for 4 seconds
+        //roll chance to remove Slowness from and apply Regeneration 2 to user (attacker) for 4 seconds
         if (new Random().nextInt(100) < targetEffectChance) {
             attacker.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-            attacker.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,
-                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get() * 20));
+            attacker.addEffect(new MobEffectInstance(MobEffects.REGENERATION,
+                    ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get() * 20, 1));
         }
     }
     /**
@@ -125,10 +125,10 @@ public class ModUtils {
      */
     public static void appendInfusedDiamondEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            components.add(Component.literal(String.format("§5> Full Set: -%s%% Magic damage taken",
+            components.add(Component.literal(String.format("§5> Full set: -%s%% Magic damage",
                     ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get())));
         } else {
-            components.add(Component.literal(String.format("§5> Chance on-hit: Gain Speed for %ss",
+            components.add(Component.literal(String.format("§5> Chance on-hit: Regeneration for %ss",
                     ModCommonConfigs.ENDGAME_TIER_EFFECT_SECONDS.get())));
 //            components.add(Component.literal(String.format("§5> +%s%% damage to End mobs",
 //                    ModCommonConfigs.ENDGAME_WEAPON_BONUS_DAMAGE.get())));
@@ -159,7 +159,7 @@ public class ModUtils {
      */
     public static void appendNetheriteEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            components.add(Component.literal(String.format("§4> Full Set: -%s%% Fire damage taken",
+            components.add(Component.literal(String.format("§4> Full set: -%s%% Fire damage",
                     ModCommonConfigs.NETHERITE_FIRE_DAMAGE_REDUCTION.get())));
         } else {
             components.add(Component.literal(String.format("§4> Chance on-hit: Wither target for %ss",
@@ -193,7 +193,7 @@ public class ModUtils {
      */
     public static void appendTungstenCarbideEquipmentTooltip(List<Component> components, boolean isArmor) {
         if (isArmor) {
-            components.add(Component.literal(String.format("§8> Full Set: -%s%% Explosion damage",
+            components.add(Component.literal(String.format("§8> Full set: -%s%% Explosion damage",
                     ModCommonConfigs.INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION.get())));
         } else {
             components.add(Component.literal(String.format("§8> Chance on-hit: Slow target for %ss",

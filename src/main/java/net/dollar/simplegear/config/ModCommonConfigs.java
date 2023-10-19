@@ -46,28 +46,28 @@ public class ModCommonConfigs {
         BUILDER.comment("Infused Diamond tier").push("infused_diamond");
         INFUSED_DIAMOND_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with" +
                         " Infused Diamond tools and weapons")
-                .defineInRange("infused_diamond_effect_chance", 17, 0, 100);
+                .defineInRange("infused_diamond_effect_chance", 20, 0, 100);
         INFUSED_DIAMOND_MAGIC_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Magic damage reduction" +
                         " granted by a full set of Infused Diamond armor")
-                .defineInRange("infused_diamond_damage_reduction", 33, 0, 100);
+                .defineInRange("infused_diamond_damage_reduction", 50, 0, 100);
         BUILDER.pop();
 
         BUILDER.comment("Netherite tier").push("netherite");
         NETHERITE_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit with Netherite" +
                         " tools and weapons")
-                .defineInRange("netherite_effect_chance", 20, 0, 100);
+                .defineInRange("netherite_effect_chance", 25, 0, 100);
         NETHERITE_FIRE_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Fire damage reduction granted by a" +
                         " full set of Netherite armor")
-                .defineInRange("netherite_damage_reduction", 33, 0, 100);
+                .defineInRange("netherite_damage_reduction", 50, 0, 100);
         BUILDER.pop();
 
         BUILDER.comment("Tungsten-Carbide tier").push("tungsten_carbide");
         TUNGSTEN_CARBIDE_EFFECT_CHANCE = BUILDER.comment("Chance (out of 100) to apply special effect on-hit" +
                         " with Tungsten-Carbide tools and weapons")
-                .defineInRange("tungsten_carbide_effect_chance", 25, 0, 100);
+                .defineInRange("tungsten_carbide_effect_chance", 30, 0, 100);
         TUNGSTEN_CARBIDE_EXPLOSION_DAMAGE_REDUCTION = BUILDER.comment("Percentage (out of 100) Explosion damage" +
                         " reduction granted by a full set of Tungsten-Carbide armor")
-                .defineInRange("tungsten_carbide_damage_reduction", 33, 0, 100);
+                .defineInRange("tungsten_carbide_damage_reduction", 50, 0, 100);
         BUILDER.pop();
         //endregion
 
