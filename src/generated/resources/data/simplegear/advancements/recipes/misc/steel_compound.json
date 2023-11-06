@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_carbonite_dust": {
+    "has_coke": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:dusts/carbonite"
+            "tag": "forge:cokes"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_carbonite_dust"
+      "has_coke"
     ]
   ],
   "rewards": {

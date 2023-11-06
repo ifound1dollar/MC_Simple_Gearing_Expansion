@@ -140,8 +140,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STEEL_COMPOUND.get(), 1)
                 .requires(Tags.Items.INGOTS_IRON)
-                .requires(ModTags.Items.FORGE_DUSTS_CARBONITE)
-                .unlockedBy("has_carbonite_dust", has(ModTags.Items.FORGE_DUSTS_CARBONITE))
+                .requires(ModTags.Items.FORGE_COKES)
+                .unlockedBy("has_coke", has(ModTags.Items.FORGE_COKES))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COMPOUND_GEMSTONE.get(), 1)
                 .requires(Tags.Items.GEMS_AMETHYST)
@@ -153,7 +153,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TUNGSTEN_CARBIDE_INGOT.get(), 1)
                 .requires(Ingredient.of(ModTags.Items.FORGE_INGOTS_TUNGSTEN), 4)
-                .requires(Ingredient.of(ModTags.Items.FORGE_DUSTS_CARBONITE), 4)
+                .requires(Ingredient.of(ModTags.Items.FORGE_COKES), 4)
                 .requires(ModItems.MOLTEN_CORE.get(), 1)
                 .unlockedBy("has_molten_core", has(ModItems.MOLTEN_CORE.get()))
                 .save(consumer);
