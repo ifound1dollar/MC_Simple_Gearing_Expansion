@@ -76,8 +76,6 @@ public class SimpleGearingExpansion
         //add to TEST_TAB
         if (event.getTab() == ModCreativeModeTabs.SIMPLEGEAR_TAB.get()) {
             //region BLOCKS
-//            event.accept(ModBlocks.CARBONITE_ORE);
-//            event.accept(ModBlocks.DEEPSLATE_CARBONITE_ORE);
             event.accept(ModBlocks.RUBY_ORE);
             event.accept(ModBlocks.DEEPSLATE_RUBY_ORE);
             event.accept(ModBlocks.SAPPHIRE_ORE);

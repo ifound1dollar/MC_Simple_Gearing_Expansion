@@ -1,9 +1,8 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/carbonite",
     "#forge:ores/ruby",
-    "#forge:ores/saphire",
+    "#forge:ores/sapphire",
     "#forge:ores/tin",
     "#forge:ores/tungsten"
   ]

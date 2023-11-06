@@ -21,7 +21,6 @@ public class ModTags {
 
         public static final TagKey<Block> FORGE_DEEPSLATE = forgeBlockTag("deepslate");
 
-        public static final TagKey<Block> FORGE_ORES_CARBONITE = forgeBlockTag("ores/carbonite");
         public static final TagKey<Block> FORGE_ORES_RUBY = forgeBlockTag("ores/ruby");
         public static final TagKey<Block> FORGE_ORES_SAPPHIRE = forgeBlockTag("ores/sapphire");
         public static final TagKey<Block> FORGE_ORES_TIN = forgeBlockTag("ores/tin");
@@ -71,7 +70,7 @@ public class ModTags {
 
         public static final TagKey<Item> FORGE_DEEPSLATE = forgeItemTag("deepslate");
 
-        public static final TagKey<Item> FORGE_DUSTS_CARBONITE = forgeItemTag("dusts/carbonite");
+        public static final TagKey<Item> FORGE_COKES = forgeItemTag("cokes");
 
         public static final TagKey<Item> FORGE_GEMS_RUBY = forgeItemTag("gems/ruby");
         public static final TagKey<Item> FORGE_GEMS_SAPPHIRE = forgeItemTag("gems/sapphire");
@@ -81,7 +80,6 @@ public class ModTags {
         public static final TagKey<Item> FORGE_INGOTS_TIN = forgeItemTag("ingots/tin");
         public static final TagKey<Item> FORGE_INGOTS_TUNGSTEN = forgeItemTag("ingots/tungsten");
 
-        public static final TagKey<Item> FORGE_ORES_CARBONITE = forgeItemTag("ores/carbonite");
         public static final TagKey<Item> FORGE_ORES_RUBY = forgeItemTag("ores/ruby");
         public static final TagKey<Item> FORGE_ORES_SAPPHIRE = forgeItemTag("ores/sapphire");
         public static final TagKey<Item> FORGE_ORES_TIN = forgeItemTag("ores/tin");
